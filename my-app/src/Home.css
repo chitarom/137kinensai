@@ -1,0 +1,131 @@
+/* Home.css */
+
+.news-slide-box-con {
+    overflow-x: auto;
+    display: flex;
+
+    /* スナップを有効化 */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /* 
+    スライド幅が flex: 0 0 80% のとき…
+    padding-inline は左右どちらも (100% - 80%) / 2 = 10% に
+  */
+    scroll-padding-inline-start: 10%;
+    scroll-padding-inline-end: 10%;
+
+    /* optional: 実際に見える余白を作りたい場合の padding */
+    padding: 10px;
+}
+
+.news-slide-box {
+    display: flex;
+    gap: 5px;
+}
+
+.news-slide {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    aspect-ratio: 8/5;
+    max-height: 300px;
+    border: 5px solid blue;
+    background-color: aqua;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+
+}
+
+
+.search-button {
+    background-color: #008cff;
+    color: white;
+    border-radius: 10px;
+    font-size: 25px;
+    border: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* .search-button:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 8%;
+
+} */
+
+.glass {
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+}
+
+.ghost-slide {
+    flex: 0 0 80%;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.home-menu-top {
+    display: flex;
+    justify-content: center;
+
+}
+
+.menu-button {
+    width: 40%;
+    height: 100px;
+    text-align: center;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #008cff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.menu-button h2 {
+    font-size: 15px;
+    font-weight: lighter;
+    
+
+}
+
+.menu-button img {
+    height: 48px;
+    width: 48px;
+    margin: 5px;
+}
+
+.footer-nav .footer-button-con {
+    text-decoration: none;
+    /* アンダーラインを消す */
+    color: inherit;
+    /* 親の文字色を継承（必要に応じて指定） */
+}

@@ -1,0 +1,51 @@
+.app-title {
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.hamburger {
+    position: absolute;
+    left: 5%;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.hamburger img {
+    height: 30px;
+    width: 30px;
+}
+
+.app-title img {
+    width: 48px;
+    height: 48px;
+}
+
+.app-title-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative;
+
+}
+
+.header-con {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+.app-title-con span {
+    font-size: 2rem;
+    vertical-align: auto;
+    /* ← ベースラインではなく中央揃え */
+}
+
+.app-title-con h3 {
+    padding: 0 5%;
+    padding-bottom: 8px;
+}
