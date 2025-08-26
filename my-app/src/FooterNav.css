@@ -24,6 +24,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0.5;
+}
+
+.footer-button-con.isactive {
+  opacity: 1;
+
 }
 
 .footer-button-con p {
