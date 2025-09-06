@@ -2,16 +2,26 @@
     position: relative;
     height: auto;
     width: 260px;
+    height: 720px;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
+    background-color: rgba(253, 202, 255, 0.342);
+}
+
+.sc-con-sun {
+    height: 840px;
+}
+
+.sc-con-stage {
+    background-color: rgba(253, 202, 255, 0.164);
 }
 
 .schedule-box {
     padding: 5px;
     width: 250px;
     position: absolute;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -173,8 +183,29 @@
 .row-border {
     margin-top: 19px;
     margin-bottom: 118px;
-    width: 600px;
+    width: 620px;
     border: 1px solid rgb(0, 0, 0);;
 }
 
+.schedule-page {
+    position: relative;
+}
+
+.page-changer {
+    position: fixed;
+    right: 0;
+    bottom: 60px;
+    z-index: 1000;
+    margin: 12px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #008cff;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    font-weight: 500;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.781);
+    
+
+}
 
