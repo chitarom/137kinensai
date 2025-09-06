@@ -7,6 +7,8 @@ import Schedule from './Schedule.jsx';
 import Search from './Search.jsx';
 import Map from './Map.jsx';
 import Event from './Event.jsx';
+import ReadQR from './ReadQR.jsx'
+import AnalyzeQR from './AnalyzeQR.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/map" element={<Map />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/event" element={<Event />} />
+        <Route path="/readqr" element={<ReadQR />} />
+        <Route path="/analyzeqr" element={<AnalyzeQR />} />
       </Routes>
       <FooterNav />
     </>
