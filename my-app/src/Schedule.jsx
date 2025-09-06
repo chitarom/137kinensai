@@ -8,6 +8,7 @@ function Schedule() {
     const scrollContainerRef = useRef(null);
     const boxRef = useRef(null);
     const [activeTab, setActiveTab] = useState('kodo');
+    const [currentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -76,101 +77,117 @@ function Schedule() {
 
     return (
         <div className="schedule-page">
-            <div className="ko-or-st-con">
-                <div className="kodo-or-stage">
-                    <button onClick={() => scrollToLeft()} className={`kodo-button ${activeTab === 'kodo' ? 'active' : ''}`}>
-                        講堂
-                    </button>
+            <button className="page-changer" onClick={() => setCurrentPage(prev => (prev + 1) % 2)}>{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button>
+            {currentPage == 0 && <>
+                <div className="ko-or-st-con">
+                    <div className="kodo-or-stage">
+                        <button onClick={() => scrollToLeft()} className={`kodo-button ${activeTab === 'kodo' ? 'active' : ''}`}>
+                            講堂企画
+                        </button>
 
-                    <button onClick={() => scrollToRight()} className={`kodo-button ${activeTab === 'stage' ? 'active' : ''}`}>
-                        ステージ
-                    </button>
+                        <button onClick={() => scrollToRight()} className={`kodo-button ${activeTab === 'stage' ? 'active' : ''}`}>
+                            ステージ企画
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <div className="schedule-page-con-con" ref={scrollContainerRef}>
-                <div className="sc-day-con"><h2>27(土)</h2></div>
-                <div className="schedule-page-con" >
-                    <div className="row-border-con">
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
+                <div className="schedule-page-con-con" ref={scrollContainerRef}>
+                    <div className="sc-day-con"><h2>27(土)</h2></div>
+                    <div className="schedule-page-con" >
+                        <div className="row-border-con">
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                        </div>
+                        <div className="timesheet">
+                            <h1>12</h1>
+                            <h1>13</h1>
+                            <h1>14</h1>
+                            <h1>15</h1>
+                            <h1>16</h1>
+                            <h1>17</h1>
+
+
+
+                        </div>
+
+                        <div className="schedule-con" ref={boxRef}>
+                            {KodoGroupList.filter(item => item.day === 'sat').map(item => (
+                                <a key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
+                                    <p className="group-name">{item.label}</p>
+                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
+                                </a>
+                            ))}
+                        </div>
+                        <div className="schedule-con sc-con-stage">
+                            {StageGroupList.filter(item => item.day === 'sat').map(item => (
+                                <a key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
+                                    <p className="group-name">{item.label}</p>
+                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
+                                </a>
+                            ))}
+                        </div>
+
                     </div>
-                    <div className="timesheet">
-                        <h1>12</h1>
-                        <h1>13</h1>
-                        <h1>14</h1>
-                        <h1>15</h1>
-                        <h1>16</h1>
-                        <h1>17</h1>
+                    <div className="sc-day-con sun"><h2>28(日)</h2></div>
+                    <div className="schedule-page-con" ref={scrollContainerRef}>
+                        <div className="row-border-con">
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                            <div className="row-border" />
+                        </div>
+                        <div className="timesheet">
+                            <h1>9</h1>
+                            <h1>10</h1>
+                            <h1>11</h1>
+                            <h1>12</h1>
+                            <h1>13</h1>
+                            <h1>14</h1>
+                            <h1>15</h1>
 
 
+                        </div>
+
+                        <div className="schedule-con sc-con-sun" ref={boxRef}>
+                            {KodoGroupList.filter(item => item.day === 'sun').map(item => (
+                                <a key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
+                                    <p className="group-name">{item.label}</p>
+                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
+                                </a>
+                            ))}
+                        </div>
+                        <div className="schedule-con sc-con-stage sc-con-sun">
+                            {StageGroupList.filter(item => item.day === 'sun').map(item => (
+                                <a key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
+                                    <p className="group-name">{item.label}</p>
+                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
+                                </a>
+                            ))}
+                        </div>
 
                     </div>
+                </div></>}
+            {currentPage == 1 && <>
+                <div className="ko-or-st-con">
+                    <div className="kodo-or-stage">
+                        <button onClick={() => scrollToLeft()} className={`kodo-button ${activeTab === 'kodo' ? 'active' : ''}`}>
+                            講堂企画
+                        </button>
 
-                    <div className="schedule-con" ref={boxRef}>
-                        {KodoGroupList.filter(item => item.day === 'sat').map(item => (
-                            <a key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
-                                <p className="group-name">{item.label}</p>
-                                <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                            </a>
-                        ))}
+                        <button onClick={() => scrollToRight()} className={`kodo-button ${activeTab === 'stage' ? 'active' : ''}`}>
+                            ステージ企画
+                        </button>
                     </div>
-                    <div className="schedule-con">
-                        {StageGroupList.filter(item => item.day === 'sat').map(item => (
-                            <a key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
-                                <p className="group-name">{item.label}</p>
-                                <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                            </a>
-                        ))}
-                    </div>
-
                 </div>
-                <div className="sc-day-con sun"><h2>28(日)</h2></div>
-                <div className="schedule-page-con" ref={scrollContainerRef}>
-                    <div className="row-border-con">
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                        <div className="row-border" />
-                    </div>
-                    <div className="timesheet">
-                        <h1>9</h1>
-                        <h1>10</h1>
-                        <h1>11</h1>
-                        <h1>12</h1>
-                        <h1>13</h1>
-                        <h1>14</h1>
-                        <h1>15</h1>
+            </>}
 
-
-                    </div>
-
-                    <div className="schedule-con" ref={boxRef}>
-                        {KodoGroupList.filter(item => item.day === 'sun').map(item => (
-                            <a key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
-                                <p className="group-name">{item.label}</p>
-                                <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                            </a>
-                        ))}
-                    </div>
-                    <div className="schedule-con">
-                        {StageGroupList.filter(item => item.day === 'sun').map(item => (
-                            <a key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
-                                <p className="group-name">{item.label}</p>
-                                <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                            </a>
-                        ))}
-                    </div>
-
-                </div>
-            </div>
 
         </div>
 
