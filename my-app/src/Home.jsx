@@ -20,10 +20,10 @@ function Home() {
         <div>
 
             <NewsSlider />
-            <div className="search-box">
+            <Link to="/search" className="search-box">
                 <button className="search-button">
                     <span><img className="glass" src={search} /></span>企画を見つける</button>
-            </div>
+            </Link>
             <div className="home-menu">
                 <div className="home-menu-top">
                     <div className="menu-button">
