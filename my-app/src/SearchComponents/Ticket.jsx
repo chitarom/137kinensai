@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Ticket ({keyword,filter,projdata}) {
+function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
   const classname = projdata[0].replace("H-","");
   var type = "謎の企画";
   var num = 0;
@@ -25,9 +25,8 @@ function Ticket ({keyword,filter,projdata}) {
   }
 
   var category_list = [];
-  for (let i=0;i<projdata[4].length;i++) {
+  for (let i=0;i<projdata[4].length;i++)
     category_list.push(<div key={i} className='category'>{projdata[4][i]}</div>);
-  }
 
   var hidden = true;
 
@@ -47,8 +46,13 @@ function Ticket ({keyword,filter,projdata}) {
 
   var ticketcl = "";
   if (hidden) ticketcl = " hidden";
+
+  const changeDDetail = () => {
+    ddetail(id);
+    setDDC([classname,projdata[1],projdata[3],projdata[4],projdata[5]]);
+  }
   return (
-    <div className={"ticket" + ticketcl}>
+    <div className={"ticket" + ticketcl} onClick={changeDDetail}>
         <div className={"p" + projdata[2] + " proj-type"}><div className='type'>{type}</div></div>
         <div className='class'>{classname}</div>
         <div className='title'>{projdata[1]}</div>
