@@ -118,29 +118,31 @@
     border-bottom-left-radius: 5px;
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-    &.p0,&.p1 {
-        background: rgb(157, 232, 255);
-=======
 
-    &.p0,
-    &.p1 {
-        background: greenyellow;
->>>>>>> 36f46c51ed72d927205a3ef8e7bd6f7f41a2c451
-    }
-
-    &.p7 {
-        background: rgb(160, 255, 176);
-    }
-
-    &.p8 {
-        background: rgb(204, 173, 255);
-    }
-
-    &.p9 {
-        background: rgb(253, 191, 255);
-    }
 }
+
+&.p0,
+&.p1 {
+    background: rgb(157, 232, 255);
+}
+
+&.p0,
+&.p1 {
+    background: greenyellow;
+}
+
+&.p7 {
+    background: rgb(160, 255, 176);
+}
+
+&.p8 {
+    background: rgb(204, 173, 255);
+}
+
+&.p9 {
+    background: rgb(253, 191, 255);
+}
+
 
 .type {
     width: 20px;
