@@ -1,5 +1,6 @@
 import './Schedule.css';
 import { useRef, useEffect, useState } from 'react';
+import grouplist from './JSON/KodoStageGroupList.json'
 
 
 
@@ -9,6 +10,8 @@ function Schedule() {
     const boxRef = useRef(null);
     const [activeTab, setActiveTab] = useState('kodo');
     const [currentPage, setCurrentPage] = useState(0)
+    const KodoGroupList = []
+    const StageGroupList = []
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,16 +51,31 @@ function Schedule() {
     };
 
 
-    const KodoGroupList = [
-        { label: '団体1', day: 'sat', starthour: '12', startminute: '00', finishhour: '12', finishminute: '30' },
-        { label: '団体3', day: 'sat', starthour: '13', startminute: '30', finishhour: '14', finishminute: '10' },
-        { label: '七文字のバンド', day: 'sun', starthour: '9', startminute: '30', finishhour: '9', finishminute: '40' },
-        { label: '六字のバンド', day: 'sun', starthour: '9', startminute: '40', finishhour: '9', finishminute: '50' }
-    ]
+    // const KodoGroupList = [
+    //     { label: '団体1', day: 'sat', starthour: '12', startminute: '00', finishhour: '12', finishminute: '30' },
+    //     { label: '団体3', day: 'sat', starthour: '13', startminute: '30', finishhour: '14', finishminute: '10' },
+    //     { label: '七文字のバンド', day: 'sun', starthour: '9', startminute: '30', finishhour: '9', finishminute: '40' },
+    //     { label: '六字のバンド', day: 'sun', starthour: '9', startminute: '40', finishhour: '9', finishminute: '50' }
+    // ]
 
-    const StageGroupList = [
-        { label: '団体2', day: 'sat', starthour: '13', startminute: '20', finishhour: '16', finishminute: '00' }
-    ]
+    function createList(list, newlist, length) {
+        for (let i = 0; i < length; i++) {
+            const object = { label: list[i][0], day: list[i][1], starthour: list[i][2], startminute: list[i][3], finishhour: list[i][4], finishminute: list[i][5] };
+            newlist.push(object);
+
+        }
+        return newlist;
+    }
+    createList(grouplist.kodo_list, KodoGroupList, grouplist.kodo_list.length)
+    createList(grouplist.stage_list, StageGroupList, grouplist.stage_list.length)
+
+
+
+
+
+    // const StageGroupList = [
+    //     { label: '団体2', day: 'sat', starthour: '13', startminute: '20', finishhour: '16', finishminute: '00' }
+    // ]
 
     function calculateBoxSize(list) {
         for (let i = 0; i < list.length; i++) {
