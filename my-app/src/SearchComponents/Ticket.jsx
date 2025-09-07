@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Ticket ({keyword,filter,projdata}) {
+function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
   const classname = projdata[0].replace("H-","");
   var type = "謎の企画";
   var num = 0;
@@ -25,9 +25,8 @@ function Ticket ({keyword,filter,projdata}) {
   }
 
   var category_list = [];
-  for (let i=0;i<projdata[4].length;i++) {
+  for (let i=0;i<projdata[4].length;i++)
     category_list.push(<div key={i} className='category'>{projdata[4][i]}</div>);
-  }
 
   var hidden = true;
 
@@ -35,15 +34,25 @@ function Ticket ({keyword,filter,projdata}) {
   var title = projdata[1];
   if (title.search(keyword) >= 0 || cl.search(keyword) >= 0) hidden = false;
 
-  console.log(num,filter[1]);
+  //console.log(num,filter[1]);
+
+  //カテゴリ選別
   if (num != filter[1] && filter[1] != 10) hidden = true;
 
-  console.log(keyword,hidden);
+  for (let i=0;i<filter[0].length;i++)
+    if (!projdata[4].includes(filter[0][i])) hidden = true;
+
+  //console.log(keyword,hidden);
 
   var ticketcl = "";
   if (hidden) ticketcl = " hidden";
+
+  const changeDDetail = () => {
+    ddetail(id);
+    setDDC([classname,projdata[1],projdata[3],projdata[4],projdata[5]]);
+  }
   return (
-    <div className={"ticket" + ticketcl}>
+    <div className={"ticket" + ticketcl} onClick={changeDDetail}>
         <div className={"p" + projdata[2] + " proj-type"}><div className='type'>{type}</div></div>
         <div className='class'>{classname}</div>
         <div className='title'>{projdata[1]}</div>

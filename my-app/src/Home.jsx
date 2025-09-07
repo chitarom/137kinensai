@@ -46,10 +46,10 @@ function Home() {
                     </Link>
                 </div>
                 <div className="home-menu-top">
-                    <div className="menu-button">
+                    <Link to="/pagelist" className="menu-button">
                         <img src={listHome} alt="" />
                         <h2>ページ一覧</h2>
-                    </div>
+                    </Link>
                     <a href='https://kinensai.jp' className="menu-button hp-link">
                         <img src={linkHome} alt="" />
                         <h2>HPはこちら</h2>

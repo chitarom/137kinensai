@@ -1,0 +1,51 @@
+.input-box {
+    width: 80%;
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    border: 1px solid #008cff;
+    border-radius: 10px;
+}
+.login-con {
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login {
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: #008cff;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.ad-button {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #008cff;
+    color: white;
+    margin: 20px 10px;
+    text-decoration: none;
+    border: none;
+}
+
+.ad-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 60px;
+    right: 0;
+
+}

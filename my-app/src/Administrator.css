@@ -1,0 +1,15 @@
+.ad-button {
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #008cff;
+    color: white;
+    margin: 30px;
+}
+
+.ad-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
