@@ -1,14 +1,18 @@
+
 import './Search.css'
 import data from './JSON/ProjectData.json'
 import categories from './JSON/Categories.json'
 import FilterButton from './SearchComponents/FilterButton.jsx';
-import TicketList from './SearchComponents/TicketList.jsx'; import { useState } from 'react';
-'./TicketList.jsx';
+import TicketList from './SearchComponents/TicketList.jsx';
+import DetailImageSlider from './SearchComponents/DetailImageSlider.jsx';
+import { useRef, useState, useEffect } from 'react';
 
 function Search() {
     //FavoriteかどうかはlocalStorageに保存
     const [isPopUp, setPopUp] = useState(false);
-    const [displayingDetail,setDisplayingDetail] = useState(false);
+    const [displayingDetail, setDisplayingDetail] = useState(-1);
+    const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], []]);
+    //["場所","企画名","説明文",[カテゴリー],[スライド用画像]]
     const [keyword, setKeyword] = useState("");
     const [filter, setFilter] = useState([[], 10]);
     const search = (e) => { setKeyword(e.target.value); }
@@ -37,6 +41,18 @@ function Search() {
         setPopUp(!isPopUp);
     }
 
+    const hideDDetail = () => {
+        setDisplayingDetail(-1);
+    }
+
+    const getList = (cats) => {
+        const list = [];
+        for (let i = 0; i < cats.length; i++) {
+            list.push(<div className='filter inactive'>{cats[i]}</div>);
+        }
+        return list;
+    }
+
     return (
         <div>
             <div className='search-wrap'>
@@ -57,7 +73,7 @@ function Search() {
                     <button className={"tab" + (filter[1] == 9 ? " active" : "")} onClick={changeFilterList[4]}>有志</button>
                 </div>
                 <div className='tickets'>
-                    <TicketList keyword={keyword} filter={filter} />
+                    <TicketList keyword={keyword} filter={filter} ddetail={setDisplayingDetail} setDDC={setDisplayDetailContents} />
                 </div>
             </div>
             {isPopUp &&
@@ -76,12 +92,28 @@ function Search() {
                     <div className='cpw-margin1' onClick={togglePopUp}></div>
                 </div>)
             }
-            {displayingDetail &&
-            (
-                <div className='detail-wrap'>
-                    <div className=''></div>
-                </div>
-            )
+            {(displayingDetail >= 0) &&
+                (
+                    <div className='detail-wrap'>
+                        <div className='dw-margin' onClick={hideDDetail}></div>
+                        <div className='detail-tag'>
+                            <div className='detail-head'>
+                                <div className='detail-place'>{displayDetailContents[0]}</div>
+                                <div className='detail-title'>{displayDetailContents[1]}</div>
+                                <button className='detail-favorite'>☆</button>
+                            </div>
+                            <div className='filter-wrap-wrap'>
+                                <div className='filter-wrap'>
+                                    <div className='filter-list'>
+                                        {getList(displayDetailContents[3])}
+                                    </div>
+                                </div>
+                            </div>
+                            <DetailImageSlider imagelist={displayDetailContents[4]} />
+                            <div className='detail'>{displayDetailContents[2]}</div>
+                        </div>
+                    </div>
+                )
             }
         </div>
     );
