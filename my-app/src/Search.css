@@ -79,7 +79,7 @@
 .ticket {
     display: grid;
     margin: 10px 0px;
-    grid-template-columns: 10% 60% 30%;
+    grid-template-columns: 6% 64% 30%;
     grid-template-rows: 20px calc(100% - 50px) 30px;
     align-items: center;
     background-color: white;
@@ -102,19 +102,19 @@
     display: flex;
     justify-content: center;
     &.p0,&.p1 {
-        background: greenyellow;
+        background: rgb(157, 232, 255);
     }
 
     &.p7 {
-        background: skyblue;
+        background: rgb(160, 255, 176);
     }
     
     &.p8 {
-        background: beige;
+        background: rgb(204, 173, 255);
     }
 
     &.p9 {
-        background: rosybrown;
+        background: rgb(253, 191, 255);
     }
 }
 
@@ -126,12 +126,14 @@
 
 .class {
     margin-left: 10px;
+    margin-top: 5px;
 }
 
 .title {
     grid-row: 2 / 2;
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .categories-wrap {
