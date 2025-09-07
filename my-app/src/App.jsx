@@ -9,6 +9,7 @@ import Map from './Map.jsx';
 import Event from './Event.jsx';
 import Login from './Login.jsx';
 import Administrator from './Administrator.jsx';
+import PageList from './PageList.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/event" element={<Event />} />
         <Route path="/login" element={<Login />} />
         <Route path="/administrator" element={<Administrator />} />
+        <Route path="/pagelist" element={<PageList />} />
       </Routes>
       <FooterNav />
     </>
