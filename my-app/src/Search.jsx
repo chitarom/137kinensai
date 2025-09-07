@@ -20,11 +20,12 @@ function Search() {
             </div>
             <div className='filter-wrap'>
                 <div className='filter-list'>
-                    <button className='filter inactive' id='0'>フィルタ0</button>
+                    <button className='first-filter filter' id='0'>絞り込む</button>
                     <button className='filter inactive' id='1'>フィルタ1</button>
                     <button className='filter inactive' id='2'>フィルタ2</button>
                     <button className='filter inactive' id='3'>フィルタ3</button>
                     <button className='filter inactive' id='4'>フィルタ4</button>
+                    <button className='filter inactive' id='5'>フィルタ5</button>
                 </div>
             </div>
             <div className='content'>

@@ -21,6 +21,7 @@
     border-left: 1px solid gray;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+
     &:active {
         background-color: rgb(181, 181, 181);
     }
@@ -29,6 +30,7 @@
 .filter-wrap {
     margin: 10px;
     overflow: scroll;
+
     &::-webkit-scrollbar {
         display: none;
     }
@@ -39,13 +41,26 @@
 }
 
 .filter {
-    border: 1px solid gray;
-    background-color: white;
+    border: 1px solid #008cff;
+    background-color: #008cff;
+    color: white;
     padding: 5px 10px;
     border-radius: 18px;
+
     &:not(:last-child) {
         margin-right: 5px;
     }
+}
+
+.filter.inactive {
+    color: #008cff;
+    background-color: white;
+}
+
+.first-filter {
+    border: 1px solid gray;
+    background-color: white;
+    color: black;
 }
 
 .content {
@@ -62,10 +77,12 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     background-color: whitesmoke;
+
     &.active {
         background-color: #008cff;
         color: white;
     }
+
     &:not(:last-child):not(:first-child) {
         margin-left: 5px;
     }
@@ -101,14 +118,16 @@
     border-bottom-left-radius: 5px;
     display: flex;
     justify-content: center;
-    &.p0,&.p1 {
+
+    &.p0,
+    &.p1 {
         background: greenyellow;
     }
 
     &.p7 {
         background: skyblue;
     }
-    
+
     &.p8 {
         background: beige;
     }
@@ -137,6 +156,7 @@
 .categories-wrap {
     grid-row: 3 / 3;
     overflow: scroll;
+
     &::-webkit-scrollbar {
         display: none;
     }
