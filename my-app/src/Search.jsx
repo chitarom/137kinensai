@@ -8,6 +8,7 @@ import TicketList from './SearchComponents/TicketList.jsx'; import { useState } 
 function Search() {
     //FavoriteかどうかはlocalStorageに保存
     const [isPopUp, setPopUp] = useState(false);
+    const [displayingDetail,setDisplayingDetail] = useState(false);
     const [keyword, setKeyword] = useState("");
     const [filter, setFilter] = useState([[], 10]);
     const search = (e) => { setKeyword(e.target.value); }
@@ -74,6 +75,13 @@ function Search() {
                     </div>
                     <div className='cpw-margin1' onClick={togglePopUp}></div>
                 </div>)
+            }
+            {displayingDetail &&
+            (
+                <div className='detail-wrap'>
+                    <div className=''></div>
+                </div>
+            )
             }
         </div>
     );
