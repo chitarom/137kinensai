@@ -102,7 +102,7 @@
     align-items: center;
     background-position: 50% 30%;
     background-size: cover;
-    border: 1px solid gray;
+    border: 0px solid gray;
     border-radius: 5px;
     box-shadow: 2px 2px 11px -5px;
     z-index: 1;
@@ -120,6 +120,7 @@
     background-position: 50% 30%;
     opacity: 0.5;
     z-index: -1;
+    border-radius: 5px;
 
 
 }
