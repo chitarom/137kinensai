@@ -83,7 +83,7 @@
         color: white;
     }
 
-    &:not(:last-child):not(:first-child) {
+    &:not(:first-child) {
         margin-left: 5px;
     }
 }
