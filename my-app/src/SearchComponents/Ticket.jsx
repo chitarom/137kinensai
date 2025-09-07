@@ -35,10 +35,15 @@ function Ticket ({keyword,filter,projdata}) {
   var title = projdata[1];
   if (title.search(keyword) >= 0 || cl.search(keyword) >= 0) hidden = false;
 
-  console.log(num,filter[1]);
+  //console.log(num,filter[1]);
+
+  //カテゴリ選別
   if (num != filter[1] && filter[1] != 10) hidden = true;
 
-  console.log(keyword,hidden);
+  for (let i=0;i<filter[0].length;i++)
+    if (!projdata[4].includes(filter[0][i])) hidden = true;
+
+  //console.log(keyword,hidden);
 
   var ticketcl = "";
   if (hidden) ticketcl = " hidden";
