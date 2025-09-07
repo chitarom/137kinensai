@@ -23,3 +23,29 @@
     border-radius: 10px;
     margin: 20px;
 }
+
+.ad-button {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #008cff;
+    color: white;
+    margin: 20px 10px;
+    text-decoration: none;
+    border: none;
+}
+
+.ad-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 60px;
+    right: 0;
+
+}

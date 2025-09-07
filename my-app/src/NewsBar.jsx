@@ -22,11 +22,14 @@ function NewsBar() {
     },[]);
 
     useEffect(() => {
-        const listLength = newsList.length;
+        let listLength = 5;
+        if (newsList.length < 5) {
+            listLength = newsList.length;
+        }   
         if (listLength <= 0) return;
         const interval = setInterval(() => {
             setCurrentNews(prev => (prev + 1) % listLength);
-        },10000);
+        },7000);
         return () => clearInterval(interval);
     },[newsList])
 
