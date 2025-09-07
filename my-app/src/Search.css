@@ -94,15 +94,34 @@
 }
 
 .ticket {
+    position: relative;
     display: grid;
     margin: 10px 0px;
     grid-template-columns: 6% 64% 30%;
     grid-template-rows: 20px calc(100% - 50px) 30px;
     align-items: center;
-    background-color: white;
+    background-position: 50% 30%;
+    background-size: cover;
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 2px 2px 11px -5px;
+    z-index: 1;
+}
+
+.ticket::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,white,transparent),url("pictures/sample.jpg");
+    background-size: cover;
+    background-position: 50% 30%;
+    opacity: 0.5;
+    z-index: -1;
+
+
 }
 
 .ticket.hidden {
@@ -119,30 +138,30 @@
     display: flex;
     justify-content: center;
 
-}
 
-&.p0,
-&.p1 {
-    background: rgb(157, 232, 255);
-}
 
-&.p0,
-&.p1 {
-    background: greenyellow;
-}
+    &.p0,
+    &.p1 {
+        background: rgb(157, 232, 255);
+    }
 
-&.p7 {
-    background: rgb(160, 255, 176);
-}
+    &.p0,
+    &.p1 {
+        background: rgb(125, 207, 255);
+    }
 
-&.p8 {
-    background: rgb(204, 173, 255);
-}
+    &.p7 {
+        background: rgb(160, 255, 176);
+    }
 
-&.p9 {
-    background: rgb(253, 191, 255);
-}
+    &.p8 {
+        background: rgb(204, 173, 255);
+    }
 
+    &.p9 {
+        background: rgb(253, 191, 255);
+    }
+}
 
 .type {
     width: 20px;
@@ -204,7 +223,7 @@
 }
 
 .favorite {
-    font-size: 20px;
-    background-color: white;
+    font-size: 25px;
+    background-color: transparent;
     border: none;
 }
