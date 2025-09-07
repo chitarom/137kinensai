@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import { QrReader } from 'react-qr-reader';
-import { useNavigate } from 'react-router-dom';
+import './ReadQR.css'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function ReadQR() {
   const navigate = useNavigate();
-  const [scanned, setScanned] = useState(false); // すでに読み取ったかどうか
 
-  const handleResult = (result) => {
-    if (!result) return;
-    // 再実行は防止
-    if (!scanned) { 
-      setScanned(true);
-      const text = result?.text;
-      navigate('/analyzeqr', { state: { qrData: text } });
-    }
+  const handleCapture = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+    // Fileを文字列などに変換してAnalyzeQRへ渡す
+    const fileURL = URL.createObjectURL(file);
+    // console.log(fileURL);
+    navigate("/analyzeqr", { state: { image: fileURL } });
     
   };
 
   return (
-    <div className="readqr-container">
-      <QrReader
-        constraints={{ facingMode: 'environment' }}
-        onResult={handleResult}
-        style={{ width: '100%' }}
+    <div className="reader-container">
+        <p className="pleaseread">QRコードを読み取ってください</p>
+      <input
+        type="file"
+        accept="image/*"
+        capture="environment"
+        onChange={handleCapture}
       />
     </div>
   );
