@@ -223,6 +223,16 @@
     flex-grow: 1;
 }
 
+.favorite-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fw-margin {
+    flex-grow: 1;
+}
+
 .favorite {
     font-size: 25px;
     background-color: transparent;

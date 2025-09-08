@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
   const classname = projdata[0].replace("H-","");
@@ -44,25 +44,50 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
 
   //console.log(keyword,hidden);
 
+  const changeDDetail = () => {
+    ddetail(id);
+    setDDC([classname,projdata[1],projdata[3],projdata[4],projdata[5],projdata[6]]);
+  }
+
+  var favorites = [];
+  if (localStorage.getItem("favorites") == undefined)
+    localStorage.setItem("favorites","[]");
+  else favorites = JSON.parse(localStorage.getItem("favorites"));
+
+  var star = "☆";
+  if (favorites.includes(projdata[6])) star = "★";
+
+  const [favoriteSwitch,setFavoriteSwitch] = useState(false);
+  const toggleSwitch = () => {
+    favorites = JSON.parse(localStorage.getItem("favorites"));
+    if (star == "☆")
+      favorites.push(projdata[6]);
+    else 
+      favorites = favorites.slice(0, favorites.indexOf(projdata[6])).concat(favorites.slice(favorites.indexOf(projdata[6]) + 1));
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    setFavoriteSwitch(!favoriteSwitch);
+  }
+  
+  hidden = (filter[2] && !favorites.includes(projdata[6])) ? true : hidden;
+
   var ticketcl = "";
   if (hidden) ticketcl = " hidden";
 
-  const changeDDetail = () => {
-    ddetail(id);
-    setDDC([classname,projdata[1],projdata[3],projdata[4],projdata[5]]);
-  }
   return (
-    <div className={"ticket" + ticketcl} onClick={changeDDetail}>
-        <div className={"p" + projdata[2] + " proj-type"}><div className='type'>{type}</div></div>
-        <div className='class'>{classname}</div>
-        <div className='title'>{projdata[1]}</div>
-        <div className='categories-wrap'><div className='categories'>{category_list}</div></div>
+    <div className={"ticket" + ticketcl}>
+        <div className={"p" + projdata[2] + " proj-type"} onClick={changeDDetail}><div className='type'>{type}</div></div>
+        <div className='class' onClick={changeDDetail}>{classname}</div>
+        <div className='title' onClick={changeDDetail}>{projdata[1]}</div>
+        <div className='categories-wrap' onClick={changeDDetail}><div className='categories'>{category_list}</div></div>
         <div className='ticket-right'>
-          <div className='terms'>
+          <div className='terms' onClick={changeDDetail}>
             <div className='term'>7:14～14:17</div>
             <div className='seiriken-term'>7:14～14:17</div>
           </div>
-          <div className='favorite-wrap'><button className='favorite'>☆</button></div>
+          <div className='favorite-wrap'>
+            <div className='fw-margin' onClick={changeDDetail}></div>
+            <button className='favorite' onClick={toggleSwitch}>{star}</button>
+          </div>
         </div>
     </div>
   )
