@@ -9,6 +9,7 @@ function Login() {
     const [result, setResult] = useState("");
     const [watchable, setWatchable] = useState(0);
     const [passage, setPassage] = useState("");
+    const [newsList, setNewsList] = useState([])
 
     const handleLogin = async (e) => {
         e.preventDefault(); // ページリロード防止
@@ -51,6 +52,38 @@ function Login() {
         }
     };
 
+    const handleDelete = async (id) => {
+        const { error } = await supabase
+            .from("news")
+            .delete()
+            .eq("id", id);
+
+        if (error) {
+            console.error("削除エラー:", error);
+        } else {
+            console.log("削除成功！");
+            // 表示を更新するならここで再取得 or フィルタ
+            setNewsList(prev => prev.filter(item => item.id !== id));
+        }
+    };
+
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            const { data, error } = await supabase
+                .from("news")
+                .select("*")
+                .order("created_at", { ascending: false });
+            if (error) {
+                console.error("取得エラー:", error);
+            } else {
+                setNewsList(data);
+            }
+        }
+        fetchNews();
+
+    }, [])
+
 
     return (
         <>
@@ -81,17 +114,29 @@ function Login() {
                 <button className="ad-button back-button" onClick={() => setWatchable(1)}>戻る</button>
             </div>}
             {watchable == 3 && <div className="ad-interior-con">
-                <form className="add-news-con" onSubmit={handleAddNews}>
-                    <input
-                        className="input-news"
-                        type="text"
-                        placeholder="ニュースを入力(20文字前後)"
-                        value={passage}
-                        onChange={(e) => setPassage(e.target.value)}
-                    />
-                    <button className="add-button" type="submit">追加</button>
+                <form className="add-news-con-con" onSubmit={handleAddNews}>
+                    <div className="add-news-con">
+                        <input
+                            className="input-news"
+                            type="text"
+                            placeholder="ニュースを入力(20文字前後)"
+                            value={passage}
+                            onChange={(e) => setPassage(e.target.value)}
+                        />
+                        <button className="add-button" type="submit">追加</button>
+                    </div>
                     <p>{result}</p>
                 </form>
+                <div className="news-list-con">
+                    <h3>ニュース一覧</h3>
+                    {newsList.map(item => (
+                        <div className="news-box">
+                            <p>{item.passage}</p>
+                            <button className="delete-button" onClick={() => handleDelete(item.id)}>delete</button>
+                        </div>
+                    ))}
+
+                </div>
 
             </div>}
 
