@@ -1,7 +1,3 @@
-.map-parent {
-    height: calc(100vh - 140px);
-}
-
 .map {
     display: none;
     width: 100%;
@@ -12,7 +8,12 @@
     }
 }
 
+.map-parent {
+    position: fixed;
+}
+
 .map-list {
+    width: 100%;
     height: 100%;
     overflow: scroll;
 }

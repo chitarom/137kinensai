@@ -1,0 +1,2182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 400.00001 330.00001"
+   version="1.1"
+   id="svg809"
+   sodipodi:docname="校舎地図1階.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   width="400"
+   height="330"
+   inkscape:export-filename="校舎地図1階.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview811"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.4687622"
+     inkscape:cx="233.18955"
+     inkscape:cy="167.48797"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg809" />
+  <defs
+     id="defs146">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#_10_lpi_40_"
+       id="pattern9317"
+       patternTransform="matrix(0.68139234,0,0,0.95679211,-3718.8917,-5160.424)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#_10_lpi_20_5"
+       id="pattern8281"
+       patternTransform="matrix(0.80302857,-1.2409623,0.80302857,1.2409623,3504.0601,-13922.029)" />
+    <style
+       id="style2">
+      .cls-1, .cls-2 {
+        fill: #865498;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        stroke: #231815;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-8 {
+        stroke-width: .25px;
+      }
+
+      .cls-12, .cls-13 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26 {
+        font-family: HeiseiKakuGoStd-W7-90ms-RKSJ-H, 'Heisei Kaku Gothic Std';
+      }
+
+      .cls-13, .cls-27, .cls-19, .cls-28, .cls-21, .cls-9, .cls-29, .cls-30, .cls-24 {
+        fill: #fff;
+      }
+
+      .cls-13, .cls-26 {
+        font-size: 7.79px;
+      }
+
+      .cls-31, .cls-32 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-33, .cls-34 {
+        fill: #fed32b;
+      }
+
+      .cls-35 {
+        stroke: #cecece;
+        stroke-width: 1.44px;
+      }
+
+      .cls-35, .cls-3, .cls-36, .cls-37, .cls-38, .cls-7 {
+        fill: none;
+      }
+
+      .cls-14 {
+        font-size: 5.92px;
+        letter-spacing: -.01em;
+      }
+
+      .cls-14, .cls-5 {
+        fill: #727171;
+      }
+
+      .cls-15 {
+        font-size: 6.15px;
+        letter-spacing: -.02em;
+      }
+
+      .cls-15, .cls-16, .cls-39, .cls-40, .cls-20, .cls-22, .cls-26 {
+        fill: #231815;
+      }
+
+      .cls-16 {
+        font-size: 7.08px;
+        letter-spacing: -.01em;
+      }
+
+      .cls-41 {
+        fill: url(#_10_lpi_40_);
+      }
+
+      .cls-17, .cls-42, .cls-20, .cls-21, .cls-23, .cls-25 {
+        font-size: 8.99px;
+      }
+
+      .cls-17, .cls-20, .cls-21 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-17, .cls-43, .cls-25 {
+        fill: #65672c;
+      }
+
+      .cls-3, .cls-37 {
+        stroke-width: .5px;
+      }
+
+      .cls-4 {
+        fill: #4969aa;
+      }
+
+      .cls-44 {
+        fill: #a0a0a0;
+      }
+
+      .cls-45, .cls-46 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-18 {
+        font-size: 6.96px;
+        letter-spacing: -.01em;
+      }
+
+      .cls-47 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-48 {
+        fill: #bedca1;
+      }
+
+      .cls-49 {
+        font-size: 20.81px;
+      }
+
+      .cls-46, .cls-50, .cls-28, .cls-32, .cls-29, .cls-30 {
+        font-family: MyriadPro-Semibold, 'Myriad Pro';
+        font-weight: 600;
+      }
+
+      .cls-46, .cls-50, .cls-32 {
+        font-size: 15.14px;
+      }
+
+      .cls-51 {
+        font-size: 33.35px;
+        letter-spacing: -.05em;
+      }
+
+      .cls-52 {
+        font-size: 6.59px;
+      }
+
+      .cls-53 {
+        fill: #0c945c;
+      }
+
+      .cls-40 {
+        font-family: MOBO-Bold, 'MOBO Bold-90ms-RKSJ-H';
+        font-size: 6.53px;
+        font-weight: 700;
+        letter-spacing: -.05em;
+      }
+
+      .cls-54, .cls-43, .cls-55 {
+        fill-rule: evenodd;
+      }
+
+      .cls-54, .cls-23 {
+        fill: #626363;
+      }
+
+      .cls-42, .cls-23, .cls-25 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-37 {
+        stroke: #a0a0a0;
+      }
+
+      .cls-38 {
+        stroke: #fff;
+        stroke-width: 2.88px;
+      }
+
+      .cls-19 {
+        font-size: 7.74px;
+        letter-spacing: -.01em;
+      }
+
+      .cls-56 {
+        fill: #dbdbdb;
+      }
+
+      .cls-6 {
+        fill: #da5789;
+      }
+
+      .cls-57 {
+        fill: #9d1f24;
+      }
+
+      .cls-58 {
+        fill: #4c6fb6;
+      }
+
+      .cls-59 {
+        fill: url(#_10_lpi_20_5);
+      }
+
+      .cls-60 {
+        font-size: 8.54px;
+        letter-spacing: -.01em;
+      }
+
+      .cls-8, .cls-11 {
+        fill: #eb9826;
+      }
+
+      .cls-61 {
+        font-size: 7.76px;
+        letter-spacing: -.01em;
+      }
+
+      .cls-62 {
+        letter-spacing: -.51em;
+      }
+
+      .cls-63 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-34 {
+        opacity: .4;
+      }
+
+      .cls-29 {
+        font-size: 8.84px;
+      }
+
+      .cls-10 {
+        fill: #4bb359;
+      }
+
+      .cls-55 {
+        fill: #424142;
+      }
+
+      .cls-30 {
+        font-size: 5.98px;
+      }
+    </style>
+    <pattern
+       id="_10_lpi_20_5"
+       data-name="10 lpi 20% 5"
+       x="0"
+       y="0"
+       width="72"
+       height="72"
+       patternTransform="translate(3191.49 -7808.63) rotate(-45)"
+       patternUnits="userSpaceOnUse"
+       viewBox="0 0 72 72">
+      <g
+         id="g72">
+        <rect
+           class="cls-36"
+           width="72"
+           height="72"
+           id="rect4" />
+        <g
+           id="g26">
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="68.4"
+             x2="144.25"
+             y2="68.4"
+             id="line6" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="54"
+             x2="144.25"
+             y2="54"
+             id="line8" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="39.6"
+             x2="144.25"
+             y2="39.6"
+             id="line10" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="25.2"
+             x2="144.25"
+             y2="25.2"
+             id="line12" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="10.8"
+             x2="144.25"
+             y2="10.8"
+             id="line14" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="61.2"
+             x2="144.25"
+             y2="61.2"
+             id="line16" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="46.8"
+             x2="144.25"
+             y2="46.8"
+             id="line18" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="32.4"
+             x2="144.25"
+             y2="32.4"
+             id="line20" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="18"
+             x2="144.25"
+             y2="18"
+             id="line22" />
+          <line
+             class="cls-35"
+             x1="71.75"
+             y1="3.6"
+             x2="144.25"
+             y2="3.6"
+             id="line24" />
+        </g>
+        <g
+           id="g48">
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="68.4"
+             x2="72.25"
+             y2="68.4"
+             id="line28" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="54"
+             x2="72.25"
+             y2="54"
+             id="line30" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="39.6"
+             x2="72.25"
+             y2="39.6"
+             id="line32" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="25.2"
+             x2="72.25"
+             y2="25.2"
+             id="line34" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="10.8"
+             x2="72.25"
+             y2="10.8"
+             id="line36" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="61.2"
+             x2="72.25"
+             y2="61.2"
+             id="line38" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="46.8"
+             x2="72.25"
+             y2="46.8"
+             id="line40" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="32.4"
+             x2="72.25"
+             y2="32.4"
+             id="line42" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="18"
+             x2="72.25"
+             y2="18"
+             id="line44" />
+          <line
+             class="cls-35"
+             x1="-.25"
+             y1="3.6"
+             x2="72.25"
+             y2="3.6"
+             id="line46" />
+        </g>
+        <g
+           id="g70">
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="68.4"
+             x2=".25"
+             y2="68.4"
+             id="line50" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="54"
+             x2=".25"
+             y2="54"
+             id="line52" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="39.6"
+             x2=".25"
+             y2="39.6"
+             id="line54" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="25.2"
+             x2=".25"
+             y2="25.2"
+             id="line56" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="10.8"
+             x2=".25"
+             y2="10.8"
+             id="line58" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="61.2"
+             x2=".25"
+             y2="61.2"
+             id="line60" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="46.8"
+             x2=".25"
+             y2="46.8"
+             id="line62" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="32.4"
+             x2=".25"
+             y2="32.4"
+             id="line64" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="18"
+             x2=".25"
+             y2="18"
+             id="line66" />
+          <line
+             class="cls-35"
+             x1="-72.25"
+             y1="3.6"
+             x2=".25"
+             y2="3.6"
+             id="line68" />
+        </g>
+      </g>
+    </pattern>
+    <pattern
+       id="_10_lpi_40_"
+       data-name="10 lpi 40%"
+       x="0"
+       y="0"
+       width="72"
+       height="72"
+       patternTransform="translate(-3168.68 -3130.61) scale(.6)"
+       patternUnits="userSpaceOnUse"
+       viewBox="0 0 72 72">
+      <g
+         id="g143">
+        <rect
+           class="cls-36"
+           width="72"
+           height="72"
+           id="rect75" />
+        <g
+           id="g97">
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="68.4"
+             x2="144.25"
+             y2="68.4"
+             id="line77" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="54"
+             x2="144.25"
+             y2="54"
+             id="line79" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="39.6"
+             x2="144.25"
+             y2="39.6"
+             id="line81" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="25.2"
+             x2="144.25"
+             y2="25.2"
+             id="line83" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="10.8"
+             x2="144.25"
+             y2="10.8"
+             id="line85" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="61.2"
+             x2="144.25"
+             y2="61.2"
+             id="line87" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="46.8"
+             x2="144.25"
+             y2="46.8"
+             id="line89" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="32.4"
+             x2="144.25"
+             y2="32.4"
+             id="line91" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="18"
+             x2="144.25"
+             y2="18"
+             id="line93" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="3.6"
+             x2="144.25"
+             y2="3.6"
+             id="line95" />
+        </g>
+        <g
+           id="g119">
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="68.4"
+             x2="72.25"
+             y2="68.4"
+             id="line99" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="54"
+             x2="72.25"
+             y2="54"
+             id="line101" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="39.6"
+             x2="72.25"
+             y2="39.6"
+             id="line103" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="25.2"
+             x2="72.25"
+             y2="25.2"
+             id="line105" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="10.8"
+             x2="72.25"
+             y2="10.8"
+             id="line107" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="61.2"
+             x2="72.25"
+             y2="61.2"
+             id="line109" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="46.8"
+             x2="72.25"
+             y2="46.8"
+             id="line111" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="32.4"
+             x2="72.25"
+             y2="32.4"
+             id="line113" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="18"
+             x2="72.25"
+             y2="18"
+             id="line115" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="3.6"
+             x2="72.25"
+             y2="3.6"
+             id="line117" />
+        </g>
+        <g
+           id="g141">
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="68.4"
+             x2=".25"
+             y2="68.4"
+             id="line121" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="54"
+             x2=".25"
+             y2="54"
+             id="line123" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="39.6"
+             x2=".25"
+             y2="39.6"
+             id="line125" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="25.2"
+             x2=".25"
+             y2="25.2"
+             id="line127" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="10.8"
+             x2=".25"
+             y2="10.8"
+             id="line129" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="61.2"
+             x2=".25"
+             y2="61.2"
+             id="line131" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="46.8"
+             x2=".25"
+             y2="46.8"
+             id="line133" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="32.4"
+             x2=".25"
+             y2="32.4"
+             id="line135" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="18"
+             x2=".25"
+             y2="18"
+             id="line137" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="3.6"
+             x2=".25"
+             y2="3.6"
+             id="line139" />
+        </g>
+      </g>
+    </pattern>
+  </defs>
+  <rect
+     class="cls-56"
+     x="4.4349817e-06"
+     y="2.4864562e-06"
+     width="400.00003"
+     height="330.00003"
+     id="rect148"
+     style="stroke-width:1.1545" />
+  <rect
+     class="cls-59"
+     x="6.3369551"
+     y="299.67386"
+     width="238.64632"
+     height="30.326153"
+     id="rect150"
+     style="fill:url(#pattern8281);stroke-width:1.41175" />
+  <rect
+     class="cls-41"
+     x="119.73199"
+     y="293.49838"
+     width="18.068253"
+     height="36.501617"
+     id="rect153"
+     style="fill:url(#pattern9317);stroke-width:1.34572" />
+  <rect
+     class="cls-27"
+     x="50.843227"
+     y="6.9956312"
+     width="15.195049"
+     height="187.03084"
+     id="rect155"
+     style="stroke-width:1.13565" />
+  <path
+     class="cls-27"
+     d="m 331.6223,162.13731 v -11.76538 h -9.42593 V 38.169329 h 0.32934 V 6.9842727 H 60.189664 V 181.32986 h -9.993755 v 40.65641 H 33.104318 v 24.46198 H 5.9508333 v 53.27353 H 244.54036 v -77.74687 h -17.36415 v -11.40196 h 86.76396 v -30.14026 h 4.077 v 0.88581 h 12.87831 v 2.40759 H 394.2309 V 162.10324 H 331.6223 Z M 304.27576,84.833348 H 181.61378 v 95.622062 h 12.37863 v 41.53086 H 89.296473 V 181.32986 H 78.098926 v -17.88655 h -9.51678 V 51.547332 h 9.51678 V 38.169329 H 304.27576 v 46.652662 z"
+     id="path157"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-11"
+     x="17.93198"
+     y="66.787804"
+     width="32.911251"
+     height="29.913124"
+     id="rect160"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-34"
+     x="244.65395"
+     y="180.4554"
+     width="60.28051"
+     height="30.140255"
+     id="rect162"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-34"
+     x="161.02437"
+     y="269.8768"
+     width="55.260918"
+     height="29.856342"
+     id="rect164"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-2"
+     x="68.570786"
+     y="24.870821"
+     width="35.682247"
+     height="29.913124"
+     id="rect166"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-2"
+     x="104.25303"
+     y="24.870821"
+     width="35.682247"
+     height="29.913124"
+     id="rect168"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-2"
+     x="139.93529"
+     y="24.870821"
+     width="35.682247"
+     height="29.913124"
+     id="rect170"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-5"
+     x="149.46342"
+     y="162.46664"
+     width="47.958664"
+     height="59.62183"
+     id="rect172"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-5"
+     x="149.46342"
+     y="222.08847"
+     width="35.693604"
+     height="24.371132"
+     id="rect174"
+     style="stroke-width:1.13565" />
+  <polygon
+     class="cls-9"
+     points="300.43,120.05 300.43,105.78 284.62,105.78 283.91,105.78 237.62,105.78 237.62,134.58 237.62,138.22 237.62,174.14 269.04,174.14 269.04,138.22 284.62,138.22 284.62,120.05 "
+     id="polygon176"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <rect
+     class="cls-2"
+     x="175.61754"
+     y="24.870821"
+     width="35.682247"
+     height="29.913124"
+     id="rect178"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-2"
+     x="211.29976"
+     y="24.870821"
+     width="35.682247"
+     height="29.913124"
+     id="rect180"
+     style="stroke-width:1.13565" />
+  <polyline
+     class="cls-6"
+     points="348.03 63.44 348.03 79.19 323.47 79.19 323.47 63.44"
+     id="polyline182"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <rect
+     class="cls-9"
+     x="185.15701"
+     y="222.08847"
+     width="12.265062"
+     height="24.371132"
+     id="rect184"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-9"
+     x="137.8116"
+     y="270.04715"
+     width="23.212767"
+     height="29.810915"
+     id="rect186"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-9"
+     x="36.806541"
+     y="269.8768"
+     width="23.212767"
+     height="29.810915"
+     id="rect188"
+     style="stroke-width:1.13565" />
+  <polyline
+     class="cls-5"
+     points="138.4 268.72 138.4 294.97 111.57 294.97 111.57 268.72"
+     id="polyline190"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-5"
+     points="453.12 187.51 453.12 216.52 426.29 216.52 426.29 187.51"
+     id="polyline192"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <rect
+     class="cls-11"
+     x="60.178303"
+     y="269.8768"
+     width="59.496906"
+     height="29.810915"
+     id="rect194"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-9"
+     x="274.81689"
+     y="54.636314"
+     width="30.117542"
+     height="30.197037"
+     id="rect196"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-9"
+     x="340.29871"
+     y="177.65033"
+     width="23.91687"
+     height="32.956676"
+     id="rect198"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-9"
+     x="304.93445"
+     y="180.4554"
+     width="18.000114"
+     height="30.140255"
+     id="rect200"
+     style="stroke-width:1.13565" />
+  <polygon
+     class="cls-9"
+     points="339.74,150.42 339.74,126.71 321.42,126.71 321.42,174.14 333.76,174.14 374.5,174.14 374.5,150.42 "
+     id="polygon202"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <rect
+     class="cls-2"
+     x="265.45911"
+     y="108.60258"
+     width="39.475327"
+     height="26.824146"
+     id="rect204"
+     style="stroke-width:1.13565" />
+  <polyline
+     class="cls-5"
+     points="150.76 89.89 121.78 89.89 121.78 69.96 150.76 69.96"
+     id="polyline206"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-5"
+     points="374.5 79.19 348.03 79.19 348.03 63.44 374.5 63.44"
+     id="polyline208"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-5"
+     points="405.64 189.98 405.64 216.52 390.35 216.52 390.35 189.98"
+     id="polyline210"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-5"
+     points="185.08 237.63 185.08 210.74 198.42 210.74 198.42 237.63"
+     id="polyline212"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-5"
+     points="345.27 126.71 374.5 126.71 374.5 116.21 345.27 116.21"
+     id="polyline214"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <rect
+     class="cls-11"
+     x="17.93198"
+     y="96.735001"
+     width="32.911251"
+     height="29.913124"
+     id="rect216"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-11"
+     x="17.93198"
+     y="126.69355"
+     width="32.911251"
+     height="29.913124"
+     id="rect218"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-11"
+     x="17.93198"
+     y="156.64073"
+     width="32.911251"
+     height="29.913124"
+     id="rect220"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-11"
+     x="17.93198"
+     y="186.59929"
+     width="32.911251"
+     height="29.913124"
+     id="rect222"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-11"
+     x="17.93198"
+     y="216.54648"
+     width="32.911251"
+     height="29.913124"
+     id="rect224"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-58"
+     x="68.616219"
+     y="156.59532"
+     width="28.493557"
+     height="35.591393"
+     id="rect226"
+     style="stroke-width:1.13565" />
+  <polyline
+     class="cls-7"
+     points="166.41 52.98 166.41 200.22 166.41 169.1 191.5 169.26 191.5 200.44 185.08 200.5 185.08 248.28"
+     id="polyline228"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-10"
+     points="172.49 210.74 172.49 224.13 185.08 224.13 185.08 210.74"
+     id="polyline230"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-5"
+     points="185.08 237.63 185.08 224.23 172.49 224.23 172.49 237.63"
+     id="polyline232"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-7"
+     points="374.5 105.78 237.63 105.78 237.54 248.1"
+     id="polyline234"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-10"
+     points="389.98 52.85 389.98 37.05 374.5 37.05 374.5 52.85"
+     id="polyline236"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-6"
+     points="374.71 52.85 374.71 37.05 348.03 37.05 348.03 52.85"
+     id="polyline238"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-6"
+     points="300.43 120.17 284.68 120.17 284.68 129.18 300.43 129.18"
+     id="polyline240"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-4"
+     points="300.43 129.18 284.68 129.18 284.68 138.22 300.43 138.22"
+     id="polyline242"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-6"
+     points="211.36 226.47 211.36 210.74 204.89 210.74 204.89 226.47"
+     id="polyline244"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-4"
+     points="204.89 226.47 204.89 210.74 198.42 210.74 198.42 226.47"
+     id="polyline246"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-7"
+     points="321.42 268.87 321.31 295.11 296.55 295.11 296.44 268.57"
+     id="polyline248"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-7"
+     points="306.02 189.98 306.02 226.64 321.42 226.64 321.42 248.1"
+     id="polyline250"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <line
+     class="cls-7"
+     x1="119.67521"
+     y1="204.03159"
+     x2="119.67521"
+     y2="246.45961"
+     id="line252"
+     style="stroke-width:1.13565" />
+  <rect
+     class="cls-48"
+     x="-399.98868"
+     y="-330.00003"
+     width="95.06559"
+     height="100.6888"
+     transform="scale(-1)"
+     id="rect254"
+     style="stroke-width:1.20126" />
+  <polyline
+     class="cls-7"
+     points="374.5 268.57 374.5 233 458.2 233"
+     id="polyline256"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <line
+     class="cls-7"
+     x1="304.93445"
+     y1="330"
+     x2="304.93445"
+     y2="292.41953"
+     id="line258"
+     style="stroke-width:1.34278" />
+  <line
+     class="cls-7"
+     x1="17.93198"
+     y1="246.45961"
+     x2="5.9394779"
+     y2="246.45961"
+     id="line260"
+     style="stroke-width:1.13565" />
+  <g
+     id="_女子-2"
+     data-name="女子"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <path
+       class="cls-27"
+       d="m 361.49,40.69 c -0.61,0 -1.1,-0.49 -1.1,-1.1 0,-0.61 0.49,-1.1 1.1,-1.1 0.61,0 1.1,0.49 1.1,1.1 0,0.61 -0.49,1.1 -1.1,1.1 z"
+       id="path268" />
+    <path
+       class="cls-27"
+       d="m 363.81,46.13 -1.13,-2.47 c 0,0 0,-0.08 -0.01,-0.12 l 0.46,-1.88 c 0.02,-0.24 -0.16,-0.44 -0.4,-0.44 h -2.48 c -0.24,0 -0.42,0.2 -0.4,0.44 l 0.46,1.88 c 0,0 -0.01,0.08 -0.01,0.12 l -1.13,2.47 c -0.03,0.34 0.23,0.62 0.57,0.62 h 1.01 l 0.26,4.24 c 0,0.23 0.2,0.42 0.43,0.42 h 0.11 c 0.23,0 0.42,-0.19 0.43,-0.42 l 0.26,-4.24 h 1.01 c 0.34,0 0.6,-0.28 0.57,-0.62 z"
+       id="path270" />
+  </g>
+  <g
+     id="_女子-3"
+     data-name="女子"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <path
+       class="cls-27"
+       d="m 335.75,67.05 c -0.61,0 -1.1,-0.49 -1.1,-1.1 0,-0.61 0.49,-1.1 1.1,-1.1 0.61,0 1.1,0.49 1.1,1.1 0,0.61 -0.49,1.1 -1.1,1.1 z"
+       id="path273" />
+    <path
+       class="cls-27"
+       d="m 338.08,72.5 -1.13,-2.47 c 0,0 0,-0.08 -0.01,-0.12 l 0.46,-1.88 c 0.02,-0.24 -0.16,-0.44 -0.4,-0.44 h -2.48 c -0.24,0 -0.42,0.2 -0.4,0.44 l 0.46,1.88 c 0,0 -0.01,0.08 -0.01,0.12 l -1.13,2.47 c -0.03,0.34 0.23,0.62 0.57,0.62 h 1.01 l 0.26,4.24 c 0,0.23 0.2,0.42 0.43,0.42 h 0.11 c 0.23,0 0.42,-0.19 0.43,-0.42 l 0.26,-4.24 h 1.01 c 0.34,0 0.6,-0.28 0.57,-0.62 z"
+       id="path275" />
+  </g>
+  <g
+     id="_女子-4"
+     data-name="女子"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <path
+       class="cls-27"
+       d="m 292.34,122.29 c -0.34,0 -0.62,-0.28 -0.62,-0.62 0,-0.34 0.28,-0.62 0.62,-0.62 0.34,0 0.62,0.28 0.62,0.62 0,0.34 -0.28,0.62 -0.62,0.62 z"
+       id="path278" />
+    <path
+       class="cls-27"
+       d="m 293.65,125.34 -0.64,-1.39 c 0,0 0,-0.05 0,-0.07 l 0.26,-1.05 c 0.01,-0.14 -0.09,-0.25 -0.23,-0.25 h -1.39 c -0.14,0 -0.24,0.11 -0.23,0.25 l 0.26,1.05 c 0,0 0,0.05 0,0.07 l -0.64,1.39 c -0.02,0.19 0.13,0.35 0.32,0.35 h 0.57 l 0.15,2.38 c 0,0.13 0.11,0.23 0.24,0.23 h 0.06 c 0.13,0 0.24,-0.11 0.24,-0.23 l 0.15,-2.38 h 0.57 c 0.19,0 0.34,-0.16 0.32,-0.35 z"
+       id="path280" />
+  </g>
+  <g
+     id="_女子-5"
+     data-name="女子"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <path
+       class="cls-27"
+       d="m 208.13,216.45 c -0.34,0 -0.62,-0.28 -0.62,-0.62 0,-0.34 0.28,-0.62 0.62,-0.62 0.34,0 0.62,0.28 0.62,0.62 0,0.34 -0.28,0.62 -0.62,0.62 z"
+       id="path283" />
+    <path
+       class="cls-27"
+       d="m 209.44,219.51 -0.64,-1.39 c 0,0 0,-0.05 0,-0.07 l 0.26,-1.05 c 0.01,-0.14 -0.09,-0.25 -0.23,-0.25 h -1.39 c -0.14,0 -0.24,0.11 -0.23,0.25 l 0.26,1.05 c 0,0 0,0.05 0,0.07 l -0.64,1.39 c -0.02,0.19 0.13,0.35 0.32,0.35 h 0.57 l 0.15,2.38 c 0,0.13 0.11,0.23 0.24,0.23 h 0.06 c 0.13,0 0.24,-0.11 0.24,-0.23 l 0.15,-2.38 h 0.57 c 0.19,0 0.34,-0.16 0.32,-0.35 z"
+       id="path285" />
+  </g>
+  <text
+     class="cls-39"
+     id="text331"
+     x="26.562952"
+     y="77.394814"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan325"
+       style="stroke-width:1.13565"><tspan
+         x="26.562952"
+         y="77.394814"
+         id="tspan323"
+         style="stroke-width:1.13565">高校</tspan></tspan><tspan
+       class="cls-46"
+       id="tspan329"
+       style="stroke-width:1.13565"><tspan
+         x="25.813416"
+         y="92.737488"
+         id="tspan327"
+         style="stroke-width:1.13565">1E</tspan></tspan></text>
+  <text
+     class="cls-27"
+     id="text343"
+     x="78.814377"
+     y="35.523254"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan335"
+       style="stroke-width:1.13565"><tspan
+         x="78.814377"
+         y="35.523254"
+         id="tspan333"
+         style="stroke-width:1.13565">中学</tspan></tspan><tspan
+       class="cls-50"
+       id="tspan341"
+       style="stroke-width:1.13565"><tspan
+         class="cls-31"
+         x="80.006821"
+         y="50.865936"
+         id="tspan337"
+         style="stroke-width:1.13565">3</tspan><tspan
+         class="cls-45"
+         x="88.796768"
+         y="50.865936"
+         id="tspan339"
+         style="stroke-width:1.13565">I</tspan></tspan></text>
+  <text
+     class="cls-27"
+     id="text353"
+     x="114.25815"
+     y="35.523254"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan347"
+       style="stroke-width:1.13565"><tspan
+         x="114.25815"
+         y="35.523254"
+         id="tspan345"
+         style="stroke-width:1.13565">中学</tspan></tspan><tspan
+       class="cls-32"
+       id="tspan351"
+       style="stroke-width:1.13565"><tspan
+         x="111.9414"
+         y="50.865936"
+         id="tspan349"
+         style="stroke-width:1.13565">3H</tspan></tspan></text>
+  <text
+     class="cls-27"
+     id="text363"
+     x="149.94038"
+     y="35.523254"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan357"
+       style="stroke-width:1.13565"><tspan
+         x="149.94038"
+         y="35.523254"
+         id="tspan355"
+         style="stroke-width:1.13565">中学</tspan></tspan><tspan
+       class="cls-32"
+       id="tspan361"
+       style="stroke-width:1.13565"><tspan
+         x="147.66907"
+         y="50.865936"
+         id="tspan359"
+         style="stroke-width:1.13565">3G</tspan></tspan></text>
+  <text
+     class="cls-27"
+     id="text373"
+     x="185.62263"
+     y="35.523254"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan367"
+       style="stroke-width:1.13565"><tspan
+         x="185.62263"
+         y="35.523254"
+         id="tspan365"
+         style="stroke-width:1.13565">中学</tspan></tspan><tspan
+       class="cls-32"
+       id="tspan371"
+       style="stroke-width:1.13565"><tspan
+         x="184.70276"
+         y="50.865936"
+         id="tspan369"
+         style="stroke-width:1.13565">3F</tspan></tspan></text>
+  <text
+     class="cls-39"
+     id="text383"
+     x="26.562952"
+     y="107.84169"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan377"
+       style="stroke-width:1.13565"><tspan
+         x="26.562952"
+         y="107.84169"
+         id="tspan375"
+         style="stroke-width:1.13565">高校</tspan></tspan><tspan
+       class="cls-46"
+       id="tspan381"
+       style="stroke-width:1.13565"><tspan
+         x="25.858835"
+         y="123.18437"
+         id="tspan379"
+         style="stroke-width:1.13565">1F</tspan></tspan></text>
+  <text
+     class="cls-39"
+     id="text393"
+     x="26.562952"
+     y="137.25513"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan387"
+       style="stroke-width:1.13565"><tspan
+         x="26.562952"
+         y="137.25513"
+         id="tspan385"
+         style="stroke-width:1.13565">高校</tspan></tspan><tspan
+       class="cls-46"
+       id="tspan391"
+       style="stroke-width:1.13565"><tspan
+         x="24.507412"
+         y="152.59781"
+         id="tspan389"
+         style="stroke-width:1.13565">1G</tspan></tspan></text>
+  <text
+     class="cls-39"
+     id="text403"
+     x="26.562952"
+     y="167.1796"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan397"
+       style="stroke-width:1.13565"><tspan
+         x="26.562952"
+         y="167.1796"
+         id="tspan395"
+         style="stroke-width:1.13565">高校</tspan></tspan><tspan
+       class="cls-46"
+       id="tspan401"
+       style="stroke-width:1.13565"><tspan
+         x="24.461985"
+         y="182.52229"
+         id="tspan399"
+         style="stroke-width:1.13565">1H</tspan></tspan></text>
+  <text
+     class="cls-39"
+     id="text413"
+     x="26.562952"
+     y="197.35393"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan407"
+       style="stroke-width:1.13565"><tspan
+         x="26.562952"
+         y="197.35393"
+         id="tspan405"
+         style="stroke-width:1.13565">高校</tspan></tspan><tspan
+       class="cls-46"
+       id="tspan411"
+       style="stroke-width:1.13565"><tspan
+         x="27.971151"
+         y="212.69661"
+         id="tspan409"
+         style="stroke-width:1.13565">1I</tspan></tspan></text>
+  <text
+     class="cls-39"
+     id="text423"
+     x="26.562952"
+     y="226.96042"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-18"
+       id="tspan417"
+       style="stroke-width:1.13565"><tspan
+         x="26.562952"
+         y="226.96042"
+         id="tspan415"
+         style="stroke-width:1.13565">高校</tspan></tspan><tspan
+       class="cls-46"
+       id="tspan421"
+       style="stroke-width:1.13565"><tspan
+         x="26.869566"
+         y="242.30312"
+         id="tspan419"
+         style="stroke-width:1.13565">1J</tspan></tspan></text>
+  <text
+     class="cls-24"
+     id="text433"
+     x="220.91875"
+     y="38.180676"
+     style="font-size:13.6278px;stroke-width:1.13565"><tspan
+       class="cls-60"
+       x="220.91875"
+       y="38.180676"
+       id="tspan425"
+       style="stroke-width:1.13565">1</tspan><tspan
+       class="cls-61"
+       x="228.60715"
+       y="37.851345"
+       id="tspan427"
+       style="stroke-width:1.13565">階</tspan><tspan
+       class="cls-61"
+       id="tspan431"
+       style="stroke-width:1.13565"><tspan
+         x="216.05815"
+         y="49.752995"
+         id="tspan429"
+         style="stroke-width:1.13565">学習室</tspan></tspan></text>
+  <text
+     class="cls-21"
+     id="text437"
+     x="158.28745"
+     y="196.67253"
+     style="stroke-width:1.13565"><tspan
+       x="158.28745"
+       y="196.67253"
+       id="tspan435"
+       style="stroke-width:1.13565">事務室</tspan></text>
+  <text
+     class="cls-19"
+     id="text441"
+     x="154.26721"
+     y="238.06712"
+     style="stroke-width:1.13565"><tspan
+       x="154.26721"
+       y="238.06712"
+       id="tspan439"
+       style="stroke-width:1.13565">放送室</tspan></text>
+  <text
+     class="cls-13"
+     id="text447"
+     x="276.4295"
+     y="120.66322"
+     style="stroke-width:1.13565"><tspan
+       x="276.4295"
+       y="120.66322"
+       id="tspan443"
+       style="stroke-width:1.13565">中学</tspan><tspan
+       x="267.69632"
+       y="130.19136"
+       id="tspan445"
+       style="stroke-width:1.13565">生徒会室</tspan></text>
+  <text
+     class="cls-20"
+     id="text451"
+     x="69.751869"
+     y="288.7059"
+     style="stroke-width:1.13565"><tspan
+       x="69.751869"
+       y="288.7059"
+       id="tspan449"
+       style="stroke-width:1.13565">家庭科室</tspan></text>
+  <g
+     id="g469"
+     transform="matrix(1.1356539,0,0,1.1356539,-121.2332,-33.79173)">
+    <text
+       class="cls-22"
+       transform="translate(399.05,270.32)"
+       id="text463"><tspan
+         class="cls-42"
+         id="tspan455"><tspan
+           x="0"
+           y="0"
+           id="tspan453">ステージ</tspan></tspan><tspan
+         class="cls-52"
+         id="tspan461"><tspan
+           class="cls-63"
+           x="1.49"
+           y="8.0799999"
+           id="tspan457">（晴天時</tspan><tspan
+           class="cls-62"
+           x="27.52"
+           y="8.0799999"
+           id="tspan459">）</tspan></tspan></text>
+    <text
+       class="cls-14"
+       transform="translate(381.82,291.05)"
+       id="text467"><tspan
+         x="0"
+         y="0"
+         id="tspan465">※雨天時は体育館での開催</tspan></text>
+  </g>
+  <text
+     class="cls-20"
+     id="text473"
+     x="120.3566"
+     y="196.67253"
+     style="stroke-width:1.13565"><tspan
+       x="120.3566"
+       y="196.67253"
+       id="tspan471"
+       style="stroke-width:1.13565">中庭</tspan></text>
+  <g
+     id="_階段-2"
+     data-name="階段"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <polygon
+       class="cls-27"
+       points="361.15,71.61 361.15,69.76 363.86,69.76 363.86,67.91 366.78,67.91 366.78,68.91 364.75,68.91 364.75,70.75 362.04,70.75 362.04,72.6 359.33,72.6 359.33,74.46 356.63,74.46 356.63,76.31 355.74,76.31 355.74,73.46 358.45,73.46 358.45,71.61 "
+       id="polygon475" />
+    <g
+       id="g481">
+      <polygon
+         class="cls-27"
+         points="356.62,69.35 359.16,69.35 359.16,68.28 358.24,68.28 360.26,66.01 359.59,65.26 357.57,67.53 357.57,66.49 356.62,66.49 "
+         id="polygon477" />
+      <polygon
+         class="cls-27"
+         points="362.93,77.37 364.96,75.1 364.96,76.14 365.91,76.14 365.91,73.28 363.36,73.28 363.36,74.35 364.29,74.35 362.26,76.62 "
+         id="polygon479" />
+    </g>
+  </g>
+  <g
+     id="_階段-3"
+     data-name="階段"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <polygon
+       class="cls-27"
+       points="136.15,80.25 136.15,78.19 139.17,78.19 139.17,76.14 142.42,76.14 142.42,77.24 140.15,77.24 140.15,79.3 137.14,79.3 137.14,81.35 134.13,81.35 134.13,83.42 131.11,83.42 131.11,85.49 130.12,85.49 130.12,82.31 133.14,82.31 133.14,80.25 "
+       id="polygon484" />
+    <g
+       id="g490">
+      <polygon
+         class="cls-27"
+         points="131.1,77.73 133.94,77.73 133.94,76.55 132.9,76.55 135.16,74.01 134.41,73.17 132.16,75.71 132.16,74.55 131.1,74.55 "
+         id="polygon486" />
+      <polygon
+         class="cls-27"
+         points="138.13,86.67 140.39,84.14 140.39,85.29 141.45,85.29 141.45,82.11 138.61,82.11 138.61,83.3 139.64,83.3 137.39,85.83 "
+         id="polygon488" />
+    </g>
+  </g>
+  <g
+     id="_階段-4"
+     data-name="階段"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <polygon
+       class="cls-27"
+       points="398.26,203.72 398.26,202.11 400.9,202.11 400.9,200.51 403.75,200.51 403.75,201.37 401.76,201.37 401.76,202.98 399.12,202.98 399.12,204.59 396.48,204.59 396.48,206.21 393.84,206.21 393.84,207.83 392.98,207.83 392.98,205.34 395.62,205.34 395.62,203.72 "
+       id="polygon493" />
+    <g
+       id="g499">
+      <polygon
+         class="cls-27"
+         points="393.83,201.76 396.32,201.76 396.32,200.83 395.42,200.83 397.39,198.85 396.74,198.19 394.76,200.17 394.76,199.27 393.83,199.27 "
+         id="polygon495" />
+      <polygon
+         class="cls-27"
+         points="399.99,208.75 401.97,206.77 401.97,207.67 402.9,207.67 402.9,205.18 400.41,205.18 400.41,206.11 401.32,206.11 399.34,208.09 "
+         id="polygon497" />
+    </g>
+  </g>
+  <g
+     id="_階段-5"
+     data-name="階段"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <polygon
+       class="cls-27"
+       points="191.65,224.74 191.65,223.17 194.23,223.17 194.23,221.59 197.01,221.59 197.01,222.44 195.07,222.44 195.07,224.01 192.49,224.01 192.49,225.59 189.91,225.59 189.91,227.18 187.33,227.18 187.33,228.76 186.49,228.76 186.49,226.33 189.07,226.33 189.07,224.74 "
+       id="polygon502" />
+    <g
+       id="g508">
+      <polygon
+         class="cls-27"
+         points="187.32,222.81 189.75,222.81 189.75,221.91 188.87,221.91 190.8,219.96 190.16,219.32 188.23,221.26 188.23,220.38 187.32,220.38 "
+         id="polygon504" />
+      <polygon
+         class="cls-27"
+         points="193.34,229.67 195.27,227.73 195.27,228.61 196.18,228.61 196.18,226.17 193.75,226.17 193.75,227.08 194.64,227.08 192.7,229.02 "
+         id="polygon506" />
+    </g>
+  </g>
+  <g
+     id="g524"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <polyline
+       class="cls-5"
+       points="321.31 189.98 321.31 216.52 306.02 216.52 306.02 189.98"
+       id="polyline511" />
+    <g
+       id="g522">
+      <g
+         id="_階段-6"
+         data-name="階段">
+        <polygon
+           class="cls-27"
+           points="313.87,199.24 313.87,197.91 316.06,197.91 316.06,196.58 318.41,196.58 318.41,197.29 316.77,197.29 316.77,198.62 314.59,198.62 314.59,199.95 312.41,199.95 312.41,201.29 310.23,201.29 310.23,202.62 309.51,202.62 309.51,200.57 311.69,200.57 311.69,199.24 "
+           id="polygon513" />
+        <polygon
+           class="cls-27"
+           points="315.31,203.39 316.94,201.75 316.94,202.5 317.7,202.5 317.7,200.44 315.65,200.44 315.65,201.21 316.4,201.21 314.77,202.85 "
+           id="polygon515" />
+      </g>
+      <text
+         class="cls-29"
+         transform="translate(309.06,213.23)"
+         id="text520"><tspan
+           x="0"
+           y="0"
+           id="tspan518">2F</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g539"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <polyline
+       class="cls-5"
+       points="321.42 268.57 321.42 295.11 306.12 295.11 306.12 268.57"
+       id="polyline526" />
+    <g
+       id="g537">
+      <g
+         id="_階段-7"
+         data-name="階段">
+        <polygon
+           class="cls-27"
+           points="313.98,277.83 313.98,276.5 316.16,276.5 316.16,275.17 318.51,275.17 318.51,275.88 316.87,275.88 316.87,277.21 314.69,277.21 314.69,278.54 312.51,278.54 312.51,279.88 310.33,279.88 310.33,281.21 309.62,281.21 309.62,279.16 311.8,279.16 311.8,277.83 "
+           id="polygon528" />
+        <polygon
+           class="cls-27"
+           points="315.41,281.98 317.04,280.34 317.04,281.09 317.81,281.09 317.81,279.03 315.76,279.03 315.76,279.8 316.5,279.8 314.87,281.44 "
+           id="polygon530" />
+      </g>
+      <text
+         class="cls-29"
+         transform="translate(309.16,291.82)"
+         id="text535"><tspan
+           x="0"
+           y="0"
+           id="tspan533">2F</tspan></text>
+    </g>
+  </g>
+  <g
+     id="g550"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <g
+       id="_階段-8"
+       data-name="階段">
+      <polygon
+         class="cls-27"
+         points="356.08,121.65 356.08,120.43 358.07,120.43 358.07,119.22 360.21,119.22 360.21,119.88 358.72,119.88 358.72,121.09 356.73,121.09 356.73,122.3 354.74,122.3 354.74,123.52 352.75,123.52 352.75,124.74 352.1,124.74 352.1,122.87 354.09,122.87 354.09,121.65 "
+         id="polygon541" />
+      <polygon
+         class="cls-27"
+         points="357.39,125.43 358.87,123.94 358.87,124.62 359.57,124.62 359.57,122.75 357.7,122.75 357.7,123.45 358.38,123.45 356.89,124.94 "
+         id="polygon543" />
+    </g>
+    <text
+       class="cls-30"
+       transform="translate(362.67,123.83)"
+       id="text548"><tspan
+         x="0"
+         y="0"
+         id="tspan546">2F</tspan></text>
+  </g>
+  <g
+     id="_男子-2"
+     data-name="男子"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <circle
+       class="cls-27"
+       cx="178.95"
+       cy="176.64999"
+       id="ellipse552"
+       r="1.64" />
+    <path
+       class="cls-27"
+       d="m 180.92,179.08 h -3.93 c -0.4,0 -0.72,0.33 -0.71,0.73 l 0.18,6.68 c 0,0.25 0.24,0.39 0.45,0.45 l 0.67,0.21 0.29,6.48 c 0.02,0.36 0.4,0.65 0.86,0.65 h 0.46 c 0.46,0 0.84,-0.29 0.86,-0.65 l 0.29,-6.48 0.67,-0.21 c 0.22,-0.06 0.45,-0.2 0.45,-0.45 l 0.18,-6.68 c 0,-0.4 -0.31,-0.73 -0.71,-0.73 z"
+       id="path554" />
+  </g>
+  <g
+     id="EV-2"
+     data-name="EV"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <path
+       class="cls-27"
+       d="m 175.2,229.39 v 6.93 h 7.31 v -6.93 z m 6.6,6.27 h -5.9 v -5.62 h 5.9 z"
+       id="path557" />
+    <path
+       class="cls-27"
+       d="m 179.46,231.64 c 0,0.31 -0.27,0.57 -0.61,0.57 -0.34,0 -0.61,-0.25 -0.61,-0.57 0,-0.32 0.27,-0.57 0.61,-0.57 0.34,0 0.61,0.25 0.61,0.57 z"
+       id="path559" />
+    <path
+       class="cls-27"
+       d="m 179.33,235.14 c 0,0.21 -0.2,0.38 -0.42,0.38 h -0.12 c -0.22,0 -0.41,-0.17 -0.42,-0.38 l -0.11,-2.31 c 0,-0.21 0.17,-0.38 0.39,-0.38 h 0.41 c 0.22,0 0.4,0.17 0.39,0.38 l -0.11,2.31 z"
+       id="path561" />
+    <path
+       class="cls-27"
+       d="m 177.63,231.64 c 0,0.31 -0.27,0.57 -0.61,0.57 -0.34,0 -0.61,-0.25 -0.61,-0.57 0,-0.32 0.27,-0.57 0.61,-0.57 0.34,0 0.61,0.25 0.61,0.57 z"
+       id="path563" />
+    <path
+       class="cls-27"
+       d="m 177.5,235.14 c 0,0.21 -0.2,0.38 -0.42,0.38 h -0.12 c -0.22,0 -0.41,-0.17 -0.42,-0.38 l -0.11,-2.31 c 0,-0.21 0.17,-0.38 0.39,-0.38 h 0.41 c 0.22,0 0.4,0.17 0.39,0.38 l -0.11,2.31 z"
+       id="path565" />
+    <path
+       class="cls-27"
+       d="m 181.29,231.64 c 0,0.31 -0.27,0.57 -0.61,0.57 -0.34,0 -0.61,-0.25 -0.61,-0.57 0,-0.32 0.27,-0.57 0.61,-0.57 0.34,0 0.61,0.25 0.61,0.57 z"
+       id="path567" />
+    <path
+       class="cls-27"
+       d="m 181.17,235.14 c 0,0.21 -0.2,0.38 -0.42,0.38 h -0.12 c -0.22,0 -0.41,-0.17 -0.42,-0.38 l -0.11,-2.31 c 0,-0.21 0.17,-0.38 0.39,-0.38 h 0.41 c 0.22,0 0.4,0.17 0.39,0.38 l -0.11,2.31 z"
+       id="path569" />
+    <g
+       id="g575">
+      <polygon
+         class="cls-27"
+         points="176.35,227.62 175.82,227.12 177.24,225.79 177.29,225.85 178.66,227.12 178.12,227.62 177.62,227.14 177.62,228.8 176.86,228.8 176.86,227.14 "
+         id="polygon571" />
+      <polygon
+         class="cls-27"
+         points="179.58,227.01 180.09,227.49 180.09,225.83 180.84,225.83 180.84,227.49 181.35,227.01 181.89,227.51 180.47,228.83 180.41,228.78 179.05,227.51 "
+         id="polygon573" />
+    </g>
+  </g>
+  <g
+     id="g601"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <polyline
+       class="cls-5"
+       points="389.2 173.85 405.59 173.85 405.59 158.37 389.2 158.37"
+       id="polyline578" />
+    <g
+       id="EV-3"
+       data-name="EV">
+      <path
+         class="cls-27"
+         d="m 393.52,164.41 v 7.97 h 8.18 v -7.97 z m 7.39,7.22 h -6.6 v -6.46 h 6.6 z"
+         id="path580" />
+      <path
+         class="cls-27"
+         d="m 398.29,167 c 0,0.36 -0.31,0.65 -0.68,0.65 -0.37,0 -0.68,-0.29 -0.68,-0.65 0,-0.36 0.31,-0.65 0.68,-0.65 0.37,0 0.68,0.29 0.68,0.65 z"
+         id="path582" />
+      <path
+         class="cls-27"
+         d="m 398.15,171.02 c -0.01,0.24 -0.22,0.44 -0.47,0.44 h -0.13 c -0.25,0 -0.46,-0.2 -0.47,-0.44 l -0.12,-2.66 c -0.01,-0.24 0.18,-0.44 0.43,-0.44 h 0.45 c 0.25,0 0.45,0.2 0.43,0.44 z"
+         id="path584" />
+      <path
+         class="cls-27"
+         d="m 396.24,167 c 0,0.36 -0.31,0.65 -0.68,0.65 -0.37,0 -0.68,-0.29 -0.68,-0.65 0,-0.36 0.31,-0.65 0.68,-0.65 0.37,0 0.68,0.29 0.68,0.65 z"
+         id="path586" />
+      <path
+         class="cls-27"
+         d="m 396.1,171.02 c -0.01,0.24 -0.22,0.44 -0.47,0.44 h -0.13 c -0.25,0 -0.46,-0.2 -0.47,-0.44 l -0.12,-2.66 c -0.01,-0.24 0.18,-0.44 0.43,-0.44 h 0.45 c 0.25,0 0.45,0.2 0.43,0.44 z"
+         id="path588" />
+      <path
+         class="cls-27"
+         d="m 400.34,167 c 0,0.36 -0.31,0.65 -0.68,0.65 -0.37,0 -0.68,-0.29 -0.68,-0.65 0,-0.36 0.31,-0.65 0.68,-0.65 0.37,0 0.68,0.29 0.68,0.65 z"
+         id="path590" />
+      <path
+         class="cls-27"
+         d="m 400.2,171.02 c -0.01,0.24 -0.22,0.44 -0.47,0.44 h -0.13 c -0.25,0 -0.46,-0.2 -0.47,-0.44 l -0.12,-2.66 c -0.01,-0.24 0.18,-0.44 0.43,-0.44 h 0.45 c 0.25,0 0.45,0.2 0.43,0.44 z"
+         id="path592" />
+      <g
+         id="g598">
+        <polygon
+           class="cls-27"
+           points="394.81,162.37 394.21,161.8 395.8,160.27 395.87,160.34 397.39,161.8 396.8,162.37 396.23,161.83 396.23,163.74 395.38,163.74 395.38,161.82 "
+           id="polygon594" />
+        <polygon
+           class="cls-27"
+           points="398.42,161.67 398.99,162.22 398.99,160.31 399.84,160.31 399.84,162.23 400.41,161.68 401.01,162.25 399.42,163.77 399.35,163.71 397.83,162.24 "
+           id="polygon596" />
+      </g>
+    </g>
+  </g>
+  <g
+     id="g633"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <g
+       id="g623">
+      <path
+         class="cls-27"
+         d="m 181,215.08 c -0.4,0 -0.75,-0.14 -0.99,-0.41 -0.25,-0.27 -0.38,-0.65 -0.38,-1.09 0,-0.45 0.13,-0.82 0.38,-1.09 0.25,-0.27 0.59,-0.41 0.99,-0.41 0.48,0 0.88,0.22 1.07,0.58 l 0.03,0.05 -0.57,0.29 -0.03,-0.03 c -0.11,-0.12 -0.29,-0.2 -0.44,-0.2 -0.39,0 -0.65,0.32 -0.65,0.81 0,0.49 0.26,0.81 0.65,0.81 0.15,0 0.33,-0.08 0.44,-0.2 l 0.03,-0.03 0.57,0.29 -0.03,0.05 c -0.19,0.36 -0.59,0.58 -1.07,0.58 z"
+         id="path619" />
+      <polygon
+         class="cls-27"
+         points="177.24,213.39 177.7,215.08 178.39,215.08 179.2,212.07 178.51,212.07 178.04,213.81 177.57,212.07 176.91,212.07 176.44,213.81 175.97,212.07 175.29,212.07 176.1,215.08 176.79,215.08 "
+         id="polygon621" />
+    </g>
+    <g
+       id="g631">
+      <path
+         class="cls-27"
+         d="m 180.16,221.26 c -0.34,0.53 -0.94,0.89 -1.61,0.89 -1.06,0 -1.92,-0.86 -1.92,-1.92 0,-0.8 0.5,-1.5 1.2,-1.78 v -0.7 c -1.07,0.31 -1.86,1.31 -1.86,2.48 0,1.42 1.16,2.58 2.58,2.58 0.98,0 1.83,-0.55 2.27,-1.35 l -0.65,-0.2 z"
+         id="path625" />
+      <path
+         class="cls-27"
+         d="m 179.54,216.35 c 0,0.38 -0.31,0.69 -0.69,0.69 -0.38,0 -0.69,-0.31 -0.69,-0.69 0,-0.38 0.31,-0.69 0.69,-0.69 0.38,0 0.69,0.31 0.69,0.69 z"
+         id="path627" />
+      <path
+         class="cls-27"
+         d="m 182.2,221.1 -0.89,-1.21 c -0.09,-0.12 -0.23,-0.19 -0.37,-0.19 h -1.47 v -1.9 c 0,-0.31 -0.26,-0.57 -0.57,-0.57 h -0.07 c -0.31,0 -0.57,0.26 -0.57,0.57 v 2.26 c 0,0.16 0.06,0.3 0.17,0.4 0.09,0.1 0.21,0.17 0.36,0.17 h 1.93 l 0.75,1.02 c 0.09,0.12 0.23,0.19 0.37,0.19 0.1,0 0.19,-0.03 0.27,-0.09 0.21,-0.15 0.25,-0.44 0.1,-0.65 z"
+         id="path629" />
+    </g>
+  </g>
+  <g
+     id="g649"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <g
+       id="g639">
+      <path
+         class="cls-27"
+         d="m 385.22,42.65 c -0.49,0 -0.9,-0.17 -1.2,-0.49 -0.3,-0.32 -0.46,-0.78 -0.46,-1.32 0,-0.54 0.16,-0.99 0.46,-1.32 0.3,-0.32 0.71,-0.49 1.2,-0.49 0.58,0 1.06,0.26 1.29,0.7 l 0.03,0.06 -0.69,0.35 -0.04,-0.04 c -0.14,-0.15 -0.34,-0.24 -0.53,-0.24 -0.47,0 -0.78,0.38 -0.78,0.98 0,0.6 0.31,0.98 0.78,0.98 0.19,0 0.39,-0.1 0.53,-0.24 l 0.04,-0.04 0.69,0.35 -0.03,0.06 c -0.23,0.44 -0.71,0.7 -1.29,0.7 z"
+         id="path635" />
+      <polygon
+         class="cls-27"
+         points="380.7,40.62 381.25,42.66 382.07,42.66 383.05,39.03 382.22,39.03 381.66,41.13 381.09,39.03 380.3,39.03 379.73,41.13 379.17,39.03 378.34,39.03 379.32,42.66 380.15,42.66 "
+         id="polygon637" />
+    </g>
+    <g
+       id="g647">
+      <path
+         class="cls-27"
+         d="m 384.21,50.09 c -0.41,0.64 -1.13,1.07 -1.94,1.07 -1.27,0 -2.31,-1.04 -2.31,-2.31 0,-0.97 0.6,-1.8 1.44,-2.14 v -0.84 c -1.29,0.38 -2.24,1.57 -2.24,2.98 0,1.71 1.39,3.11 3.1,3.11 1.18,0 2.2,-0.66 2.73,-1.63 z"
+         id="path641" />
+      <path
+         class="cls-27"
+         d="m 383.46,44.19 c 0,0.46 -0.37,0.83 -0.83,0.83 -0.46,0 -0.83,-0.37 -0.83,-0.83 0,-0.46 0.37,-0.83 0.83,-0.83 0.46,0 0.83,0.37 0.83,0.83 z"
+         id="path643" />
+      <path
+         class="cls-27"
+         d="m 386.66,49.91 -1.07,-1.46 c -0.11,-0.14 -0.27,-0.23 -0.45,-0.23 h -1.77 v -2.29 c 0,-0.38 -0.31,-0.69 -0.69,-0.69 h -0.09 c -0.38,0 -0.69,0.31 -0.69,0.69 v 2.72 c 0,0.19 0.08,0.36 0.2,0.49 0.1,0.12 0.26,0.2 0.43,0.2 h 2.32 l 0.9,1.23 c 0.11,0.15 0.28,0.23 0.45,0.23 0.11,0 0.23,-0.04 0.33,-0.11 0.25,-0.18 0.3,-0.53 0.12,-0.78 z"
+         id="path645" />
+    </g>
+  </g>
+  <polyline
+     class="cls-7"
+     points="150.76 52.98 150.76 37.25 389.98 37.03 389.69 158.41 405.66 158.35 405.64 173.85 453.12 173.85"
+     id="polyline651"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <g
+     id="_男子-3"
+     data-name="男子"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <circle
+       class="cls-27"
+       cx="292.34"
+       cy="130.69"
+       r="0.62"
+       id="circle653" />
+    <path
+       class="cls-27"
+       d="m 293.08,131.61 h -1.48 c -0.15,0 -0.27,0.12 -0.27,0.27 l 0.07,2.51 c 0,0.09 0.09,0.15 0.17,0.17 l 0.25,0.08 0.11,2.44 c 0,0.14 0.15,0.24 0.32,0.24 h 0.17 c 0.17,0 0.32,-0.11 0.32,-0.24 l 0.11,-2.44 0.25,-0.08 c 0.08,-0.02 0.17,-0.07 0.17,-0.17 l 0.07,-2.51 c 0,-0.15 -0.12,-0.27 -0.27,-0.27 z"
+       id="path655" />
+  </g>
+  <g
+     id="_男子-4"
+     data-name="男子"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <circle
+       class="cls-27"
+       cx="201.66"
+       cy="215.84"
+       r="0.62"
+       id="circle658" />
+    <path
+       class="cls-27"
+       d="m 202.4,216.75 h -1.48 c -0.15,0 -0.27,0.12 -0.27,0.27 l 0.07,2.51 c 0,0.09 0.09,0.15 0.17,0.17 l 0.25,0.08 0.11,2.44 c 0,0.14 0.15,0.24 0.32,0.24 h 0.17 c 0.17,0 0.32,-0.11 0.32,-0.24 l 0.11,-2.44 0.25,-0.08 c 0.08,-0.02 0.17,-0.07 0.17,-0.17 l 0.07,-2.51 c 0,-0.15 -0.12,-0.27 -0.27,-0.27 z"
+       id="path660" />
+  </g>
+  <line
+     class="cls-7"
+     x1="216.28529"
+     y1="246.45961"
+     x2="245.01732"
+     y2="246.45961"
+     id="line663"
+     style="stroke-width:1.13565" />
+  <line
+     class="cls-7"
+     x1="137.45955"
+     y1="222.08847"
+     x2="149.39525"
+     y2="222.08847"
+     id="line665"
+     style="stroke-width:1.13565" />
+  <polyline
+     class="cls-3"
+     points="218.7 228.55 220.49 231.66 220.49 221.61 222.29 224.81"
+     id="polyline667"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <polyline
+     class="cls-3"
+     points="372.59 276.77 369.49 278.57 379.51 278.57 376.32 280.37"
+     id="polyline669"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)" />
+  <line
+     class="cls-7"
+     x1="119.73199"
+     y1="222.08847"
+     x2="122.82097"
+     y2="222.08847"
+     id="line671"
+     style="stroke-width:1.13565" />
+  <g
+     id="g685"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <path
+       class="cls-27"
+       d="m 117.81,283.6 h 1.17 v -1.94 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.12 c 0.09,0 0.16,0.07 0.16,0.16 v 1.94 h 1.27 v -1.94 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.12 c 0.09,0 0.16,0.07 0.16,0.16 v 1.94 h 1.27 v -1.94 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.12 c 0.09,0 0.16,0.07 0.16,0.16 v 1.94 h 1.17 v -3.16 h -9.19 v 3.16 z"
+       id="path673" />
+    <path
+       class="cls-27"
+       d="m 125.67,275.67 c 0.09,0 0.16,0.07 0.16,0.16 v 0.42 c 0.08,-0.01 0.17,-0.01 0.26,0 0.08,0 0.15,0.01 0.23,0.03 l 0.69,0.15 v -1.81 h -9.19 v 3.16 h 1.17 v -1.94 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.12 c 0.09,0 0.16,0.07 0.16,0.16 v 1.94 h 1.27 v -1.94 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.12 c 0.09,0 0.16,0.07 0.16,0.16 v 1.94 h 1.27 v -1.94 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.12 z"
+       id="path675" />
+    <g
+       id="g681">
+      <path
+         class="cls-27"
+         d="m 131.8,277.67 c 0.76,0 1.38,-0.62 1.38,-1.38 0,-0.76 -0.62,-1.38 -1.38,-1.38 -0.76,0 -1.38,0.62 -1.38,1.38 0,0.76 0.62,1.38 1.38,1.38 z"
+         id="path677" />
+      <path
+         class="cls-27"
+         d="m 135.72,282.69 c 0,0 -0.2,-1.14 -0.45,-2.09 -0.29,-1.11 -1.25,-2.01 -1.43,-2.17 -0.3,-0.25 -0.59,-0.36 -0.88,-0.36 h -2.39 l -4.42,-0.98 c -0.36,-0.07 -0.7,0.16 -0.77,0.51 -0.07,0.35 0.16,0.7 0.51,0.78 l 4.16,0.93 0.08,4.12 c 0,0 -0.08,6.54 -0.08,6.54 0,0.43 0.34,0.79 0.77,0.8 0,0 0,0 0.01,0 0.43,0 0.78,-0.35 0.78,-0.78 l 0.08,-6.11 h 0.21 l 0.06,6.11 c 0,0.43 0.35,0.78 0.78,0.78 0,0 0,0 0,0 0.43,0 0.78,-0.36 0.78,-0.79 0,0 -0.06,-6.52 -0.06,-6.55 l 0.06,-3.28 c 0.21,0.27 0.39,0.55 0.45,0.79 0.24,0.9 0.43,1.97 0.43,1.98 0.06,0.32 0.33,0.54 0.65,0.54 0.04,0 0.08,0 0.11,-0.01 0.36,-0.06 0.6,-0.4 0.53,-0.76 z"
+         id="path679" />
+    </g>
+    <path
+       class="cls-27"
+       d="m 125.72,279.19 c -0.39,-0.08 -0.73,-0.31 -0.95,-0.64 -0.05,-0.08 -0.1,-0.16 -0.13,-0.24 h -7.37 v -4.25 h 10.27 v 2.48 l 1.6,0.36 v -3.61 c 0,-0.44 -0.36,-0.8 -0.8,-0.8 h -11.86 c -0.44,0 -0.8,0.36 -0.8,0.8 v 16.16 c 0,0.44 0.36,0.8 0.8,0.8 h 0.35 v 0.5 h 1.78 v -0.5 h 7.6 v 0.5 h 1.78 v -0.5 h 0.35 c 0.44,0 0.8,-0.36 0.8,-0.8 v -9.49 l -3.42,-0.76 z m -7.04,6.57 h 0.52 l -1.93,1.93 v -0.52 z m -1.41,0.69 v -0.69 h 0.69 z m 7.37,1.93 h -6.87 l 2.61,-2.62 h 4.26 z m 2.9,-0.94 h -1.97 v -1.68 h 1.97 z m 0,-3.3 h -10.27 v -4.25 h 10.27 z"
+       id="path683" />
+  </g>
+  <g
+     id="g699"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <path
+       class="cls-27"
+       d="m 431.87,203.58 h 1.22 v -2.02 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.17 c 0.09,0 0.16,0.07 0.16,0.16 v 2.02 h 1.33 v -2.02 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.17 c 0.09,0 0.16,0.07 0.16,0.16 v 2.02 h 1.33 v -2.02 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.17 c 0.09,0 0.16,0.07 0.16,0.16 v 2.02 h 1.22 v -3.3 h -9.57 z"
+       id="path687" />
+    <path
+       class="cls-27"
+       d="m 440.06,195.31 c 0.09,0 0.16,0.07 0.16,0.16 v 0.44 c 0.09,-0.01 0.18,-0.01 0.27,-0.01 0.08,0 0.16,0.01 0.24,0.03 l 0.72,0.16 v -1.89 h -9.57 v 3.3 h 1.22 v -2.02 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.17 c 0.09,0 0.16,0.07 0.16,0.16 v 2.02 h 1.33 v -2.02 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.17 c 0.09,0 0.16,0.07 0.16,0.16 v 2.02 h 1.33 v -2.02 c 0,-0.09 0.07,-0.16 0.16,-0.16 h 1.17 z"
+       id="path689" />
+    <g
+       id="g695">
+      <path
+         class="cls-27"
+         d="m 446.45,197.4 c 0.79,0 1.44,-0.64 1.44,-1.44 0,-0.8 -0.64,-1.44 -1.44,-1.44 -0.8,0 -1.44,0.64 -1.44,1.44 0,0.8 0.64,1.44 1.44,1.44 z"
+         id="path691" />
+      <path
+         class="cls-27"
+         d="m 450.54,202.63 c 0,0 -0.21,-1.18 -0.47,-2.18 -0.31,-1.15 -1.3,-2.1 -1.49,-2.26 -0.31,-0.27 -0.61,-0.38 -0.92,-0.38 h -2.49 l -4.6,-1.03 c -0.37,-0.08 -0.73,0.17 -0.81,0.54 -0.08,0.37 0.16,0.73 0.54,0.81 l 4.33,0.97 0.08,4.29 c 0,0 -0.08,6.82 -0.08,6.82 0,0.45 0.35,0.82 0.81,0.83 0,0 0,0 0.01,0 0.45,0 0.81,-0.36 0.82,-0.81 l 0.08,-6.37 h 0.22 l 0.07,6.37 c 0,0.45 0.37,0.81 0.82,0.81 0,0 0,0 0,0 0.45,0 0.81,-0.38 0.81,-0.83 0,0 -0.06,-6.8 -0.06,-6.82 l 0.07,-3.41 c 0.22,0.28 0.4,0.57 0.47,0.83 0.25,0.94 0.45,2.06 0.45,2.07 0.06,0.33 0.35,0.57 0.67,0.57 0.04,0 0.08,0 0.12,-0.01 0.37,-0.07 0.62,-0.42 0.56,-0.79 z"
+         id="path693" />
+    </g>
+    <path
+       class="cls-27"
+       d="m 440.11,198.99 c -0.41,-0.08 -0.76,-0.32 -0.99,-0.67 -0.05,-0.08 -0.1,-0.17 -0.14,-0.25 h -7.68 v -4.43 h 10.71 v 2.59 l 1.66,0.37 v -3.76 c 0,-0.46 -0.38,-0.84 -0.83,-0.84 h -12.37 c -0.46,0 -0.83,0.38 -0.83,0.84 v 16.84 c 0,0.46 0.38,0.84 0.83,0.84 h 0.37 v 0.52 h 1.86 v -0.52 h 7.92 v 0.52 h 1.86 v -0.52 h 0.37 c 0.46,0 0.83,-0.38 0.83,-0.84 v -9.89 L 440.12,199 Z m -7.33,6.84 h 0.54 l -2.01,2.01 v -0.54 z m -1.47,0.72 v -0.72 h 0.71 z m 7.67,2.01 h -7.16 l 2.72,-2.73 h 4.44 z m 3.03,-0.98 h -2.06 v -1.75 h 2.06 z m 0,-3.44 H 431.3 v -4.43 h 10.71 z"
+       id="path697" />
+  </g>
+  <g
+     id="g711"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <text
+       class="cls-17"
+       transform="translate(267.92,285.8)"
+       id="text706"><tspan
+         x="0"
+         y="0"
+         id="tspan704">出口</tspan></text>
+    <g
+       id="_交通機関案内-2"
+       data-name="交通機関案内">
+      <polygon
+         class="cls-43"
+         points="261.62,284.69 261.63,278.45 263.1,278.45 263.09,284.72 266.03,281.77 266.02,283.64 262.36,287.32 262.36,287.28 262.35,287.27 262.35,287.32 258.71,283.63 258.71,281.75 "
+         id="polygon708" />
+    </g>
+  </g>
+  <g
+     id="g720"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <text
+       class="cls-25"
+       transform="translate(336.75,207.28)"
+       id="text715"><tspan
+         x="0"
+         y="0"
+         id="tspan713">出口</tspan></text>
+    <g
+       id="_交通機関案内-3"
+       data-name="交通機関案内">
+      <polygon
+         class="cls-43"
+         points="330.45,206.18 330.46,199.94 331.93,199.94 331.92,206.2 334.86,203.25 334.85,205.12 331.19,208.8 331.19,208.76 331.18,208.76 331.18,208.8 327.54,205.12 327.54,203.24 "
+         id="polygon717" />
+    </g>
+  </g>
+  <g
+     id="g729"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <text
+       class="cls-23"
+       transform="translate(322.04,261.6)"
+       id="text724"><tspan
+         x="0"
+         y="0"
+         id="tspan722">入口</tspan></text>
+    <g
+       id="_交通機関案内-4"
+       data-name="交通機関案内">
+      <polygon
+         class="cls-54"
+         points="312.59,257.55 319.92,257.56 319.91,259.3 312.56,259.29 316.02,262.75 313.83,262.75 309.51,258.42 309.56,258.42 309.57,258.42 309.51,258.42 313.84,254.12 316.04,254.13 "
+         id="polygon726" />
+    </g>
+  </g>
+  <g
+     id="g743"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <text
+       class="cls-26"
+       transform="translate(412.2,117.34)"
+       id="text739"><tspan
+         class="cls-47"
+         id="tspan733"><tspan
+           x="0"
+           y="0"
+           id="tspan731">講堂へは</tspan></tspan><tspan
+         class="cls-12"
+         id="tspan737"><tspan
+           x="0"
+           y="8.3900003"
+           id="tspan735">２階へ</tspan></tspan></text>
+    <rect
+       class="cls-53"
+       x="403.17001"
+       y="110.64"
+       width="7.46"
+       height="7.48"
+       transform="rotate(180,406.9,114.38)"
+       id="rect741" />
+  </g>
+  <g
+     id="g751"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <text
+       class="cls-15"
+       transform="translate(216.34,261.02)"
+       id="text747"><tspan
+         x="0"
+         y="0"
+         id="tspan745">食堂</tspan></text>
+    <rect
+       class="cls-53"
+       x="209.22"
+       y="255.82001"
+       width="5.8800001"
+       height="5.9000001"
+       transform="rotate(180,212.165,258.77)"
+       id="rect749" />
+  </g>
+  <g
+     id="g759"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <text
+       class="cls-16"
+       transform="translate(412.22,103.31)"
+       id="text755"><tspan
+         x="0"
+         y="0"
+         id="tspan753">中学校舎</tspan></text>
+    <rect
+       class="cls-1"
+       x="404.39999"
+       y="97.330002"
+       width="6.5700002"
+       height="6.5700002"
+       id="rect757" />
+  </g>
+  <g
+     id="g767"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <text
+       class="cls-16"
+       transform="translate(412.22,92.86)"
+       id="text763"><tspan
+         x="0"
+         y="0"
+         id="tspan761">高校校舎</tspan></text>
+    <rect
+       class="cls-8"
+       x="404.39999"
+       y="86.879997"
+       width="6.5700002"
+       height="6.5700002"
+       id="rect765" />
+  </g>
+  <g
+     id="g781"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <g
+       id="g773">
+      <circle
+         class="cls-57"
+         cx="409.82001"
+         cy="139.99001"
+         r="6.7399998"
+         id="circle769" />
+      <path
+         class="cls-27"
+         d="m 413.62,136.77 c 0,0 0,0 0,0 -0.5,-0.5 -1.3,-0.87 -1.85,-0.63 -0.4,0.17 -0.59,0.5 -0.56,0.93 0.03,0.44 -0.13,0.84 -0.46,1.13 -0.14,0.12 -0.28,0.18 -0.42,0.17 -0.02,0 -0.03,0 -0.05,0 v 0 c 0,0 0,0 0,0 l -0.29,0.29 c -0.13,0.13 -0.34,0.15 -0.49,0.04 -1.01,-0.74 -1.82,-1.01 -2.12,-0.71 l -1.94,1.94 c -0.43,0.43 0.35,1.92 1.75,3.32 1.4,1.4 2.88,2.18 3.32,1.75 l 1.94,-1.94 c 0.3,-0.3 0.03,-1.11 -0.71,-2.12 -0.11,-0.15 -0.09,-0.36 0.04,-0.49 l 0.29,-0.29 c 0,0 0,0 0,0 0,-0.02 0,-0.04 0,-0.06 -0.01,-0.14 0.05,-0.28 0.17,-0.42 0.29,-0.33 0.7,-0.49 1.13,-0.46 0.43,0.03 0.75,-0.16 0.93,-0.56 0.24,-0.55 -0.14,-1.35 -0.64,-1.86 z m -4.26,7.42 c -0.55,-0.31 -1.18,-0.8 -1.77,-1.39 -0.59,-0.59 -1.09,-1.22 -1.39,-1.77 -0.16,-0.28 -0.23,-0.47 -0.26,-0.6 0.13,0.03 0.32,0.11 0.6,0.26 0.55,0.31 1.18,0.8 1.77,1.39 0.59,0.59 1.08,1.22 1.39,1.77 0.16,0.28 0.23,0.47 0.26,0.6 -0.13,-0.03 -0.32,-0.11 -0.6,-0.26 z"
+         id="path771" />
+    </g>
+    <text
+       class="cls-40"
+       transform="translate(418.53,138.91)"
+       id="text779"><tspan
+         x="0"
+         y="0"
+         id="tspan775">スタンプ</tspan><tspan
+         x="0"
+         y="7.02"
+         id="tspan777">設置箇所</tspan></text>
+  </g>
+  <g
+     id="g787"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <line
+       class="cls-37"
+       x1="219.35001"
+       y1="308.64999"
+       x2="219.35001"
+       y2="263.66"
+       id="line783" />
+    <polygon
+       class="cls-44"
+       points="217.31,306.99 219.35,309.19 221.4,306.99 221.03,306.65 219.35,308.46 217.67,306.65 "
+       id="polygon785" />
+  </g>
+  <g
+     id="g795"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <circle
+       class="cls-57"
+       cx="284.67999"
+       cy="148.84"
+       r="6.3600001"
+       id="circle791" />
+    <path
+       class="cls-27"
+       d="m 288.27,145.81 c 0,0 0,0 0,0 -0.47,-0.47 -1.23,-0.82 -1.74,-0.6 -0.37,0.16 -0.56,0.47 -0.53,0.88 0.03,0.41 -0.13,0.79 -0.43,1.07 -0.13,0.12 -0.26,0.17 -0.39,0.16 -0.02,0 -0.03,0 -0.05,0 v 0 c 0,0 0,0 0,0 l -0.28,0.28 c -0.12,0.12 -0.32,0.14 -0.46,0.04 -0.95,-0.7 -1.72,-0.96 -2,-0.67 l -1.83,1.83 c -0.41,0.41 0.33,1.81 1.65,3.13 1.32,1.32 2.72,2.06 3.13,1.65 l 1.83,-1.83 c 0.28,-0.28 0.03,-1.05 -0.67,-2 -0.1,-0.14 -0.09,-0.34 0.04,-0.46 l 0.28,-0.28 c 0,0 0,0 0,0 0,-0.02 0,-0.03 0,-0.05 -0.01,-0.13 0.04,-0.27 0.16,-0.4 0.28,-0.31 0.66,-0.46 1.07,-0.43 0.41,0.03 0.71,-0.16 0.88,-0.53 0.23,-0.52 -0.13,-1.28 -0.6,-1.75 z m -4.02,7 c -0.52,-0.29 -1.11,-0.76 -1.67,-1.31 -0.56,-0.56 -1.02,-1.15 -1.31,-1.67 -0.15,-0.26 -0.22,-0.44 -0.25,-0.56 0.12,0.03 0.3,0.1 0.56,0.25 0.52,0.29 1.11,0.76 1.67,1.31 0.56,0.56 1.02,1.15 1.31,1.67 0.15,0.26 0.22,0.44 0.25,0.56 -0.12,-0.03 -0.3,-0.1 -0.56,-0.25 z"
+       id="path793" />
+  </g>
+  <g
+     id="_1F"
+     data-name="1F"
+     transform="matrix(1.1356539,0,0,1.1356539,-120.36795,-35.296122)">
+    <g
+       id="g806">
+      <ellipse
+         class="cls-39"
+         cx="421.48999"
+         cy="56.860001"
+         rx="19.57"
+         ry="19.620001"
+         id="ellipse798" />
+      <text
+         class="cls-28"
+         transform="translate(407.77,67.59)"
+         id="text804"><tspan
+           class="cls-51"
+           x="0"
+           y="0"
+           id="tspan800">1</tspan><tspan
+           class="cls-49"
+           x="16.209999"
+           y="0.56999999"
+           id="tspan802">F</tspan></text>
+    </g>
+  </g>
+</svg>
