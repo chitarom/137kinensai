@@ -1,6 +1,6 @@
 import './Map.css'
 import { useRef, useEffect, useState } from "react";
-import { Stage, Layer, Image as KonvaImage, Group } from "react-konva";
+import { Stage, Layer, Image as KonvaImage, Group, Rect } from "react-konva";
 
 
 function Map() {
@@ -50,6 +50,45 @@ function Map() {
     const [scale, setScale] = useState(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
+    const [rects, setRects] = useState([]);
+
+    useEffect(() => {
+        // SVGファイルを取得
+        fetch(SVG_URL)
+            .then(res => res.text())
+            .then(text => {
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(text, "image/svg+xml");
+
+                const rectNodes = svgDoc.querySelectorAll("rect");
+
+                const rectData = Array.from(rectNodes).map((r, i) => ({
+                    id: r.getAttribute("id") || `rect-${i}`,
+                    x: parseFloat(r.getAttribute("x") || 0),
+                    y: parseFloat(r.getAttribute("y") || 0),
+                    width: parseFloat(r.getAttribute("width") || 0),
+                    height: parseFloat(r.getAttribute("height") || 0),
+                    fill: r.getAttribute("fill") || "black",
+                }));
+
+                setRects(rectData);
+            });
+    }, []);
+
+    // rectをクリックしたときに色とサイズを変更
+    const handleRectClick = (id) => {
+        setRects(rects.map(r =>
+            r.id === id
+                ? {
+                    ...r,
+                    fill: r.fill === "red" ? "blue" : "red", // 色をトグル
+                    width: r.width * 1.2, // 幅を拡大
+                    height: r.height * 1.2, // 高さを拡大
+                }
+                : r
+        ));
+    };
+
     // For touch pinch handling
     const pinchRef = useRef({
         initialDistance: 0,
@@ -70,6 +109,9 @@ function Map() {
         image.crossOrigin = "anonymous";
         image.onload = () => setImg(image);
         image.src = SVG_URL;
+        /*.addEventListener("click",(e) => {
+            console.log("160");
+        });*/
 
         const updateSize = () => {
             const w = Math.min(window.innerWidth, 720);
@@ -215,6 +257,52 @@ function Map() {
         dragRef.current.isDragging = false;
     }
 
+    const temp2 = (classid) => {
+        return () => {
+            open("./search?id="+classid,"_top");
+        };
+    }
+    const rts = [
+        [175.61754,24.870821,35.682247,29.913124,temp2("C-15"),1],
+        [139.93529,24.870821,35.682247,29.913124,temp2("C-16"),1],
+        [104.25303,24.870821,35.682247,29.913124,temp2("C-17"),1],
+        [68.570786,24.870821,35.682247,29.913124,temp2("C-18"),1],
+        [17.93198,66.787804,32.911251,29.913124,temp2("C-23"),1],
+        [17.93198,96.735001,32.911251,29.913124,temp2("C-24"),1],
+        [17.93198,126.69355,32.911251,29.913124,temp2("C-25"),1],
+        [17.93198,156.64073,32.911251,29.913124,temp2("C-26"),1],
+        [17.93198,186.59929,32.911251,29.913124,temp2("C-27"),1],
+        [17.93198,216.54648,32.911251,29.913124,temp2("C-28"),1],
+        [209.809,24.316,36.786,31.021,temp2("C-10"),2],
+        [174.158,24.316,36.786,31.021,temp2("C-11"),2],
+        [138.507,24.316,36.786,31.021,temp2("C-12"),2],
+        [102.856,24.316,36.786,31.021,temp2("C-13"),2],
+        [67.206,24.316,36.786,31.021,temp2("C-14"),2],
+        [16.611,66.196,34.017,31.021,temp2("C-19"),2],
+        [16.611,96.128,34.017,31.021,temp2("C-20"),2],
+        [16.611,126.049,34.017,31.021,temp2("C-21"),2],
+        [16.611,155.981,34.017,31.021,temp2("C-22"),2],
+        [267.302,174.147,36.786,31.021,temp2("C-01"),3],
+        [267.302,143.999,36.786,31.021,temp2("C-02"),3],
+        [267.302,113.965,36.786,31.021,temp2("C-03"),3],
+        [267.302,84.089,36.786,31.021,temp2("C-04"),3],
+        [267.302,54.202,36.786,31.021,temp2("C-05"),3],
+        [174.158,24.316,36.786,31.021,temp2("C-06"),3],
+        [138.507,24.316,36.786,31.021,temp2("C-07"),3],
+        [102.856,24.316,36.786,31.021,temp2("C-08"),3],
+        [67.206,24.316,36.786,31.021,temp2("C-09"),3],
+        [16.611,66.196,34.017,31.021,temp2("C-29"),3],
+        [16.611,96.128,34.017,31.021,temp2("C-30"),3],
+        [16.611,126.049,34.017,31.021,temp2("C-31"),3],
+        [16.611,155.981,34.017,31.021,temp2("C-32"),3],
+        [16.611,185.902,34.017,31.021,temp2("C-33"),3],
+        [16.611,215.834,34.017,31.021,temp2("C-34"),3],
+        [5.151,269.118,34.017,30.919,temp2("C-35"),3],
+        [37.988,269.118,34.017,30.919,temp2("C-36"),3],
+        [70.871,269.118,34.017,30.919,temp2("C-37"),3],
+        [103.753,269.118,34.017,30.919,temp2("C-38"),3]
+    ];
+
     return (
         <div className='map-parent'>
             <div
@@ -245,6 +333,16 @@ function Map() {
                                     height={img.height}
                                 />
                             )}
+                            {
+                                rts.map((obj) => {
+                                    return displayMap == obj[5] ? <Rect
+                                    x={obj[0]}
+                                    y={obj[1] + 50}
+                                    width={obj[2]}
+                                    height={obj[3]}
+                                    onTap={obj[4]} /> : <div></div>;
+                                })
+                            }
                         </Group>
                     </Layer>
                 </Stage>

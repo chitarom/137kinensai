@@ -11,9 +11,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 function Search() {
     //FavoriteかどうかはlocalStorageに保存
+    const [queried,setQueried] = useState(false);
     const [isPopUp, setPopUp] = useState(false);
     const [displayingDetail, setDisplayingDetail] = useState(-1);
     const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
+    console.log(displayDetailContents);
     //["場所","企画名","説明文",[カテゴリー],[スライド用画像],"企画ID"]
     const [keyword, setKeyword] = useState("");
     const [filter, setFilter] = useState([[], 10, false]);
@@ -21,6 +23,16 @@ function Search() {
     const changeFilterList = [template(10), template(11), template(7), template(8), template(9)];
     function template(int) { return () => { setFilter([filter[0], int, filter[2]]); } };
     const setFilterList = [];
+    if (window.location.href.indexOf("?") >= 0 && !queried) {
+        var projectid = window.location.href.split("?")[1].split("id=")[1].split("&")[0];
+        for (let i = 0; i < data.length; i++) {
+            if (data[i][6] == projectid) {
+                setDisplayingDetail(i);
+                setDisplayDetailContents([data[i][0],data[i][1],data[i][3],data[i][4],data[i][5],data[i][6]]);
+                setQueried(true);
+            }
+        }
+    }
     categories.map((category) => setFilterList.push(temp(category)));
     function temp(str) {
         //filter[0] (categories) の中身を変更する関数のテンプレート
@@ -59,6 +71,7 @@ function Search() {
         return list;
     }
 
+    if (localStorage.getItem("favorites") == undefined) localStorage.setItem("favorites", "[]");
     var favorites = JSON.parse(localStorage.getItem("favorites"));
 
     var star = favorites.includes(displayDetailContents[5]) ? "★" : "☆";

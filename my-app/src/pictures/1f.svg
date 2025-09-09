@@ -3,7 +3,7 @@
    viewBox="0 0 400.00001 330.00001"
    version="1.1"
    id="svg809"
-   sodipodi:docname="校舎地図1階.svg"
+   sodipodi:docname="1f.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    width="400"
    height="330"
@@ -25,15 +25,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.4687622"
-     inkscape:cx="233.18955"
-     inkscape:cy="167.48797"
+     inkscape:zoom="5.8750488"
+     inkscape:cx="162.89226"
+     inkscape:cy="64.510103"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg809" />
+     inkscape:current-layer="svg809"
+     showguides="false" />
   <defs
      id="defs146">
     <pattern
@@ -804,7 +805,8 @@
      width="32.911251"
      height="29.913124"
      id="rect160"
-     style="stroke-width:1.13565" />
+     style="stroke-width:1.13565"
+     inkscape:label="rect160" />
   <rect
      class="cls-34"
      x="244.65395"
@@ -998,7 +1000,8 @@
      width="32.911251"
      height="29.913124"
      id="rect216"
-     style="stroke-width:1.13565" />
+     style="stroke-width:1.13565"
+     inkscape:label="rect216" />
   <rect
      class="cls-11"
      x="17.93198"

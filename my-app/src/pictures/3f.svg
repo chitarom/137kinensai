@@ -3,7 +3,7 @@
    viewBox="0 0 400.00001 330"
    version="1.1"
    id="svg10232"
-   sodipodi:docname="校舎地図3階.svg"
+   sodipodi:docname="3f.svg"
    width="400"
    height="330"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
@@ -21,9 +21,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.0534604"
-     inkscape:cx="195.0714"
-     inkscape:cy="264.84147"
+     inkscape:zoom="2.979636"
+     inkscape:cx="80.211141"
+     inkscape:cy="232.57875"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
@@ -206,277 +206,309 @@
        points="133.42,26.5 124.51,26.5 124.51,180.03 115.71,180.03 115.71,215.82 100.66,215.82 100.66,237.36 76.75,237.36 76.75,284.28 193.01,284.28 193.01,215.82 150.15,215.82 150.15,180.03 140.29,180.03 140.29,164.28 131.91,164.28 131.91,65.74 140.29,65.74 140.29,53.97 339.45,53.97 339.45,95.05 308,95.05 308,200.8 347.96,200.8 347.96,200.8 384.56,200.8 384.56,182.15 418.65,182.15 418.65,163.12 363.53,163.12 363.53,152.76 355.23,152.76 355.23,53.97 355.52,53.97 355.52,26.5 140.29,26.5 "
        id="polygon9714" />
   </g>
+  <rect
+     class="cls-13"
+     x="17.178679"
+     y="66.763115"
+     width="32.882309"
+     height="29.886818"
+     id="rect9717"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="67.772949"
+     y="24.882986"
+     width="35.650867"
+     height="29.886818"
+     id="rect9719"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="103.42383"
+     y="24.882986"
+     width="35.650867"
+     height="29.886818"
+     id="rect9721"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="139.07469"
+     y="24.882986"
+     width="35.650867"
+     height="29.886818"
+     id="rect9723"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="174.72556"
+     y="24.882986"
+     width="35.650867"
+     height="29.886818"
+     id="rect9725"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="267.86942"
+     y="54.76981"
+     width="35.650867"
+     height="29.886818"
+     id="rect9727"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="267.86942"
+     y="84.656624"
+     width="35.650867"
+     height="29.886818"
+     id="rect9729"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="267.86942"
+     y="114.5321"
+     width="35.650867"
+     height="29.886818"
+     id="rect9731"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="267.86942"
+     y="144.56641"
+     width="35.650867"
+     height="29.886818"
+     id="rect9733"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="267.86942"
+     y="174.7142"
+     width="35.650867"
+     height="29.886818"
+     id="rect9735"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-3"
+     x="210.3764"
+     y="24.882986"
+     width="35.650867"
+     height="29.886818"
+     id="rect9737"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-10"
+     x="246.02728"
+     y="36.751484"
+     width="27.86713"
+     height="17.870819"
+     id="rect9739"
+     style="stroke-width:1.13466" />
+  <polyline
+     class="cls-3"
+     points="370.92 163.3 418.4 163.3 418.4 200.8 370.92 200.8"
+     id="polyline9741"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <polyline
+     class="cls-6"
+     points="116.04 79.33 87.06 79.33 87.06 59.4 116.04 59.4"
+     id="polyline9743"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <polyline
+     class="cls-6"
+     points="339.77 68.64 313.3 68.64 313.3 52.88 339.77 52.88"
+     id="polyline9745"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <polyline
+     class="cls-6"
+     points="370.92 179.43 370.92 200.8 355.62 200.8 355.62 179.43"
+     id="polyline9747"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <polyline
+     class="cls-6"
+     points="150.35 227.07 150.35 200.18 168.56 200.18 168.56 227.07"
+     id="polyline9749"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <rect
+     class="cls-13"
+     x="17.178679"
+     y="96.695312"
+     width="32.882309"
+     height="29.886818"
+     id="rect9751"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="17.178679"
+     y="126.61617"
+     width="32.882309"
+     height="29.886818"
+     id="rect9753"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="17.178679"
+     y="156.54839"
+     width="32.882309"
+     height="29.886818"
+     id="rect9755"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="17.178679"
+     y="186.46924"
+     width="32.882309"
+     height="29.886818"
+     id="rect9757"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="17.178679"
+     y="216.40144"
+     width="32.882309"
+     height="29.886818"
+     id="rect9759"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="5.7186632"
+     y="269.68488"
+     width="32.882309"
+     height="29.784698"
+     id="rect9761"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="38.555588"
+     y="269.68488"
+     width="32.882309"
+     height="29.784698"
+     id="rect9763"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="71.437897"
+     y="269.68488"
+     width="32.882309"
+     height="29.784698"
+     id="rect9765"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="104.3202"
+     y="269.68488"
+     width="32.882309"
+     height="29.784698"
+     id="rect9767"
+     style="stroke-width:1.13466" />
+  <rect
+     class="cls-13"
+     x="109.65308"
+     y="203.88618"
+     width="27.549429"
+     height="30.510878"
+     id="rect9769"
+     style="stroke-width:1.13466" />
+  <polyline
+     class="cls-12"
+     points="137.77 200.18 137.77 213.58 150.35 213.58 150.35 200.18"
+     id="polyline9771"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <polyline
+     class="cls-6"
+     points="150.35 227.07 150.35 213.68 137.77 213.68 137.77 227.07"
+     id="polyline9773"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <polyline
+     class="cls-5"
+     points="355.24 42.3 355.24 26.5 313.3 26.5 313.3 42.3"
+     id="polyline9775"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <polyline
+     class="cls-8"
+     points="87.06 237.54 76.96 237.54 76.96 284.41"
+     id="polyline9777"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+  <line
+     class="cls-8"
+     x1="137.2025"
+     y1="234.39708"
+     x2="137.2025"
+     y2="269.68488"
+     id="line9779"
+     style="stroke-width:1.13466" />
   <g
-     id="_枠本体"
-     data-name="枠本体"
+     id="_装飾のボード"
+     data-name="装飾のボード"
      transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)">
-    <rect
-       class="cls-13"
-       x="87.059998"
-       y="79.330002"
-       width="28.98"
-       height="26.34"
-       id="rect9717" />
-    <rect
-       class="cls-3"
-       x="131.64999"
-       y="42.419998"
-       width="31.42"
-       height="26.34"
-       id="rect9719" />
-    <rect
-       class="cls-3"
-       x="163.07001"
-       y="42.419998"
-       width="31.42"
-       height="26.34"
-       id="rect9721" />
-    <rect
-       class="cls-3"
-       x="194.49001"
-       y="42.419998"
-       width="31.42"
-       height="26.34"
-       id="rect9723" />
-    <rect
-       class="cls-3"
-       x="225.91"
-       y="42.419998"
-       width="31.42"
-       height="26.34"
-       id="rect9725" />
-    <rect
-       class="cls-3"
-       x="308"
-       y="68.760002"
-       width="31.42"
-       height="26.34"
-       id="rect9727" />
-    <rect
-       class="cls-3"
-       x="308"
-       y="95.099998"
-       width="31.42"
-       height="26.34"
-       id="rect9729" />
-    <rect
-       class="cls-3"
-       x="308"
-       y="121.43"
-       width="31.42"
-       height="26.34"
-       id="rect9731" />
-    <rect
-       class="cls-3"
-       x="308"
-       y="147.89999"
-       width="31.42"
-       height="26.34"
-       id="rect9733" />
-    <rect
-       class="cls-3"
-       x="308"
-       y="174.47"
-       width="31.42"
-       height="26.34"
-       id="rect9735" />
-    <rect
-       class="cls-3"
-       x="257.32999"
-       y="42.419998"
-       width="31.42"
-       height="26.34"
-       id="rect9737" />
-    <rect
-       class="cls-10"
-       x="288.75"
-       y="52.880001"
-       width="24.559999"
-       height="15.75"
-       id="rect9739" />
     <polyline
-       class="cls-3"
-       points="370.92 163.3 418.4 163.3 418.4 200.8 370.92 200.8"
-       id="polyline9741" />
-    <polyline
-       class="cls-6"
-       points="116.04 79.33 87.06 79.33 87.06 59.4 116.04 59.4"
-       id="polyline9743" />
-    <polyline
-       class="cls-6"
-       points="339.77 68.64 313.3 68.64 313.3 52.88 339.77 52.88"
-       id="polyline9745" />
-    <polyline
-       class="cls-6"
-       points="370.92 179.43 370.92 200.8 355.62 200.8 355.62 179.43"
-       id="polyline9747" />
-    <polyline
-       class="cls-6"
-       points="150.35 227.07 150.35 200.18 168.56 200.18 168.56 227.07"
-       id="polyline9749" />
-    <rect
-       class="cls-13"
-       x="87.059998"
-       y="105.71"
-       width="28.98"
-       height="26.34"
-       id="rect9751" />
-    <rect
-       class="cls-13"
-       x="87.059998"
-       y="132.08"
-       width="28.98"
-       height="26.34"
-       id="rect9753" />
-    <rect
-       class="cls-13"
-       x="87.059998"
-       y="158.46001"
-       width="28.98"
-       height="26.34"
-       id="rect9755" />
-    <rect
-       class="cls-13"
-       x="87.059998"
-       y="184.83"
-       width="28.98"
-       height="26.34"
-       id="rect9757" />
-    <rect
-       class="cls-13"
-       x="87.059998"
-       y="211.21001"
-       width="28.98"
-       height="26.34"
-       id="rect9759" />
-    <rect
-       class="cls-13"
-       x="76.959999"
-       y="258.17001"
-       width="28.98"
-       height="26.25"
-       id="rect9761" />
-    <rect
-       class="cls-13"
-       x="105.9"
-       y="258.17001"
-       width="28.98"
-       height="26.25"
-       id="rect9763" />
-    <rect
-       class="cls-13"
-       x="134.88"
-       y="258.17001"
-       width="28.98"
-       height="26.25"
-       id="rect9765" />
-    <rect
-       class="cls-13"
-       x="163.86"
-       y="258.17001"
-       width="28.98"
-       height="26.25"
-       id="rect9767" />
-    <rect
-       class="cls-13"
-       x="168.56"
-       y="200.17999"
-       width="24.280001"
-       height="26.889999"
-       id="rect9769" />
-    <polyline
-       class="cls-12"
-       points="137.77 200.18 137.77 213.58 150.35 213.58 150.35 200.18"
-       id="polyline9771" />
-    <polyline
-       class="cls-6"
-       points="150.35 227.07 150.35 213.68 137.77 213.68 137.77 227.07"
-       id="polyline9773" />
-    <polyline
-       class="cls-5"
-       points="355.24 42.3 355.24 26.5 313.3 26.5 313.3 42.3"
-       id="polyline9775" />
-    <polyline
-       class="cls-8"
-       points="87.06 237.54 76.96 237.54 76.96 284.41"
-       id="polyline9777" />
-    <line
-       class="cls-8"
-       x1="192.84"
-       y1="227.07001"
-       x2="192.84"
-       y2="258.17001"
-       id="line9779" />
-    <g
-       id="_装飾のボード"
-       data-name="装飾のボード">
-      <polyline
-         class="cls-4"
-         points="159.53 200.18 166.4 190.19 174.89 190.26"
-         id="polyline9781" />
-    </g>
-    <line
-       class="cls-8"
-       x1="339.42001"
-       y1="200.8"
-       x2="355.62"
-       y2="200.8"
-       id="line9784" />
-    <g
-       id="g9800">
-      <line
-         class="cls-2"
-         x1="200.24001"
-         y1="242.62"
-         x2="201.74001"
-         y2="242.62"
-         id="line9786" />
-      <line
-         class="cls-7"
-         x1="204.67999"
-         y1="242.62"
-         x2="344.54999"
-         y2="242.62"
-         id="line9788" />
-      <polyline
-         class="cls-2"
-         points="346.02 242.62 347.52 242.62 347.52 241.12"
-         id="polyline9790" />
-      <line
-         class="cls-11"
-         x1="347.51999"
-         y1="238.25"
-         x2="347.51999"
-         y2="211"
-         id="line9792" />
-      <line
-         class="cls-2"
-         x1="347.51999"
-         y1="209.56"
-         x2="347.51999"
-         y2="208.06"
-         id="line9794" />
-      <polygon
-         class="cls-22"
-         points="200.43,242.62 202.23,240.94 201.89,240.57 199.69,242.62 201.89,244.66 202.23,244.3 "
-         id="polygon9796" />
-      <polygon
-         class="cls-22"
-         points="347.52,208.25 345.85,210.06 345.48,209.72 347.52,207.52 349.57,209.72 349.2,210.06 "
-         id="polygon9798" />
-    </g>
-    <rect
-       class="cls-25"
-       x="131.39"
-       y="158.46001"
-       width="25.09"
-       height="31.34"
-       id="rect9802" />
-    <polyline
-       class="cls-8"
-       points="131.68 42.42 131.68 189.67 131.68 158.54 156.77 158.7 156.77 189.88 150.35 189.94 150.35 227.07"
-       id="polyline9804" />
+       class="cls-4"
+       points="159.53 200.18 166.4 190.19 174.89 190.26"
+       id="polyline9781" />
   </g>
+  <line
+     class="cls-8"
+     x1="303.52029"
+     y1="204.58968"
+     x2="321.90167"
+     y2="204.58968"
+     id="line9784"
+     style="stroke-width:1.13466" />
+  <g
+     id="g9800"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)">
+    <line
+       class="cls-2"
+       x1="200.24001"
+       y1="242.62"
+       x2="201.74001"
+       y2="242.62"
+       id="line9786" />
+    <line
+       class="cls-7"
+       x1="204.67999"
+       y1="242.62"
+       x2="344.54999"
+       y2="242.62"
+       id="line9788" />
+    <polyline
+       class="cls-2"
+       points="346.02 242.62 347.52 242.62 347.52 241.12"
+       id="polyline9790" />
+    <line
+       class="cls-11"
+       x1="347.51999"
+       y1="238.25"
+       x2="347.51999"
+       y2="211"
+       id="line9792" />
+    <line
+       class="cls-2"
+       x1="347.51999"
+       y1="209.56"
+       x2="347.51999"
+       y2="208.06"
+       id="line9794" />
+    <polygon
+       class="cls-22"
+       points="201.89,240.57 199.69,242.62 201.89,244.66 202.23,244.3 200.43,242.62 202.23,240.94 "
+       id="polygon9796" />
+    <polygon
+       class="cls-22"
+       points="345.48,209.72 347.52,207.52 349.57,209.72 349.2,210.06 347.52,208.25 345.85,210.06 "
+       id="polygon9798" />
+  </g>
+  <rect
+     class="cls-25"
+     x="67.477943"
+     y="156.54839"
+     width="28.468498"
+     height="35.560093"
+     id="rect9802"
+     style="stroke-width:1.13466" />
+  <polyline
+     class="cls-8"
+     points="131.68 42.42 131.68 189.67 131.68 158.54 156.77 158.7 156.77 189.88 150.35 189.94 150.35 227.07"
+     id="polyline9804"
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
   <text
      class="cls-22"
      id="text9855"
