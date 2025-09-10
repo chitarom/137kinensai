@@ -41,7 +41,7 @@ const DetailImageSlider = ({imagelist}) => {
     const getImageList = (imgs) => {
         const list = [];
         for (let i = 0; i < imgs.length; i++) {
-            list.push(<img className='detail-slide' src={'/src/pictures/' + imgs[i]} id={i} />);
+            list.push(<img className='detail-slide' src={'/src/pictures/' + imgs[i]} id={i} key={i} />);
         }
         return list;
     }

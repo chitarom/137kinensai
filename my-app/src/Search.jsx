@@ -8,10 +8,11 @@ import DetailImageSlider from './SearchComponents/DetailImageSlider.jsx';
 import React from 'react';
 import { useRef, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import DisplayDetail from './DisplayDetail.jsx';
 
 function Search() {
     //FavoriteかどうかはlocalStorageに保存
-    const [queried,setQueried] = useState(false);
+    const [queried, setQueried] = useState(false);
     const [isPopUp, setPopUp] = useState(false);
     const [displayingDetail, setDisplayingDetail] = useState(-1);
     const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
@@ -23,6 +24,7 @@ function Search() {
     const changeFilterList = [template(10), template(11), template(7), template(8), template(9)];
     function template(int) { return () => { setFilter([filter[0], int, filter[2]]); } };
     const setFilterList = [];
+    /*
     if (window.location.href.indexOf("?") >= 0 && !queried) {
         var projectid = window.location.href.split("?")[1].split("id=")[1].split("&")[0];
         for (let i = 0; i < data.length; i++) {
@@ -33,6 +35,7 @@ function Search() {
             }
         }
     }
+    */
     categories.map((category) => setFilterList.push(temp(category)));
     function temp(str) {
         //filter[0] (categories) の中身を変更する関数のテンプレート
@@ -59,32 +62,10 @@ function Search() {
         setFilter([filter[0], filter[1], !filter[2]]);
     }
 
-    const hideDDetail = () => {
-        setDisplayingDetail(-1);
-    }
-
-    const getList = (cats) => {
-        const list = [];
-        for (let i = 0; i < cats.length; i++) {
-            list.push(<div className='filter inactive'>{cats[i]}</div>);
-        }
-        return list;
-    }
-
     if (localStorage.getItem("favorites") == undefined) localStorage.setItem("favorites", "[]");
     var favorites = JSON.parse(localStorage.getItem("favorites"));
 
     var star = favorites.includes(displayDetailContents[5]) ? "★" : "☆";
-
-    const [favoriteSwitch, setFavoriteSwitch] = useState(false);
-    const toggleSwitch = () => {
-        if (!favorites.includes(displayDetailContents[5]))
-            favorites.push(displayDetailContents[5]);
-        else
-            favorites = favorites.slice(0, favorites.indexOf(displayDetailContents[5])).concat(favorites.slice(favorites.indexOf(displayDetailContents[5]) + 1));
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-        setFavoriteSwitch(!favoriteSwitch);
-    }
 
     return (
         <div>
@@ -128,27 +109,7 @@ function Search() {
                 </div>)
             }
             {(displayingDetail >= 0) &&
-                (
-                    <div className='detail-wrap'>
-                        <div className='dw-margin' onClick={hideDDetail}></div>
-                        <div className='detail-tag'>
-                            <div className='detail-head'>
-                                <div className='detail-place'>{displayDetailContents[0]}</div>
-                                <div className='detail-title'>{displayDetailContents[1]}</div>
-                                <button className='detail-favorite' onClick={toggleSwitch}>{star}</button>
-                            </div>
-                            <div className='filter-wrap-wrap'>
-                                <div className='filter-wrap'>
-                                    <div className='filter-list' key={uuidv4()}>
-                                        {getList(displayDetailContents[3])}
-                                    </div>
-                                </div>
-                            </div>
-                            <DetailImageSlider imagelist={displayDetailContents[4]} />
-                            <div className='detail'>{displayDetailContents[2]}</div>
-                        </div>
-                    </div>
-                )
+                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />)
             }
         </div>
     );
