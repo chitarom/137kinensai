@@ -47,10 +47,12 @@ function Map() {
      */
     const stageRef = useRef(null);
     const imageRef = useRef(null);
+    const [distance, setDistance] = useState([0, 0]);
     const [img, setImg] = useState(null);
     const [stageSize, setStageSize] = useState({ width: window.innerWidth, height: window.innerHeight });
     const [scale, setScale] = useState(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [canOpen, setCanOpen] = useState([false, ""]);
 
     const [rects, setRects] = useState([]);
 
@@ -167,6 +169,7 @@ function Map() {
             dragRef.current.lastX = e.touches[0].clientX;
             dragRef.current.lastY = e.touches[0].clientY;
             setPosition((prev) => ({ x: prev.x + dx, y: prev.y + dy }));
+            setDistance([distance[0] + dx, distance[1] + dy]);
         } else if (e.touches.length === 2 && pinchRef.current.isPinching) {
             e.preventDefault(); // stop page scroll
             const t1 = e.touches[0];
@@ -198,7 +201,12 @@ function Map() {
             };
 
             setScale(newScale);
-            setPosition(newPos);
+            const dx = e.touches[0].clientX - dragRef.current.lastX;
+            const dy = e.touches[0].clientY - dragRef.current.lastY;
+            dragRef.current.lastX = e.touches[0].clientX;
+            dragRef.current.lastY = e.touches[0].clientY;
+            setPosition({ x: newPos["x"] + dx, y: newPos["y"] + dy });
+            setDistance([distance[0] + dx, distance[1] + dy]);
         }
     }
 
@@ -215,6 +223,17 @@ function Map() {
             dragRef.current.lastX = e.touches[0].clientX;
             dragRef.current.lastY = e.touches[0].clientY;
         }
+        if (Math.abs(distance[0]) < 1 && Math.abs(distance[1]) < 1 && canOpen[0]) {
+            for (let i = 0; i < data.length; i++) {
+                if (data[i][6] == canOpen[1]) {
+                    setDisplayDetailContents([data[i][0], data[i][1], data[i][3], data[i][4], data[i][5], data[i][6]]);
+                    setDisplayingDetail(i);
+                    break;
+                }
+            }
+        }
+        setCanOpen([false, ""]);
+        setDistance([0, 0]);
     }
 
     function clamp(v, a, b) {
@@ -260,19 +279,8 @@ function Map() {
     }
 
     const [displayingDetail, setDisplayingDetail] = useState(-1);
-    const [displayDetailContents,setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
+    const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
 
-    const temp2 = (classid) => {
-        return () => {
-            for (let i=0;i<data.length;i++) {
-                if (data[i][6] == classid) {
-                    setDisplayDetailContents([data[i][0],data[i][1],data[i][3],data[i][4],data[i][5],data[i][6]]);
-                    setDisplayingDetail(i);
-                    break;
-                }
-            }
-        };
-    }
     const rts = [
         [175.61754, 24.870821, 35.682247, 29.913124, temp2("C-15"), 1],
         [139.93529, 24.870821, 35.682247, 29.913124, temp2("C-16"), 1],
@@ -313,6 +321,12 @@ function Map() {
         [70.871, 269.118, 34.017, 30.919, temp2("C-37"), 3],
         [103.753, 269.118, 34.017, 30.919, temp2("C-38"), 3]
     ];
+
+    function temp2(str) {
+        return () => {
+            setCanOpen([true, str]);
+        };
+    };
 
     return (
         <div className='map-parent'>
@@ -364,10 +378,10 @@ function Map() {
                 <button className={'map-switch' + (displayMap == 3 ? ' active' : '')} onClick={changeDisplayMap[3]}>3F</button>
                 <button className={'map-switch' + (displayMap == 4 ? ' active' : '')} onClick={changeDisplayMap[4]}>4-5F</button>
             </div>
-            {(displayingDetail >= 0) && 
-            (
-                <DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />
-            )}
+            {(displayingDetail >= 0) &&
+                (
+                    <DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />
+                )}
         </div>
     );
 
