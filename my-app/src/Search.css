@@ -234,6 +234,8 @@
 }
 
 .favorite {
+    color: #008cff;
+    font-weight: bold;
     font-size: 25px;
     background-color: transparent;
     border: none;
@@ -335,6 +337,8 @@
 }
 
 .detail-favorite {
+    color: #008cff;
+    font-weight: bold;
     grid-column: 2;
     grid-row: 1 / 3;
     background-color: white;
