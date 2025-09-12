@@ -7,6 +7,8 @@ import Schedule from './Schedule.jsx';
 import Search from './Search.jsx';
 import Map from './Map.jsx';
 import Event from './Event.jsx';
+import Login from './Login.jsx';
+import PageList from './PageList.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/map" element={<Map />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/event" element={<Event />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/pagelist" element={<PageList />} />
       </Routes>
       <FooterNav />
     </>

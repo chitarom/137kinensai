@@ -20,10 +20,10 @@ function Home() {
         <div>
 
             <NewsSlider />
-            <div className="search-box">
+            <Link to="/search" className="search-box">
                 <button className="search-button">
                     <span><img className="glass" src={search} /></span>企画を見つける</button>
-            </div>
+            </Link>
             <div className="home-menu">
                 <div className="home-menu-top">
                     <div className="menu-button">
@@ -46,10 +46,10 @@ function Home() {
                     </Link>
                 </div>
                 <div className="home-menu-top">
-                    <div className="menu-button">
+                    <Link to="/pagelist" className="menu-button">
                         <img src={listHome} alt="" />
                         <h2>ページ一覧</h2>
-                    </div>
+                    </Link>
                     <a href='https://kinensai.jp' className="menu-button hp-link">
                         <img src={linkHome} alt="" />
                         <h2>HPはこちら</h2>

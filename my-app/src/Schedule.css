@@ -1,0 +1,211 @@
+.schedule-con {
+    position: relative;
+    height: auto;
+    width: 260px;
+    height: 720px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(253, 202, 255, 0.342);
+}
+
+.sc-con-sun {
+    height: 840px;
+}
+
+.sc-con-stage {
+    background-color: rgba(253, 202, 255, 0.164);
+}
+
+.schedule-box {
+    padding: 5px;
+    width: 250px;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.301);
+    background-color: rgba(197, 232, 255);
+}
+.group-name {
+    font-size: 22px;
+    color: rgb(8, 0, 122);
+}
+
+.group-time {
+    font-size: 13px;
+}
+
+.schedule-page {
+    position: relative;
+
+    align-items: flex-start;
+
+ 
+    padding-top: 60px;
+}
+
+
+.kodo-or-stage {
+    
+    z-index: 50;
+    width: 200%;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.103);
+}
+
+.ko-or-st-con {
+    z-index: 50;
+    margin: 10px 0;
+    position: fixed;
+    top: 78px;
+    left: 0;
+    padding-inline: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.kodo-button {
+    background-color: #ffffff;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.425);
+    font-weight: 400;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+}
+
+.kodo-button.active {
+    background-color: #008cff;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+}
+
+/* .stage-button {
+    background-color: white;
+    font-size: 25px;
+    color: #000000;
+    font-weight: 550;
+    width: 100%;
+    border: none;
+    border-radius: 0 20px 20px 0;
+} */
+
+.timesheet {
+    position: sticky;
+    left: 0;
+    z-index: 25;
+    background-color: rgb(255, 255, 255);
+    border-right: 5px solid rgb(0, 0, 0);
+}
+
+.timesheet h1 {
+    width: 50px;
+    font-size: 30px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    
+}
+
+.schedule-page-con {
+    position: relative;
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+
+    display: flex;
+    align-items: flex-start;
+
+    
+    /* scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;  */
+}
+
+.schedule-page-con-con {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    /* スナップを有効化 */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+.sc-day-con {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+}
+
+.sc-day-con h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    color: blue;
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.075);
+
+}
+
+.sc-day-con.sun h2 {
+    text-align: center;
+    width: 100%;
+    color: rgb(255, 0, 0);
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.075);
+
+}
+
+.row-border-con {
+    position: absolute;
+}
+
+.row-border {
+    margin-top: 19px;
+    margin-bottom: 118px;
+    width: 620px;
+    border: 1px solid rgb(0, 0, 0);;
+}
+
+.schedule-page {
+    position: relative;
+}
+
+.page-changer {
+    position: fixed;
+    right: 0;
+    bottom: 60px;
+    z-index: 1000;
+    margin: 12px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #008cff;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    font-weight: 500;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.781);
+    
+
+}
+
