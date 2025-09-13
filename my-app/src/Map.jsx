@@ -4,35 +4,38 @@ import { Stage, Layer, Image as KonvaImage, Group, Rect } from "react-konva";
 import data from "./JSON/ProjectData.json";
 import DisplayDetail from './DisplayDetail';
 import { v4 as uuid } from "uuid";
+import f1 from './pictures/1f.svg';
+import f2 from './pictures/2f.svg';
+import f3 from './pictures/3f.svg';
+import f45 from './pictures/4-5f.svg';
 
 
 function Map() {
     const [displayMap, setDisplayMap] = useState(1);
-    const [SVG_URL, setSVG_URL] = useState("src/pictures/1f.svg");
+    const [SVG, setSVG] = useState(f1);
     const changeDisplayMap = [temp(0), temp(1), temp(2), temp(3), temp(4)];
     function temp(int) {
         return () => {
             setDisplayMap(int);
-            var str = "src/pictures/";
+            var svg;
             switch (int) {
                 case 1:
-                    str += "1f.svg";
+                    svg = f1;
                     break;
                 case 2:
-                    str += "2f.svg";
+                    svg = f2;
                     break;
                 case 3:
-                    str += "3f.svg";
+                    svg = f3;
                     break;
                 case 4:
-                    str += "4-5f.svg";
+                    svg = f45;
                     break;
 
             }
-            setSVG_URL(str);
+            setSVG(svg);
         }
     }
-    console.log(SVG_URL);
 
     /*
     <div className='map-parent'>
@@ -59,25 +62,21 @@ function Map() {
 
     useEffect(() => {
         // SVGファイルを取得
-        fetch(SVG_URL)
-            .then(res => res.text())
-            .then(text => {
-                const parser = new DOMParser();
-                const svgDoc = parser.parseFromString(text, "image/svg+xml");
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(SVG, "image/svg+xml");
 
-                const rectNodes = svgDoc.querySelectorAll("rect");
+        const rectNodes = svgDoc.querySelectorAll("rect");
 
-                const rectData = Array.from(rectNodes).map((r, i) => ({
-                    id: r.getAttribute("id") || `rect-${i}`,
-                    x: parseFloat(r.getAttribute("x") || 0),
-                    y: parseFloat(r.getAttribute("y") || 0),
-                    width: parseFloat(r.getAttribute("width") || 0),
-                    height: parseFloat(r.getAttribute("height") || 0),
-                    fill: r.getAttribute("fill") || "black",
-                }));
+        const rectData = Array.from(rectNodes).map((r, i) => ({
+            id: r.getAttribute("id") || `rect-${i}`,
+            x: parseFloat(r.getAttribute("x") || 0),
+            y: parseFloat(r.getAttribute("y") || 0),
+            width: parseFloat(r.getAttribute("width") || 0),
+            height: parseFloat(r.getAttribute("height") || 0),
+            fill: r.getAttribute("fill") || "black",
+        }));
 
-                setRects(rectData);
-            });
+        setRects(rectData);
     }, []);
 
     // rectをクリックしたときに色とサイズを変更
@@ -113,7 +112,7 @@ function Map() {
         const image = new window.Image();
         image.crossOrigin = "anonymous";
         image.onload = () => setImg(image);
-        image.src = SVG_URL;
+        image.src = SVG;
         /*.addEventListener("click",(e) => {
             console.log("160");
         });*/
@@ -126,7 +125,7 @@ function Map() {
         updateSize();
         window.addEventListener("resize", updateSize);
         return () => window.removeEventListener("resize", updateSize);
-    }, [SVG_URL]);
+    }, [SVG]);
 
     function getDistance(t1, t2) {
         const dx = t2.clientX - t1.clientX;
