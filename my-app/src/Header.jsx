@@ -38,9 +38,9 @@ function Header() {
             {displayHamburger &&
                 (
                     <div className='hamburger-menu'>
-                        <Link to="/" className='hamburger-menu-tab'>ニュース・記事</Link>
+                        <Link to="/articlemenu" className='hamburger-menu-tab'>ニュース・記事</Link>
                         <Link to="/" className='hamburger-menu-tab'>お気に入りの企画</Link>
-                        <Link to="/" className='hamburger-menu-tab'>絵の旅パスポート</Link>
+                        <Link to="/passport" className='hamburger-menu-tab'>絵の旅パスポート</Link>
                         <Link to="/" className='hamburger-menu-tab'>ステージ投票</Link>
                         <Link to="/" className='hamburger-menu-tab'>講堂企画</Link>
                         <Link to="/" className='hamburger-menu-tab'>模擬店</Link>

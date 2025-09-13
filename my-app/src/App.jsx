@@ -14,6 +14,7 @@ import AboutFood from './AboutFood.jsx';
 import ReadQR from './ReadQR.jsx';
 import AnalyzeQR from './AnalyzeQR.jsx';
 import Passport from './Passport.jsx';
+import ArticleMenu from './ArticleMenu.jsx';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/readqr" element={<ReadQR/>}/>
         <Route path="/analyzeqr" element={<AnalyzeQR/>}/>
         <Route path="/passport" element={<Passport/>}/>
+        <Route path="/articlemenu" element={<ArticleMenu/>}/>
       </Routes>
       <FooterNav />
     </>
