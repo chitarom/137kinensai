@@ -10,6 +10,7 @@ import Event from './Event.jsx';
 import Login from './Login.jsx';
 import PageList from './PageList.jsx';
 import { Routes, Route } from 'react-router-dom';
+import AboutFood from './AboutFood.jsx';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/event" element={<Event />} />
         <Route path="/login" element={<Login />} />
         <Route path="/pagelist" element={<PageList />} />
+        <Route path="/aboutfood" element={<AboutFood />} />
       </Routes>
       <FooterNav />
     </>

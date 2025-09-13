@@ -9,7 +9,7 @@ function Schedule() {
     const scrollContainerRef = useRef(null);
     const boxRef = useRef(null);
     const [activeTab, setActiveTab] = useState('kodo');
-    const [currentPage, setCurrentPage] = useState(0)
+    const [currentPage, setCurrentPage] = useState(1)
     const KodoGroupList = []
     const StageGroupList = []
     const [currentTab, setCurrentTab] = useState('kodo');
