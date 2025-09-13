@@ -1,13 +1,14 @@
 import './AnalyzeQR.css'
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function AnalyzeQR() {
   const location = useLocation();
+  const navigate = useNavigate();
   const qrText = location.state?.qrData || "";
-  const [resultText, setResultText] = useState(""); // QR文字列を加工した結果
+  const [resultText, setResultText] = useState("");
+  const [funcNum, setfuncNum] = useState(-1);
 
-  // QR文字列に応じた処理
   useEffect(() => {
     if (!qrText) {
       setResultText("QRコードを読み取っていません");
@@ -18,24 +19,50 @@ function AnalyzeQR() {
     const parts = qrText.split(" ");
     if (
       parts.length !== 3 ||
-      isNaN(parts[0]) || // 先頭が数字か
+      (parts[0] !== "1" && parts[0] !== "2") ||
       parts[2] !== "endqr"
     ) {
-      setResultText(parts[1], "誤ったQRコードです");
+      setResultText("誤ったQRコードです");
       return;
     }
 
-    // 処理例
-    const T = parts[1];
-    setResultText(T);
+    let num = parseInt(parts[0]);
+    let str = parts[1];
+    setfuncNum(num);
+    setResultText(str);
   }, [qrText]);
+
+  // QRの種類ごとに遷移
+  useEffect(() => {
+    if (funcNum !== 1 && funcNum !== 2) return;
+
+    if (funcNum === 1) {
+      setfuncNum(-1);
+      navigate("/map", { state: { resultText } });
+    }
+    if (funcNum === 2) {
+      setfuncNum(-1);
+      navigate("/passport", { state: { resultText } });
+    }
+  }, [funcNum, navigate, resultText]);
 
   return (
     <div className="analyzer-container">
-      <h2>処理結果:</h2>
-      <p>{resultText}</p>
+      {funcNum === -1 ? (
+        <>
+          <p>{resultText}</p>
+        </>
+      ) : (
+        <></>
+      )
+      }
     </div>
   );
 }
 
 export default AnalyzeQR;
+
+/*
+1 ... マップ現在地関連機能
+2 ... 絵の旅パスポート関連機能
+*/
