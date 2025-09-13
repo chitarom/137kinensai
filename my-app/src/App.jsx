@@ -13,6 +13,7 @@ import { Routes, Route } from 'react-router-dom';
 import AboutFood from './AboutFood.jsx';
 import ReadQR from './ReadQR.jsx';
 import AnalyzeQR from './AnalyzeQR.jsx';
+import Passport from './Passport.jsx';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
         <Route path="/pagelist" element={<PageList />} />
         <Route path="/aboutfood" element={<AboutFood />} />
         <Route path="/readqr" element={<ReadQR/>}/>
-        <Route path="analyzeqr" element={<AnalyzeQR/>}/>
+        <Route path="/analyzeqr" element={<AnalyzeQR/>}/>
+        <Route path="/passport" element={<Passport/>}/>
       </Routes>
       <FooterNav />
     </>

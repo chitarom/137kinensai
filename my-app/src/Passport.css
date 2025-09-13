@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'GLFont';
+  src: url('/fonts/GL-CurulMinamoto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KSFont';
+  src: url('/fonts/KaiseiOpti-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
