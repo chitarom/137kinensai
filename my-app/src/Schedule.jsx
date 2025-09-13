@@ -12,25 +12,23 @@ function Schedule() {
     const [currentPage, setCurrentPage] = useState(0)
     const KodoGroupList = []
     const StageGroupList = []
+    const [currentTab, setCurrentTab] = useState('kodo');
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollLeft = scrollContainerRef.current.scrollLeft;
-            const boxWidth = boxRef.current.offsetWidth;
+        const container = scrollContainerRef.current;
+        if (!container) return; // ← これが重要！
 
-            // 例：講堂とステージがそれぞれ containerWidth 分の幅を持つ場合
-            if (scrollLeft < boxWidth / 2) {
-                setActiveTab('kodo');
-            } else {
-                setActiveTab('stage');
-            }
+        const handleScroll = () => {
+            const scrollLeft = container.scrollLeft;
+            const boxWidth = boxRef.current?.offsetWidth || 0;
+
+            setActiveTab(scrollLeft < boxWidth / 2 ? 'kodo' : 'stage');
         };
 
-        const container = scrollContainerRef.current;
         container.addEventListener('scroll', handleScroll);
-
         return () => container.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [currentPage]);
+
 
     const scrollToRight = () => {
         if (scrollContainerRef.current) {
@@ -60,7 +58,7 @@ function Schedule() {
 
     function createList(list, newlist, length) {
         for (let i = 0; i < length; i++) {
-            const object = { label: list[i][0], day: list[i][1], starthour: list[i][2], startminute: list[i][3], finishhour: list[i][4], finishminute: list[i][5] };
+            const object = { label: list[i][0], day: list[i][1], starthour: list[i][2], startminute: list[i][3], finishhour: list[i][4], finishminute: list[i][5], category: list[i][6], category2: list[i][7], subtitle: list[i][8] };
             newlist.push(object);
 
         }
@@ -195,15 +193,79 @@ function Schedule() {
             {currentPage == 1 && <>
                 <div className="ko-or-st-con">
                     <div className="kodo-or-stage">
-                        <button onClick={() => scrollToLeft()} className={`kodo-button ${activeTab === 'kodo' ? 'active' : ''}`}>
+                        <button onClick={() => setCurrentTab("kodo")} className={`kodo-button ${currentTab === 'kodo' ? 'active' : ''}`}>
                             講堂企画
                         </button>
 
-                        <button onClick={() => scrollToRight()} className={`kodo-button ${activeTab === 'stage' ? 'active' : ''}`}>
+                        <button onClick={() => setCurrentTab("stage")} className={`kodo-button ${currentTab === 'stage' ? 'active' : ''}`}>
                             ステージ企画
                         </button>
                     </div>
                 </div>
+
+
+                {currentTab == "kodo" && <>
+                    {KodoGroupList.filter(item => item.day === 'sat').map(item => (
+                        <div role="button" key={item.label} className="row-con">
+                            <div className="time-con">
+                                <p>{item.starthour}:{item.startminute}</p>
+                                <p>～</p>
+                                <p>{item.finishhour}:{item.finishminute}</p>
+                            </div>
+                            <div className="group-detail-con">
+                                <p>{item.category}・{item.category2}</p>
+                                <h2>{item.label}</h2>
+                                <p className="subtitle">{item.subtitle}</p>
+                            </div>
+                        </div>
+
+                    ))}
+                    {KodoGroupList.filter(item => item.day === 'sun').map(item => (
+                        <div role="button" key={item.label} className="row-con">
+                            <div className="time-con">
+                                <p>{item.starthour}:{item.startminute}</p>
+                                <p>～</p>
+                                <p>{item.finishhour}:{item.finishminute}</p>
+                            </div>
+                            <div className="group-detail-con">
+                                <p>{item.category}・{item.category2}</p>
+                                <h2>{item.label}</h2>
+                                <p className="subtitle">{item.subtitle}</p>
+                            </div>
+                        </div>
+
+                    ))}</>}
+                {currentTab == "stage" && <>
+                    {StageGroupList.filter(item => item.day === 'sat').map(item => (
+                        <div role="button" key={item.label} className="row-con">
+                            <div className="time-con">
+                                <p>{item.starthour}:{item.startminute}</p>
+                                <p>～</p>
+                                <p>{item.finishhour}:{item.finishminute}</p>
+                            </div>
+                            <div className="group-detail-con">
+                                <p>{item.category}・{item.category2}</p>
+                                <h2>{item.label}</h2>
+                                <p className="subtitle">{item.subtitle}</p>
+                            </div>
+                        </div>
+
+                    ))}
+                    {StageGroupList.filter(item => item.day === 'sun').map(item => (
+                        <div role="button" key={item.label} className="row-con">
+                            <div className="time-con">
+                                <p>{item.starthour}:{item.startminute}</p>
+                                <p>～</p>
+                                <p>{item.finishhour}:{item.finishminute}</p>
+                            </div>
+                            <div className="group-detail-con">
+                                <p>{item.category}・{item.category2}</p>
+                                <h2>{item.label}</h2>
+                                <p className="subtitle">{item.subtitle}</p>
+                            </div>
+                        </div>
+
+                    ))}</>}
             </>}
 
 
