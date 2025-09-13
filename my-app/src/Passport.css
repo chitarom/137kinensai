@@ -80,9 +80,12 @@
 }
 
 .pass-menu-button img {
-    width: 100px;
-    height: 100px;
+    width: 32px;
     height: auto;
+}
+
+.pass-menu-button h2 {
+    font-size: 16px;
 }
 
 .picture-puzzle img {

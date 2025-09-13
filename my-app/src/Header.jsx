@@ -29,10 +29,10 @@ function Header() {
                     {!displayHamburger && (<img src={hamburger} alt="" />)}
                     {displayHamburger && (<div>×</div>)}
                 </button>
-                <div className="app-title">
+                <Link to="/" className="app-title">
                     <img src={logo} alt="ロゴ" width="64" height="64" />
                     <h2>記念祭</h2>
-                </div>
+                </Link>
                 {/* <h3>あと<span>{limitDays}</span>日</h3> */}
             </div>
             {displayHamburger &&
