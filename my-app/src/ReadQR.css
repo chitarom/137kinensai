@@ -12,8 +12,8 @@
 }
 
 .qr-button {
-    font-size: 22px;
-    width: 40%;
+    font-size: 24px;
+    width: 50%;
     height: 100px;
     margin: 5px;
     background-color: white;
@@ -25,11 +25,10 @@
 }
 
 .error-message {
-    /*適当です、もっと優しいイメージがいいかも*/
+    /*もっと優しいイメージがいいかも*/
     color: red;
-    font-size: 32px;
-    width: 600px;
-    height: 120px;
+    font-size: 20px;
+    width: 60%;
     background-color: #ffd7f1;
     border: 2px solid #f28c8c;
     border-radius: 10px;

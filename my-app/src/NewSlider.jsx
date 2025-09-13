@@ -1,6 +1,7 @@
 import './Home.css';
 import { useRef, useState, useEffect } from 'react';
 import stageSlide from '/pictures/stage-slide.png';
+import { Link } from 'react-router-dom';
 
 
 const NewsSlider = () => {

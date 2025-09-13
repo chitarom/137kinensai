@@ -80,7 +80,7 @@ function ReadQR() {
         // スキャン前、失敗時も
         <>
           <button onClick={startCamera} className="qr-button">
-            カメラを起動する
+            カメラを起動
           </button>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
         </>
