@@ -30,10 +30,10 @@ function Home() {
                         <img src={foodHome} alt="" />
                         <h2>お食事について</h2>
                     </Link>
-                    <div className="menu-button">
+                    <Link to="/analyzeqr" className="menu-button">
                         <img src={qrHome} alt="" />
                         <h2>QRコードを読み取る</h2>
-                    </div>
+                    </Link>
                 </div>
                 <div className="home-menu-top">
                     <div className="menu-button">

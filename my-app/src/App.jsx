@@ -11,6 +11,8 @@ import Login from './Login.jsx';
 import PageList from './PageList.jsx';
 import { Routes, Route } from 'react-router-dom';
 import AboutFood from './AboutFood.jsx';
+import ReadQR from './ReadQR.jsx';
+import AnalyzeQR from './AnalyzeQR.jsx';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/pagelist" element={<PageList />} />
         <Route path="/aboutfood" element={<AboutFood />} />
+        <Route path="/readqr" element={<ReadQR/>}/>
+        <Route path="analyzeqr" element={<AnalyzeQR/>}/>
       </Routes>
       <FooterNav />
     </>
