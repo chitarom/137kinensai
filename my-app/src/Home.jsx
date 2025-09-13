@@ -2,13 +2,13 @@ import './Home.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NewsSlider from './NewSlider';
-import search from './pictures/search.png'
-import foodHome from './pictures/foodHome.png'
-import qrHome from './pictures/qrHome.png'
-import passportHome from './pictures/passportHome.png'
-import listHome from './pictures/listHome.png'
-import eventHome from './pictures/exclamationHome.png'
-import linkHome from './pictures/linkHome.png'
+import search from '/pictures/search.png'
+import foodHome from '/pictures/foodHome.png'
+import qrHome from '/pictures/qrHome.png'
+import passportHome from '/pictures/passportHome.png'
+import listHome from '/pictures/listHome.png'
+import eventHome from '/pictures/exclamationHome.png'
+import linkHome from '/pictures/linkHome.png'
 import OnAir from './OnAir';
 import OnAirCopy from './OnAirCopy';
 

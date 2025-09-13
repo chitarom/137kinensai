@@ -1,6 +1,6 @@
 import './Home.css';
 import { useRef, useState, useEffect } from 'react';
-import stageSlide from './pictures/stage-slide.png';
+import stageSlide from '/pictures/stage-slide.png';
 
 
 const NewsSlider = () => {
