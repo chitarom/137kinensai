@@ -35,15 +35,10 @@ function AnalyzeQR() {
   // QRの種類ごとに遷移
   useEffect(() => {
     if (funcNum !== 1 && funcNum !== 2) return;
+    
+    setfuncNum(-1);
+    navigate("/map", { state: { resultText, funcNum } });
 
-    if (funcNum === 1) {
-      setfuncNum(-1);
-      navigate("/map", { state: { resultText } });
-    }
-    if (funcNum === 2) {
-      setfuncNum(-1);
-      navigate("/passport", { state: { resultText } });
-    }
   }, [funcNum, navigate, resultText]);
 
   return (
