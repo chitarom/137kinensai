@@ -10,7 +10,7 @@ function AnalyzeQR() {
   // QR文字列に応じた処理
   useEffect(() => {
     if (!qrText) {
-      setResultText("");
+      setResultText("QRコードを読み取っていません");
       return;
     }
 
