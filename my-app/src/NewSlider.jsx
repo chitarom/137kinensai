@@ -1,6 +1,7 @@
 import './Home.css';
 import { useRef, useState, useEffect } from 'react';
 import stageSlide from './pictures/stage-slide.png';
+import { Link } from 'react-router-dom';
 
 
 const NewsSlider = () => {
@@ -44,21 +45,21 @@ const NewsSlider = () => {
       <div className="news-slide-box">
         <div className="ghost-slide" aria-hidden="true" />
 
-        <a className="news-slide">
+        <Link to="/" className="news-slide">
           <img src={stageSlide} alt="" />
-        </a>
-        <a className="news-slide">
+        </Link>
+        <Link to="/" className="news-slide">
           <div className="center-center">
             <h2>スタンプラリー2</h2>
             <h1>開催決定</h1>
           </div>
-        </a>
-        <a className="news-slide">
+        </Link>
+        <Link to="/" className="news-slide">
           <div className="center-center">
             <h2>スタンプラリー3</h2>
             <h1>開催決定</h1>
           </div>
-        </a>
+        </Link>
         <div className="ghost-slide" aria-hidden="true" />
 
       </div>
