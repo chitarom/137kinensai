@@ -5,20 +5,37 @@ import categories from './JSON/Categories.json'
 import FilterButton from './SearchComponents/FilterButton.jsx';
 import TicketList from './SearchComponents/TicketList.jsx';
 import DetailImageSlider from './SearchComponents/DetailImageSlider.jsx';
+import React from 'react';
 import { useRef, useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import DisplayDetail from './DisplayDetail.jsx';
 
 function Search() {
     //FavoriteかどうかはlocalStorageに保存
+    const [queried, setQueried] = useState(false);
     const [isPopUp, setPopUp] = useState(false);
     const [displayingDetail, setDisplayingDetail] = useState(-1);
-    const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], []]);
-    //["場所","企画名","説明文",[カテゴリー],[スライド用画像]]
+    const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
+    console.log(displayDetailContents);
+    //["場所","企画名","説明文",[カテゴリー],[スライド用画像],"企画ID"]
     const [keyword, setKeyword] = useState("");
-    const [filter, setFilter] = useState([[], 10]);
+    const [filter, setFilter] = useState([[], 10, false]);
     const search = (e) => { setKeyword(e.target.value); }
     const changeFilterList = [template(10), template(11), template(7), template(8), template(9)];
-    function template(int) { return () => { setFilter([filter[0], int]); } };
+    function template(int) { return () => { setFilter([filter[0], int, filter[2]]); } };
     const setFilterList = [];
+    /*
+    if (window.location.href.indexOf("?") >= 0 && !queried) {
+        var projectid = window.location.href.split("?")[1].split("id=")[1].split("&")[0];
+        for (let i = 0; i < data.length; i++) {
+            if (data[i][6] == projectid) {
+                setDisplayingDetail(i);
+                setDisplayDetailContents([data[i][0],data[i][1],data[i][3],data[i][4],data[i][5],data[i][6]]);
+                setQueried(true);
+            }
+        }
+    }
+    */
     categories.map((category) => setFilterList.push(temp(category)));
     function temp(str) {
         //filter[0] (categories) の中身を変更する関数のテンプレート
@@ -26,12 +43,12 @@ function Search() {
             console.log("filter: " + filter);
             var filt0 = filter[0].includes(str) ? filter[0].slice(0, filter[0].indexOf(str)).concat(filter[0].slice(filter[0].indexOf(str) + 1)) : false;
             if (!filt0) { filt0 = filter[0]; filt0.push(str); }
-            setFilter([filt0, filter[1]]);
+            setFilter([filt0, filter[1], filter[2]]);
         };
     }
 
     const filterButton = (str, id) => {
-        return <button className={'filter' + (filter[0].includes(str) ? '' : ' inactive')} id={id} onClick={setFilterList[id - 1]}>{str}</button>;
+        return <button className={'filter' + (filter[0].includes(str) ? '' : ' inactive')} id={id} onClick={setFilterList[id - 1]} key={id}>{str}</button>;
     }
     const list = [];
     for (let i = 0; i < categories.length; i++)
@@ -41,17 +58,14 @@ function Search() {
         setPopUp(!isPopUp);
     }
 
-    const hideDDetail = () => {
-        setDisplayingDetail(-1);
+    const toggleFavorite = () => {
+        setFilter([filter[0], filter[1], !filter[2]]);
     }
 
-    const getList = (cats) => {
-        const list = [];
-        for (let i = 0; i < cats.length; i++) {
-            list.push(<div className='filter inactive'>{cats[i]}</div>);
-        }
-        return list;
-    }
+    if (localStorage.getItem("favorites") == undefined) localStorage.setItem("favorites", "[]");
+    var favorites = JSON.parse(localStorage.getItem("favorites"));
+
+    var star = favorites.includes(displayDetailContents[5]) ? "★" : "☆";
 
     return (
         <div>
@@ -61,6 +75,7 @@ function Search() {
             <div className='filter-wrap'>
                 <div className='filter-list'>
                     <button className='first-filter filter' id='0' onClick={togglePopUp}>絞り込む</button>
+                    <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
                     {list}
                 </div>
             </div>
@@ -84,6 +99,7 @@ function Search() {
                         <div className='category-popup'>
                             <div className='category-popup-title'>絞り込み</div>
                             <div className='category-popup-categories'>
+                                <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
                                 {list}
                             </div>
                         </div>
@@ -93,27 +109,7 @@ function Search() {
                 </div>)
             }
             {(displayingDetail >= 0) &&
-                (
-                    <div className='detail-wrap'>
-                        <div className='dw-margin' onClick={hideDDetail}></div>
-                        <div className='detail-tag'>
-                            <div className='detail-head'>
-                                <div className='detail-place'>{displayDetailContents[0]}</div>
-                                <div className='detail-title'>{displayDetailContents[1]}</div>
-                                <button className='detail-favorite'>☆</button>
-                            </div>
-                            <div className='filter-wrap-wrap'>
-                                <div className='filter-wrap'>
-                                    <div className='filter-list'>
-                                        {getList(displayDetailContents[3])}
-                                    </div>
-                                </div>
-                            </div>
-                            <DetailImageSlider imagelist={displayDetailContents[4]} />
-                            <div className='detail'>{displayDetailContents[2]}</div>
-                        </div>
-                    </div>
-                )
+                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />)
             }
         </div>
     );
