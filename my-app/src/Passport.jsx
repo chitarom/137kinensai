@@ -31,7 +31,7 @@ function Passport() {
                     <img src={scope} alt="スコープアイコン" />
                     <h2>絵を探す</h2>
                 </Link>
-                <Link to="/" className="pass-menu-button">
+                <Link to="/readqr" className="pass-menu-button">
                     <img src={camera} alt="カメラ" />
                     <h2>QRコード</h2>
                 </Link>
