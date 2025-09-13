@@ -207,6 +207,7 @@ function Schedule() {
 
 
                 {currentTab == "kodo" && <>
+                <div className="sc-day-con"><h2>27(土)</h2></div>
                     {KodoGroupList.filter(item => item.day === 'sat').map(item => (
                         <div role="button" key={item.label} className="row-con">
                             <div className="time-con">
@@ -222,6 +223,7 @@ function Schedule() {
                         </div>
 
                     ))}
+                    <div className="sc-day-con sun"><h2>28(日)</h2></div>
                     {KodoGroupList.filter(item => item.day === 'sun').map(item => (
                         <div role="button" key={item.label} className="row-con">
                             <div className="time-con">
@@ -238,6 +240,7 @@ function Schedule() {
 
                     ))}</>}
                 {currentTab == "stage" && <>
+                <div className="sc-day-con"><h2>27(土)</h2></div>
                     {StageGroupList.filter(item => item.day === 'sat').map(item => (
                         <div role="button" key={item.label} className="row-con">
                             <div className="time-con">
@@ -253,6 +256,7 @@ function Schedule() {
                         </div>
 
                     ))}
+                    <div className="sc-day-con sun"><h2>28(日)</h2></div>
                     {StageGroupList.filter(item => item.day === 'sun').map(item => (
                         <div role="button" key={item.label} className="row-con">
                             <div className="time-con">
