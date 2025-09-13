@@ -15,14 +15,24 @@ function ReadQR() {
   // カメラを起動する
   const startCamera = () => {
     setErrorMessage(""); // 前回のエラーをクリア
-    navigator.mediaDevices.getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { exact: "environment" } } // 追加：背面カメラを指定
+    })
       .then(s => {
         setStream(s);
         setScanning(true);
       })
       .catch(err => {
-        setScanning(false);
-        setErrorMessage("QRコードの読み取りには、カメラへのアクセスを許可してください。");
+        // 背面カメラ指定で取得できない場合、フロントカメラを試す
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(s => {
+            setStream(s);
+            setScanning(true);
+          })
+          .catch(err => {
+            setScanning(false);
+            setErrorMessage("QRコードの読み取りには、カメラへのアクセスを許可してください。");
+          });
       });
   };
 
