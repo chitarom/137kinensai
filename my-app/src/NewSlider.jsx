@@ -1,5 +1,7 @@
 import './Home.css';
 import { useRef, useState, useEffect } from 'react';
+import stageSlide from './pictures/stage-slide.png';
+
 
 const NewsSlider = () => {
   const sliderRef = useRef(null);
@@ -43,10 +45,7 @@ const NewsSlider = () => {
         <div className="ghost-slide" aria-hidden="true" />
 
         <a className="news-slide">
-          <div className="center-center">
-            <h2>スタンプラリー1</h2>
-            <h1>開催決定</h1>
-          </div>
+          <img src={stageSlide} alt="" />
         </a>
         <a className="news-slide">
           <div className="center-center">
