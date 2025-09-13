@@ -68,49 +68,51 @@ function Search() {
     var star = favorites.includes(displayDetailContents[5]) ? "★" : "☆";
 
     return (
-        <div>
-            <div className='search-wrap'>
-                <input className='search-box2' type="text" id='keyword' onChange={search} placeholder='キーワードを入力...' />
-            </div>
-            <div className='filter-wrap'>
-                <div className='filter-list'>
-                    <button className='first-filter filter' id='0' onClick={togglePopUp}>絞り込む</button>
-                    <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
-                    {list}
+        <div className='search-parent' style={{ "overflow-y": (displayingDetail >= 0 ? "hidden" : "auto") }}>
+            <div>
+                <div className='search-wrap'>
+                    <input className='search-box2' type="text" id='keyword' onChange={search} placeholder='キーワードを入力...' />
                 </div>
-            </div>
-            <div className='content'>
-                <div className='tabs'>
-                    <button className={"tab" + (filter[1] == 10 ? " active" : "")} onClick={changeFilterList[0]}>すべて</button>
-                    <button className={"tab" + (filter[1] == 11 ? " active" : "")} onClick={changeFilterList[1]}>クラス企画</button>
-                    <button className={"tab" + (filter[1] == 7 ? " active" : "")} onClick={changeFilterList[2]}>ステージ</button>
-                    <button className={"tab" + (filter[1] == 8 ? " active" : "")} onClick={changeFilterList[3]}>講堂</button>
-                    <button className={"tab" + (filter[1] == 9 ? " active" : "")} onClick={changeFilterList[4]}>有志</button>
-                </div>
-                <div className='tickets'>
-                    <TicketList keyword={keyword} filter={filter} ddetail={setDisplayingDetail} setDDC={setDisplayDetailContents} />
-                </div>
-            </div>
-            {isPopUp &&
-                (<div className='category-popup-wrap'>
-                    <div className='cpw-margin1' onClick={togglePopUp}></div>
-                    <div className='category-popup-wrap2'>
-                        <div className='cpw-margin2' onClick={togglePopUp}>×</div>
-                        <div className='category-popup'>
-                            <div className='category-popup-title'>絞り込み</div>
-                            <div className='category-popup-categories'>
-                                <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
-                                {list}
-                            </div>
-                        </div>
-                        <div className='cpw-margin2' onClick={togglePopUp}></div>
+                <div className='filter-wrap'>
+                    <div className='filter-list'>
+                        <button className='first-filter filter' id='0' onClick={togglePopUp}>絞り込む</button>
+                        <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
+                        {list}
                     </div>
-                    <div className='cpw-margin1' onClick={togglePopUp}></div>
-                </div>)
-            }
-            {(displayingDetail >= 0) &&
-                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />)
-            }
+                </div>
+                <div className='content'>
+                    <div className='tabs'>
+                        <button className={"tab" + (filter[1] == 10 ? " active" : "")} onClick={changeFilterList[0]}>すべて</button>
+                        <button className={"tab" + (filter[1] == 11 ? " active" : "")} onClick={changeFilterList[1]}>クラス企画</button>
+                        <button className={"tab" + (filter[1] == 7 ? " active" : "")} onClick={changeFilterList[2]}>ステージ</button>
+                        <button className={"tab" + (filter[1] == 8 ? " active" : "")} onClick={changeFilterList[3]}>講堂</button>
+                        <button className={"tab" + (filter[1] == 9 ? " active" : "")} onClick={changeFilterList[4]}>有志</button>
+                    </div>
+                    <div className='tickets'>
+                        <TicketList keyword={keyword} filter={filter} ddetail={setDisplayingDetail} setDDC={setDisplayDetailContents} />
+                    </div>
+                </div>
+                {isPopUp &&
+                    (<div className='category-popup-wrap'>
+                        <div className='cpw-margin1' onClick={togglePopUp}></div>
+                        <div className='category-popup-wrap2'>
+                            <div className='cpw-margin2' onClick={togglePopUp}>×</div>
+                            <div className='category-popup'>
+                                <div className='category-popup-title'>絞り込み</div>
+                                <div className='category-popup-categories'>
+                                    <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
+                                    {list}
+                                </div>
+                            </div>
+                            <div className='cpw-margin2' onClick={togglePopUp}></div>
+                        </div>
+                        <div className='cpw-margin1' onClick={togglePopUp}></div>
+                    </div>)
+                }
+                {(displayingDetail >= 0) &&
+                    (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />)
+                }
+            </div>
         </div>
     );
 }

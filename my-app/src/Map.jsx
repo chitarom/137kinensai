@@ -365,7 +365,7 @@ function Map() {
                                         y={obj[1] + 50}
                                         width={obj[2]}
                                         height={obj[3]}
-                                        onTap={obj[4]} /> : <div></div>;
+                                        onTap={obj[4]} /> : <br />;
                                 })
                             }
                         </Group>
