@@ -36,10 +36,10 @@ function Home() {
                     </Link>
                 </div>
                 <div className="home-menu-top">
-                    <div className="menu-button">
+                    <Link to="/passport" className="menu-button">
                         <img src={passportHome} alt="" />
                         <h2>絵の旅パスポート</h2>
-                    </div>
+                    </Link>
                     <Link to="/event" className="menu-button">
                         <img src={eventHome} alt="" />
                         <h2>イベント</h2>
