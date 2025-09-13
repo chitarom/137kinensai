@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const NewsSlider = () => {
   const sliderRef = useRef(null);
   const [slideCount, setSlideCount] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   // マウント時にスライド枚数を取得
   useEffect(() => {
