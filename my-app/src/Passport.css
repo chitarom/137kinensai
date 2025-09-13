@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Kaisei Opti', serif;
-    background-image: url('pictures/brownpaper3.jpg');
+    background-image: url('/pictures/brownpaper3.jpg');
     position: relative;
     min-height: calc(100vh - 140px);
     background-size: cover;
