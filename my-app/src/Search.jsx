@@ -7,7 +7,6 @@ import TicketList from './SearchComponents/TicketList.jsx';
 import DetailImageSlider from './SearchComponents/DetailImageSlider.jsx';
 import React from 'react';
 import { useRef, useState, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import DisplayDetail from './DisplayDetail.jsx';
 
 function Search() {
