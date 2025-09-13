@@ -1,11 +1,11 @@
 import './Passport.css'
-import airplane from "/pictures/airplane.png"
-import passport from "/pictures/passport.png"
+import airplane from "/public/pictures/airplane.png"
+import passport from "/public/pictures/passport.png"
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import scope from "/pictures/scope.png"
-import camera from "/pictures/camera.png"
-import giftpicture from "/pictures/giftpicture.png"
+import scope from "/public/pictures/scope.png"
+import camera from "/public/pictures/camera.png"
+import giftpicture from "/public/pictures/giftpicture.png"
 
 function Passport() {
     const [activeExplanation, setActiveExplanation] = useState(0)
