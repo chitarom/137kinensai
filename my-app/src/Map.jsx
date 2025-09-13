@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import { Stage, Layer, Image as KonvaImage, Group, Rect } from "react-konva";
 import data from "./JSON/ProjectData.json";
 import DisplayDetail from './DisplayDetail';
+import { v4 as uuid } from "uuid";
 
 
 function Map() {
@@ -365,7 +366,8 @@ function Map() {
                                         y={obj[1] + 50}
                                         width={obj[2]}
                                         height={obj[3]}
-                                        onTap={obj[4]} /> : <div></div>;
+                                        onTap={obj[4]}
+                                        key={uuid()} /> : <Group key={uuid()} />;
                                 })
                             }
                         </Group>
