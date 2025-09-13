@@ -1,0 +1,9 @@
+.ar-menu-title {
+    display: flex;
+    justify-content: center;
+}
+
+.ar-menu-title h2 {
+    margin: 10px;
+
+}
