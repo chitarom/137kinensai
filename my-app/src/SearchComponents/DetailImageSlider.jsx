@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef, useState, useEffect } from 'react';
 
-const DetailImageSlider = ({imagelist}) => {
+const DetailImageSlider = ({ imagelist }) => {
     //スライド
     const sliderRef = useRef(null);
     const [slideCount, setSlideCount] = useState(0);
@@ -38,10 +38,10 @@ const DetailImageSlider = ({imagelist}) => {
         });
     }, [currentIndex]);
 
-    const getImageList = (imgs) => {
+    function getImageList() {
         const list = [];
-        for (let i = 0; i < imgs.length; i++) {
-            list.push(<img className='detail-slide' src={'/src/pictures/' + imgs[i]} id={i} key={i} />);
+        for (let i = 0; i < imagelist.length; i++) {
+            list.push(<img className='detail-slide' src={"/pictures/" + imagelist[i]} id={i} key={i} />);
         }
         return list;
     }
@@ -49,7 +49,7 @@ const DetailImageSlider = ({imagelist}) => {
     return (
         <div className='detail-images-wrap' ref={sliderRef}>
             <div className='detail-images'>
-                {getImageList(imagelist)}
+                {getImageList()}
             </div>
         </div>
     )

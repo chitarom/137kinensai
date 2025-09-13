@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
 import './FooterNav.css';
-import search from './pictures/searchFooter.png'
-import home from './pictures/homeFooter.png'
-import event from './pictures/exclamationFooter.png'
-import map from './pictures/mapFooter.png'
-import schedule from './pictures/scheduleFooter.png'
+import search from '/pictures/searchFooter.png'
+import home from '/pictures/homeFooter.png'
+import event from '/pictures/exclamationFooter.png'
+import map from '/pictures/mapFooter.png'
+import schedule from '/pictures/scheduleFooter.png'
 import { useLocation } from 'react-router-dom';
 
 function FooterNav() {

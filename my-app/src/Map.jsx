@@ -4,10 +4,10 @@ import { Stage, Layer, Image as KonvaImage, Group, Rect } from "react-konva";
 import data from "./JSON/ProjectData.json";
 import DisplayDetail from './DisplayDetail';
 import { v4 as uuid } from "uuid";
-import f1 from './pictures/1f.svg';
-import f2 from './pictures/2f.svg';
-import f3 from './pictures/3f.svg';
-import f45 from './pictures/4-5f.svg';
+import f1 from '/pictures/1f.svg';
+import f2 from '/pictures/2f.svg';
+import f3 from '/pictures/3f.svg';
+import f45 from '/pictures/4-5f.svg';
 
 
 function Map() {

@@ -1,7 +1,7 @@
 import './Header.css'
 import { Link } from 'react-router-dom';
-import logo from './pictures/logo.png';
-import hamburger from './pictures/hamburger.svg'
+import logo from '/pictures/logo.png';
+import hamburger from '/pictures/hamburger.svg'
 import NewsBar from './NewsBar';
 import { useState } from 'react';
 

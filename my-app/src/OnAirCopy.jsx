@@ -1,7 +1,7 @@
 import './OnAirCopy.css'
-import link from './pictures/link.png'
-import map from './pictures/map.png'
-import schedule from './pictures/schedule.png'
+import link from '/pictures/link.png'
+import map from '/pictures/map.png'
+import schedule from '/pictures/schedule.png'
 
 function OnAirCopy() {
     return (
