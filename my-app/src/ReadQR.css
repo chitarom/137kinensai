@@ -1,8 +1,38 @@
 .reader-container {
-    font-size: 40px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    flex-direction: column;
 }
 
 .pleaseread {
     font-size: 50px;
+}
+
+.qr-button {
+    font-size: 22px;
+    width: 40%;
+    height: 100px;
+    margin: 5px;
+    background-color: white;
+    border: 2px solid #008cff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.error-message {
+    /*適当です、もっと優しいイメージがいいかも*/
+    color: red;
+    font-size: 32px;
+    width: 600px;
+    height: 120px;
+    background-color: #ffd7f1;
+    border: 2px solid #f28c8c;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
