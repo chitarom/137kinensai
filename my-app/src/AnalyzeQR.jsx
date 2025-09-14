@@ -22,7 +22,7 @@ function AnalyzeQR() {
       (parts[0] !== "1" && parts[0] !== "2") ||
       parts[2] !== "endqr"
     ) {
-      setResultText("誤ったQRコードです");
+      setResultText("このQRコードは対応していません");
       return;
     }
 
@@ -46,6 +46,12 @@ function AnalyzeQR() {
       {funcNum === -1 ? (
         <>
           <p>{resultText}</p>
+          <button
+            onClick={() => navigate("/")}
+            className="back-home-button"
+          >
+            ホームに戻る
+          </button>
         </>
       ) : (
         <></>
