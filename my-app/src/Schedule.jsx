@@ -1,6 +1,6 @@
 import './Schedule.css';
 import { useRef, useEffect, useState } from 'react';
-import grouplist from './JSON/KodoStageGroupList.json'
+import grouplist from './JSON/ProjectData.json'
 
 
 
@@ -60,14 +60,19 @@ function Schedule() {
 
     function createList(list, newlist, length) {
         for (let i = 0; i < length; i++) {
-            const object = { label: list[i][0], day: list[i][1], starthour: list[i][2], startminute: list[i][3], finishhour: list[i][4], finishminute: list[i][5], category: list[i][6], category2: list[i][7], subtitle: list[i][8] };
-            newlist.push(object);
+            if ((list[i][0] == "講堂" && newlist == KodoGroupList) || (list[i][0] == "ステージ" && newlist == StageGroupList)) {
+                const object = { label: list[i][1], day: list[i][7][0], starthour: list[i][7][1], startminute: list[i][7][2], finishhour: list[i][7][3], finishminute: list[i][7][4], category: list[i][7][5], category2: list[i][7][6], subtitle: list[i][3] };
+                newlist.push(object);
+
+
+            }
+
 
         }
         return newlist;
     }
-    createList(grouplist.kodo_list, KodoGroupList, grouplist.kodo_list.length)
-    createList(grouplist.stage_list, StageGroupList, grouplist.stage_list.length)
+    createList(grouplist, KodoGroupList, grouplist.length)
+    createList(grouplist, StageGroupList, grouplist.length)
 
 
 
@@ -207,7 +212,7 @@ function Schedule() {
 
 
                 {currentTab == "kodo" && <>
-                <div className="sc-day-con"><h2>27(土)</h2></div>
+                    <div className="sc-day-con"><h2>27(土)</h2></div>
                     {KodoGroupList.filter(item => item.day === 'sat').map(item => (
                         <div role="button" key={item.label} className="row-con">
                             <div className="time-con">
@@ -240,7 +245,7 @@ function Schedule() {
 
                     ))}</>}
                 {currentTab == "stage" && <>
-                <div className="sc-day-con"><h2>27(土)</h2></div>
+                    <div className="sc-day-con"><h2>27(土)</h2></div>
                     {StageGroupList.filter(item => item.day === 'sat').map(item => (
                         <div role="button" key={item.label} className="row-con">
                             <div className="time-con">
