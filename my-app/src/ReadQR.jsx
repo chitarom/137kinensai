@@ -66,11 +66,19 @@ function ReadQR() {
         console.log("QRコード検出:", code.data);
         clearInterval(interval); // 検出後は停止
         stream.getTracks().forEach(track => track.stop()); // カメラ停止
+        if (videoRef.current) {
+          videoRef.current.srcObject = null; // video要素をリセット
+        }
         navigate("/analyzeqr", { state: { qrData: code.data } });
 
       }, 500);
 
-      return () => clearInterval(interval);
+      return () => {
+        clearInterval(interval)
+        // バグ回避
+        if (stream) stream.getTracks().forEach(track => track.stop());
+        if (videoRef.current) videoRef.current.srcObject = null;
+      };
     }
   }, [scanning, stream, navigate]);
 
