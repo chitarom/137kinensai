@@ -26,7 +26,7 @@ function Article() {
                     </div>
                     <img className="ar-image" src={item[4]} alt="" />
                     <div className="ar-passage">
-                        <p>{item[3]}</p>
+                        <p style={{ whiteSpace: 'pre-line' }}>{item[3]}</p>
                     </div>
 
 
