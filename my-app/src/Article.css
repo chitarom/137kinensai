@@ -1,0 +1,22 @@
+.ar-image {
+    width: 70%;
+    height: auto;
+}
+
+.ar-title-con {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #008cff;
+    margin: 10px;
+
+}
+
+.ar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+

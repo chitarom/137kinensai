@@ -1,9 +1,43 @@
 .ar-menu-title {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10%;
 }
 
 .ar-menu-title h2 {
     margin: 10px;
 
 }
+
+.ar-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ar-con {
+    width: 90%;
+    border-radius: 10px;
+    height: 100px;
+    background-size: cover;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.336);
+    text-decoration: none;
+    color: inherit;
+    background-position: 50% 50%;
+}
+
+.ar-con h3 {
+    margin: 5px 0;
+}
+
+.white-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0.301));
+    
+    padding: 5px;
+}
+

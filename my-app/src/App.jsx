@@ -15,11 +15,15 @@ import ReadQR from './ReadQR.jsx';
 import AnalyzeQR from './AnalyzeQR.jsx';
 import Passport from './Passport.jsx';
 import ArticleMenu from './ArticleMenu.jsx';
+import ScrollToTop from './ScrollTopTo.jsx';
+import Article from './Article.jsx';
+
 
 function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
@@ -33,6 +37,7 @@ function App() {
         <Route path="/analyzeqr" element={<AnalyzeQR/>}/>
         <Route path="/passport" element={<Passport/>}/>
         <Route path="/articlemenu" element={<ArticleMenu/>}/>
+        <Route path="/article" element={<Article/>}/>
       </Routes>
       <FooterNav />
     </>
