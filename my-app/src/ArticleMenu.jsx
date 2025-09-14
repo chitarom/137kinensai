@@ -1,24 +1,32 @@
 import './ArticleMenu.css'
 import { supabase } from './supabase';
 import { useEffect, useState } from 'react';
+import articlelist from "./JSON/ArticleList.json"
 
 function ArticleMenu() {
-    const [newsList,setNewsList] = useState([])
 
-    useEffect(() => {
-        const fetchNews = async () => {
-            const {data, error} = await supabase
-                .from("article")
-                .select("*")
-                .order("created_at", { ascending: false });
-            if (error) {
-                console.error("取得エラー:", error);
-            } else {
-                setNewsList(data);
-            }
+    function createList() {
+        let newlist = [];
+
+        for (let i = 0; i < articlelist.length; i++) {
+            const item = articlelist[i];
+            if (!Array.isArray(item) || item.length < 3) continue;
+
+            const [className, title, passage] = item;
+            const object = {
+                class: className,
+                title,
+                passage,
+            };
+            newlist.push(object);
         }
-        fetchNews();
-    },[]);
+
+        return newlist;
+    }
+
+    const list = createList();
+
+
 
 
     return (

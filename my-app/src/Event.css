@@ -1,0 +1,37 @@
+.title-explain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.event {
+    width: 90%;
+    margin: 10px;
+    height: 100px;
+    background-image: url("/pictures/stage-slide.png");
+    background-size: cover;
+    background-position: 50% 92%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.336);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.event p {
+    position: absolute;
+    right: 0;
+    padding: 3px;
+    color: #008bdb;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.445);
+
+}

@@ -1,0 +1,13 @@
+[
+  { "path": "/", "component": "Home" ,"name":"ホーム"},
+  { "path": "/search", "component": "Search" ,"name":"企画検索"},
+  { "path": "/map", "component": "Map" ,"name":"マップ"},
+  { "path": "/schedule", "component": "Schedule" ,"name":"予定表"},
+  { "path": "/event", "component": "Event" ,"name":"イベント"},
+  { "path": "/login", "component": "Login" ,"name":"管理者用"},
+  { "path": "/pagelist", "component": "PageList" ,"name":"ページ一覧"},
+  { "path": "/aboutfood", "component": "AboutFood" ,"name":"お食事について"},
+  { "path": "/readqr", "component": "ReadQR" ,"name":"QRコードを読み取る"},
+  { "path": "/passport", "component": "Passport" ,"name":"絵の旅パスポート"},
+  { "path": "/articlemenu", "component": "ArticleMenu" ,"name":"ニュース・記事"}
+]
