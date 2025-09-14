@@ -6,6 +6,9 @@ function StageVote() {
     const [selectedGroup, setSelectedGroup] = useState()
     const [voted, setVoted] = useState()
     const [currentPage, setCurrentPage] = useState(0)
+    const today = new Date();
+    const month = today.getMonth(); // 0〜11 → 9月は「8」
+    const date = today.getDate()
 
     useEffect(() => {
         const value = localStorage.getItem("selectedGroup")
@@ -42,16 +45,20 @@ function StageVote() {
                 </div>
 
             </div>
-            <div className="vote-subtitle">
-                <h4>どのパフォーマーが一番良かったか投票しよう！</h4>
+            <div className="vote-subtitle-con">
+                <div className="vote-subtitle">
+                    <h4>どのパフォーマーが一番良かったか投票しよう！</h4>
+
+                </div>
+                <div className="vote-subtitle red">
+                    <h4>※一度投票したら変更はできません！</h4>
+                </div>
+                <div className="vote-subtitle reverse">
+                    <h4>{voted == "voted" ? "投票完了" : "選択中"}:{selectedGroup}</h4>
+                </div>
 
             </div>
-            <div className="vote-subtitle red">
-                <h4>※一度投票したら変更はできません！</h4>
-            </div>
-            <div className="vote-subtitle reverse">
-                <h4>{voted == "voted" ? "投票完了" : "選択中"}:{selectedGroup}</h4>
-            </div>
+
             <div className="sc-day-con"><h2>27(土)</h2></div>
             {grouplist.filter(item => item[0] === 'ステージ' && item[7][0] === 'sat').map(item => (
                 <div role="button" key={item[1]} className="row-con" style={{ backgroundImage: `url(${item[4]})` }}>
@@ -72,6 +79,7 @@ function StageVote() {
                         <div className="vote-check-box">
                             <button onClick={() => handleSelect(item[1])}>{checkSelected(item[1]) ? "■" : "□"}</button>
                         </div>
+
                     </div>}
                 </div>
             ))}
@@ -93,7 +101,7 @@ function StageVote() {
                     </div>
                 </div>
             ))}
-            {voted != "voted" && <>
+            {voted != "voted" && month > 8 && date > 26 && <>
                 <div className="vote-button">
                     <button className={selectedGroup ? "checked" : "unchecked"} onClick={() => {
                         if (selectedGroup) {
