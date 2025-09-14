@@ -18,9 +18,41 @@ import cf45 from '/pictures/4-5f-monochrome.svg';
 
 function Map() {
     const location = useLocation();
+    const [isFirstLoad,setFirstLoad] = useState(true);
     const [displayMap, setDisplayMap] = useState(1);
-    const [isEnotabi, setEnotabi] = useState(false);
-    const [SVG, setSVG] = useState(f1);
+    var b = false;
+    var preSVG = f1;
+    
+    if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
+
+    if (location.state != null && isFirstLoad) {
+        b = true;
+        setFirstLoad(false);
+        const id = location.state.text;
+        var pictures = JSON.parse(localStorage.getItem("pictures"));
+        if (!pictures.includes(id)) pictures.push(id);
+        setDisplayMap(enotabipictures[id][3]);
+        switch (enotabipictures[id][3]) {
+            case 5:
+                preSVG = cf1;
+                break;
+            case 6:
+                preSVG = cf2;
+                break;
+            case 7:
+                preSVG = cf3;
+                break;
+            case 8:
+                preSVG = cf45;
+                break;
+        };
+        localStorage.setItem("pictures", JSON.stringify(pictures));
+    }
+
+    const picts = JSON.parse(localStorage.getItem("pictures"));
+    
+    const [isEnotabi, setEnotabi] = useState(b ? true : false);
+    const [SVG, setSVG] = useState(preSVG);
 
     const toggleEnotabi = () => {
         return () => {
@@ -48,7 +80,6 @@ function Map() {
                 case 4:
                     svg = bool ? cf45 : f45;
                     break;
-
             }
             setSVG(svg);
         };
@@ -369,18 +400,6 @@ function Map() {
         };
     };
 
-    console.log(location.state);
-    if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
-
-    if (location.state != null) {
-        const id = location.state.text;
-        var pictures = JSON.parse(localStorage.getItem("pictures"));
-        if (!pictures.includes(id)) pictures.push(id);
-        localStorage.setItem("pictures", JSON.stringify(pictures));
-    }
-
-    const picts = JSON.parse(localStorage.getItem("pictures"));
-
     return (
         <div className='map-parent'>
             <div
@@ -425,7 +444,26 @@ function Map() {
                             {(isEnotabi) &&
                                 (
                                     Object.keys(enotabipictures).map((key) => {
-                                        return (picts.includes(key) && enotabipictures[key][3] == displayMap) ?
+                                        if (enotabipictures[key][3] != displayMap)
+                                        return <Group key={uuid()} />;
+                                        else 
+                                        return picts.includes(key) ?
+                                            <Group key={uuid()}>
+                                            <Rect
+                                                x={enotabipictures[key][1][0]}
+                                                y={enotabipictures[key][1][1]}
+                                                width={enotabipictures[key][2][0]}
+                                                height={enotabipictures[key][2][1]}
+                                                fill="green"
+                                                key={uuid()} />
+                                                <Text
+                                                x={enotabipictures[key][1][0] + 12}
+                                                y={enotabipictures[key][1][1] + 5}
+                                                fontFamily="sans-serif"
+                                                fontSize={20}
+                                                text="!"
+                                                fill="white"
+                                                key={uuid()} /></Group> : 
                                             <Group key={uuid()}>
                                             <Rect
                                                 x={enotabipictures[key][1][0]}
@@ -441,7 +479,7 @@ function Map() {
                                                 fontSize={20}
                                                 text="?"
                                                 fill="white"
-                                                key={uuid()} /></Group> : <Group key={uuid()} />;
+                                                key={uuid()} /></Group>;
                                     })
                                 )
                             }
