@@ -16,6 +16,7 @@ import AnalyzeQR from './AnalyzeQR.jsx';
 import Passport from './Passport.jsx';
 import ArticleMenu from './ArticleMenu.jsx';
 import ScrollToTop from './ScrollTopTo.jsx';
+import Article from './Article.jsx';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/analyzeqr" element={<AnalyzeQR/>}/>
         <Route path="/passport" element={<Passport/>}/>
         <Route path="/articlemenu" element={<ArticleMenu/>}/>
+        <Route path="/article" element={<Article/>}/>
       </Routes>
       <FooterNav />
     </>
