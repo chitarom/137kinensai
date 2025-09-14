@@ -43,3 +43,101 @@
 .red {
     background-color: red;
 }
+
+.row-con {
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.vote-check-box {
+    height: 100%;
+    display: flex;
+    align-items: start;
+}
+
+.vote-check-box button {
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    vertical-align: top;
+
+
+
+}
+
+.vote-check-box h6 {
+    margin-top: 10px;
+}
+
+.reverse {
+    color: #008cff;
+    background-color: white;
+}
+
+.vote-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.349);
+    position: fixed;
+    bottom: 60px;
+}
+
+.vote-button button {
+    width: 90%;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #008cff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.288);
+    margin: 20px;
+}
+
+.vote-button button.unchecked {
+    background-color: rgb(179, 179, 179);
+    color: black;
+}
+
+.vote-attention-con {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.479);
+    padding: 40% 10%;
+}
+
+.vote-attention {
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.vote-attention button {
+    background-color: #008cff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 90%;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.288);
+    margin: 20px;
+}
+
+.vote-attention h2 {
+    color: rgb(255, 123, 0);
+    margin: 10px;
+}

@@ -14,7 +14,7 @@ function Event() {
                 <p>～記念祭をもっと楽しめるイベントをご紹介～</p>
             </div>
             <div className="event-list">
-                <Link to="/" className="event">
+                <Link to="/stagevote" className="event">
                     <p>STAGE PERFORMANCE</p>
                 </Link>
             </div>
