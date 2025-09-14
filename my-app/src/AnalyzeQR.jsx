@@ -37,7 +37,7 @@ function AnalyzeQR() {
     if (funcNum !== 1 && funcNum !== 2) return;
     
     setfuncNum(-1);
-    navigate("/map", { state: { resultText, funcNum } });
+    navigate("/map", { state: { "text":resultText, "num":funcNum } });
 
   }, [funcNum, navigate, resultText]);
 

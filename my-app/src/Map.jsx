@@ -1,9 +1,11 @@
 import './Map.css'
 import { useRef, useEffect, useState } from "react";
-import { Stage, Layer, Image as KonvaImage, Group, Rect } from "react-konva";
+import { Stage, Layer, Image as KonvaImage, Group, Rect, Text } from "react-konva";
 import data from "./JSON/ProjectData.json";
+import enotabipictures from "./JSON/EnotabiPictures.json";
 import DisplayDetail from './DisplayDetail';
 import { v4 as uuid } from "uuid";
+import { useLocation, useNavigate } from 'react-router-dom';
 import f1 from '/pictures/1f.svg';
 import f2 from '/pictures/2f.svg';
 import f3 from '/pictures/3f.svg';
@@ -15,8 +17,9 @@ import cf45 from '/pictures/4-5f-monochrome.svg';
 
 
 function Map() {
+    const location = useLocation();
     const [displayMap, setDisplayMap] = useState(1);
-    const [isEnotabi,setEnotabi] = useState(false);
+    const [isEnotabi, setEnotabi] = useState(false);
     const [SVG, setSVG] = useState(f1);
 
     const toggleEnotabi = () => {
@@ -366,6 +369,18 @@ function Map() {
         };
     };
 
+    console.log(location.state);
+    if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
+
+    if (location.state != null) {
+        const id = location.state.text;
+        var pictures = JSON.parse(localStorage.getItem("pictures"));
+        if (!pictures.includes(id)) pictures.push(id);
+        localStorage.setItem("pictures", JSON.stringify(pictures));
+    }
+
+    const picts = JSON.parse(localStorage.getItem("pictures"));
+
     return (
         <div className='map-parent'>
             <div
@@ -406,6 +421,29 @@ function Map() {
                                         onTap={obj[4]}
                                         key={uuid()} /> : <Group key={uuid()} />;
                                 })
+                            }
+                            {(isEnotabi) &&
+                                (
+                                    Object.keys(enotabipictures).map((key) => {
+                                        return (picts.includes(key) && enotabipictures[key][3] == displayMap) ?
+                                            <Group key={uuid()}>
+                                            <Rect
+                                                x={enotabipictures[key][1][0]}
+                                                y={enotabipictures[key][1][1]}
+                                                width={enotabipictures[key][2][0]}
+                                                height={enotabipictures[key][2][1]}
+                                                fill="black"
+                                                key={uuid()} />
+                                                <Text
+                                                x={enotabipictures[key][1][0] + 10}
+                                                y={enotabipictures[key][1][1] + 5}
+                                                fontFamily="sans-serif"
+                                                fontSize={20}
+                                                text="?"
+                                                fill="white"
+                                                key={uuid()} /></Group> : <Group key={uuid()} />;
+                                    })
+                                )
                             }
                         </Group>
                     </Layer>
