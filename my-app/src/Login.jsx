@@ -106,10 +106,13 @@ function Login() {
                 <button className="login" type="submit">ログイン</button>
                 <p>{result}</p>
             </form>}
-            {watchable == 1 && <div className="ad-con">
-                <button className="ad-button" onClick={() => setWatchable(2)}>コメント検閲</button>
-                <button className="ad-button" onClick={() => setWatchable(3)}>ニュース管理</button>
-            </div>}
+            {watchable == 1 && <>
+                <div className="ad-con">
+                    <button className="ad-button" onClick={() => setWatchable(2)}>コメント検閲</button>
+                    <button className="ad-button" onClick={() => setWatchable(3)}>ニュース管理</button>
+                </div>
+                <button className="ad-button" onClick={() => localStorage.clear()}>データ全削除</button>
+            </>}
             {watchable > 1 && <div className="ad-con">
                 <button className="ad-button back-button" onClick={() => setWatchable(1)}>戻る</button>
             </div>}
