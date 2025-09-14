@@ -1,0 +1,45 @@
+.vote-title-con {
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+    position: relative;
+}
+
+.vote-title-con h2 {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    background-color: white;
+
+}
+
+.vote-title-exp {
+    border: 1px solid black;
+    display: flex;
+    padding: 15px;
+    font-size: 13px;
+}
+
+.vote-title-exp img {
+    width: 40%;
+    margin-inline: 10px;
+}
+
+.vote-subtitle {
+    display: flex;
+    justify-content: center;
+    background-color: #008cff;
+    color: white;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+.vote-con {
+    position: relative;
+    width: 100%;
+}
+
+.red {
+    background-color: red;
+}

@@ -17,6 +17,8 @@ import Passport from './Passport.jsx';
 import ArticleMenu from './ArticleMenu.jsx';
 import ScrollToTop from './ScrollTopTo.jsx';
 import Article from './Article.jsx';
+import StageVote from './StageVote.jsx';
+
 
 
 function App() {
@@ -38,6 +40,7 @@ function App() {
         <Route path="/passport" element={<Passport/>}/>
         <Route path="/articlemenu" element={<ArticleMenu/>}/>
         <Route path="/article" element={<Article/>}/>
+        <Route path="/stagevote" element={<StageVote/>}/>
       </Routes>
       <FooterNav />
     </>

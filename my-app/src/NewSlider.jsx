@@ -46,7 +46,7 @@ const NewsSlider = () => {
       <div className="news-slide-box">
         <div className="ghost-slide" aria-hidden="true" />
 
-        <Link to="/" className="news-slide">
+        <Link to="/stagevote" className="news-slide">
           <img src={stageSlide} alt="" />
         </Link>
         <Link to="/" className="news-slide">
