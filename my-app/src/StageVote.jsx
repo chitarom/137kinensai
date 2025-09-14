@@ -6,6 +6,9 @@ function StageVote() {
     const [selectedGroup, setSelectedGroup] = useState()
     const [voted, setVoted] = useState()
     const [currentPage, setCurrentPage] = useState(0)
+    const today = new Date();
+    const month = today.getMonth(); // 0〜11 → 9月は「8」
+    const date = today.getDate()
 
     useEffect(() => {
         const value = localStorage.getItem("selectedGroup")
@@ -72,6 +75,7 @@ function StageVote() {
                         <div className="vote-check-box">
                             <button onClick={() => handleSelect(item[1])}>{checkSelected(item[1]) ? "■" : "□"}</button>
                         </div>
+
                     </div>}
                 </div>
             ))}
@@ -93,7 +97,7 @@ function StageVote() {
                     </div>
                 </div>
             ))}
-            {voted != "voted" && <>
+            {voted != "voted" && month > 8 && date > 26 && <>
                 <div className="vote-button">
                     <button className={selectedGroup ? "checked" : "unchecked"} onClick={() => {
                         if (selectedGroup) {
