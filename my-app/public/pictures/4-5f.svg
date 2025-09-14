@@ -60,7 +60,7 @@
       }
 
       .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20 {
-        font-family: HeiseiKakuGoStd-W7-90ms-RKSJ-H, 'Heisei Kaku Gothic Std';
+        font-family: sans-serif;
       }
 
       .cls-15, .cls-21, .cls-19, .cls-22, .cls-10, .cls-20 {
@@ -91,7 +91,7 @@
 
       .cls-26 {
         fill: #c30d23;
-        font-family: 'UDKakugo_LargePr6N-B-90ms-RKSJ-H', 'FOT-UDKakugo_Large Pr6N';
+        font-family: sans-serif;
         font-size: 8.19px;
       }
 

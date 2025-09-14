@@ -3,7 +3,7 @@
    viewBox="0 0 400.00001 330"
    version="1.1"
    id="svg10232"
-   sodipodi:docname="3f.svg"
+   sodipodi:docname="3f-monochrome.svg"
    width="400"
    height="330"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
@@ -21,9 +21,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="2.979636"
-     inkscape:cx="80.211141"
-     inkscape:cy="232.57875"
+     inkscape:zoom="2.1069208"
+     inkscape:cx="181.78187"
+     inkscape:cy="140.01475"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
@@ -213,7 +213,7 @@
      width="32.882309"
      height="29.886818"
      id="rect9717"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="67.772949"
@@ -221,7 +221,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9719"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="103.42383"
@@ -229,7 +229,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9721"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="139.07469"
@@ -237,7 +237,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9723"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="174.72556"
@@ -245,7 +245,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9725"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="267.86942"
@@ -253,7 +253,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9727"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="267.86942"
@@ -261,7 +261,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9729"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="267.86942"
@@ -269,7 +269,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9731"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="267.86942"
@@ -277,7 +277,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9733"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="267.86942"
@@ -285,7 +285,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9735"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-3"
      x="210.3764"
@@ -293,7 +293,7 @@
      width="35.650867"
      height="29.886818"
      id="rect9737"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-10"
      x="246.02728"
@@ -306,7 +306,8 @@
      class="cls-3"
      points="370.92 163.3 418.4 163.3 418.4 200.8 370.92 200.8"
      id="polyline9741"
-     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)"
+     style="fill:#727171;fill-opacity:1" />
   <polyline
      class="cls-6"
      points="116.04 79.33 87.06 79.33 87.06 59.4 116.04 59.4"
@@ -334,7 +335,7 @@
      width="32.882309"
      height="29.886818"
      id="rect9751"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="17.178679"
@@ -342,7 +343,7 @@
      width="32.882309"
      height="29.886818"
      id="rect9753"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="17.178679"
@@ -350,7 +351,7 @@
      width="32.882309"
      height="29.886818"
      id="rect9755"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="17.178679"
@@ -358,7 +359,7 @@
      width="32.882309"
      height="29.886818"
      id="rect9757"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="17.178679"
@@ -366,7 +367,7 @@
      width="32.882309"
      height="29.886818"
      id="rect9759"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="5.7186632"
@@ -374,7 +375,7 @@
      width="32.882309"
      height="29.784698"
      id="rect9761"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="38.555588"
@@ -382,7 +383,7 @@
      width="32.882309"
      height="29.784698"
      id="rect9763"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="71.437897"
@@ -390,7 +391,7 @@
      width="32.882309"
      height="29.784698"
      id="rect9765"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="104.3202"
@@ -398,7 +399,7 @@
      width="32.882309"
      height="29.784698"
      id="rect9767"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <rect
      class="cls-13"
      x="109.65308"
@@ -406,12 +407,13 @@
      width="27.549429"
      height="30.510878"
      id="rect9769"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <polyline
      class="cls-12"
      points="137.77 200.18 137.77 213.58 150.35 213.58 150.35 200.18"
      id="polyline9771"
-     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)"
+     style="fill:#727171;fill-opacity:1" />
   <polyline
      class="cls-6"
      points="150.35 227.07 150.35 213.68 137.77 213.68 137.77 227.07"
@@ -421,7 +423,8 @@
      class="cls-5"
      points="355.24 42.3 355.24 26.5 313.3 26.5 313.3 42.3"
      id="polyline9775"
-     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
+     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)"
+     style="fill:#727171;fill-opacity:1" />
   <polyline
      class="cls-8"
      points="87.06 237.54 76.96 237.54 76.96 284.41"
@@ -435,15 +438,6 @@
      y2="269.68488"
      id="line9779"
      style="stroke-width:1.13466" />
-  <g
-     id="_装飾のボード"
-     data-name="装飾のボード"
-     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)">
-    <polyline
-       class="cls-4"
-       points="159.53 200.18 166.4 190.19 174.89 190.26"
-       id="polyline9781" />
-  </g>
   <line
      class="cls-8"
      x1="303.52029"
@@ -452,50 +446,6 @@
      y2="204.58968"
      id="line9784"
      style="stroke-width:1.13466" />
-  <g
-     id="g9800"
-     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)">
-    <line
-       class="cls-2"
-       x1="200.24001"
-       y1="242.62"
-       x2="201.74001"
-       y2="242.62"
-       id="line9786" />
-    <line
-       class="cls-7"
-       x1="204.67999"
-       y1="242.62"
-       x2="344.54999"
-       y2="242.62"
-       id="line9788" />
-    <polyline
-       class="cls-2"
-       points="346.02 242.62 347.52 242.62 347.52 241.12"
-       id="polyline9790" />
-    <line
-       class="cls-11"
-       x1="347.51999"
-       y1="238.25"
-       x2="347.51999"
-       y2="211"
-       id="line9792" />
-    <line
-       class="cls-2"
-       x1="347.51999"
-       y1="209.56"
-       x2="347.51999"
-       y2="208.06"
-       id="line9794" />
-    <polygon
-       class="cls-22"
-       points="201.89,240.57 199.69,242.62 201.89,244.66 202.23,244.3 200.43,242.62 202.23,240.94 "
-       id="polygon9796" />
-    <polygon
-       class="cls-22"
-       points="345.48,209.72 347.52,207.52 349.57,209.72 349.2,210.06 347.52,208.25 345.85,210.06 "
-       id="polygon9798" />
-  </g>
   <rect
      class="cls-25"
      x="67.477943"
@@ -503,417 +453,12 @@
      width="28.468498"
      height="35.560093"
      id="rect9802"
-     style="stroke-width:1.13466" />
+     style="stroke-width:1.13466;fill:#727171;fill-opacity:1" />
   <polyline
      class="cls-8"
      points="131.68 42.42 131.68 189.67 131.68 158.54 156.77 158.7 156.77 189.88 150.35 189.94 150.35 227.07"
      id="polyline9804"
      transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
-  <text
-     class="cls-22"
-     id="text9855"
-     x="25.790716"
-     y="77.372139"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9849"
-       style="stroke-width:1.13466"><tspan
-         x="25.790716"
-         y="77.372139"
-         id="tspan9847"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan9853"
-       style="stroke-width:1.13466"><tspan
-         x="23.997959"
-         y="92.701332"
-         id="tspan9851"
-         style="stroke-width:1.13466">2A</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9865"
-     x="77.996208"
-     y="35.537403"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9859"
-       style="stroke-width:1.13466"><tspan
-         x="77.996208"
-         y="35.537403"
-         id="tspan9857"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9863"
-       style="stroke-width:1.13466"><tspan
-         x="79.187599"
-         y="50.866596"
-         id="tspan9861"
-         style="stroke-width:1.13466">2I</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9877"
-     x="113.42014"
-     y="35.537403"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9869"
-       style="stroke-width:1.13466"><tspan
-         x="113.42014"
-         y="35.537403"
-         id="tspan9867"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-30"
-       id="tspan9875"
-       style="stroke-width:1.13466"><tspan
-         class="cls-26"
-         x="111.32102"
-         y="50.866596"
-         id="tspan9871"
-         style="stroke-width:1.13466">2</tspan><tspan
-         class="cls-14"
-         x="119.67209"
-         y="50.866596"
-         id="tspan9873"
-         style="stroke-width:1.13466">H</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9887"
-     x="149.07101"
-     y="35.537403"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9881"
-       style="stroke-width:1.13466"><tspan
-         x="149.07101"
-         y="35.537403"
-         id="tspan9879"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9885"
-       style="stroke-width:1.13466"><tspan
-         x="146.8017"
-         y="50.866596"
-         id="tspan9883"
-         style="stroke-width:1.13466">2G</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9897"
-     x="184.72188"
-     y="35.537403"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9891"
-       style="stroke-width:1.13466"><tspan
-         x="184.72188"
-         y="35.537403"
-         id="tspan9889"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9895"
-       style="stroke-width:1.13466"><tspan
-         x="183.80281"
-         y="50.866596"
-         id="tspan9893"
-         style="stroke-width:1.13466">2F</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9907"
-     x="277.87708"
-     y="65.424225"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9901"
-       style="stroke-width:1.13466"><tspan
-         x="277.87708"
-         y="65.424225"
-         id="tspan9899"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9905"
-       style="stroke-width:1.13466"><tspan
-         x="276.9126"
-         y="80.753418"
-         id="tspan9903"
-         style="stroke-width:1.13466">2E</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9917"
-     x="277.87708"
-     y="95.299698"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9911"
-       style="stroke-width:1.13466"><tspan
-         x="277.87708"
-         y="95.299698"
-         id="tspan9909"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9915"
-       style="stroke-width:1.13466"><tspan
-         x="275.46024"
-         y="110.62888"
-         id="tspan9913"
-         style="stroke-width:1.13466">2D</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9927"
-     x="277.87708"
-     y="125.18652"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9921"
-       style="stroke-width:1.13466"><tspan
-         x="277.87708"
-         y="125.18652"
-         id="tspan9919"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9925"
-       style="stroke-width:1.13466"><tspan
-         x="276.27719"
-         y="140.5157"
-         id="tspan9923"
-         style="stroke-width:1.13466">2C</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9937"
-     x="277.87708"
-     y="155.22083"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9931"
-       style="stroke-width:1.13466"><tspan
-         x="277.87708"
-         y="155.22083"
-         id="tspan9929"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9935"
-       style="stroke-width:1.13466"><tspan
-         x="276.3793"
-         y="170.55002"
-         id="tspan9933"
-         style="stroke-width:1.13466">2B</tspan></tspan></text>
-  <text
-     class="cls-23"
-     id="text9947"
-     x="277.87708"
-     y="185.35727"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9941"
-       style="stroke-width:1.13466"><tspan
-         x="277.87708"
-         y="185.35727"
-         id="tspan9939"
-         style="stroke-width:1.13466">中学</tspan></tspan><tspan
-       class="cls-15"
-       id="tspan9945"
-       style="stroke-width:1.13466"><tspan
-         x="275.86871"
-         y="200.68646"
-         id="tspan9943"
-         style="stroke-width:1.13466">2A</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text9957"
-     x="25.790716"
-     y="107.79224"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9951"
-       style="stroke-width:1.13466"><tspan
-         x="25.790716"
-         y="107.79224"
-         id="tspan9949"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan9955"
-       style="stroke-width:1.13466"><tspan
-         x="24.508551"
-         y="123.12144"
-         id="tspan9953"
-         style="stroke-width:1.13466">2B</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text9967"
-     x="25.790716"
-     y="137.16847"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9961"
-       style="stroke-width:1.13466"><tspan
-         x="25.790716"
-         y="137.16847"
-         id="tspan9959"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan9965"
-       style="stroke-width:1.13466"><tspan
-         x="24.406437"
-         y="152.49765"
-         id="tspan9963"
-         style="stroke-width:1.13466">2C</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text9977"
-     x="25.790716"
-     y="167.07797"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9971"
-       style="stroke-width:1.13466"><tspan
-         x="25.790716"
-         y="167.07797"
-         id="tspan9969"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan9975"
-       style="stroke-width:1.13466"><tspan
-         x="23.589483"
-         y="182.40717"
-         id="tspan9973"
-         style="stroke-width:1.13466">2D</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text9987"
-     x="25.790716"
-     y="196.88536"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9981"
-       style="stroke-width:1.13466"><tspan
-         x="25.790716"
-         y="196.88536"
-         id="tspan9979"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan9985"
-       style="stroke-width:1.13466"><tspan
-         x="25.04184"
-         y="212.21457"
-         id="tspan9983"
-         style="stroke-width:1.13466">2E</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text9997"
-     x="25.790716"
-     y="226.79488"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan9991"
-       style="stroke-width:1.13466"><tspan
-         x="25.790716"
-         y="226.79488"
-         id="tspan9989"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan9995"
-       style="stroke-width:1.13466"><tspan
-         x="25.087227"
-         y="242.12407"
-         id="tspan9993"
-         style="stroke-width:1.13466">2F</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text10007"
-     x="14.330701"
-     y="280.15771"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan10001"
-       style="stroke-width:1.13466"><tspan
-         x="14.330701"
-         y="280.15771"
-         id="tspan9999"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan10005"
-       style="stroke-width:1.13466"><tspan
-         x="12.276969"
-         y="295.48694"
-         id="tspan10003"
-         style="stroke-width:1.13466">2G</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text10017"
-     x="47.167618"
-     y="280.15771"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan10011"
-       style="stroke-width:1.13466"><tspan
-         x="47.167618"
-         y="280.15771"
-         id="tspan10009"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan10015"
-       style="stroke-width:1.13466"><tspan
-         x="45.068508"
-         y="295.48694"
-         id="tspan10013"
-         style="stroke-width:1.13466">2H</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text10027"
-     x="80.049927"
-     y="280.15771"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan10021"
-       style="stroke-width:1.13466"><tspan
-         x="80.049927"
-         y="280.15771"
-         id="tspan10019"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-27"
-       id="tspan10025"
-       style="stroke-width:1.13466"><tspan
-         x="81.456909"
-         y="295.48694"
-         id="tspan10023"
-         style="stroke-width:1.13466">2I</tspan></tspan></text>
-  <text
-     class="cls-22"
-     id="text10039"
-     x="112.93223"
-     y="280.15771"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-19"
-       id="tspan10031"
-       style="stroke-width:1.13466"><tspan
-         x="112.93223"
-         y="280.15771"
-         id="tspan10029"
-         style="stroke-width:1.13466">高校</tspan></tspan><tspan
-       class="cls-30"
-       id="tspan10037"
-       style="stroke-width:1.13466"><tspan
-         x="112.80742"
-         y="295.48694"
-         id="tspan10033"
-         style="stroke-width:1.13466">2</tspan><tspan
-         class="cls-26"
-         x="122.02083"
-         y="295.48694"
-         id="tspan10035"
-         style="stroke-width:1.13466">J</tspan></tspan></text>
-  <text
-     class="cls-20"
-     id="text10045"
-     x="351.05481"
-     y="179.19456"
-     style="stroke-width:1.13466"><tspan
-       x="351.05481"
-       y="179.19456"
-       id="tspan10041"
-       style="stroke-width:1.13466">美術室</tspan><tspan
-       x="351.05481"
-       y="195.07974"
-       id="tspan10043"
-       style="stroke-width:1.13466">工作室</tspan></text>
   <g
      id="_階段-2"
      data-name="階段"
@@ -1139,105 +684,6 @@
      points="116.04 59.78 116.04 26.69 355.26 26.47 354.97 147.85 370.93 147.79 370.91 163.3 418.4 163.3"
      id="polyline10166"
      transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)" />
-  <g
-     id="g10177"
-     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)">
-    <text
-       class="cls-17"
-       transform="translate(376.84,91.33)"
-       id="text10173"><tspan
-         x="0"
-         y="0"
-         id="tspan10171">中学校舎</tspan></text>
-    <rect
-       class="cls-1"
-       x="369.01999"
-       y="85.349998"
-       width="6.5700002"
-       height="6.5700002"
-       id="rect10175" />
-  </g>
-  <g
-     id="g10185"
-     transform="matrix(1.1346552,0,0,1.1346552,-81.6044,-23.249085)">
-    <text
-       class="cls-17"
-       transform="translate(376.84,80.87)"
-       id="text10181"><tspan
-         x="0"
-         y="0"
-         id="tspan10179">高校校舎</tspan></text>
-    <rect
-       class="cls-9"
-       x="369.01999"
-       y="74.900002"
-       width="6.5700002"
-       height="6.5700002"
-       id="rect10183" />
-  </g>
-  <text
-     class="cls-22"
-     id="text10195"
-     x="112.31953"
-     y="221.29181"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-31"
-       id="tspan10189"
-       style="stroke-width:1.13466"><tspan
-         x="112.31953"
-         y="221.29181"
-         id="tspan10187"
-         style="stroke-width:1.13466">301</tspan></tspan><tspan
-       class="cls-16"
-       id="tspan10193"
-       style="stroke-width:1.13466"><tspan
-         x="111.85431"
-         y="227.96356"
-         id="tspan10191"
-         style="stroke-width:1.13466">補助教室</tspan></tspan></text>
-  <text
-     class="cls-18"
-     id="text10199"
-     x="118.27477"
-     y="194.44579"
-     style="stroke-width:1.13466"><tspan
-       x="118.27477"
-       y="194.44579"
-       id="tspan10197"
-       style="stroke-width:1.13466">この階まで</tspan></text>
-  <text
-     class="cls-18"
-     id="text10203"
-     x="181.6655"
-     y="264.44153"
-     style="stroke-width:1.13466"><tspan
-       x="181.6655"
-       y="264.44153"
-       id="tspan10201"
-       style="stroke-width:1.13466">１階または２階経由でご移動下さい</tspan></text>
-  <text
-     class="cls-21"
-     id="text10213"
-     x="218.43246"
-     y="37.97691"
-     style="font-size:13.6159px;stroke-width:1.13466"><tspan
-       class="cls-28"
-       x="218.43246"
-       y="37.97691"
-       id="tspan10205"
-       style="stroke-width:1.13466">３</tspan><tspan
-       class="cls-34"
-       x="226.76083"
-       y="37.647861"
-       id="tspan10207"
-       style="stroke-width:1.13466">階</tspan><tspan
-       class="cls-34"
-       id="tspan10211"
-       style="stroke-width:1.13466"><tspan
-         x="215.11929"
-         y="49.539051"
-         id="tspan10209"
-         style="stroke-width:1.13466">学習室</tspan></tspan></text>
   <g
      id="_男子-3"
      data-name="男子"
