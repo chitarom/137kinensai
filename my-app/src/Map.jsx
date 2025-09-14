@@ -8,28 +8,66 @@ import f1 from '/pictures/1f.svg';
 import f2 from '/pictures/2f.svg';
 import f3 from '/pictures/3f.svg';
 import f45 from '/pictures/4-5f.svg';
+import cf1 from '/pictures/1f-monochrome.svg';
+import cf2 from '/pictures/2f-monochrome.svg';
+import cf3 from '/pictures/3f-monochrome.svg';
+import cf45 from '/pictures/4-5f-monochrome.svg';
 
 
 function Map() {
     const [displayMap, setDisplayMap] = useState(1);
+    const [isEnotabi,setEnotabi] = useState(false);
     const [SVG, setSVG] = useState(f1);
-    const changeDisplayMap = [temp(0), temp(1), temp(2), temp(3), temp(4)];
-    function temp(int) {
+
+    const toggleEnotabi = () => {
         return () => {
-            setDisplayMap(int);
+            var bool = !isEnotabi;
+            var int = displayMap;
+            setEnotabi(bool);
+            if (int <= 4) {
+                setDisplayMap(bool ? int + 4 : int);
+                if (!bool) int += 4;
+            } else {
+                setDisplayMap(bool ? int : int - 4);
+                if (!bool) int -= 4;
+            }
             var svg;
             switch (int) {
                 case 1:
-                    svg = f1;
+                    svg = bool ? cf1 : f1;
                     break;
                 case 2:
-                    svg = f2;
+                    svg = bool ? cf2 : f2;
                     break;
                 case 3:
-                    svg = f3;
+                    svg = bool ? cf3 : f3;
                     break;
                 case 4:
-                    svg = f45;
+                    svg = bool ? cf45 : f45;
+                    break;
+
+            }
+            setSVG(svg);
+        };
+    };
+
+    const changeDisplayMap = [temp(0), temp(1), temp(2), temp(3), temp(4)];
+    function temp(int) {
+        return () => {
+            setDisplayMap(isEnotabi ? int + 4 : int);
+            var svg;
+            switch (int) {
+                case 1:
+                    svg = isEnotabi ? cf1 : f1;
+                    break;
+                case 2:
+                    svg = isEnotabi ? cf2 : f2;
+                    break;
+                case 3:
+                    svg = isEnotabi ? cf3 : f3;
+                    break;
+                case 4:
+                    svg = isEnotabi ? cf45 : f45;
                     break;
 
             }
@@ -374,10 +412,13 @@ function Map() {
                 </Stage>
             </div>
             <div className='map-switches'>
-                <button className={'map-switch' + (displayMap == 1 ? ' active' : '')} onClick={changeDisplayMap[1]}>1F</button>
-                <button className={'map-switch' + (displayMap == 2 ? ' active' : '')} onClick={changeDisplayMap[2]}>2F</button>
-                <button className={'map-switch' + (displayMap == 3 ? ' active' : '')} onClick={changeDisplayMap[3]}>3F</button>
-                <button className={'map-switch' + (displayMap == 4 ? ' active' : '')} onClick={changeDisplayMap[4]}>4-5F</button>
+                <button className={'map-switch' + (displayMap == 1 || displayMap == 5 ? ' active' : '')} onClick={changeDisplayMap[1]}>1F</button>
+                <button className={'map-switch' + (displayMap == 2 || displayMap == 6 ? ' active' : '')} onClick={changeDisplayMap[2]}>2F</button>
+                <button className={'map-switch' + (displayMap == 3 || displayMap == 7 ? ' active' : '')} onClick={changeDisplayMap[3]}>3F</button>
+                <button className={'map-switch' + (displayMap == 4 || displayMap == 8 ? ' active' : '')} onClick={changeDisplayMap[4]}>4-5F</button>
+            </div>
+            <div className='enotabi-switch-wrap'>
+                <button className={'enotabi-switch' + (isEnotabi ? ' enotabi' : '')} onClick={toggleEnotabi()}>{isEnotabi ? 'フロアマップへ' : '絵の旅マップへ'}</button>
             </div>
             {(displayingDetail >= 0) &&
                 (

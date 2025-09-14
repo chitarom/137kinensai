@@ -51,3 +51,21 @@
         color: white;
     }
 }
+
+.enotabi-switch-wrap {
+    position: fixed;
+    left: 10px;
+    top: 90px;
+}
+
+.enotabi-switch {
+    border: 1px solid #008cff;
+    color: #008cff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: white;
+    &.enotabi {
+        background-color: #008cff;
+        color: white;
+    }
+}
