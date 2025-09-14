@@ -9,6 +9,9 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
     const [favoriteSwitch, setFavoriteSwitch] = useState(false);
     const [CommentList, setCommentList] = useState([]);
     const [CurrentCommmentList, setCurrentCommentList] = useState([]);
+    const [newComment, setNewComment] = useState("");
+    const [modalState, setModalState] = useState(null);
+    const [isFading, setIsFading] = useState(false);
 
     const hideDDetail = () => {
         setDisplayingDetail(-1);
@@ -36,20 +39,21 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
         setFavoriteSwitch(!favoriteSwitch);
     }
 
-    // コメントに関して
-    useEffect(() => {
-        const fetchComments = async () => {
-            const { data, error } = await supabase
-                .from("comment")
-                .select("*")
-                .order("created_at", { ascending: true }) // 最新のものは後ろに来る
-                .eq("check", true); // 検閲済み
-            if (error) {
-                console.error("取得エラー:", error);
-            } else {
-                setCommentList(data);
-            }
+    // 以下、コメントに関して
+    const fetchComments = async () => {
+        const { data, error } = await supabase
+            .from("comment")
+            .select("*")
+            .order("created_at", { ascending: false }) // 最新のものは上に来る
+            .eq("check", true); // 検閲済み
+        if (error) {
+            console.error("取得エラー:", error);
+        } else {
+            setCommentList(data);
         }
+    }
+
+    useEffect(() => {
         fetchComments();
     }, []);
 
@@ -62,6 +66,60 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
         // console.log("Filtered");
         // console.log(data);
     }, [CommentList, displayDetailContents]);
+
+    // 草稿保存用
+    const localStorageKey = `draftComment-${displayDetailContents[1]}`;
+
+    // マウント時に保存済みコメントを読み込む
+    useEffect(() => {
+        const saved = localStorage.getItem(localStorageKey);
+        if (saved) setNewComment(saved);
+    }, [localStorageKey]);
+
+    // localStorage に保存
+    useEffect(() => {
+        if (newComment.trim()) {
+            localStorage.setItem(localStorageKey, newComment);
+        } else {
+            localStorage.removeItem(localStorageKey);
+        }
+    }, [newComment, localStorageKey]);
+
+    const handleRequestSend = () => {
+        if (!newComment.trim()) return;
+        setModalState("confirm");
+    };
+
+    const handleAddComment = async () => {
+        if (!newComment.trim()) return;
+
+        const { data, error } = await supabase
+            .from("comment")
+            .insert([
+                {
+                    name: displayDetailContents[1],
+                    passage: newComment,
+                    check: false // 未検閲
+                }
+            ]);
+
+        if (error) {
+            console.error("追加エラー:", error);
+        } else {
+            setNewComment(""); // 入力欄をクリア
+            localStorage.removeItem(localStorageKey);
+            fetchComments();
+            setModalState("toast");
+
+            setTimeout(() => {
+                setIsFading(true);
+                setTimeout(() => {
+                    setModalState(null);
+                    setIsFading(false);
+                }, 1200);
+            }, 4000);
+        }
+    };
 
     return (
         <div className='detail-wrap'>
@@ -92,6 +150,42 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
                         <p className='no-comment'>まだコメントはありません</p>
                     )}
                 </div>
+                <div className="add-comment-section">
+                    <textarea
+                        className="add-comment"
+                        value={newComment}
+                        onChange={(e) => setNewComment(e.target.value)}
+                        placeholder="コメントを書く..."
+                        rows={4} // 初期設定したい行数
+                    />
+                    <button
+                        className="comment-submit"
+                        onClick={handleRequestSend}
+                        disabled={!newComment.trim()}
+                    >送信する</button>
+                </div>
+                {modalState && (
+                    <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
+                        <div className="modal-content">
+                            {modalState === "confirm" && (
+                                <>
+                                    <p>この内容で送信してもよろしいですか？</p>
+                                    {/*<p className="confirm-comment">{newComment}</p>/**/}
+                                    <div className="confirm-buttons">
+                                        <button onClick={handleAddComment} className="confirm-send">送信</button>
+                                        <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
+                                    </div>
+                                </>
+                            )}
+                            {modalState === "toast" && (
+                                <>
+                                    <span>コメントの送信が完了しました！<br />ありがとうございます！！</span>
+                                    <button className="toast-close" onClick={() => setModalState(null)}>×</button>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )
