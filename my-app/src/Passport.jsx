@@ -20,14 +20,14 @@ function Passport() {
         image.src = giftpicture;
     }, [])
 
-    if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
-    var pictures = JSON.parse(localStorage.getItem("pictures"));
+    if (localStorage.getItem("pieces") == null) localStorage.setItem("pieces", "[]");
+    var pieces = JSON.parse(localStorage.getItem("pieces"));
 
     var list = [];
     var list1 = [];
     var list2 = [];
     for (let i = 0; i < 6; i++) {
-        if (pictures.indexOf("map.at_" + i) > -1)
+        if (pieces.indexOf(i) > -1)
             list1.push(
                 <Group
                     clip={
