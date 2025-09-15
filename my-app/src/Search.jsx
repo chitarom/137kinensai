@@ -35,6 +35,12 @@ function Search() {
         }
     }
     */
+    if (location.search != "" && location.search.includes("?keyword=") && !queried) {
+        var kw = decodeURI(location.search.split("?keyword=")[1]);
+        console.log(kw);
+        setKeyword(kw);
+        setQueried(true);
+    }
     categories.map((category) => setFilterList.push(temp(category)));
     function temp(str) {
         //filter[0] (categories) の中身を変更する関数のテンプレート
@@ -69,7 +75,7 @@ function Search() {
     return (
         <div>
             <div className='search-wrap'>
-                <input className='search-box2' type="text" id='keyword' onChange={search} placeholder='キーワードを入力...' />
+                <input className='search-box2' value={keyword} type="text" id='keyword' onChange={search} placeholder='キーワードを入力...' />
             </div>
             <div className='filter-wrap'>
                 <div className='filter-list'>
