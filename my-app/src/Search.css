@@ -401,6 +401,30 @@
     border-radius: 10px;
 }
 
+.comment-header,
+.comment-footer {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.comment-divider {
+    flex-grow: 1;
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 8px;
+}
+
+.comment-title {
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: italic;
+    color: #333;
+}
+
+
 .detail-comments {
     display: flex;
     flex-direction: column;
