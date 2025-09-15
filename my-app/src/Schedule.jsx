@@ -278,7 +278,7 @@ function Schedule() {
                 {currentTab == 'stage' && <>
                     <div className="sc-day-con"><h2>27(土)</h2></div>
                     {StageGroupList.filter(item => item.day === 'sat').map(item => (
-                        <div onClick={showDetail(item)} role="button" key={item.label} className="row-con">
+                        <div onClick={showDetail(item)} role="button" key={item.label} className="row-con" style={{ '--bg-image': `url(/pictures/${item.images[0]})` }}>
                             <div className="time-con">
                                 <p>{item.starthour}:{item.startminute}</p>
                                 <p>～</p>
@@ -294,7 +294,7 @@ function Schedule() {
                     ))}
                     <div className="sc-day-con sun"><h2>28(日)</h2></div>
                     {StageGroupList.filter(item => item.day === 'sun').map(item => (
-                        <div onClick={showDetail(item)} role="button" key={item.label} className="row-con">
+                        <div onClick={showDetail(item)} role="button" key={item.label} className="row-con" style={{ '--bg-image': `url(/pictures/${item.images[0]})` }}>
                             <div className="time-con">
                                 <p>{item.starthour}:{item.startminute}</p>
                                 <p>～</p>

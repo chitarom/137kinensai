@@ -69,7 +69,7 @@ function Passport() {
                 </p>}
             </div>
             <div className="passport-menu">
-                <Link to="/" className="pass-menu-button">
+                <Link to="/map" className="pass-menu-button">
                     <img src={scope} alt="スコープアイコン" />
                     <h2>絵を探す</h2>
                 </Link>

@@ -61,7 +61,7 @@ function StageVote() {
 
             <div className="sc-day-con"><h2>27(土)</h2></div>
             {grouplist.filter(item => item[0] === 'ステージ' && item[7][0] === 'sat').map(item => (
-                <div role="button" key={item[1]} className="row-con" style={{ backgroundImage: `url(${item[4]})` }}>
+                <div role="button" key={item[1]} className="row-con" style={{ '--bg-image': `url(/pictures/${item[5][0]})` }}>
                     <div className="time-con">
                         <p>{item[7][1]}:{item[7][2]}</p>
                         <p>～</p>
@@ -85,7 +85,7 @@ function StageVote() {
             ))}
             <div className="sc-day-con sun"><h2>28(日)</h2></div>
             {grouplist.filter(item => item[0] === 'ステージ' && item[7][0] === 'sun').map(item => (
-                <div role="button" key={item[1]} className="row-con" style={{ backgroundImage: `url(${item[4]})` }}>
+                <div role="button" key={item[1]} className="row-con" style={{ '--bg-image': `url(/pictures/${item[5][0]})` }}>
                     <div className="time-con">
                         <p>{item[7][1]}:{item[7][2]}</p>
                         <p>～</p>
