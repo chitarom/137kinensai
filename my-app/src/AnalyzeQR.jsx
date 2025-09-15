@@ -48,7 +48,6 @@ function AnalyzeQR() {
     <div className="analyzer-container">
       {funcNum === -1 ? (
         <>
-          <p>{resultText}</p>
           <button
             onClick={() => navigate("/")}
             className="back-home-button"
