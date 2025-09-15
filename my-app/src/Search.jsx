@@ -108,7 +108,7 @@ function Search() {
                 </div>)
             }
             {(displayingDetail >= 0) &&
-                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />)
+                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={false} />)
             }
         </div>
     );

@@ -251,3 +251,7 @@
     color: #ffffff;
     font-weight: 550;
 }
+
+.hidden {
+    pointer-events: none;
+}
