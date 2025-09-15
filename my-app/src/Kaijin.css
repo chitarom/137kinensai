@@ -1,0 +1,136 @@
+.kaijin-con {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: none;
+    position: relative;
+    min-height: calc(100vh - 140px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.kj-title-con img {
+    width: 50%;
+}
+
+.kj-title-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.oo8cff {
+    color: #008cff;
+}
+
+.kj-ex-button {
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+}
+
+.kj-explanation-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.276);
+    margin: 0 20px;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+.kj-explanation-con p {
+    font-size: 15px;
+    color: white;
+}
+
+.kj-rule-con {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 10px;
+}
+
+.kj-rule-button-con {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.kj-rule-button-con button {
+    width: 50%;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #008cff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+.kj-rule-exp-con {
+    width: 100%;
+    padding: 0 5%;
+}
+
+.kj-rule-button-con button.unselected {
+    color: black;
+    background-color: transparent;
+}
+
+.kj-change-button {
+    position: fixed;
+    right: 0;
+    bottom: 60px;
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #008cff;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.361);
+}
+
+.kj-group-con.sumabura {
+    border: 3px double #008cff;
+    padding: 5px;
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.kj-group-list-con {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kj-group-con.supura {
+    border: 3px double #ffee00;
+    padding: 5px;
+    width: 90%;
+    margin: 5px;
+    gap: 20px;
+}
+
+.kj-group-con.supura p {
+    font-size: 12px;
+
+}

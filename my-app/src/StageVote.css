@@ -31,8 +31,14 @@
     background-color: #008cff;
     color: white;
     padding: 5px;
+    
+}
+
+.vote-subtitle-con {
     position: sticky;
-    top: 0;
+    top: 80px;
+    z-index: 10;
+
 }
 
 .vote-con {
