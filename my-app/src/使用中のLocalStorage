@@ -1,3 +1,7 @@
 pictures:企画検索にて、企画のお気に入り情報が入っている
+pieces:絵の旅ピース（何番目のピースがはまっているか）
 selectedGroup:ステージ投票機能にて、選択中の団体
 voted:ステージ投票をしたか否か
+
+draftCommentKey:各企画に対するコメントの下書き
+commentCount:各企画に対するコメントの今までの投稿回数
