@@ -6,6 +6,7 @@ import enotabipictures from "./JSON/EnotabiPictures.json";
 import DisplayDetail from './DisplayDetail';
 import { v4 as uuid } from "uuid";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import f1 from '/pictures/1f.svg';
 import f2 from '/pictures/2f.svg';
 import f3 from '/pictures/3f.svg';
@@ -14,15 +15,28 @@ import cf1 from '/pictures/1f-monochrome.svg';
 import cf2 from '/pictures/2f-monochrome.svg';
 import cf3 from '/pictures/3f-monochrome.svg';
 import cf45 from '/pictures/4-5f-monochrome.svg';
+import giftpicture from "/pictures/giftpicture.png";
+import sampjpg from "/pictures/sample.jpg";
 
 
 function Map() {
+    const samps = [sampjpg,sampjpg,sampjpg,sampjpg,sampjpg,sampjpg];
     const location = useLocation();
-    const [isFirstLoad,setFirstLoad] = useState(true);
+    const [isFirstLoad, setFirstLoad] = useState(true);
     const [displayMap, setDisplayMap] = useState(1);
+    const [gotNewPiece, setGotNewPiece] = useState([false, null]);
+    const [sample, setSample] = useState({ "map.at_0": null, "map.at_1": null, "map.at_2": null, "map.at_3": null, "map.at_4": null, "map.at_5": null });
+
+    for (let i = 0; i < 6; i++) {
+        const samp0 = new window.Image();
+        samp0.crossOrigin = "anonymous";
+        samp0.onload = () => { var s = sample; s["map.at_"+i] = samp0; setSample(s) };
+        samp0.src = samps[i];
+    }
+
     var b = false;
     var preSVG = f1;
-    
+
     if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
 
     if (location.state != null && isFirstLoad) {
@@ -47,10 +61,18 @@ function Map() {
                 break;
         };
         localStorage.setItem("pictures", JSON.stringify(pictures));
+        //ここに画像を大きく見せるプログラムを書く
+        setGotNewPiece([true, id.split('_')[1]])
     }
 
+    const closeGNP = () => {
+        return () => {
+            setGotNewPiece([false, gotNewPiece[1]]);
+        }
+    };
+
     const picts = JSON.parse(localStorage.getItem("pictures"));
-    
+
     const [isEnotabi, setEnotabi] = useState(b ? true : false);
     const [SVG, setSVG] = useState(preSVG);
 
@@ -445,41 +467,35 @@ function Map() {
                                 (
                                     Object.keys(enotabipictures).map((key) => {
                                         if (enotabipictures[key][3] != displayMap)
-                                        return <Group key={uuid()} />;
-                                        else 
-                                        return picts.includes(key) ?
-                                            <Group key={uuid()}>
-                                            <Rect
-                                                x={enotabipictures[key][1][0]}
-                                                y={enotabipictures[key][1][1]}
-                                                width={enotabipictures[key][2][0]}
-                                                height={enotabipictures[key][2][1]}
-                                                fill="green"
-                                                key={uuid()} />
-                                                <Text
-                                                x={enotabipictures[key][1][0] + 12}
-                                                y={enotabipictures[key][1][1] + 5}
-                                                fontFamily="sans-serif"
-                                                fontSize={20}
-                                                text="!"
-                                                fill="white"
-                                                key={uuid()} /></Group> : 
-                                            <Group key={uuid()}>
-                                            <Rect
-                                                x={enotabipictures[key][1][0]}
-                                                y={enotabipictures[key][1][1]}
-                                                width={enotabipictures[key][2][0]}
-                                                height={enotabipictures[key][2][1]}
-                                                fill="black"
-                                                key={uuid()} />
-                                                <Text
-                                                x={enotabipictures[key][1][0] + 10}
-                                                y={enotabipictures[key][1][1] + 5}
-                                                fontFamily="sans-serif"
-                                                fontSize={20}
-                                                text="?"
-                                                fill="white"
-                                                key={uuid()} /></Group>;
+                                            return <Group key={uuid()} />;
+                                        else
+                                            return picts.includes(key) ?
+                                                <Group key={uuid()}>
+                                                    <KonvaImage
+                                                        image={sample[key]}
+                                                        x={enotabipictures[key][1][0]}
+                                                        y={enotabipictures[key][1][1]}
+                                                        width={enotabipictures[key][2][0]}
+                                                        height={enotabipictures[key][2][1]}
+                                                        fill="black"
+                                                        key={uuid()}
+                                                    /></Group> :
+                                                <Group key={uuid()}>
+                                                    <Rect
+                                                        x={enotabipictures[key][1][0]}
+                                                        y={enotabipictures[key][1][1]}
+                                                        width={enotabipictures[key][2][0]}
+                                                        height={enotabipictures[key][2][1]}
+                                                        fill="black"
+                                                        key={uuid()} />
+                                                    <Text
+                                                        x={enotabipictures[key][1][0] + 10}
+                                                        y={enotabipictures[key][1][1] + 5}
+                                                        fontFamily="sans-serif"
+                                                        fontSize={20}
+                                                        text="?"
+                                                        fill="white"
+                                                        key={uuid()} /></Group>;
                                     })
                                 )
                             }
@@ -500,6 +516,32 @@ function Map() {
                 (
                     <DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} />
                 )}
+            {(gotNewPiece[0]) &&
+                (
+                    <div className='gotnewpiece-wrap-wrap'>
+                        <div className='gnp-margin1' onClick={closeGNP()}></div>
+                        <div className='gotnewpiece-wrap'>
+                            <div className='gnp-margin2' onClick={closeGNP()}></div>
+                            <div className='gotnewpiece'>
+                                <h3>絵をゲットしました！</h3>
+                                <div className='gift-wrap'>
+                                    <img src="/pictures/sample.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div className='gnp-margin2' onClick={closeGNP()}></div>
+                        </div>
+                        <div className='gnp-margin1' onClick={closeGNP()}></div>
+                    </div>
+                )
+            }
+            {
+                (gotNewPiece[1] != null) &&
+                (
+                    <div className='achievement'>
+                        <Link to="/passport">ピースゲット！</Link>
+                    </div>
+                )
+            }
         </div>
     );
 
