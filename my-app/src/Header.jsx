@@ -36,16 +36,17 @@ function Header() {
                 {/* <h3>あと<span>{limitDays}</span>日</h3> */}
             </div>
             {displayHamburger &&
-                (
-                    <div className='hamburger-menu'>
-                        <Link to="/articlemenu" className='hamburger-menu-tab'>ニュース・記事</Link>
-                        <Link to="/passport" className='hamburger-menu-tab'>絵の旅パスポート</Link>
-                        <Link to="/" className='hamburger-menu-tab'>ステージ投票</Link>
-                        <Link to="/" className='hamburger-menu-tab'>講堂企画</Link>
-                        <Link to="/" className='hamburger-menu-tab'>模擬店</Link>
-                        <Link to="/pagelist" className='hamburger-menu-tab'>ページ一覧</Link>
-                        <Link to="/login" className='hamburger-menu-tab'>管理者専用</Link>
+                (<div className="hamburger-attention-con" onClick={() => setDisplayHamburger(false)}>
+                    <div className='hamburger-menu' onClick={(e) => e.stopPropagation()}>
+                        <Link to="/articlemenu" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>ニュース・記事</Link>
+                        <Link to="/passport" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>絵の旅パスポート</Link>
+                        <Link to="/stagevote" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>ステージ投票</Link>
+                        <Link to="/" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>講堂企画</Link>
+                        <Link to="/" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>模擬店</Link>
+                        <Link to="/pagelist" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>ページ一覧</Link>
+                        <Link to="/login" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>管理者専用</Link>
                     </div>
+                </div>
                 )
             }
         </div>
