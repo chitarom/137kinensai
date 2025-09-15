@@ -2,6 +2,7 @@ import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import { useState, useEffect } from 'react';
 import DetailImageSlider from './SearchComponents/DetailImageSlider';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from './supabase';
 
 const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }) => {
@@ -16,6 +17,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
     const [draftCommentKey] = useState(`draftComment-${displayDetailContents[1]}`);
     const [commentCountKey] = useState(`commentCount-${displayDetailContents[1]}`);
     const [commentCount, setCommentCount] = useState(0);
+    const navigate = useNavigate();
 
     const hideDDetail = () => {
         setDisplayingDetail(-1);
@@ -142,17 +144,35 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
             <div className='dw-margin' onClick={hideDDetail}></div>
             <div className='detail-tag'>
                 <div className='detail-head'>
-                    <div className='detail-place'>{displayDetailContents[0]}</div>
-                    <div className='detail-title'>{displayDetailContents[1]}</div>
-                    <button className={'detail-favorite' + (scheduled ? ' hidden' : '')} onClick={toggleSwitch}>{scheduled ? "" : star}</button>
-                </div>
-                <div className='filter-wrap-wrap'>
-                    <div className='filter-wrap'>
-                        <div className='filter-list' key={uuidv4()}>
-                            {getList(displayDetailContents[3])}
+                    <div className='detail-left'>
+                        <div className='detail-place'>{displayDetailContents[0]}</div>
+                        <div className='detail-space space1'></div>
+                        <div className='detail-title'>{displayDetailContents[1]}</div>
+                        <div className='detail-space space2'></div>
+                        <div className='filter-wrap-wrap'>
+                            <div className='filter-wrap'>
+                                <div className='filter-list' key={uuidv4()}>
+                                    {getList(displayDetailContents[3])}
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div className='detail-right'>
+                        <button
+                            className={'detail-favorite' + (scheduled ? ' hidden' : '')}
+                            onClick={toggleSwitch}
+                        >
+                            {scheduled ? "" : star}
+                        </button>
+                        {displayDetailContents[0] === "ステージ" && (
+                            <button className='navigate-to-vote' onClick={() => navigate("/stagevote")}>
+                                投票する！<br />(投票ページへ)
+                            </button>
+                        )}
+                    </div>
                 </div>
+
                 <DetailImageSlider imagelist={displayDetailContents[4]} />
                 <div className='detail'>{displayDetailContents[2]}</div>
                 <div className='comment-header'>
