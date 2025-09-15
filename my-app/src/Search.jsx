@@ -8,14 +8,6 @@ import DetailImageSlider from './SearchComponents/DetailImageSlider.jsx';
 import React from 'react';
 import { useRef, useState, useEffect } from 'react';
 import DisplayDetail from './DisplayDetail.jsx';
-var pictures = [];
-for (let i = 0; i < data.length; i++) {
-    var list = [];
-    for (let a = 0; a < data[i][5].length; a++) {
-        list.push(import('/pictures/' + data[i][5][a]));
-    }
-    pictures.push(list);
-}
 
 function Search() {
     //FavoriteかどうかはlocalStorageに保存
