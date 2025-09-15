@@ -1,7 +1,7 @@
 import './Passport.css'
 import airplane from "/pictures/airplane.png"
 import passport from "/pictures/passport.png"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import scope from "/pictures/scope.png"
 import camera from "/pictures/camera.png"
@@ -13,10 +13,12 @@ function Passport() {
     const [activeExplanation, setActiveExplanation] = useState(0);
     const [img, setImg] = useState(null);
 
-    const image = new window.Image();
-    image.crossOrigin = "anonymous";
-    image.onload = () => setImg(image);
-    image.src = giftpicture;
+    useEffect(() => {
+        const image = new window.Image();
+        image.crossOrigin = "anonymous";
+        image.onload = () => setImg(image);
+        image.src = giftpicture;
+    }, [])
 
     if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
     var pictures = JSON.parse(localStorage.getItem("pictures"));
