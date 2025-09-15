@@ -73,10 +73,14 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
   var ticketcl = "";
   if (hidden) ticketcl = " hidden";
 
+  var cn = classname.split("");
+  if (cn[0] == "J") cn[0] = "中";
+  cn = cn.join("");
+
   return (
     <div className={"ticket" + ticketcl}>
         <div className={"p" + projdata[2] + " proj-type"} onClick={changeDDetail}><div className='type'>{type}</div></div>
-        <div className='class' onClick={changeDDetail}>{classname}</div>
+        <div className='class' onClick={changeDDetail}>{cn}</div>
         <div className='title' onClick={changeDDetail}>{projdata[1]}</div>
         <div className='categories-wrap' onClick={changeDDetail}><div className='categories'>{category_list}</div></div>
         <div className='ticket-right'>
