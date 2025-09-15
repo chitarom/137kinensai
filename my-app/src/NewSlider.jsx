@@ -1,7 +1,7 @@
 import './Home.css';
 import { useRef, useState, useEffect } from 'react';
 import stageSlide from '/pictures/stage-slide.png';
-import kaijinSlide from '/pictures/kaijin.jpg';
+import kaijinSlide from '/pictures/kaijin.png';
 import { Link } from 'react-router-dom';
 
 
