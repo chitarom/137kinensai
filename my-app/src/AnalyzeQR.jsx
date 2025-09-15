@@ -37,6 +37,7 @@ function AnalyzeQR() {
     if (funcNum !== 1 && funcNum !== 2) return;
     
     setfuncNum(-1);
+    if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
     const pictures = JSON.parse(localStorage.getItem("pictures"));
     if (pictures.indexOf(resultText) != -1) {
       alert("このピースは既にゲットしています。");

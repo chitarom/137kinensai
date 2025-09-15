@@ -61,8 +61,19 @@ function Map() {
                 break;
         };
         localStorage.setItem("pictures", JSON.stringify(pictures));
+        if (localStorage.getItem("pieces") == null) localStorage.setItem("pieces","[]");
+        var pieces = JSON.parse(localStorage.getItem("pieces"));
+        var bool = false;
+        var r;
+        if (pieces.length <= 5)
+            while (!bool) {
+                var random = Math.floor(Math.random()*6);
+                if (pieces.indexOf(random) <= -1) {pieces.push(random);bool = true;r=random;}
+            }
+        console.log("pieces: "+JSON.stringify(pieces));
+        localStorage.setItem("pieces",JSON.stringify(pieces));
         //ここに画像を大きく見せるプログラムを書く
-        setGotNewPiece([true, id.split('_')[1]])
+        if (bool) setGotNewPiece([true, r]);
     }
 
     const closeGNP = () => {

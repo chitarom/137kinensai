@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import DetailImageSlider from './SearchComponents/DetailImageSlider';
 import { supabase } from './supabase';
 
-const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
+const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }) => {
 
     const [favoriteSwitch, setFavoriteSwitch] = useState(false);
     const [CommentList, setCommentList] = useState([]);
@@ -144,7 +144,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
                 <div className='detail-head'>
                     <div className='detail-place'>{displayDetailContents[0]}</div>
                     <div className='detail-title'>{displayDetailContents[1]}</div>
-                    <button className='detail-favorite' onClick={toggleSwitch}>{star}</button>
+                    <button className={'detail-favorite' + (scheduled ? ' hidden' : '')} onClick={toggleSwitch}>{scheduled ? "" : star}</button>
                 </div>
                 <div className='filter-wrap-wrap'>
                     <div className='filter-wrap'>
