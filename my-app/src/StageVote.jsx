@@ -39,7 +39,7 @@ function StageVote() {
             <div className="vote-title-con">
                 <h2>STAGE</h2>
                 <div className="vote-title-exp">
-                    <p>　東海生の東海生による東海生のための個性の祭典。 今年度は、例年大きな盛り上がりを見せるTKI48やジャグリング部など、過去最多20組のパフォーマーが出演。年に一度のどこよりも自由な大会が幕を開ける。</p>
+                    <p>　東海生の東海生による東海生のための個性の祭典。 今年度は、例年大きな盛り上がりを見せるTKI48やジャグリング部など、過去最多17組のパフォーマーが出演。年に一度のどこよりも自由な大会が幕を開ける。</p>
                     <img src="/pictures/stageposter.png" alt="加治屋の画像" />
 
                 </div>
