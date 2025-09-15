@@ -138,6 +138,7 @@
     border-bottom-left-radius: 5px;
     display: flex;
     justify-content: center;
+    min-height: 100%;
 
 
 
@@ -165,6 +166,8 @@
 }
 
 .type {
+    display: flex;
+    justify-content: center;
     width: 20px;
     writing-mode: vertical-rl;
     text-orientation: upright;
