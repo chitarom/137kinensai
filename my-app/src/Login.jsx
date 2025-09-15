@@ -9,7 +9,10 @@ function Login() {
     const [result, setResult] = useState("");
     const [watchable, setWatchable] = useState(0);
     const [passage, setPassage] = useState("");
-    const [newsList, setNewsList] = useState([])
+    const [newsList, setNewsList] = useState([]);
+    const [commentList, setCommentList] = useState([]);
+    const [deleteConfirmId, setDeleteConfirmId] = useState(null);
+    const [commentFilter, setCommentFilter] = useState("all");
 
     const handleLogin = async (e) => {
         e.preventDefault(); // ページリロード防止
@@ -84,6 +87,54 @@ function Login() {
 
     }, [])
 
+    const fetchComments = async () => {
+        const { data, error } = await supabase
+            .from("comment")
+            .select("*")
+            .order("created_at", { ascending: false });
+        if (error) {
+            console.error("取得エラー:", error);
+        } else {
+            setCommentList(data);
+        }
+    }
+
+    useEffect(() => {
+        fetchComments();
+    }, []);
+
+    const handleDeleteComment = async (id) => {
+        const { error } = await supabase
+            .from("comment")
+            .delete()
+            .eq("id", id);
+
+        if (error) {
+            console.error("削除エラー:", error);
+        } else {
+            console.log("削除成功！");
+            // stateを更新して削除されたコメントを即座に反映
+            setCommentList(prev => prev.filter(item => item.id !== id));
+        }
+    };
+
+    const handleToggleApproval = async (id, currentCheck) => {
+        const { error } = await supabase
+            .from("comment")
+            .update({ check: !currentCheck })
+            .eq("id", id);
+
+        if (error) {
+            console.error("承認切替エラー:", error);
+        } else {
+            console.log("承認状態切替成功！");
+            setCommentList(prev =>
+                prev.map(item =>
+                    item.id === id ? { ...item, check: !currentCheck } : item
+                )
+            );
+        }
+    };
 
     return (
         <>
@@ -116,10 +167,67 @@ function Login() {
             {watchable > 1 && <div className="ad-con">
                 <button className="ad-button back-button" onClick={() => setWatchable(1)}>戻る</button>
             </div>}
-            {watchable == 2 && <>
-            {/*ここにコード書いてください*/}
-            
-            </>}
+            {watchable == 2 && <div className="ad-interior-con">
+                <div className="comment-list-con">
+                    <h3>コメント一覧</h3>
+                    <div className="comment-filter-buttons">
+                        <button
+                            className={commentFilter === "all" ? "filter-button active" : "filter-button"}
+                            onClick={() => setCommentFilter("all")}
+                        >全て</button>
+                        <button
+                            className={commentFilter === "approved" ? "filter-button active" : "filter-button"}
+                            onClick={() => setCommentFilter("approved")}
+                        >承認済み</button>
+                        <button
+                            className={commentFilter === "pending" ? "filter-button active" : "filter-button"}
+                            onClick={() => setCommentFilter("pending")}
+                        >未承認</button>
+                    </div>
+                    {commentList.length === 0 && <p>コメントがありません</p>}
+                    {commentList
+                        .filter(item => {
+                            if (commentFilter === "approved") return item.check;
+                            if (commentFilter === "pending") return !item.check;
+                            return true;
+                        })
+                        .map(item => (
+                            <div className="comment-box" key={item.id}>
+                                <div className="comment-name">{item.name}</div>
+                                <p className="comment-passage">{item.passage}</p>
+                                <div className="comment-actions">
+                                    {item.check ? (
+                                        <button
+                                            className="toggle-button cancel-button"
+                                            onClick={() => handleToggleApproval(item.id, item.check)}
+                                        >承認取り消し</button>
+                                    ) : (
+                                        <button
+                                            className="toggle-button approve-button"
+                                            onClick={() => {
+                                                if (deleteConfirmId === item.id) {
+                                                    setDeleteConfirmId(null);
+                                                } else {
+                                                    handleToggleApproval(item.id, item.check);
+                                                }
+                                            }}
+                                        >{deleteConfirmId === item.id ? "やめとく" : "承認"}</button>
+                                    )}
+                                    <button className="delete-button" disabled={item.check}
+                                        onClick={() => {
+                                            if (deleteConfirmId === item.id) {
+                                                handleDeleteComment(item.id);
+                                                setDeleteConfirmId(null);
+                                            } else {
+                                                setDeleteConfirmId(item.id);
+                                            }
+                                        }}
+                                    >{deleteConfirmId === item.id ? "削除する？" : "削除"}</button>
+                                </div>
+                            </div>
+                        ))}
+                </div>
+            </div>}
             {watchable == 3 && <div className="ad-interior-con">
                 <form className="add-news-con-con" onSubmit={handleAddNews}>
                     <div className="add-news-con">
