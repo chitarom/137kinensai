@@ -20,16 +20,19 @@ import sampjpg from "/pictures/sample.jpg";
 
 
 function Map() {
+    const samps = [sampjpg,sampjpg,sampjpg,sampjpg,sampjpg,sampjpg];
     const location = useLocation();
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [displayMap, setDisplayMap] = useState(1);
     const [gotNewPiece, setGotNewPiece] = useState([false, null]);
-    const [sample, setSample] = useState({ "map.at_0": null });
+    const [sample, setSample] = useState({ "map.at_0": null, "map.at_1": null, "map.at_2": null, "map.at_3": null, "map.at_4": null, "map.at_5": null });
 
-    const samp = new window.Image();
-    samp.crossOrigin = "anonymous";
-    samp.onload = () => { var s = sample; s["map.at_0"] = samp; setSample(s) };
-    samp.src = sampjpg;
+    for (let i = 0; i < 6; i++) {
+        const samp0 = new window.Image();
+        samp0.crossOrigin = "anonymous";
+        samp0.onload = () => { var s = sample; s["map.at_"+i] = samp0; setSample(s) };
+        samp0.src = samps[i];
+    }
 
     var b = false;
     var preSVG = f1;
@@ -59,7 +62,7 @@ function Map() {
         };
         localStorage.setItem("pictures", JSON.stringify(pictures));
         //ここに画像を大きく見せるプログラムを書く
-        setGotNewPiece([true,id.split('_')[1]])
+        setGotNewPiece([true, id.split('_')[1]])
     }
 
     const closeGNP = () => {
@@ -532,7 +535,7 @@ function Map() {
                 )
             }
             {
-                (gotNewPiece[1] != null) && 
+                (gotNewPiece[1] != null) &&
                 (
                     <div className='achievement'>
                         <Link to="/passport">ピースゲット！</Link>
