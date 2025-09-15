@@ -9,5 +9,7 @@
   { "path": "/aboutfood", "component": "AboutFood" ,"name":"お食事について"},
   { "path": "/readqr", "component": "ReadQR" ,"name":"QRコードを読み取る"},
   { "path": "/passport", "component": "Passport" ,"name":"絵の旅パスポート"},
-  { "path": "/articlemenu", "component": "ArticleMenu" ,"name":"ニュース・記事"}
+  { "path": "/articlemenu", "component": "ArticleMenu" ,"name":"ニュース・記事"},
+  { "path": "/kaijin", "component": "Kaijin" ,"name":"海神"},
+  { "path": "/stagevote", "component": "StageVote" ,"name":"ステージ投票"}
 ]
