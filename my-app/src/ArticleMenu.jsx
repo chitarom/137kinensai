@@ -11,9 +11,9 @@ function ArticleMenu() {
         <div>
             <div className="ar-menu-title">
                 <h2>ニュース・記事一覧</h2>
-                <p>各クラス企画についてまとめた記事や、</p>
-                <p>記念祭内でのニュースを</p>
-                <p>ご覧いただけます。</p>
+                <p>高校の各クラス企画について</p>
+                <p>まとめた記事や、記念祭内での</p>
+                <p>ニュースをご覧いただけます。</p>
             </div>
             <div className="ar-list">
                 {articlelist.map(item => (

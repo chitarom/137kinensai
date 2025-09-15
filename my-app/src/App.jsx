@@ -18,6 +18,7 @@ import ArticleMenu from './ArticleMenu.jsx';
 import ScrollToTop from './ScrollTopTo.jsx';
 import Article from './Article.jsx';
 import StageVote from './StageVote.jsx';
+import Kaijin from './Kaijin.jsx';
 
 
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/articlemenu" element={<ArticleMenu/>}/>
         <Route path="/article" element={<Article/>}/>
         <Route path="/stagevote" element={<StageVote/>}/>
+        <Route path="/kaijin" element={<Kaijin/>}/>
       </Routes>
       <FooterNav />
     </>
