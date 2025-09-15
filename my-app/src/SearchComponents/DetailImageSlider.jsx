@@ -31,10 +31,10 @@ const DetailImageSlider = ({ imagelist }) => {
         const target = slides[currentIndex];
         if (!target) return;
 
-        target.scrollIntoView({
+        slider.scrollTo({
+            // target.offsetLeft - (スライダーの幅 / 2) + (画像の幅 / 2) で座標指定
+            left: target.offsetLeft - slider.offsetWidth / 2 + target.offsetWidth / 2,
             behavior: 'smooth',
-            inline: 'center',
-            block: 'nearest',
         });
     }, [currentIndex]);
 

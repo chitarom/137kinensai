@@ -116,6 +116,10 @@ function Login() {
             {watchable > 1 && <div className="ad-con">
                 <button className="ad-button back-button" onClick={() => setWatchable(1)}>戻る</button>
             </div>}
+            {watchable == 2 && <>
+            {/*ここにコード書いてください*/}
+            
+            </>}
             {watchable == 3 && <div className="ad-interior-con">
                 <form className="add-news-con-con" onSubmit={handleAddNews}>
                     <div className="add-news-con">

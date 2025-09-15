@@ -1,11 +1,10 @@
 import './Schedule.css';
 import { useRef, useEffect, useState } from 'react';
 import grouplist from './JSON/ProjectData.json'
-
-
-
+import { useLocation } from 'react-router-dom';
 
 function Schedule() {
+    const location = useLocation();
     const scrollContainerRef = useRef(null);
     const boxRef = useRef(null);
     const [activeTab, setActiveTab] = useState('kodo');
@@ -13,6 +12,19 @@ function Schedule() {
     const KodoGroupList = []
     const StageGroupList = []
     const [currentTab, setCurrentTab] = useState('kodo');
+
+    useEffect(() => {
+        console.log("Schedule mounted");
+
+        const params = new URLSearchParams(window.location.search); // ← React Router依存回避
+        console.log("search params:", params.toString());
+        if (params.get("type") === "1") {
+            console.log("currentTabをstageに変更");
+            setCurrentTab('stage');
+        }
+    }, []);
+
+
 
     useEffect(() => {
         const container = scrollContainerRef.current;
@@ -244,7 +256,7 @@ function Schedule() {
                         </div>
 
                     ))}</>}
-                {currentTab == "stage" && <>
+                {currentTab == 'stage' && <>
                     <div className="sc-day-con"><h2>27(土)</h2></div>
                     {StageGroupList.filter(item => item.day === 'sat').map(item => (
                         <div role="button" key={item.label} className="row-con">
