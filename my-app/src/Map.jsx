@@ -7,6 +7,7 @@ import DisplayDetail from './DisplayDetail';
 import { v4 as uuid } from "uuid";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import entire from '/pictures/entire_map.svg';
 import f1 from '/pictures/1f.svg';
 import f2 from '/pictures/2f.svg';
 import f3 from '/pictures/3f.svg';
@@ -15,22 +16,24 @@ import cf1 from '/pictures/1f-monochrome.svg';
 import cf2 from '/pictures/2f-monochrome.svg';
 import cf3 from '/pictures/3f-monochrome.svg';
 import cf45 from '/pictures/4-5f-monochrome.svg';
+import centire from '/pictures/entire_map-monochrome.svg';
 import giftpicture from "/pictures/giftpicture.png";
 import sampjpg from "/pictures/sample.jpg";
 
 
 function Map() {
-    const samps = [sampjpg,sampjpg,sampjpg,sampjpg,sampjpg,sampjpg];
+    const samps = [sampjpg, sampjpg, sampjpg, sampjpg, sampjpg, sampjpg, sampjpg];
     const location = useLocation();
+    const navigate = useNavigate();
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [displayMap, setDisplayMap] = useState(1);
     const [gotNewPiece, setGotNewPiece] = useState([false, null]);
-    const [sample, setSample] = useState({ "map.at_0": null, "map.at_1": null, "map.at_2": null, "map.at_3": null, "map.at_4": null, "map.at_5": null });
+    const [sample, setSample] = useState({ "map.at_0": null, "map.at_1": null, "map.at_2": null, "map.at_3": null, "map.at_4": null, "map.at_5": null, "map.at_6": null });
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
         const samp0 = new window.Image();
         samp0.crossOrigin = "anonymous";
-        samp0.onload = () => { var s = sample; s["map.at_"+i] = samp0; setSample(s) };
+        samp0.onload = () => { var s = sample; s["map.at_" + i] = samp0; setSample(s) };
         samp0.src = samps[i];
     }
 
@@ -59,21 +62,24 @@ function Map() {
             case 8:
                 preSVG = cf45;
                 break;
+            case 9:
+                preSVG = centire;
+                break;
         };
         localStorage.setItem("pictures", JSON.stringify(pictures));
-        if (localStorage.getItem("pieces") == null) localStorage.setItem("pieces","[]");
+        if (localStorage.getItem("pieces") == null) localStorage.setItem("pieces", "[]");
         var pieces = JSON.parse(localStorage.getItem("pieces"));
         var bool = false;
         var r;
         if (pieces.length <= 5)
             while (!bool) {
-                var random = Math.floor(Math.random()*6);
-                if (pieces.indexOf(random) <= -1) {pieces.push(random);bool = true;r=random;}
+                var random = Math.floor(Math.random() * 6);
+                if (pieces.indexOf(random) <= -1) { pieces.push(random); bool = true; r = random; }
             }
-        console.log("pieces: "+JSON.stringify(pieces));
-        localStorage.setItem("pieces",JSON.stringify(pieces));
+        console.log("pieces: " + JSON.stringify(pieces));
+        localStorage.setItem("pieces", JSON.stringify(pieces));
         //ここに画像を大きく見せるプログラムを書く
-        if (bool) setGotNewPiece([true, r]);
+        setGotNewPiece([true, r]);
     }
 
     const closeGNP = () => {
@@ -92,15 +98,24 @@ function Map() {
             var bool = !isEnotabi;
             var int = displayMap;
             setEnotabi(bool);
-            if (int <= 4) {
+            if (int == 0) {
+                setDisplayMap(9);
+            } else if (int == 9) {
+                setDisplayMap(0);
+                int = 0;
+            } else if (int <= 4) {
                 setDisplayMap(bool ? int + 4 : int);
                 if (!bool) int += 4;
             } else {
                 setDisplayMap(bool ? int : int - 4);
                 if (!bool) int -= 4;
             }
+            console.log(int);
             var svg;
             switch (int) {
+                case 0:
+                    svg = bool ? centire : entire;
+                    break;
                 case 1:
                     svg = bool ? cf1 : f1;
                     break;
@@ -121,9 +136,14 @@ function Map() {
     const changeDisplayMap = [temp(0), temp(1), temp(2), temp(3), temp(4)];
     function temp(int) {
         return () => {
-            setDisplayMap(isEnotabi ? int + 4 : int);
+            if (int != 0)
+                setDisplayMap(isEnotabi ? int + 4 : int);
+            else setDisplayMap(isEnotabi ? 9 : 0);
             var svg;
             switch (int) {
+                case 0:
+                    svg = isEnotabi ? centire : entire;
+                    break;
                 case 1:
                     svg = isEnotabi ? cf1 : f1;
                     break;
@@ -387,6 +407,10 @@ function Map() {
     const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
 
     const rts = [
+        [167.517, 227.784, 104.961, 40.780, temp3("講堂"), 0],
+        [167.517, 283.676, 104.961, 40.780, temp3("百志館"), 0],
+        [205.485, 339.567, 66.993, 39.099, temp3("明照殿"), 0],
+        [314.161, 163.334, 78.149, 187.183, temp3("ステージ"), 0],
         [175.61754, 24.870821, 35.682247, 29.913124, temp2("C-15"), 1],
         [139.93529, 24.870821, 35.682247, 29.913124, temp2("C-16"), 1],
         [104.25303, 24.870821, 35.682247, 29.913124, temp2("C-17"), 1],
@@ -432,6 +456,12 @@ function Map() {
             setCanOpen([true, str]);
         };
     };
+
+    function temp3(keyword) {
+        return () => {
+            navigate('/search?keyword=' + keyword, {});
+        };
+    }
 
     return (
         <div className='map-parent'>
@@ -515,6 +545,7 @@ function Map() {
                 </Stage>
             </div>
             <div className='map-switches'>
+                <button className={'map-switch' + (displayMap == 0 || displayMap == 9 ? ' active' : '')} onClick={changeDisplayMap[0]}>校内図</button>
                 <button className={'map-switch' + (displayMap == 1 || displayMap == 5 ? ' active' : '')} onClick={changeDisplayMap[1]}>1F</button>
                 <button className={'map-switch' + (displayMap == 2 || displayMap == 6 ? ' active' : '')} onClick={changeDisplayMap[2]}>2F</button>
                 <button className={'map-switch' + (displayMap == 3 || displayMap == 7 ? ' active' : '')} onClick={changeDisplayMap[3]}>3F</button>

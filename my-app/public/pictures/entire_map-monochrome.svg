@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 400.00001 501.8123"
+   version="1.1"
+   id="svg367"
+   sodipodi:docname="entire_map-monochrome.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   width="400"
+   height="501.81229"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview369"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.5069823"
+     inkscape:cx="311.88157"
+     inkscape:cy="250.83241"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg367" />
+  <defs
+     id="defs51">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#_6_lpi_50_"
+       id="pattern1261"
+       patternTransform="matrix(0.38890873,-0.38890873,0.38890873,0.38890873,-1801.98,-7828.04)" />
+    <style
+       id="style2">
+      .cls-1 {
+        fill: #939393;
+      }
+
+      .cls-2 {
+        opacity: .85;
+      }
+
+      .cls-3 {
+        fill: #8e58a1;
+      }
+
+      .cls-4 {
+        letter-spacing: -.53em;
+      }
+
+      .cls-5 {
+        letter-spacing: .25em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.53em;
+      }
+
+      .cls-7 {
+        fill: #686868;
+        stroke: #eaeaea;
+        stroke-width: 1.5px;
+      }
+
+      .cls-7, .cls-8, .cls-9, .cls-10 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-11, .cls-12, .cls-13 {
+        font-size: 9px;
+      }
+
+      .cls-14 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.17em;
+      }
+
+      .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20 {
+        font-size: 10px;
+      }
+
+      .cls-12, .cls-21, .cls-22, .cls-23, .cls-24, .cls-13, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29 {
+        font-family: HeiseiKakuGoStd-W7-90ms-RKSJ-H, 'Heisei Kaku Gothic Std';
+      }
+
+      .cls-12, .cls-22, .cls-30, .cls-25, .cls-26, .cls-27, .cls-28 {
+        fill: #231815;
+      }
+
+      .cls-8, .cls-9 {
+        stroke-width: 2px;
+      }
+
+      .cls-8, .cls-9, .cls-31, .cls-10 {
+        fill: none;
+      }
+
+      .cls-8, .cls-10 {
+        stroke: #231815;
+      }
+
+      .cls-32 {
+        fill: url(#_6_lpi_50_);
+      }
+
+      .cls-9 {
+        stroke: #424142;
+      }
+
+      .cls-21, .cls-23, .cls-33, .cls-29 {
+        font-size: 14px;
+      }
+
+      .cls-21, .cls-34 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-35 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-36, .cls-24, .cls-27 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-22, .cls-24, .cls-37, .cls-27, .cls-28 {
+        font-size: 20px;
+      }
+
+      .cls-22, .cls-25 {
+        glyph-orientation-vertical: 0deg;
+        text-orientation: upright;
+        writing-mode: tb;
+      }
+
+      .cls-38 {
+        fill: #919191;
+        stroke: #c9c9c9;
+        stroke-width: 6px;
+      }
+
+      .cls-39 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-40 {
+        letter-spacing: -.8em;
+      }
+
+      .cls-41 {
+        fill: #2c69b3;
+      }
+
+      .cls-16, .cls-17 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-42 {
+        letter-spacing: -.2em;
+      }
+
+      .cls-43 {
+        fill: #eaeaea;
+      }
+
+      .cls-44 {
+        fill: #767777;
+        opacity: .4;
+      }
+
+      .cls-45 {
+        fill: #0c945c;
+      }
+
+      .cls-33, .cls-46, .cls-17, .cls-20 {
+        font-family: HeiseiKakuGoStd-W5-90ms-RKSJ-H, 'Heisei Kaku Gothic Std';
+      }
+
+      .cls-47 {
+        opacity: .69;
+      }
+
+      .cls-47, .cls-48, .cls-49, .cls-50, .cls-51, .cls-52 {
+        fill: #fff;
+      }
+
+      .cls-48 {
+        opacity: .8;
+      }
+
+      .cls-53 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-13, .cls-54, .cls-55, .cls-56, .cls-57 {
+        fill: #424142;
+      }
+
+      .cls-58 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-59, .cls-46, .cls-55 {
+        font-size: 11px;
+      }
+
+      .cls-54 {
+        font-size: 16px;
+      }
+
+      .cls-54, .cls-55 {
+        font-family: HeiseiKakuGoStd-W9-90ms-RKSJ-H, 'Heisei Kaku Gothic Std';
+      }
+
+      .cls-10 {
+        stroke-linecap: round;
+      }
+
+      .cls-60 {
+        letter-spacing: -.52em;
+      }
+
+      .cls-61 {
+        fill: #deebb5;
+      }
+
+      .cls-62 {
+        letter-spacing: -.52em;
+      }
+
+      .cls-63 {
+        letter-spacing: -.55em;
+      }
+
+      .cls-64 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-65 {
+        letter-spacing: -.52em;
+      }
+
+      .cls-66 {
+        letter-spacing: -.3em;
+      }
+
+      .cls-67 {
+        letter-spacing: -.38em;
+      }
+
+      .cls-67, .cls-68 {
+        font-size: 14.69px;
+      }
+
+      .cls-49 {
+        opacity: .71;
+      }
+
+      .cls-18 {
+        letter-spacing: -.49em;
+      }
+
+      .cls-69 {
+        letter-spacing: -.5em;
+      }
+
+      .cls-70 {
+        fill: #51b9eb;
+      }
+
+      .cls-71 {
+        letter-spacing: -.13em;
+      }
+
+      .cls-50 {
+        opacity: .7;
+      }
+
+      .cls-19 {
+        letter-spacing: 0em;
+      }
+
+      .cls-51 {
+        opacity: .65;
+      }
+
+      .cls-72 {
+        fill: #e6952b;
+      }
+
+      .cls-73 {
+        letter-spacing: -.2em;
+      }
+
+      .cls-57 {
+        fill-rule: evenodd;
+      }
+
+      .cls-74 {
+        letter-spacing: -.4em;
+      }
+
+      .cls-20 {
+        letter-spacing: -.4em;
+      }
+
+      .cls-52 {
+        opacity: .57;
+      }
+
+      .cls-29 {
+        letter-spacing: -.35em;
+      }
+    </style>
+    <pattern
+       id="_6_lpi_50_"
+       data-name="6 lpi 50%"
+       x="0"
+       y="0"
+       width="72"
+       height="72"
+       patternTransform="translate(-1801.98 -7828.04) rotate(-45) scale(.55)"
+       patternUnits="userSpaceOnUse"
+       viewBox="0 0 72 72">
+      <g
+         id="g48">
+        <rect
+           class="cls-31"
+           width="72"
+           height="72"
+           id="rect4" />
+        <g
+           id="g18">
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="66"
+             x2="144.25"
+             y2="66"
+             id="line6" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="42"
+             x2="144.25"
+             y2="42"
+             id="line8" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="18"
+             x2="144.25"
+             y2="18"
+             id="line10" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="54"
+             x2="144.25"
+             y2="54"
+             id="line12" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="30"
+             x2="144.25"
+             y2="30"
+             id="line14" />
+          <line
+             class="cls-38"
+             x1="71.75"
+             y1="6"
+             x2="144.25"
+             y2="6"
+             id="line16" />
+        </g>
+        <g
+           id="g32">
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="66"
+             x2="72.25"
+             y2="66"
+             id="line20" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="42"
+             x2="72.25"
+             y2="42"
+             id="line22" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="18"
+             x2="72.25"
+             y2="18"
+             id="line24" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="54"
+             x2="72.25"
+             y2="54"
+             id="line26" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="30"
+             x2="72.25"
+             y2="30"
+             id="line28" />
+          <line
+             class="cls-38"
+             x1="-.25"
+             y1="6"
+             x2="72.25"
+             y2="6"
+             id="line30" />
+        </g>
+        <g
+           id="g46">
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="66"
+             x2=".25"
+             y2="66"
+             id="line34" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="42"
+             x2=".25"
+             y2="42"
+             id="line36" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="18"
+             x2=".25"
+             y2="18"
+             id="line38" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="54"
+             x2=".25"
+             y2="54"
+             id="line40" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="30"
+             x2=".25"
+             y2="30"
+             id="line42" />
+          <line
+             class="cls-38"
+             x1="-72.25"
+             y1="6"
+             x2=".25"
+             y2="6"
+             id="line44" />
+        </g>
+      </g>
+    </pattern>
+  </defs>
+  <g
+     id="g539"
+     transform="scale(0.6890849)">
+    <g
+       id="_背景"
+       data-name="背景">
+      <rect
+         class="cls-43"
+         width="580.10999"
+         height="728.22998"
+         id="rect53"
+         x="0"
+         y="0" />
+    </g>
+    <rect
+       class="cls-32"
+       x="279.14999"
+       y="389.73001"
+       width="31.139999"
+       height="21.940001"
+       id="rect56"
+       style="fill:url(#pattern1261)" />
+    <polygon
+       class="cls-1"
+       points="182.75,65.09 206.77,65.09 206.77,41.53 158.73,41.53 158.73,65.09 158.73,86.26 159.19,86.26 159.19,90.01 182.75,90.01 "
+       id="polygon58" />
+    <line
+       class="cls-9"
+       x1="489.72"
+       y1="684.96997"
+       x2="448.26999"
+       y2="684.96997"
+       id="line60" />
+    <line
+       class="cls-9"
+       x1="538.64001"
+       y1="684.81"
+       x2="573.71997"
+       y2="684.81"
+       id="line62" />
+    <line
+       class="cls-9"
+       x1="298.20001"
+       y1="685.19"
+       x2="6.9699998"
+       y2="685.19"
+       id="line64" />
+    <rect
+       id="_通用右_"
+       data-name="&amp;lt;通用右&amp;gt;"
+       class="cls-56"
+       x="-543.23004"
+       y="-692.96002"
+       width="15.56"
+       height="15.56"
+       transform="scale(-1)" />
+    <rect
+       id="_通用左_"
+       data-name="&amp;lt;通用左&amp;gt;"
+       class="cls-56"
+       x="-497.51001"
+       y="-692.59003"
+       width="15.56"
+       height="15.56"
+       transform="scale(-1)" />
+    <rect
+       id="_正門右_"
+       data-name="&amp;lt;正門右&amp;gt;"
+       class="cls-56"
+       x="-456.04001"
+       y="-692.59003"
+       width="15.56"
+       height="15.56"
+       transform="scale(-1)" />
+    <rect
+       id="_正門左_"
+       data-name="&amp;lt;正門左&amp;gt;"
+       class="cls-56"
+       x="-306.73001"
+       y="-692.75"
+       width="15.56"
+       height="15.56"
+       transform="scale(-1)" />
+    <line
+       class="cls-9"
+       x1="134.25999"
+       y1="6.6399999"
+       x2="134.25999"
+       y2="183.39999"
+       id="line75" />
+    <line
+       class="cls-9"
+       x1="86.260002"
+       y1="183.77"
+       x2="7.1199999"
+       y2="183.77"
+       id="line77" />
+    <rect
+       id="_正門左_-2"
+       data-name="&amp;lt;正門左&amp;gt;"
+       class="cls-56"
+       x="-91.119995"
+       y="-188.26001"
+       width="9.7299995"
+       height="9.7299995"
+       transform="scale(-1)" />
+    <rect
+       id="_正門左_-3"
+       data-name="&amp;lt;正門左&amp;gt;"
+       class="cls-56"
+       x="-139.12"
+       y="-188.26001"
+       width="9.7299995"
+       height="9.7299995"
+       transform="scale(-1)" />
+    <polygon
+       class="cls-32"
+       points="127.61,281.88 127.61,258.03 141.22,258.03 141.22,257.99 142.22,257.99 142.22,224.75 141.22,224.75 133.29,224.75 127.61,224.75 127.61,191.18 94.33,191.18 94.33,224.75 81.48,224.75 81.48,258.03 94.33,258.03 94.33,281.88 94.33,291.6 94.33,315.16 277.01,315.16 277.01,330.55 310.29,330.55 310.29,315.16 396.27,315.16 396.27,400.7 395.42,400.7 395.42,549.52 98.11,549.52 98.11,668.62 395.42,668.62 395.42,668.41 455.91,668.41 455.91,207.38 396.27,207.38 396.27,281.88 310.29,281.88 310.29,266.49 277.01,266.49 277.01,281.88 "
+       id="polygon115" />
+    <rect
+       class="cls-1"
+       x="-396.26999"
+       y="-207.99001"
+       width="77.010002"
+       height="93.519997"
+       transform="scale(-1)"
+       id="rect118" />
+    <rect
+       class="cls-1"
+       x="-668.41003"
+       y="455.91"
+       width="147.25999"
+       height="41.59"
+       transform="rotate(-90)"
+       id="rect120" />
+    <rect
+       class="cls-41"
+       x="-395.41998"
+       y="-549.52002"
+       width="97.220001"
+       height="56.740002"
+       transform="scale(-1)"
+       id="rect122"
+       style="fill:#727171;fill-opacity:1" />
+    <rect
+       class="cls-70"
+       x="-395.41998"
+       y="-470.84998"
+       width="152.32001"
+       height="59.18"
+       transform="scale(-1)"
+       id="rect124"
+       style="fill:#727171;fill-opacity:1" />
+    <rect
+       class="cls-45"
+       x="-395.41998"
+       y="-389.74002"
+       width="152.32001"
+       height="59.18"
+       transform="scale(-1)"
+       id="rect126"
+       style="fill:#727171;fill-opacity:1" />
+    <rect
+       class="cls-61"
+       x="-569.32001"
+       y="-508.67001"
+       width="113.41"
+       height="271.64001"
+       transform="scale(-1)"
+       id="rect128"
+       style="fill:#727171;fill-opacity:1" />
+    <polygon
+       class="cls-72"
+       points="142.22,232.66 142.22,266.49 396.42,266.49 396.42,207.31 201.4,207.31 201.4,85.17 142.22,85.17 142.22,207.31 "
+       id="polygon130"
+       style="fill:#727171;fill-opacity:1" />
+    <rect
+       class="cls-72"
+       x="-81.480003"
+       y="-330.56"
+       width="68.459999"
+       height="120.44"
+       transform="scale(-1)"
+       id="rect132"
+       style="fill:#727171;fill-opacity:1" />
+    <polygon
+       class="cls-3"
+       points="455.54,137.2 455.54,85.24 455.54,59.89 455.54,26.06 201.34,26.06 201.34,85.24 396.37,85.24 396.37,207.38 455.54,207.38 455.54,185.16 513.2,185.16 513.2,137.2 "
+       id="polygon134"
+       style="fill:#727171;fill-opacity:1" />
+    <rect
+       class="cls-1"
+       x="355.95999"
+       y="582.85999"
+       width="37.099998"
+       height="53.110001"
+       id="rect136" />
+    <rect
+       class="cls-44"
+       x="395.64999"
+       y="207.25999"
+       width="29.49"
+       height="313.70999"
+       id="rect350" />
+  </g>
+</svg>
