@@ -79,7 +79,7 @@ function Map() {
         console.log("pieces: " + JSON.stringify(pieces));
         localStorage.setItem("pieces", JSON.stringify(pieces));
         //ここに画像を大きく見せるプログラムを書く
-        if (bool) setGotNewPiece([true, r]);
+        setGotNewPiece([true, r]);
     }
 
     const closeGNP = () => {
