@@ -1,6 +1,6 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import DetailImageSlider from './SearchComponents/DetailImageSlider';
 import { supabase } from './supabase';
 
@@ -12,6 +12,10 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
     const [newComment, setNewComment] = useState("");
     const [modalState, setModalState] = useState(null);
     const [isFading, setIsFading] = useState(false);
+    const [isCommentTooLong, setCommentTooLong] = useState(false);
+    const [draftCommentKey] = useState(`draftComment-${displayDetailContents[1]}`);
+    const [commentCountKey] = useState(`commentCount-${displayDetailContents[1]}`);
+    const [commentCount, setCommentCount] = useState(0);
 
     const hideDDetail = () => {
         setDisplayingDetail(-1);
@@ -67,23 +71,19 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
         // console.log(data);
     }, [CommentList, displayDetailContents]);
 
-    // 草稿保存用
-    const localStorageKey = `draftComment-${displayDetailContents[1]}`;
-
-    // マウント時に保存済みコメントを読み込む
+    // 保存済みコメントとカウントをマウント時に読み込む
     useEffect(() => {
-        const saved = localStorage.getItem(localStorageKey);
+        const saved = localStorage.getItem(draftCommentKey);
         if (saved) setNewComment(saved);
-    }, [localStorageKey]);
 
-    // localStorage に保存
+        const count = parseInt(localStorage.getItem(commentCountKey)) || 0;
+        setCommentCount(count);
+    }, [draftCommentKey, commentCountKey]);
+
+    // コメント入力が変化したら文字数チェック
     useEffect(() => {
-        if (newComment.trim()) {
-            localStorage.setItem(localStorageKey, newComment);
-        } else {
-            localStorage.removeItem(localStorageKey);
-        }
-    }, [newComment, localStorageKey]);
+        setCommentTooLong(newComment.length > 400);
+    }, [newComment]);
 
     const handleRequestSend = () => {
         if (!newComment.trim()) return;
@@ -92,6 +92,15 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
 
     const handleAddComment = async () => {
         if (!newComment.trim()) return;
+
+        if (commentCount >= 3) {
+            alert("この企画に対するコメントはもう送信できません");
+            return;
+        }
+        if (newComment.length > 400) {
+            alert("コメントは400文字以内で入力してください");
+            return;
+        }
 
         const { data, error } = await supabase
             .from("comment")
@@ -107,7 +116,12 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
             console.error("追加エラー:", error);
         } else {
             setNewComment(""); // 入力欄をクリア
-            localStorage.removeItem(localStorageKey);
+            localStorage.removeItem(draftCommentKey);
+
+            const newCount = commentCount + 1;
+            setCommentCount(newCount);
+            localStorage.setItem(commentCountKey, newCount);
+
             fetchComments();
             setModalState("toast");
 
@@ -120,6 +134,8 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
             }, 4000);
         }
     };
+    
+    const hasReachedCommentLimit = (commentCount >= 3);
 
     return (
         <div className='detail-wrap'>
@@ -155,14 +171,25 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail }) => {
                         className="add-comment"
                         value={newComment}
                         onChange={(e) => setNewComment(e.target.value)}
-                        placeholder="コメントを書く..."
+                        placeholder="コメントを書く...（４００字まで）"
                         rows={4} // 初期設定したい行数
+                        disabled={hasReachedCommentLimit}
                     />
-                    <button
-                        className="comment-submit"
-                        onClick={handleRequestSend}
-                        disabled={!newComment.trim()}
-                    >送信する</button>
+                    {hasReachedCommentLimit ? (
+                        <button className="comment-submit" disabled>
+                            この企画に対する<br />コメントはこれ以<br />上送信できません
+                        </button>
+                    ) : isCommentTooLong ? (
+                        <button className="comment-submit" disabled>
+                            コメントが長すぎます
+                        </button>
+                    ) : (
+                        <button
+                            className="comment-submit"
+                            onClick={handleRequestSend}
+                            disabled={!newComment.trim()}
+                        >送信する</button>
+                    )}
                 </div>
                 {modalState && (
                     <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
