@@ -78,7 +78,7 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
   cn = cn.join("");
 
   return (
-    <div className={"ticket" + ticketcl}>
+    <div className={"ticket" + ticketcl} style={{ '--bg-image': `url(/pictures/${projdata[5][0]})` }}>
         <div className={"p" + projdata[2] + " proj-type"} onClick={changeDDetail}><div className='type'>{type}</div></div>
         <div className='class' onClick={changeDDetail}>{cn}</div>
         <div className='title' onClick={changeDDetail}>{projdata[1]}</div>
