@@ -45,8 +45,9 @@
 
 .back-button {
     position: fixed;
-    bottom: 60px;
+    bottom: 100px;
     right: 0;
+    z-index: 100;
 
 }
 .news-box {
@@ -121,3 +122,98 @@
     flex-direction: column;
     align-items: center;
 }
+
+.comment-list-con {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-list-con h3 {
+    margin: 10px;
+}
+
+.comment-filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-button {
+    padding: 5px 15px;
+    border-radius: 8px;
+    border: 1px solid #008cff;
+    background-color: white;
+    color: #008cff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-button.active {
+    background-color: #008cff;
+    color: white;
+}
+
+.comment-box {
+    font-size: 12px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border: 1px solid #008cff;
+    background-color: rgb(255, 255, 255);
+    padding: 0 0 0 5px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+
+.comment-name {
+    width: 20%;
+    min-width: 80px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #008cff;
+    border-right: 1px solid #008cff;
+    text-align: center;
+    word-break: break-word;
+}
+
+.comment-passage {
+    margin: 2px 10px 2px 5px;
+    flex: 1;
+    padding: 5px 10px;
+    font-size: 13px;
+    color: #333;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.comment-actions .toggle-button,
+.comment-actions .delete-button {
+    padding: 7px 12px;
+    font-size: 14px;
+    font-weight: 550;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    color: white;
+    margin-left: auto;
+}
+
+.approve-button { background-color: #28a745; }
+.approve-button:hover { background-color: #218838; }
+.cancel-button { background-color: #ff9800; }
+.cancel-button:hover { background-color: #e68900; }
+.delete-button { background-color: #ff0000; }
+.delete-button:hover { background-color: #cc0000; }
+.delete-button:disabled { background-color: #cccccc; cursor: not-allowed; }
