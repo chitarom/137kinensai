@@ -6,9 +6,49 @@ import { Link } from 'react-router-dom'
 import scope from "/pictures/scope.png"
 import camera from "/pictures/camera.png"
 import giftpicture from "/pictures/giftpicture.png"
+import { Stage, Layer, Image as KonvaImage, Group, Rect, Text } from "react-konva";
+import { v4 as uuid } from "uuid";
 
 function Passport() {
-    const [activeExplanation, setActiveExplanation] = useState(0)
+    const [activeExplanation, setActiveExplanation] = useState(0);
+    const [img, setImg] = useState(null);
+
+    const image = new window.Image();
+    image.crossOrigin = "anonymous";
+    image.onload = () => setImg(image);
+    image.src = giftpicture;
+
+    if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
+    var pictures = JSON.parse(localStorage.getItem("pictures"));
+
+    var list = [];
+    var list1 = [];
+    var list2 = [];
+    for (let i = 0; i < 6; i++) {
+        if (pictures.indexOf("map.at_" + i) > -1)
+            list1.push(
+                <Group
+                    clip={
+                        {
+                            x: (i % 2) * 100,
+                            y: Math.floor(i / 2) * 100,
+                            width: 100,
+                            height: 100
+                        }
+                    }
+                    key={uuid()}
+                >
+                    <KonvaImage x={0} y={0} width={200} height={300} image={img}></KonvaImage>
+                </Group>
+            );
+        else list2.push(
+            <Group key={uuid()}>
+                <Rect x={(i % 2) * 100 + 0.5} y={Math.floor(i / 2) * 100 + 0.5} width={99} height={99} fill="black" stroke="white" strokeWidth={0.5}></Rect>
+            </Group>
+        );
+    }
+    list.push(list2);
+    list.push(list1);
 
 
 
@@ -38,7 +78,15 @@ function Passport() {
             </div>
             <div className="picture-puzzle">
                 <h2>イラスト進捗</h2>
-                <img src={giftpicture} alt="" />
+                <Stage
+                    width={200}
+                    height={300}
+                >
+                    <Layer>
+                        <Rect x={0} y={0} width={200} height={300} fill="white"></Rect>
+                        {list}
+                    </Layer>
+                </Stage>
             </div>
         </div>
     )

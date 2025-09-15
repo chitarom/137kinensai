@@ -37,7 +37,10 @@ function AnalyzeQR() {
     if (funcNum !== 1 && funcNum !== 2) return;
     
     setfuncNum(-1);
-    navigate("/map", { state: { "text":resultText, "num":funcNum } });
+    const pictures = JSON.parse(localStorage.getItem("pictures"));
+    if (pictures.indexOf(resultText) != -1) {
+      alert("このピースは既にゲットしています。");
+    } else navigate("/map", { state: { "text":resultText, "num":funcNum } });
 
   }, [funcNum, navigate, resultText]);
 
