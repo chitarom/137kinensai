@@ -134,7 +134,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
             }, 4000);
         }
     };
-    
+
     const hasReachedCommentLimit = (commentCount >= 3);
 
     return (
@@ -155,6 +155,11 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                 </div>
                 <DetailImageSlider imagelist={displayDetailContents[4]} />
                 <div className='detail'>{displayDetailContents[2]}</div>
+                <div className='comment-header'>
+                    <hr className="comment-divider" />
+                    <span className="comment-title">この企画に寄せられたコメント</span>
+                    <hr className="comment-divider" />
+                </div>
                 <div className='detail-comments'>
                     {CurrentCommmentList.length > 0 ? (
                         CurrentCommmentList.map((comment) => (
@@ -165,6 +170,9 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                     ) : (
                         <p className='no-comment'>まだコメントはありません</p>
                     )}
+                </div>
+                <div className="comment-footer">
+                    <hr className='comment-divider'></hr>
                 </div>
                 <div className="add-comment-section">
                     <textarea
