@@ -583,7 +583,7 @@ function Map() {
                                             x={triangle[1]["x"]}
                                             y={triangle[1]["y"] + 50}
                                             rotation={triangle[2]}
-                                            fill="#008cff"
+                                            fill="red"
                                             stroke="white"
                                             strokeWidth={1}
                                         /> : <></>
