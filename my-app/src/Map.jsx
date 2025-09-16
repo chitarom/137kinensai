@@ -18,6 +18,7 @@ import cf3 from '/pictures/3f-monochrome.svg';
 import cf45 from '/pictures/4-5f-monochrome.svg';
 import centire from '/pictures/entire_map-monochrome.svg';
 import giftpicture from "/pictures/giftpicture.png";
+import sampjpg from "/pictures/kaijinlogo.png"
 
 
 function Map() {
