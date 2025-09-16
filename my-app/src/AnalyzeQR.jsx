@@ -35,13 +35,17 @@ function AnalyzeQR() {
   // QRの種類ごとに遷移
   useEffect(() => {
     if (funcNum !== 1 && funcNum !== 2) return;
-    
+
     setfuncNum(-1);
-    if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
-    const pictures = JSON.parse(localStorage.getItem("pictures"));
-    if (pictures.indexOf(resultText) != -1) {
-      alert("このピースは既にゲットしています。");
-    } else navigate("/map", { state: { "text":resultText, "num":funcNum } });
+    if (funcNum == 1) {
+      if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
+      const pictures = JSON.parse(localStorage.getItem("pictures"));
+      if (pictures.indexOf(resultText) != -1) {
+        alert("このピースは既にゲットしています。");
+      } else navigate("/map", { state: { "text": resultText, "num": funcNum } });
+    } else if (funcNum == 2) {
+      navigate("/map", { state: { "text": resultText, "num": funcNum } });
+    }
 
   }, [funcNum, navigate, resultText]);
 

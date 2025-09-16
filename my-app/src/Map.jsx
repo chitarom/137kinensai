@@ -1,6 +1,6 @@
 import './Map.css'
 import { useRef, useEffect, useState } from "react";
-import { Stage, Layer, Image as KonvaImage, Group, Rect, Text } from "react-konva";
+import { Stage, Layer, Image as KonvaImage, Group, Rect, Text, Shape } from "react-konva";
 import data from "./JSON/ProjectData.json";
 import enotabipictures from "./JSON/EnotabiPictures.json";
 import DisplayDetail from './DisplayDetail';
@@ -28,6 +28,7 @@ function Map() {
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [displayMap, setDisplayMap] = useState(1);
     const [gotNewPiece, setGotNewPiece] = useState([false, null]);
+    const [triangle, setTriangle] = useState(null);
     const [sample, setSample] = useState({ "map.at_0": null, "map.at_1": null, "map.at_2": null, "map.at_3": null, "map.at_4": null, "map.at_5": null, "map.at_6": null });
 
     for (let i = 0; i < 7; i++) {
@@ -46,40 +47,67 @@ function Map() {
         b = true;
         setFirstLoad(false);
         const id = location.state.text;
-        var pictures = JSON.parse(localStorage.getItem("pictures"));
-        if (!pictures.includes(id)) pictures.push(id);
-        setDisplayMap(enotabipictures[id][3]);
-        switch (enotabipictures[id][3]) {
-            case 5:
-                preSVG = cf1;
-                break;
-            case 6:
-                preSVG = cf2;
-                break;
-            case 7:
-                preSVG = cf3;
-                break;
-            case 8:
-                preSVG = cf45;
-                break;
-            case 9:
-                preSVG = centire;
-                break;
-        };
-        localStorage.setItem("pictures", JSON.stringify(pictures));
-        if (localStorage.getItem("pieces") == null) localStorage.setItem("pieces", "[]");
-        var pieces = JSON.parse(localStorage.getItem("pieces"));
-        var bool = false;
-        var r;
-        if (pieces.length <= 5)
-            while (!bool) {
-                var random = Math.floor(Math.random() * 6);
-                if (pieces.indexOf(random) <= -1) { pieces.push(random); bool = true; r = random; }
-            }
-        console.log("pieces: " + JSON.stringify(pieces));
-        localStorage.setItem("pieces", JSON.stringify(pieces));
-        //ここに画像を大きく見せるプログラムを書く
-        setGotNewPiece([true, r]);
+        if (location.state.num == 1) {
+            var pictures = JSON.parse(localStorage.getItem("pictures"));
+            if (!pictures.includes(id)) pictures.push(id);
+            setDisplayMap(enotabipictures[id][3]);
+            switch (enotabipictures[id][3]) {
+                case 5:
+                    preSVG = cf1;
+                    break;
+                case 6:
+                    preSVG = cf2;
+                    break;
+                case 7:
+                    preSVG = cf3;
+                    break;
+                case 8:
+                    preSVG = cf45;
+                    break;
+                case 9:
+                    preSVG = centire;
+                    break;
+            };
+            localStorage.setItem("pictures", JSON.stringify(pictures));
+            if (localStorage.getItem("pieces") == null) localStorage.setItem("pieces", "[]");
+            var pieces = JSON.parse(localStorage.getItem("pieces"));
+            var bool = false;
+            var r;
+            if (pieces.length <= 5)
+                while (!bool) {
+                    var random = Math.floor(Math.random() * 6);
+                    if (pieces.indexOf(random) <= -1) { pieces.push(random); bool = true; r = random; }
+                }
+            console.log("pieces: " + JSON.stringify(pieces));
+            localStorage.setItem("pieces", JSON.stringify(pieces));
+            //ここに画像を大きく見せるプログラムを書く
+            setGotNewPiece([true, r]);
+        } else if (location.state.num == 2) {
+            //id: "map_type(0: entire_map, 1: floor1, 2: floor2, 3: floor3, 4:floor4-5)|x,y|direction(e.g 45)"
+            var map = Number(id.split("|")[0]);
+            var pos = { x: Number(id.split("|")[1].split(",")[0]), y: Number(id.split("|")[1].split(",")[1]) };
+            var dir = id.split("|")[2];
+            console.log(pos);
+            setDisplayMap(map);
+            switch (map) {
+                case 0:
+                    preSVG = entire;
+                    break;
+                case 1:
+                    preSVG = f1;
+                    break;
+                case 2:
+                    preSVG = f2;
+                    break;
+                case 3:
+                    preSVG = f3;
+                    break;
+                case 4:
+                    preSVG = f45;
+                    break;
+            };
+            setTriangle([map, pos, dir]);
+        }
     }
 
     const closeGNP = () => {
@@ -538,6 +566,27 @@ function Map() {
                                                         fill="white"
                                                         key={uuid()} /></Group>;
                                     })
+                                )
+                            }
+                            {(triangle != null) &&
+                                (
+                                    triangle[0] == displayMap ?
+                                        <Shape
+                                            sceneFunc={(context, shape) => {
+                                                context.beginPath();
+                                                context.moveTo(-12, -15);
+                                                context.lineTo(-12, 15);
+                                                context.lineTo(0, 0);
+                                                context.closePath();
+                                                context.fillStrokeShape(shape);
+                                            }}
+                                            x={triangle[1]["x"]}
+                                            y={triangle[1]["y"] + 50}
+                                            rotation={triangle[2]}
+                                            fill="#008cff"
+                                            stroke="white"
+                                            strokeWidth={1}
+                                        /> : <></>
                                 )
                             }
                         </Group>
