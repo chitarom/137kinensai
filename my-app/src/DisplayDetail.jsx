@@ -139,7 +139,9 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
 
     const hasReachedCommentLimit = (commentCount >= 3);
 
-    const tyugaku = (S) => S?.includes("中学");
+    const tyugaku = (S) => {
+        return S?.includes("中学") && !(S?.includes("高校")) && !(S?.includes("高"));
+    }
 
     return (
         <div className='detail-wrap'>
@@ -178,7 +180,6 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                 <DetailImageSlider imagelist={displayDetailContents[4]} />
                 <div className='detail'>{displayDetailContents[2]}</div>
                 {displayDetailContents[0][0] !== 'J' &&
-                    !tyugaku(displayDetailContents[0]) &&
                     !tyugaku(displayDetailContents[1]) ? <>
                     <div className='comment-header'>
                         <hr className="comment-divider" />
