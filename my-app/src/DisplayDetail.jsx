@@ -140,9 +140,8 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
     const hasReachedCommentLimit = (commentCount >= 3);
 
     const tyugaku = (S) => {
-        return S?.includes("中学") && !(S?.includes("高校")) && !(S?.includes("高"));
+        return S?.includes("中学") || S?.includes("中高");
     }
-
     return (
         <div className='detail-wrap'>
             <div className='dw-margin' onClick={hideDDetail}></div>
@@ -179,8 +178,11 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
 
                 <DetailImageSlider imagelist={displayDetailContents[4]} />
                 <div className='detail'>{displayDetailContents[2]}</div>
-                {displayDetailContents[0][0] !== 'J' &&
-                    !tyugaku(displayDetailContents[1]) ? <>
+                {(displayDetailContents[0][0] !== 'J' &&
+                    !tyugaku(displayDetailContents[0]) &&
+                    !tyugaku(displayDetailContents[1])) ||
+                    displayDetailContents[1] === "交通研究同好会" ||
+                    displayDetailContents[1] === "歴史研究部" ? <>
                     <div className='comment-header'>
                         <hr className="comment-divider" />
                         <span className="comment-title">この企画に寄せられたコメント</span>
