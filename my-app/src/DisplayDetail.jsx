@@ -139,6 +139,8 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
 
     const hasReachedCommentLimit = (commentCount >= 3);
 
+    const tyugaku = (S) => S?.includes("中学");
+
     return (
         <div className='detail-wrap'>
             <div className='dw-margin' onClick={hideDDetail}></div>
@@ -175,7 +177,9 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
 
                 <DetailImageSlider imagelist={displayDetailContents[4]} />
                 <div className='detail'>{displayDetailContents[2]}</div>
-                {displayDetailContents[0][0] !== 'J' ? <>
+                {displayDetailContents[0][0] !== 'J' &&
+                    !tyugaku(displayDetailContents[0]) &&
+                    !tyugaku(displayDetailContents[1]) ? <>
                     <div className='comment-header'>
                         <hr className="comment-divider" />
                         <span className="comment-title">この企画に寄せられたコメント</span>
@@ -221,28 +225,28 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                         )}
                     </div>
                     {modalState && (
-                        <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
-                            <div className="modal-content">
-                                {modalState === "confirm" && (
-                                    <>
-                                        <p>この内容で送信してもよろしいですか？</p>
-                                        {/*<p className="confirm-comment">{newComment}</p>/**/}
-                                        <div className="confirm-buttons">
-                                            <button onClick={handleAddComment} className="confirm-send">送信</button>
-                                            <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
-                                        </div>
-                                    </>
-                                )}
-                                {modalState === "toast" && (
-                                    <>
-                                        <span>コメントの送信が完了しました！<br />ありがとうございます！！</span>
-                                        <button className="toast-close" onClick={() => setModalState(null)}>×</button>
-                                    </>
-                                )}
-                            </div>
+                    <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
+                        <div className="modal-content">
+                            {modalState === "confirm" && (
+                                <>
+                                    <p>この内容で送信してもよろしいですか？</p>
+                                    {/*<p className="confirm-comment">{newComment}</p>/**/}
+                                    <div className="confirm-buttons">
+                                        <button onClick={handleAddComment} className="confirm-send">送信</button>
+                                        <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
+                                    </div>
+                                </>
+                            )}
+                            {modalState === "toast" && (
+                                <>
+                                    <span>コメントの送信が完了しました！<br />ありがとうございます！！</span>
+                                    <button className="toast-close" onClick={() => setModalState(null)}>×</button>
+                                </>
+                            )}
                         </div>
-                    )}
-                </> : <></>
+                    </div>
+                )}
+                </> : null
                 }
             </div>
         </div>
