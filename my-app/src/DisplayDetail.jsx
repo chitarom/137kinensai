@@ -225,28 +225,34 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                         )}
                     </div>
                     {modalState && (
-                    <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
-                        <div className="modal-content">
-                            {modalState === "confirm" && (
-                                <>
-                                    <p>この内容で送信してもよろしいですか？</p>
-                                    {/*<p className="confirm-comment">{newComment}</p>/**/}
-                                    <div className="confirm-buttons">
-                                        <button onClick={handleAddComment} className="confirm-send">送信</button>
-                                        <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
-                                    </div>
-                                </>
-                            )}
-                            {modalState === "toast" && (
-                                <>
-                                    <span>コメントの送信が完了しました！<br />ありがとうございます！！</span>
-                                    <button className="toast-close" onClick={() => setModalState(null)}>×</button>
-                                </>
-                            )}
+                        <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
+                            <div className="modal-content">
+                                {modalState === "confirm" && (
+                                    <>
+                                        <p>この内容で送信してもよろしいですか？</p>
+                                        {/*<p className="confirm-comment">{newComment}</p>/**/}
+                                        <div className="confirm-buttons">
+                                            <button onClick={handleAddComment} className="confirm-send">送信</button>
+                                            <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
+                                        </div>
+                                    </>
+                                )}
+                                {modalState === "toast" && (
+                                    <>
+                                        <span>コメントの送信が完了しました！<br />ありがとうございます！！</span>
+                                        <button className="toast-close" onClick={() => setModalState(null)}>×</button>
+                                    </>
+                                )}
+                            </div>
                         </div>
+                    )}
+                </> : <>
+                    <div className='comment-header'>
+                        <hr className="comment-divider" />
+                        <span className="comment-title">この企画へのコメントはオフに設定されています</span>
+                        <hr className="comment-divider" />
                     </div>
-                )}
-                </> : null
+                </>
                 }
             </div>
         </div>
