@@ -175,72 +175,75 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
 
                 <DetailImageSlider imagelist={displayDetailContents[4]} />
                 <div className='detail'>{displayDetailContents[2]}</div>
-                <div className='comment-header'>
-                    <hr className="comment-divider" />
-                    <span className="comment-title">この企画に寄せられたコメント</span>
-                    <hr className="comment-divider" />
-                </div>
-                <div className='detail-comments'>
-                    {CurrentCommmentList.length > 0 ? (
-                        CurrentCommmentList.map((comment) => (
-                            <div key={comment.id} className='comment-item'>
-                                {comment.passage}
-                            </div>
-                        ))
-                    ) : (
-                        <p className='no-comment'>まだコメントはありません</p>
-                    )}
-                </div>
-                <div className="comment-footer">
-                    <hr className='comment-divider'></hr>
-                </div>
-                <div className="add-comment-section">
-                    <textarea
-                        className="add-comment"
-                        value={newComment}
-                        onChange={(e) => setNewComment(e.target.value)}
-                        placeholder="コメントを書く...（４００字まで）"
-                        rows={4} // 初期設定したい行数
-                        disabled={hasReachedCommentLimit}
-                    />
-                    {hasReachedCommentLimit ? (
-                        <button className="comment-submit" disabled>
-                            この企画に対する<br />コメントはこれ以<br />上送信できません
-                        </button>
-                    ) : isCommentTooLong ? (
-                        <button className="comment-submit" disabled>
-                            コメントが長すぎます
-                        </button>
-                    ) : (
-                        <button
-                            className="comment-submit"
-                            onClick={handleRequestSend}
-                            disabled={!newComment.trim()}
-                        >送信する</button>
-                    )}
-                </div>
-                {modalState && (
-                    <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
-                        <div className="modal-content">
-                            {modalState === "confirm" && (
-                                <>
-                                    <p>この内容で送信してもよろしいですか？</p>
-                                    {/*<p className="confirm-comment">{newComment}</p>/**/}
-                                    <div className="confirm-buttons">
-                                        <button onClick={handleAddComment} className="confirm-send">送信</button>
-                                        <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
-                                    </div>
-                                </>
-                            )}
-                            {modalState === "toast" && (
-                                <>
-                                    <span>コメントの送信が完了しました！<br />ありがとうございます！！</span>
-                                    <button className="toast-close" onClick={() => setModalState(null)}>×</button>
-                                </>
-                            )}
-                        </div>
+                {displayDetailContents[0][0] !== 'J' ? <>
+                    <div className='comment-header'>
+                        <hr className="comment-divider" />
+                        <span className="comment-title">この企画に寄せられたコメント</span>
+                        <hr className="comment-divider" />
                     </div>
-                )}
+                    <div className='detail-comments'>
+                        {CurrentCommmentList.length > 0 ? (
+                            CurrentCommmentList.map((comment) => (
+                                <div key={comment.id} className='comment-item'>
+                                    {comment.passage}
+                                </div>
+                            ))
+                        ) : (
+                            <p className='no-comment'>まだコメントはありません</p>
+                        )}
+                    </div>
+                    <div className="comment-footer">
+                        <hr className='comment-divider'></hr>
+                    </div>
+                    <div className="add-comment-section">
+                        <textarea
+                            className="add-comment"
+                            value={newComment}
+                            onChange={(e) => setNewComment(e.target.value)}
+                            placeholder="コメントを書く...（４００字まで）"
+                            rows={4} // 初期設定したい行数
+                            disabled={hasReachedCommentLimit}
+                        />
+                        {hasReachedCommentLimit ? (
+                            <button className="comment-submit" disabled>
+                                この企画に対する<br />コメントはこれ以<br />上送信できません
+                            </button>
+                        ) : isCommentTooLong ? (
+                            <button className="comment-submit" disabled>
+                                コメントが長すぎます
+                            </button>
+                        ) : (
+                            <button
+                                className="comment-submit"
+                                onClick={handleRequestSend}
+                                disabled={!newComment.trim()}
+                            >送信する</button>
+                        )}
+                    </div>
+                    {modalState && (
+                        <div className={`modal-overlay ${isFading ? "fade-out" : ""}`}>
+                            <div className="modal-content">
+                                {modalState === "confirm" && (
+                                    <>
+                                        <p>この内容で送信してもよろしいですか？</p>
+                                        {/*<p className="confirm-comment">{newComment}</p>/**/}
+                                        <div className="confirm-buttons">
+                                            <button onClick={handleAddComment} className="confirm-send">送信</button>
+                                            <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
+                                        </div>
+                                    </>
+                                )}
+                                {modalState === "toast" && (
+                                    <>
+                                        <span>コメントの送信が完了しました！<br />ありがとうございます！！</span>
+                                        <button className="toast-close" onClick={() => setModalState(null)}>×</button>
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </> : <></>
+                }
             </div>
         </div>
     )
