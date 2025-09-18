@@ -1,0 +1,114 @@
+.shin-con {
+    background-image: url("/pictures/shintenchi.jpg");
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shin-title-con {
+    background-color: rgba(255, 255, 255, 0.519);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 20px;
+}
+
+.shin-title-con h2 {
+    font-size: 60px;
+}
+
+.shin-title-con p {
+    font-size: 20px;
+}
+
+.shin-exp-con {
+    background-image: url("/pictures/tmap.webp");
+    background-size: cover;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+    background-position: 50% 50%;
+    
+
+}
+
+.shin-detail-con {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.49);
+    margin: 10px;
+    position: relative;
+}
+
+.shin-detail-con.right {
+    text-align: right;
+    align-items: end;
+}
+
+.shin-detail-con h2 {
+    background-color: rgb(250, 255, 212);
+    width: 100%;
+    padding-inline: 10px;
+    
+}
+
+.shin-detail-con img {
+    position: absolute;
+    top: 25%;
+    width: 128px;
+    right: 0;
+    z-index: 0;
+    opacity: 0.4;
+
+}
+
+.shin-detail-con.right img {
+    left: 0;
+}
+
+.shin-detail-con h2.green {
+    background-color: rgb(206, 255, 202);
+    text-align: right;
+}
+
+.shin-detail-con h2.red {
+    background-color: rgb(255, 202, 202);
+}
+
+.shin-de-passage {
+    padding: 3%;
+    width: 90%;
+}
+
+
+.shin-button {
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 18px;
+    margin: 5px;
+    background-color: #008cff;
+    text-decoration: none;
+    color: white;
+}
+
+.shin-button-con {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+

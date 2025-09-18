@@ -2,6 +2,7 @@ import './Home.css';
 import { useRef, useState, useEffect } from 'react';
 import stageSlide from '/pictures/stage-slide.png';
 import kaijinSlide from '/pictures/kaijin.png';
+import shinslide from '/pictures/shin-slide.png';
 import { Link } from 'react-router-dom';
 
 
@@ -53,11 +54,8 @@ const NewsSlider = () => {
         <img src={kaijinSlide} alt="" />
 
         </Link>
-        <Link to="/" className="news-slide">
-          <div className="center-center">
-            <h2>スタンプラリー3</h2>
-            <h1>開催決定</h1>
-          </div>
+        <Link to="/shintenchi" className="news-slide">
+          <img src={shinslide} alt="" />
         </Link>
         <div className="ghost-slide" aria-hidden="true" />
 

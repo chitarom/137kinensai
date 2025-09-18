@@ -10,5 +10,6 @@
   { "path": "/kaijin", "component": "Kaijin" ,"name":"海神"},
   { "path": "/readqr", "component": "ReadQR" ,"name":"QRコードを読み取る"},
   { "path": "/login", "component": "Login" ,"name":"管理者用"},
-  { "path": "/pagelist", "component": "PageList" ,"name":"ページ一覧"}
+  { "path": "/pagelist", "component": "PageList" ,"name":"ページ一覧"},
+  { "path": "/shintenchi", "component": "Shintenchi" ,"name":"新天地"}
 ]

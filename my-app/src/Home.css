@@ -29,7 +29,7 @@
 .news-slide {
     flex: 0 0 80%;
     scroll-snap-align: center;
-    width: 150px;
+    width: 80%;
     height: auto;
     border-radius: 20px;
 
