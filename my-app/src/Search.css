@@ -345,6 +345,10 @@
     font-size: 30px;
 }
 
+.filter-wrap-wrap {
+    width: 100%;
+}
+
 .filter-wrap-wrap>.filter-wrap {
     margin: 0;
 }
@@ -412,6 +416,7 @@
 }
 
 .detail-left {
+    width: 65%;
     flex: 1;
     text-align: left;
 }
