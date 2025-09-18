@@ -423,7 +423,8 @@
     gap: 6px; 
 }
 
-.navigate-to-vote {
+.navigate-to-vote,
+.navigate-to-kaijin {
     padding: 6px 12px;
     font-size: 14px;
     font-weight: 600;
@@ -436,10 +437,12 @@
     white-space: nowrap;
 }
 
-.navigate-to-vote:hover {
+.navigate-to-vote:hover,
+.navigate-to-kaijin:hover {
     background-color: #0072d6;
 }
 
+.navigate-to-vote:active,
 .navigate-to-vote:active {
     background-color: #005bb5;
 }

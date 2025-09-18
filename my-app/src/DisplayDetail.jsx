@@ -173,6 +173,11 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                                 投票する！<br />(投票ページへ)
                             </button>
                         )}
+                        {displayDetailContents[1]?.includes("海神") && (
+                            <button className='navigate-to-kaijin' onClick={() => navigate("/kaijin")}>
+                                特設ページへ
+                            </button>
+                        )}
                     </div>
                 </div>
 
