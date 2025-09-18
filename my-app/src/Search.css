@@ -177,6 +177,7 @@
 .class {
     margin-left: 10px;
     margin-top: 5px;
+    font-size: 14px;
 }
 
 .title {
@@ -221,10 +222,18 @@
 }
 
 .terms {
+    width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    font-size: 20px;
     align-items: center;
     flex-grow: 1;
+}
+
+.seiriken-term {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
 }
 
 .favorite-wrap {
@@ -345,7 +354,12 @@
     font-size: 30px;
 }
 
+.filter-wrap-wrap {
+    width: 100%;
+}
+
 .filter-wrap-wrap>.filter-wrap {
+    width: calc(100% - 5px);
     margin: 0;
 }
 
@@ -412,6 +426,7 @@
 }
 
 .detail-left {
+    width: 65%;
     flex: 1;
     text-align: left;
 }

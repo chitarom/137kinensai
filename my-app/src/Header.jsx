@@ -38,7 +38,7 @@ function Header() {
             {displayHamburger &&
                 (<div className="hamburger-attention-con" onClick={() => setDisplayHamburger(false)}>
                     <div className='hamburger-menu' onClick={(e) => e.stopPropagation()}>
-                        <Link to="/articlemenu" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>ニュース・記事</Link>
+                        {/* <Link to="/articlemenu" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>ニュース・記事</Link> */}
                         <Link to="/passport" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>絵の旅パスポート</Link>
                         <Link to="/stagevote" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>ステージ投票</Link>
                         <Link to="/kaijin" onClick={() => setDisplayHamburger(false)} className='hamburger-menu-tab'>海神</Link>

@@ -145,6 +145,23 @@
     color: #008cff;
 }
 
+.loading-wrap {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-txt {
+    color: white;
+}
+
 @keyframes slidein {
     from {
         right: -150px;

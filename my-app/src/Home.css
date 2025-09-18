@@ -29,8 +29,8 @@
 .news-slide {
     flex: 0 0 80%;
     scroll-snap-align: center;
-    aspect-ratio: 8/5;
-    max-height: 300px;
+    width: 150px;
+    height: auto;
     border-radius: 20px;
 
     display: flex;
