@@ -4,7 +4,6 @@
   { "path": "/map", "component": "Map" ,"name":"マップ"},
   { "path": "/schedule", "component": "Schedule" ,"name":"予定表"},
   { "path": "/event", "component": "Event" ,"name":"イベント"},
-  { "path": "/articlemenu", "component": "ArticleMenu" ,"name":"ニュース・記事"},
   { "path": "/aboutfood", "component": "AboutFood" ,"name":"お食事について"},
   { "path": "/passport", "component": "Passport" ,"name":"絵の旅パスポート"},
   { "path": "/stagevote", "component": "StageVote" ,"name":"ステージ投票"},
