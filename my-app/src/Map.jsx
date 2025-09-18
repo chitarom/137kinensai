@@ -157,6 +157,7 @@ function Map() {
                     svg = bool ? cf45 : f45;
                     break;
             }
+            setLoaded(false);
             setSVG(svg);
         };
     };
@@ -186,6 +187,7 @@ function Map() {
                     break;
 
             }
+            setLoaded(false);
             setSVG(svg);
         }
     }
@@ -210,6 +212,7 @@ function Map() {
     const [scale, setScale] = useState(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [canOpen, setCanOpen] = useState([false, ""]);
+    const [loaded,setLoaded] = useState(false);
 
     const [rects, setRects] = useState([]);
 
@@ -264,7 +267,7 @@ function Map() {
 
         const image = new window.Image();
         image.crossOrigin = "anonymous";
-        image.onload = () => setImg(image);
+        image.onload = () => {setImg(image);setLoaded(true);}
         image.src = SVG;
         /*.addEventListener("click",(e) => {
             console.log("160");
@@ -630,6 +633,13 @@ function Map() {
                 (
                     <div className='achievement'>
                         <Link to="/passport">ピースゲット！</Link>
+                    </div>
+                )
+            }
+            {(!loaded) &&
+                (
+                    <div className='loading-wrap'>
+                        <div className='loading-txt'>読み込み中...</div>
                     </div>
                 )
             }
