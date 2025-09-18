@@ -187,7 +187,7 @@ function Map() {
                     break;
 
             }
-            setLoaded(false);
+            if (displayMap != int) setLoaded(false);
             setSVG(svg);
         }
     }
