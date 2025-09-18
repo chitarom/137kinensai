@@ -85,8 +85,9 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
         <div className='categories-wrap' onClick={changeDDetail}><div className='categories'>{category_list}</div></div>
         <div className='ticket-right'>
           <div className='terms' onClick={changeDDetail}>
-            <div className='term'>7:14～14:17</div>
-            <div className='seiriken-term'>7:14～14:17</div>
+            <div className='term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? projdata[7][1]+":"+projdata[7][2] : ""}</div>
+            <div className='seiriken-term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? "～" : ""}</div>
+            <div className='term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? projdata[7][3]+":"+projdata[7][4] : ""}</div>
           </div>
           <div className='favorite-wrap'>
             <div className='fw-margin' onClick={changeDDetail}></div>
