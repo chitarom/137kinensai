@@ -20,6 +20,7 @@ import Article from './Article.jsx';
 import StageVote from './StageVote.jsx';
 import Kaijin from './Kaijin.jsx';
 import Shintenchi from './Shintenchi.jsx';
+import Mogiten from './Mogiten.jsx';
 
 
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/stagevote" element={<StageVote/>}/>
         <Route path="/kaijin" element={<Kaijin/>}/>
         <Route path="/shintenchi" element={<Shintenchi/>}/>
+        <Route path="/mogiten" element={<Mogiten/>}/>
       </Routes>
       <FooterNav />
     </>

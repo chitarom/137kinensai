@@ -93,7 +93,7 @@
 .kj-change-button {
     position: fixed;
     right: 0;
-    top: 80px;
+    bottom: 120px;
     margin: 10px;
     font-size: 20px;
     padding: 10px;
@@ -103,6 +103,7 @@
     color: white;
     font-weight: bold;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.361);
+    opacity: 0.9;
 }
 
 .kj-group-con.sumabura {

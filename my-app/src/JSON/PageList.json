@@ -4,12 +4,14 @@
   { "path": "/map", "component": "Map" ,"name":"マップ"},
   { "path": "/schedule", "component": "Schedule" ,"name":"予定表"},
   { "path": "/event", "component": "Event" ,"name":"イベント"},
+  { "path": "/shintenchi", "component": "Shintenchi" ,"name":"新天地"},
   { "path": "/aboutfood", "component": "AboutFood" ,"name":"お食事について"},
+  { "path": "/mogiten", "component": "Mogiten" ,"name":"模擬店"},
   { "path": "/passport", "component": "Passport" ,"name":"絵の旅パスポート"},
   { "path": "/stagevote", "component": "StageVote" ,"name":"ステージ投票"},
   { "path": "/kaijin", "component": "Kaijin" ,"name":"海神"},
   { "path": "/readqr", "component": "ReadQR" ,"name":"QRコードを読み取る"},
   { "path": "/login", "component": "Login" ,"name":"管理者用"},
-  { "path": "/pagelist", "component": "PageList" ,"name":"ページ一覧"},
-  { "path": "/shintenchi", "component": "Shintenchi" ,"name":"新天地"}
+  { "path": "/pagelist", "component": "PageList" ,"name":"ページ一覧"}
+  
 ]

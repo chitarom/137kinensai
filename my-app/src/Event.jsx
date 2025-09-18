@@ -17,6 +17,12 @@ function Event() {
                 <Link to="/stagevote" className="event">
                     <p>STAGE PERFORMANCE</p>
                 </Link>
+                <Link to="/kaijin" className="event kaijin">
+                </Link>
+                <Link to="/passport" className="event passport">
+                </Link>
+                <Link to="/mogiten" className="event mogiten">
+                </Link>
             </div>
 
             

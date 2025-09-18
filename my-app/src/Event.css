@@ -36,3 +36,20 @@
     background-color: rgba(255, 255, 255, 0.445);
 
 }
+
+.event.kaijin {
+    background-image: url("/pictures/kaijin.png");
+    background-position: 50% 50%;
+}
+
+.event.passport {
+    background-image: url("/pictures/enotabislide.png");
+    background-position: 50% 50%;
+
+}
+
+.event.mogiten {
+    background-image: url("/pictures/mogi.png");
+    background-position: 50% 50%;
+
+}

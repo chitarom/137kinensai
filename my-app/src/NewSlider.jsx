@@ -4,6 +4,7 @@ import stageSlide from '/pictures/stage-slide.png';
 import kaijinSlide from '/pictures/kaijin.png';
 import shinslide from '/pictures/shin-slide.png';
 import { Link } from 'react-router-dom';
+import enotabi from '/pictures/enotabi2.png'
 
 
 const NewsSlider = () => {
@@ -56,6 +57,9 @@ const NewsSlider = () => {
         </Link>
         <Link to="/shintenchi" className="news-slide">
           <img src={shinslide} alt="" />
+        </Link>
+        <Link to="/passport" className="news-slide">
+          <img src={enotabi} alt="" />
         </Link>
         <div className="ghost-slide" aria-hidden="true" />
 
