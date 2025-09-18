@@ -253,7 +253,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                 </> : <>
                     <div className='comment-header'>
                         <hr className="comment-divider" />
-                        <span className="comment-title">この企画へのコメントはオフに設定されています</span>
+                        <span className="comment-title" style={{fontSize:"14px"}}>この企画へのコメントはオフに設定されています</span>
                         <hr className="comment-divider" />
                     </div>
                 </>
