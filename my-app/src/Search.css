@@ -351,6 +351,7 @@
 }
 
 .filter-wrap-wrap>.filter-wrap {
+    width: calc(100% - 5px);
     margin: 0;
 }
 
