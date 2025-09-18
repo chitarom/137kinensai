@@ -222,10 +222,18 @@
 }
 
 .terms {
+    width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    font-size: 20px;
     align-items: center;
     flex-grow: 1;
+}
+
+.seiriken-term {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
 }
 
 .favorite-wrap {
@@ -346,7 +354,12 @@
     font-size: 30px;
 }
 
+.filter-wrap-wrap {
+    width: 100%;
+}
+
 .filter-wrap-wrap>.filter-wrap {
+    width: calc(100% - 5px);
     margin: 0;
 }
 
@@ -413,6 +426,7 @@
 }
 
 .detail-left {
+    width: 65%;
     flex: 1;
     text-align: left;
 }
@@ -424,7 +438,8 @@
     gap: 6px; 
 }
 
-.navigate-to-vote {
+.navigate-to-vote,
+.navigate-to-kaijin {
     padding: 6px 12px;
     font-size: 14px;
     font-weight: 600;
@@ -437,10 +452,12 @@
     white-space: nowrap;
 }
 
-.navigate-to-vote:hover {
+.navigate-to-vote:hover,
+.navigate-to-kaijin:hover {
     background-color: #0072d6;
 }
 
+.navigate-to-vote:active,
 .navigate-to-vote:active {
     background-color: #005bb5;
 }

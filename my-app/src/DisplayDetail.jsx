@@ -142,6 +142,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
     const tyugaku = (S) => {
         return S?.includes("中学") || S?.includes("中高");
     }
+
     return (
         <div className='detail-wrap'>
             <div className='dw-margin' onClick={hideDDetail}></div>
@@ -152,7 +153,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                         <div className='detail-space space1'></div>
                         <div className='detail-title'>{displayDetailContents[1]}</div>
                         <div className='detail-space space2'></div>
-                        <div className='filter-wrap-wrap'>
+                        <div className='filter-wrap-wrap' style={displayDetailContents[5].split("-")[0] == "S" ? {} : {width: "calc(100vw - 30px)"}}>
                             <div className='filter-wrap'>
                                 <div className='filter-list' key={uuidv4()}>
                                     {getList(displayDetailContents[3])}
@@ -171,6 +172,11 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                         {displayDetailContents[0] === "ステージ" && (
                             <button className='navigate-to-vote' onClick={() => navigate("/stagevote")}>
                                 投票する！<br />(投票ページへ)
+                            </button>
+                        )}
+                        {displayDetailContents[1]?.includes("海神") && (
+                            <button className='navigate-to-kaijin' onClick={() => navigate("/kaijin")}>
+                                特設ページへ
                             </button>
                         )}
                     </div>
@@ -252,7 +258,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                 </> : <>
                     <div className='comment-header'>
                         <hr className="comment-divider" />
-                        <span className="comment-title">この企画へのコメントはオフに設定されています</span>
+                        <span className="comment-title" style={{fontSize:"14px"}}>この企画へのコメントはオフに設定されています</span>
                         <hr className="comment-divider" />
                     </div>
                 </>

@@ -103,7 +103,7 @@ function ReadQR() {
             style={{ width: "100%" }}
           />
           <canvas ref={canvasRef} style={{ display: "none" }} />
-          <p className="pleaseread">QRコードをカメラにかざしてください</p>
+          <p className="pleaseread">QRコードをカメラに<br/>かざしてください</p>
         </>
       )}
     </div>

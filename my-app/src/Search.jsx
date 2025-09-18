@@ -19,7 +19,7 @@ function Search() {
     //["場所","企画名","説明文",[カテゴリー],[スライド用画像],"企画ID"]
     const [keyword, setKeyword] = useState("");
     const [filter, setFilter] = useState([[], 10, false]);
-    const search = (e) => { setKeyword(e.target.value); }
+    const search = (e) => { setFilter([[], 10, false]); setKeyword(e.target.value); }
     const changeFilterList = [template(10), template(11), template(7), template(8), template(9)];
     function template(int) { return () => { setFilter([filter[0], int, filter[2]]); } };
     const setFilterList = [];
@@ -56,8 +56,15 @@ function Search() {
         return <button className={'filter' + (filter[0].includes(str) ? '' : ' inactive')} id={id} onClick={setFilterList[id - 1]} key={id}>{str}</button>;
     }
     const list = [];
-    for (let i = 0; i < categories.length; i++)
+    const list1 = [];
+    const list2 = [];
+    for (let i = 0; i < categories.length; i++) {
+        if (filter[0].includes(categories[i]))
+            list1.push(filterButton(categories[i], (i + 1)));
+        else list2.push(filterButton(categories[i], (i + 1)));
         list.push(filterButton(categories[i], (i + 1)));
+    }
+    console.log(filter);
 
     const togglePopUp = () => {
         setPopUp(!isPopUp);
@@ -80,8 +87,9 @@ function Search() {
             <div className='filter-wrap'>
                 <div className='filter-list'>
                     <button className='first-filter filter' id='0' onClick={togglePopUp}>絞り込む</button>
+                    {list1}
                     <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
-                    {list}
+                    {list2}
                 </div>
             </div>
             <div className='content'>
