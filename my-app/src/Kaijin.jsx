@@ -55,7 +55,6 @@ function Kaijin() {
                             {grouplist.filter(item => item[0] === 'スマブラ').map(item => (
                                 <div className="kj-group-con sumabura">
                                     <h2>{item[1]}</h2>
-                                    <p>PN: {item[2]}</p>
                                 </div>
 
                             ))}</>}
