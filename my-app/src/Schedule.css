@@ -2,7 +2,7 @@
     position: relative;
     height: auto;
     width: 260px;
-    height: 720 * 2px;
+    height: 720px;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -116,7 +116,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 140px;
+    margin-bottom: 80px;
 
 }
 
