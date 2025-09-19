@@ -39,7 +39,7 @@ function Shintenchi() {
                 <h2 className="red">③絵の旅パスポート</h2>
                 <div className="shin-de-passage">
                     <h3>設置場所：高校校舎</h3>
-                    <p>私達と一緒に、記念祭を旅してみませんか？校舎内各地におかれているスタンプを見つけ、全部集めよう！最後まで集めたら景品があります！諦めないで！</p>
+                    <p>校内のいろいろなところに貼ってある絵を探して、QRコードを読み取ってみよう！読み取った絵はコレクションに追加されるよ！6枚集めると、137th記念祭のオリジナル壁紙もらえる！</p>
                 </div>
                 <div className="shin-button-con"><Link to="/passport" className="shin-button">特設ページ</Link></div>
                 <img src="/pictures/passportstamp.png" alt="" />
