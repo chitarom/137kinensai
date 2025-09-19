@@ -16,7 +16,7 @@ function Kaijin() {
             <div className="kj-explanation-con">
                 <button className="kj-ex-button" onClick={() => setActiveExplanation(prev => (prev + 1) % 2)}>海神とは <span className="oo8cff">{activeExplanation === 1 ? '▲' : '▼'}</span></button>
                 {activeExplanation == 1 && <p>
-                    「海神」とは第134周年記念祭から毎年日曜日の午後に開催されている東海高校1、2年による実況解説大会です。事前オーディションによって選ばれた出演者によって大迫力の戦いが繰り広げられます。実行委員から選出された実況、解説が出場者のプレイを彩り、記念祭を最後の最後まで盛り上げます。
+                    「海神」とは134周年創立記念祭から毎年日曜日の午後に開催されている東海高校1、2年による実況解説大会です。事前オーディションによって選ばれた出演者によって大迫力の戦いが繰り広げられます。実行委員から選出された実況、解説が出場者のプレイを彩り、記念祭を最後の最後まで盛り上げます。
 
                 </p>}
             </div>
