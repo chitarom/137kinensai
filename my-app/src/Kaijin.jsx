@@ -21,13 +21,13 @@ function Kaijin() {
                 </p>}
             </div>
             <div className="kj-rule-con">
-                <h2>{currentPage == 1 ? "パフォーマー一覧" : "ルール説明"}</h2>
                 <div className="kj-rule-button-con">
-                    <button className={`kj-rule-button ${currentRule != 0 ? "unselected" : ""}`} onClick={() => setCurrentRule(0)}>スマブラ</button>
-                    <button className={`kj-rule-button ${currentRule != 1 ? "unselected" : ""}`} onClick={() => setCurrentRule(1)}>スプラ</button>
+                    <button className={`kj-rule-button ${currentRule != 0 ? "unselected" : ""}`} onClick={() => setCurrentRule(0)}>ルール説明</button>
+                    <button className={`kj-rule-button ${currentRule != 1 ? "unselected" : ""}`} onClick={() => setCurrentRule(1)}>パフォーマー</button>
                 </div>
-                {currentPage == 0 && <>{currentRule == 0 && <div className="kj-rule-exp-con">
+                {currentRule == 0 && <div className="kj-rule-exp-con">
                     <div className="kj-rule-pas">
+                        <h3>スマブラ</h3>
                         <p>・パフォーマーは8名</p>
                         <p>・トーナメント方式</p>
                         <p>・準々決勝、準決勝、決勝の計7戦</p>
@@ -37,45 +37,49 @@ function Kaijin() {
                     </div>
 
 
-                </div>}
-                    {currentRule == 1 && <div className="kj-rule-exp-con">
-                        <div className="kj-rule-pas">
-                            <p>・パフォーマーは4チーム16名</p>
-                            <p>・トーナメント方式</p>
-                            <p>・対戦数は準決勝2戦と決勝の計3戦</p>
-                            <p>・4人対4人、2本先取で行う。</p>
-                            <p>・試合ルールはナワバリバトル以外を全て使用できる。</p>
-                        </div>
 
 
-                    </div>}</>}
-                {currentPage == 1 && <>
-                    <div className="kj-group-list-con">
-                        {currentRule == 0 && <>
-                            {grouplist.filter(item => item[0] === 'スマブラ').map(item => (
-                                <div className="kj-group-con sumabura">
-                                    <h2>{item[1]}</h2>
-                                </div>
-
-                            ))}</>}
-                        {currentRule == 1 && <>
-                            {grouplist.filter(item => item[0] === 'スプラ').map(item => (
-                                <div className="kj-group-con supura">
-                                    <h2>{item[1]}</h2>
-                                    <p>{item[2]}</p>
-                                </div>
-
-                            ))}</>}
+                    <div className="kj-rule-pas">
+                        <h3>スプラ</h3>
+                        <p>・パフォーマーは4チーム16名</p>
+                        <p>・トーナメント方式</p>
+                        <p>・対戦数は準決勝2戦と決勝の計3戦</p>
+                        <p>・4人対4人、2本先取で行う。</p>
+                        <p>・試合ルールはナワバリバトル以外を全て使用できる。</p>
                     </div>
-                </>}
+                    </div>
+                }
 
 
 
-            </div>
-            <button className="kj-change-button" onClick={() => setCurrentPage(prev => (prev + 1) % 2)}>{currentPage == 0 ? "パフォーマー一覧" : "ルール説明"}</button>
+                    {currentRule == 1 && <>
+                        <div className="kj-group-list-con">
+                            
+                                {grouplist.filter(item => item[0] === 'スマブラ').map(item => (
+                                    <div className="kj-group-con sumabura">
+                                        <h2>{item[1]}</h2>
+                                        <p>{item[0]}</p>
+                                    </div>
 
-        </div>
-    )
+                                ))}
+                            
+                                {grouplist.filter(item => item[0] === 'スプラ').map(item => (
+                                    <div className="kj-group-con supura">
+                                        <h2>{item[1]}</h2>
+                                        <p>{item[0]}</p>
+                                    </div>
+
+                                ))}
+                        </div>
+                    </>}
+
+
+
+                </div>
+                    <button className="kj-change-button" onClick={() => setCurrentPage(prev => (prev + 1) % 2)}>{currentPage == 0 ? "パフォーマー一覧" : "ルール説明"}</button>
+
+                </div>
+                )
 }
 
-export default Kaijin;
+                export default Kaijin;

@@ -111,9 +111,11 @@
     padding: 5px;
     width: 90%;
     margin: 5px;
-    display: flex;
-    align-items: center;
     gap: 20px;
+}
+
+.kj-group-con.sumabura p {
+    font-size: 12px;
 }
 
 .kj-group-list-con {
