@@ -65,7 +65,7 @@ function Passport() {
             <div className="explanation-con">
                 <button className="ex-button" onClick={() => setActiveExplanation(prev => (prev + 1) % 2)}>絵の旅パスポートとは？ <span className="oo8cff">{activeExplanation === 1 ? '▲' : '▼'}</span></button>
                 {activeExplanation == 1 && <p>
-                    校内のいろいろなところに貼ってある絵を探して、QRコードを読み取ってみよう！読み取った絵はコレクションに追加されるよ！6枚集めると、137th記念祭のオリジナル壁紙もらえる！
+                    校内のいろいろなところに貼ってある絵を探して、QRコードを読み取ってみよう！読み取った絵はコレクションに追加されるよ！6枚集めると、137th記念祭のオリジナル壁紙がもらえる！
                 </p>}
             </div>
             <div className="passport-menu">
