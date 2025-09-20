@@ -158,9 +158,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                 <div className='detail-head'>
                     <div className='detail-left'>
                         <div className='detail-place'>{displayDetailContents[0]}</div>
-                        <div className='detail-space space1'></div>
                         <div className='detail-title'>{displayDetailContents[1]}</div>
-                        <div className='detail-space space2'></div>
                         <div className='filter-wrap-wrap' style={displayDetailContents[5].split("-")[0] == "S" ? {} : { width: "calc(100vw - 30px)" }}>
                             <div className='filter-wrap'>
                                 <div className='filter-list' key={uuidv4()}>
@@ -178,16 +176,16 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                             {scheduled ? "" : star}
                         </button>
                         {(displayDetailContents[0] === "ステージ" || displaystage) ? (
-                            <button className='navigate-to-vote' onClick={() => navigate("/stagevote")}>
+                            <button className='navigate-to vote' onClick={() => navigate("/stagevote")}>
                                 投票する！<br />(投票ページへ)
                             </button>
                         ) : displayDetailContents[1]?.includes("海神") ? (
-                            <button className='navigate-to-kaijin' onClick={() => navigate("/kaijin")}>
+                            <button className='navigate-to kaijin' onClick={() => navigate("/kaijin")}>
                                 特設ページへ
                             </button>
                         ) : matchHighSchoolClassProject(displayDetailContents[0]) && false && (
-                            <button>
-                                クラス記事を<br/>見る
+                            <button className='navigate-to article' onClick={() => navigate("/articlemenu")}>
+                                記事へ
                             </button>
                         )}
                     </div>
