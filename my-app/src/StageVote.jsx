@@ -96,9 +96,14 @@ function StageVote() {
                         <h2>{item[1]}</h2>
                         <p className="subtitle">{item[3]}</p>
                     </div>
-                    <div className="vote-check-box">
-                        <button onClick={() => handleSelect(item[1])}>{checkSelected(item[1]) ? "■" : "□"}</button>
-                    </div>
+                    {voted != "voted" && <div className="vote-check-box">
+                        <h6>選択する</h6>
+
+                        <div className="vote-check-box">
+                            <button onClick={() => handleSelect(item[1])}>{checkSelected(item[1]) ? "■" : "□"}</button>
+                        </div>
+
+                    </div>}
                 </div>
             ))}
             {voted != "voted" && month > 8 && date > 26 && <>
