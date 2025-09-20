@@ -55,7 +55,8 @@ function Login() {
         }
     };
 
-    const handleDelete = async (id) => {
+    const handleDeleteNews = async (id) => {
+        alert("消しますよ");
         const { error } = await supabase
             .from("news")
             .delete()
@@ -70,22 +71,17 @@ function Login() {
         }
     };
 
-
-    useEffect(() => {
-        const fetchNews = async () => {
-            const { data, error } = await supabase
-                .from("news")
-                .select("*")
-                .order("created_at", { ascending: false });
-            if (error) {
-                console.error("取得エラー:", error);
-            } else {
-                setNewsList(data);
-            }
+    const fetchNews = async () => {
+        const { data, error } = await supabase
+            .from("news")
+            .select("*")
+            .order("created_at", { ascending: false });
+        if (error) {
+            console.error("取得エラー:", error);
+        } else {
+            setNewsList(data);
         }
-        fetchNews();
-
-    }, [])
+    };
 
     const fetchComments = async () => {
         const { data, error } = await supabase
@@ -97,9 +93,10 @@ function Login() {
         } else {
             setCommentList(data);
         }
-    }
+    };
 
     useEffect(() => {
+        fetchNews();
         fetchComments();
     }, []);
 
@@ -247,7 +244,7 @@ function Login() {
                     {newsList.map(item => (
                         <div className="news-box">
                             <p>{item.passage}</p>
-                            <button className="delete-button" onClick={() => handleDelete(item.id)}>delete</button>
+                            <button className="delete-button" onClick={() => handleDeleteNews(item.id)}>delete</button>
                         </div>
                     ))}
 
