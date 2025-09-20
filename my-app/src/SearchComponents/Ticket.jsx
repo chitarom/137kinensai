@@ -80,7 +80,8 @@ function Ticket({ keyword, filter, projdata, ddetail, id, setDDC }) {
   var seiriken = "";
   if (projdata[6].indexOf("C") > -1) {
     if (projdata[4].includes("整理券有(a)")) seiriken = "整理券有(α)";
-    else if (projdata[4].includes("整理券有(b)")) seiriken = "整理券有(β)"
+    else if (projdata[4].includes("整理券有(b)")) seiriken = "整理券有(β)";
+    else seiriken = "整理券無"
   }
 
   return (
