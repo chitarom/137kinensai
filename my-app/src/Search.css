@@ -236,7 +236,11 @@
 
 .seiriken {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
     color: #008cff;
     &.ari {
         color: red;

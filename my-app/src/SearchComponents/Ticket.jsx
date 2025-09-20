@@ -19,7 +19,7 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
       num = 8;
       break;
     case 9:
-      type = "有　　志";
+      type = "その他";
       num = 9;
       break;
   }
