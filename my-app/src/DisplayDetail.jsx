@@ -189,6 +189,10 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                             <button className='navigate-to kaijin' onClick={() => navigate("/kaijin")}>
                                 特設ページへ
                             </button>
+                        ) : !scheduled && displayDetailContents[0] === "講堂" ? (
+                            <button className='navigate-to schedule' onClick={() => navigate("/schedule")}>
+                                予定表を見る
+                            </button>
                             /* この下のfalseをとると表示されます */
                         ) : matchHighSchoolClassProject(displayDetailContents[0]) && false && (
                             <button className='navigate-to article' onClick={() => navigate("/article", { state: { title: matchHighSchoolClassProject(displayDetailContents[0]) } })}>
