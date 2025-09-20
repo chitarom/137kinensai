@@ -1,0 +1,378 @@
+
+.detail-wrap {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.402);
+    z-index: 5;
+}
+
+.dw-margin {
+    width: 100%;
+    height: 30%;
+}
+
+.detail-tag {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(70% - 60px);
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 15px;
+    overflow: scroll;
+}
+
+.detail-tag>*:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.detail-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.detail-favorite {
+    color: #008cff;
+    font-weight: bold;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    background-color: white;
+    border: none;
+    font-size: 30px;
+}
+
+.filter-wrap-wrap {
+    width: 100%;
+}
+
+.filter-wrap-wrap>.filter-wrap {
+    width: calc(100% - 5px);
+    margin: 0;
+}
+
+.filter-wrap-wrap>.filter-wrap>.filter-list {
+    display: flex;
+}
+
+.detail-images-wrap {
+    overflow-x: auto;
+    min-height: 200px;
+    
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    scroll-padding-inline-start: 10%;
+    scroll-padding-inline-end: 10%;
+}
+
+.detail-images {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    min-width: calc(100vw - 30px);
+}
+
+.detail-images>img {
+    border-radius: 10px;
+    height: 200px;
+    scroll-snap-align: center;
+    object-fit: contain;
+
+    &:first-child {
+        margin-left: 30px;
+    }
+
+    &:last-child {
+        margin-right: 30px;
+    }
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.detail {
+    white-space: pre-line;
+    padding: 10px;
+    background-color: #e9e9e9;
+    border-radius: 10px;
+}
+
+.space1 {
+    height: 2px;
+}
+
+.space2 {
+    height: 10px;
+}
+
+.detail-head {
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: 80% 20%;
+}
+
+.detail-left {
+    width: 65%;
+    flex: 1;
+    text-align: left;
+}
+
+.detail-right {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    gap: 6px; 
+}
+
+.navigate-to-vote,
+.navigate-to-kaijin {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #008cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.navigate-to-vote:hover,
+.navigate-to-kaijin:hover {
+    background-color: #0072d6;
+}
+
+.navigate-to-vote:active,
+.navigate-to-vote:active {
+    background-color: #005bb5;
+}
+
+
+.comment-header,
+.comment-footer {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.comment-divider {
+    flex-grow: 1;
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 0 8px;
+}
+
+.comment-title {
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: italic;
+    color: #333;
+}
+
+
+.detail-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 12px;
+    /*padding-bottom: 120px; /* 入力欄の高さぶん余白を確保(入力欄固定用) */
+}
+
+.comment-item {
+    background-color: #e9e9e9;
+    border-radius: 20px;
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.05);
+}
+
+.no-comment {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+}
+
+
+/* コメ入力欄を固定したいとき用*//*
+.add-comment-section {
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; 
+}
+*/
+
+.add-comment {
+    width: 90%;
+    max-width: 800px;
+    margin: 10px 0;
+    padding: 12px 15px;
+    border: 1px solid #008cff;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    resize: none; /* ユーザーが高さを変えられるようにするなら、'vertical' */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.add-comment:focus {
+    border-color: #005bb5;
+    box-shadow: 0 0 5px rgba(0, 140, 255, 0.5);
+}
+
+.comment-submit {
+    width: 40%;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background-color: #008cff;
+    border: none;
+    border-radius: 10px;
+    margin: 0px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.comment-submit:hover {
+    background-color: #005bb5;
+}
+
+.comment-submit:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.add-comment-section {
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 以下、コメントの確認画面用 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    animation: fadeIn 0.2s ease forwards;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: scaleIn 0.2s ease forwards;
+}
+
+.confirm-comment {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 15px;
+}
+
+/* ボタン共通 */
+.confirm-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.confirm-send, .confirm-cancel, .toast-close {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.confirm-send {
+    background-color: #008cff;
+    color: #fff;
+}
+.confirm-send:hover {
+    background-color: #005bb5;
+}
+
+.confirm-cancel {
+    background-color: #ccc;
+    color: #333;
+}
+.confirm-cancel:hover {
+    background-color: #aaa;
+}
+
+.toast-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* フェードイン・フェードアウト */
+.fade-out {
+    animation: fadeOut 1.2s ease forwards; /* jsxと統一 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
