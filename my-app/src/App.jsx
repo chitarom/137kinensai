@@ -21,35 +21,38 @@ import StageVote from './StageVote.jsx';
 import Kaijin from './Kaijin.jsx';
 import Shintenchi from './Shintenchi.jsx';
 import Mogiten from './Mogiten.jsx';
+import "./App.css"
 
 
 
 function App() {
   return (
-    <>
-      <Header />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/schedule" element={<Schedule />} />
-        <Route path="/event" element={<Event />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/pagelist" element={<PageList />} />
-        <Route path="/aboutfood" element={<AboutFood />} />
-        <Route path="/readqr" element={<ReadQR/>}/>
-        <Route path="/analyzeqr" element={<AnalyzeQR/>}/>
-        <Route path="/passport" element={<Passport/>}/>
-        <Route path="/articlemenu" element={<ArticleMenu/>}/>
-        <Route path="/article" element={<Article/>}/>
-        <Route path="/stagevote" element={<StageVote/>}/>
-        <Route path="/kaijin" element={<Kaijin/>}/>
-        <Route path="/shintenchi" element={<Shintenchi/>}/>
-        <Route path="/mogiten" element={<Mogiten/>}/>
-      </Routes>
-      <FooterNav />
-    </>
+    <div className="all-wr-wr">
+      <div className="all-wrapper">
+        <Header />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/event" element={<Event />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/pagelist" element={<PageList />} />
+          <Route path="/aboutfood" element={<AboutFood />} />
+          <Route path="/readqr" element={<ReadQR />} />
+          <Route path="/analyzeqr" element={<AnalyzeQR />} />
+          <Route path="/passport" element={<Passport />} />
+          <Route path="/articlemenu" element={<ArticleMenu />} />
+          <Route path="/article" element={<Article />} />
+          <Route path="/stagevote" element={<StageVote />} />
+          <Route path="/kaijin" element={<Kaijin />} />
+          <Route path="/shintenchi" element={<Shintenchi />} />
+          <Route path="/mogiten" element={<Mogiten />} />
+        </Routes>
+        <FooterNav />
+      </div>
+    </div>
   );
 }
 
