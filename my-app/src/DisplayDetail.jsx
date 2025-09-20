@@ -183,6 +183,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                             <button className='navigate-to kaijin' onClick={() => navigate("/kaijin")}>
                                 特設ページへ
                             </button>
+                            /* この下のfalseをとると表示されます */
                         ) : matchHighSchoolClassProject(displayDetailContents[0]) && false && (
                             <button className='navigate-to article' onClick={() => navigate("/articlemenu")}>
                                 記事へ
