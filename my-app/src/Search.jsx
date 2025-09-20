@@ -19,7 +19,12 @@ function Search() {
     //["場所","企画名","説明文",[カテゴリー],[スライド用画像],"企画ID"]
     const [keyword, setKeyword] = useState("");
     const [filter, setFilter] = useState([[], 10, false]);
-    const search = (e) => { setFilter([[], 10, false]); setKeyword(e.target.value); }
+    const search = (e) => {
+        setFilter([[], 10, false]);
+        var kw = e.target.value;
+        kw = kw.split("(").join("").split(")").join("").split("\\").join("").split("[").join("").split("]").join("").split("+").join("").split("?").join("");
+        setKeyword(kw);
+    }
     const changeFilterList = [template(10), template(11), template(7), template(8), template(9)];
     function template(int) { return () => { setFilter([filter[0], int, filter[2]]); } };
     const setFilterList = [];
@@ -37,7 +42,7 @@ function Search() {
     */
     if (location.search != "" && location.search.includes("?keyword=") && !queried) {
         var kw = decodeURI(location.search.split("?keyword=")[1]);
-        console.log(kw);
+        kw = kw.split("(").join("").split(")").join("").split("\\").join("").split("[").join("").split("]").join("").split("+").join("").split("?").join("");
         setKeyword(kw);
         setQueried(true);
     }
@@ -64,7 +69,6 @@ function Search() {
         else list2.push(filterButton(categories[i], (i + 1)));
         list.push(filterButton(categories[i], (i + 1)));
     }
-    console.log(filter);
 
     const togglePopUp = () => {
         setPopUp(!isPopUp);
