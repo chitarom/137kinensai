@@ -98,7 +98,7 @@ function Search() {
                     <button className={"tab" + (filter[1] == 11 ? " active" : "")} onClick={changeFilterList[1]}>クラス企画</button>
                     <button className={"tab" + (filter[1] == 7 ? " active" : "")} onClick={changeFilterList[2]}>ステージ</button>
                     <button className={"tab" + (filter[1] == 8 ? " active" : "")} onClick={changeFilterList[3]}>講堂</button>
-                    <button className={"tab" + (filter[1] == 9 ? " active" : "")} onClick={changeFilterList[4]}>有志</button>
+                    <button className={"tab" + (filter[1] == 9 ? " active" : "")} onClick={changeFilterList[4]}>その他</button>
                 </div>
                 <div className='tickets'>
                     <TicketList keyword={keyword} filter={filter} ddetail={setDisplayingDetail} setDDC={setDisplayDetailContents} />
