@@ -77,6 +77,12 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
   if (cn[0] == "J") cn[0] = "中";
   cn = cn.join("");
 
+  var seiriken = "";
+  if (projdata[6].indexOf("C") > -1) {
+    if (projdata[4].includes("整理券有")) seiriken = "整理券有";
+    else seiriken = "整理券無";
+  }
+
   return (
     <div className={"ticket" + ticketcl} style={{ '--bg-image': `url(/pictures/${projdata[5][0]})` }}>
         <div className={"p" + projdata[2] + " proj-type"} onClick={changeDDetail}><div className='type'>{type}</div></div>
@@ -85,7 +91,8 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
         <div className='categories-wrap' onClick={changeDDetail}><div className='categories'>{category_list}</div></div>
         <div className='ticket-right'>
           <div className='terms' onClick={changeDDetail}>
-          <div className="satsun">{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? projdata[7][0] : ""}</div>
+            <div className={'seiriken' + (seiriken == "整理券有" ? " ari" : "")}>{seiriken}</div>
+            <div className="satsun">{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? projdata[7][0] : ""}</div>
             <div className='term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? projdata[7][1]+":"+projdata[7][2] : ""}</div>
             <div className='seiriken-term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? "～" : ""}</div>
             <div className='term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? projdata[7][3]+":"+projdata[7][4] : ""}</div>

@@ -234,6 +234,15 @@
     padding: 4px 8px;
 }
 
+.seiriken {
+    font-weight: bold;
+    font-size: 15px;
+    color: #008cff;
+    &.ari {
+        color: red;
+    }
+}
+
 .terms {
     width: 100%;
     display: flex;
