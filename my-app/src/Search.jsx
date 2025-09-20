@@ -101,6 +101,7 @@ function Search() {
                     <button className={"tab" + (filter[1] == 9 ? " active" : "")} onClick={changeFilterList[4]}>その他</button>
                 </div>
                 <div className='tickets'>
+                    <div className='ticket-warning'>パンフに掲載されている『愛知東海平和連合』は、諸事情によりなくなりました。</div>
                     <TicketList keyword={keyword} filter={filter} ddetail={setDisplayingDetail} setDDC={setDisplayDetailContents} />
                 </div>
             </div>

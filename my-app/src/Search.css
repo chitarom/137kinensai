@@ -88,6 +88,14 @@
     }
 }
 
+.ticket-warning {
+    border-radius: 5px;
+    border: 1px solid red;
+    background-color: #ff00001f;
+    color: red;
+    padding: 5px;
+}
+
 .tickets {
     padding: 10px;
     background-color: white;
