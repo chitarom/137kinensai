@@ -27,9 +27,11 @@ import "./App.css"
 
 function App() {
   return (
-    <div className="all-wr-wr">
+    <>
+      <Header />
+
       <div className="all-wrapper">
-        <Header />
+
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -50,9 +52,11 @@ function App() {
           <Route path="/shintenchi" element={<Shintenchi />} />
           <Route path="/mogiten" element={<Mogiten />} />
         </Routes>
-        <FooterNav />
+
+
       </div>
-    </div>
+      <FooterNav />
+    </>
   );
 }
 

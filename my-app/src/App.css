@@ -1,8 +1,6 @@
 .all-wrapper {
     max-width: 800px;
+    margin:  0 auto;
+    
 }
 
-.all-wr-wr {
-    display: flex;
-    justify-content: center;
-}
