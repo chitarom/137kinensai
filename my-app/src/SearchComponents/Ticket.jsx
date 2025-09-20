@@ -26,7 +26,9 @@ function Ticket({ keyword, filter, projdata, ddetail, id, setDDC }) {
 
   var category_list = [];
   for (let i = 0; i < projdata[4].length; i++)
-    category_list.push(<div key={i} className='category'>{projdata[4][i]}</div>);
+    category_list.push(<div key={i} className='category'>{
+      projdata[4][i] === "整理券有(a)" ? "整理券有(α)" : projdata[4][i] === "整理券有(b)" ? "整理券有(β)" : projdata[4][i]
+      }</div>);
 
   var hidden = true;
 
