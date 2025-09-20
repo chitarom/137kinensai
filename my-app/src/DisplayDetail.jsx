@@ -147,6 +147,10 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
         return S?.includes("中学") || S?.includes("中高");
     };
 
+    const rts = [
+        "1A"
+    ];
+
     const matchHighSchoolClassProject = (S) => {
         if (!S || S.length !== 3) return null;
         if (S[0] !== '高' || S[2] < 'A' || S[2] > 'J') return null;
@@ -187,8 +191,8 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                             </button>
                             /* この下のfalseをとると表示されます */
                         ) : matchHighSchoolClassProject(displayDetailContents[0]) && false && (
-                            <button className='navigate-to article' onClick={() => navigate("/articlemenu", { state: { title: matchHighSchoolClassProject(displayDetailContents[0]) } })}>
-                                記事へ
+                            <button className='navigate-to article' onClick={() => navigate("/article", { state: { title: matchHighSchoolClassProject(displayDetailContents[0]) } })}>
+                                記事を見る
                             </button>
                         )}
                     </div>

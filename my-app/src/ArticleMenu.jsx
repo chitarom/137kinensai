@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 function ArticleMenu() {
 
-
     return (
         <div>
             <div className="ar-menu-title">
@@ -17,7 +16,7 @@ function ArticleMenu() {
             </div>
             <div className="ar-list">
                 {articlelist.map(item => (
-                    <Link key={item[0]} to="/article" state={{ title: item[1]}} className="ar-con" style={{ backgroundImage: `url(${item[4]})` }}>
+                    <Link key={item[0]} to="/article" state={{ title: item[0]}} className="ar-con" style={{ backgroundImage: `url(${item[4]})` }}>
                         <div className="white-cover">
                             <p>{item[0]}</p>
                             <h3>{item[1]}</h3>

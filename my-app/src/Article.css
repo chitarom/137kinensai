@@ -26,3 +26,19 @@
     border-top: 1px solid #008cff; 
 }
 
+.ar-back-button {
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+    z-index: 100;
+    
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #008cff;
+    color: white;
+    margin: 20px 10px;
+    text-decoration: none;
+    border: none;
+}
