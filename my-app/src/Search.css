@@ -57,6 +57,11 @@
     background-color: white;
 }
 
+.filter.delete {
+    color: red;
+    border: 1px solid red;
+}
+
 .first-filter {
     border: 1px solid gray;
     background-color: white;

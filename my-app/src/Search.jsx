@@ -74,6 +74,15 @@ function Search() {
         setFilter([filter[0], filter[1], !filter[2]]);
     }
 
+    const cancelCategories = () => {
+        return () => {
+            if (confirm("今選択されているカテゴリーをすべて解除します。\nよろしいですか？")) {
+                setFilter([[], 10, false]);
+                setPopUp(false);
+            }
+        }
+    }
+
     if (localStorage.getItem("favorites") == undefined) localStorage.setItem("favorites", "[]");
     var favorites = JSON.parse(localStorage.getItem("favorites"));
 
@@ -115,6 +124,7 @@ function Search() {
                             <div className='category-popup-categories'>
                                 <button className={'filter' + (filter[2] ? "" : " inactive")} id='-1' onClick={toggleFavorite}>お気に入り</button>
                                 {list}
+                                <button className='filter delete inactive' id='-2' onClick={cancelCategories()}>選択解除</button>
                             </div>
                         </div>
                         <div className='cpw-margin2' onClick={togglePopUp}></div>
