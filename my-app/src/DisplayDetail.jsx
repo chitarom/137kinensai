@@ -207,6 +207,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                             <hr className='comment-divider'></hr>
                         </div>
                     */}
+                    {/*
                     <div className="add-comment-section">
                         <textarea
                             className="add-comment"
@@ -238,7 +239,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                                 {modalState === "confirm" && (
                                     <>
                                         <p>この内容で送信してもよろしいですか？</p>
-                                        {/*<p className="confirm-comment">{newComment}</p>/**/}
+                                        
                                         <div className="confirm-buttons">
                                             <button onClick={handleAddComment} className="confirm-send">送信</button>
                                             <button onClick={() => setModalState(null)} className="confirm-cancel">キャンセル</button>
@@ -254,6 +255,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                             </div>
                         </div>
                     )}
+                    */}
                 </> : <></>
                 }
             </div>
