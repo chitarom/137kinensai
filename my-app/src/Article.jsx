@@ -12,8 +12,9 @@ function Article() {
     }
 
     const matched = articlelist.filter(item => item[0] === title);
-    const handleBack = () => {
-        navigate("/articlemenu");
+    const handleBack = (num) => {
+        if (num == 1) navigate("/articlemenu");
+        else navigate("/search");
     };
 
     return (
@@ -37,7 +38,10 @@ function Article() {
                 </div>
             ))}
             <div>
-                <button className="ar-back-button" onClick={() => handleBack()}>記事一覧へ戻る</button>
+                <button className="ar-back-button articlemenu" onClick={() => handleBack(1)}>記事一覧へ戻る</button>
+            </div>
+            <div>
+                <button className="ar-back-button search" onClick={() => handleBack(2)}>企画検索へ戻る</button>
             </div>
         </div>
     );
