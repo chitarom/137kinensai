@@ -186,9 +186,9 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                                 特設ページへ
                             </button>
                         ) : matchHighSchoolClassProject(displayDetailContents[0]) && false && (
-                            <>
-                                <button>{/*クラス記事を<br/>見る*/}</button>
-                            </>
+                            <button>
+                                クラス記事を<br/>見る
+                            </button>
                         )}
                     </div>
                 </div>
