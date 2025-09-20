@@ -159,7 +159,7 @@ function Login() {
                     <button className="ad-button" onClick={() => setWatchable(2)}>コメント検閲</button>
                     <button className="ad-button" onClick={() => setWatchable(3)}>ニュース管理</button>
                 </div>
-                <button className="ad-button" onClick={() => localStorage.clear()}>データ全削除</button>
+                <button className="ad-button" onClick={() => {localStorage.clear(); alert("削除しました");}}>データ全削除</button>
             </>}
             {watchable > 1 && <div className="ad-con">
                 <button className="ad-button back-button" onClick={() => setWatchable(1)}>戻る</button>
@@ -210,7 +210,7 @@ function Login() {
                                             }}
                                         >{deleteConfirmId === item.id ? "やめとく" : "承認"}</button>
                                     )}
-                                    <button className="delete-button" disabled={item.check}
+                                    <button className="delete-button" disabled={true}
                                         onClick={() => {
                                             if (deleteConfirmId === item.id) {
                                                 handleDeleteComment(item.id);
