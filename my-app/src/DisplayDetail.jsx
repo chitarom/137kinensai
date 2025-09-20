@@ -28,7 +28,9 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
     const getList = (cats) => {
         const list = [];
         for (let i = 0; i < cats.length; i++) {
-            list.push(<div className='filter inactive' key={uuidv4()}>{cats[i]}</div>);
+            list.push(<div className='filter inactive' key={uuidv4()}>{
+                cats[i] === "整理券有(a)" ? "整理券有(α)" : cats[i] === "整理券有(b)" ? "整理券有(β)" : cats[i]
+                }</div>);
         }
         return list;
     }
@@ -185,7 +187,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                             </button>
                             /* この下のfalseをとると表示されます */
                         ) : matchHighSchoolClassProject(displayDetailContents[0]) && false && (
-                            <button className='navigate-to article' onClick={() => navigate("/articlemenu")}>
+                            <button className='navigate-to article' onClick={() => navigate("/articlemenu", { state: { title: matchHighSchoolClassProject(displayDetailContents[0]) } })}>
                                 記事へ
                             </button>
                         )}
