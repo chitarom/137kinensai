@@ -26,7 +26,7 @@ function Map() {
     const location = useLocation();
     const navigate = useNavigate();
     const [isFirstLoad, setFirstLoad] = useState(true);
-    const [displayMap, setDisplayMap] = useState(1);
+    const [displayMap, setDisplayMap] = useState(0);
     const [gotNewPiece, setGotNewPiece] = useState([false, null]);
     const [triangle, setTriangle] = useState(null);
     const [sample, setSample] = useState({ "map.at_0": null, "map.at_1": null, "map.at_2": null, "map.at_3": null, "map.at_4": null, "map.at_5": null, "map.at_6": null });
@@ -39,7 +39,7 @@ function Map() {
     }
 
     var b = false;
-    var preSVG = f1;
+    var preSVG = entire;
 
     if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
 
