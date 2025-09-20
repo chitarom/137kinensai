@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import DetailImageSlider from './SearchComponents/DetailImageSlider';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from './supabase';
+import './displaydetail.css';
 
 const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, displaystage }) => {
 
@@ -142,7 +143,13 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
 
     const tyugaku = (S) => {
         return S?.includes("中学") || S?.includes("中高");
-    }
+    };
+
+    const matchHighSchoolClassProject = (S) => {
+        if (!S || S.length !== 3) return null;
+        if (S[0] !== '高' || S[2] < 'A' || S[2] > 'J') return null;
+        return S[1] + S[2];
+    };
 
     return (
         <div className='detail-wrap'>
@@ -170,16 +177,15 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, 
                         >
                             {scheduled ? "" : star}
                         </button>
-                        {(displayDetailContents[0] === "ステージ" || displaystage) && (
+                        {(displayDetailContents[0] === "ステージ" || displaystage) ? (
                             <button className='navigate-to-vote' onClick={() => navigate("/stagevote")}>
                                 投票する！<br />(投票ページへ)
                             </button>
-                        )}
-                        {displayDetailContents[1]?.includes("海神") && (
+                        ) : displayDetailContents[1]?.includes("海神") ? (
                             <button className='navigate-to-kaijin' onClick={() => navigate("/kaijin")}>
                                 特設ページへ
                             </button>
-                        )}
+                        ) : matchHighSchoolClassProject(displayDetailContents[0]) && (<button>{/*クラス記事を<br/>見る*/}</button>)}
                     </div>
                 </div>
 
