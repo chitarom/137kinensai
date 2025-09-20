@@ -84,7 +84,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
 
     // コメント入力が変化したら文字数チェック
     useEffect(() => {
-        setCommentTooLong(newComment.length > 400);
+        setCommentTooLong(newComment.length > 1000);
     }, [newComment]);
 
     const handleRequestSend = () => {
@@ -99,8 +99,8 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
             alert("この企画に対するコメントはもう送信できません");
             return;
         }
-        if (newComment.length > 400) {
-            alert("コメントは400文字以内で入力してください");
+        if (newComment.length > 1000) {
+            alert("コメントは1000文字以内で入力してください");
             return;
         }
 
@@ -153,7 +153,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                         <div className='detail-space space1'></div>
                         <div className='detail-title'>{displayDetailContents[1]}</div>
                         <div className='detail-space space2'></div>
-                        <div className='filter-wrap-wrap' style={displayDetailContents[5].split("-")[0] == "S" ? {} : {width: "calc(100vw - 30px)"}}>
+                        <div className='filter-wrap-wrap' style={displayDetailContents[5].split("-")[0] == "S" ? {} : { width: "calc(100vw - 30px)" }}>
                             <div className='filter-wrap'>
                                 <div className='filter-list' key={uuidv4()}>
                                     {getList(displayDetailContents[3])}
@@ -187,33 +187,32 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                 {(displayDetailContents[0][0] !== 'J' &&
                     !tyugaku(displayDetailContents[0]) &&
                     !tyugaku(displayDetailContents[1])) ||
-                    displayDetailContents[1] === "交通研究同好会" ||
-                    displayDetailContents[1] === "歴史研究部" ? <>
-                    <div className='comment-header'>
-                        <hr className="comment-divider" />
-                        <span className="comment-title">この企画に寄せられたコメント</span>
-                        <hr className="comment-divider" />
-                    </div>
-                    <div className='detail-comments'>
-                        {CurrentCommmentList.length > 0 ? (
-                            CurrentCommmentList.map((comment) => (
-                                <div key={comment.id} className='comment-item'>
-                                    {comment.passage}
-                                </div>
-                            ))
-                        ) : (
-                            <p className='no-comment'>まだコメントはありません</p>
-                        )}
-                    </div>
-                    <div className="comment-footer">
-                        <hr className='comment-divider'></hr>
-                    </div>
+                    displayDetailContents[1] === "交通研究同好会" ? <>
+                    {/*
+                        <div className='comment-header'>
+                            <hr className="comment-divider" />
+                            <span className="comment-title">この企画に寄せられたコメント</span>
+                            <hr className="comment-divider" />
+                        </div>
+                        <div className='detail-comments'>
+                            {CurrentCommmentList.length > 0 ? (
+                                CurrentCommmentList.map((comment) => (
+                                    <div key={comment.id} className='comment-item'>
+                                        {comment.passage}
+                                    </div>
+                                ))
+                            ) : (<></>)}
+                        </div>
+                        <div className="comment-footer">
+                            <hr className='comment-divider'></hr>
+                        </div>
+                    */}
                     <div className="add-comment-section">
                         <textarea
                             className="add-comment"
                             value={newComment}
                             onChange={(e) => setNewComment(e.target.value)}
-                            placeholder="コメントを書く...（４００字まで）"
+                            placeholder="コメント・感想を残す..."
                             rows={4} // 初期設定したい行数
                             disabled={hasReachedCommentLimit}
                         />
@@ -255,13 +254,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                             </div>
                         </div>
                     )}
-                </> : <>
-                    <div className='comment-header'>
-                        <hr className="comment-divider" />
-                        <span className="comment-title" style={{fontSize:"14px"}}>この企画へのコメントはオフに設定されています</span>
-                        <hr className="comment-divider" />
-                    </div>
-                </>
+                </> : <></>
                 }
             </div>
         </div>
