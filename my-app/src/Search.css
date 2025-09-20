@@ -243,8 +243,11 @@
     background-color: white;
     border: 1px solid black;
     color: #000000;
-    &.ari {
+    &.ari-a {
         color: red;
+    }
+    &.ari-b {
+        color: orange;
     }
     &.nashi {
         color: #008cff;
