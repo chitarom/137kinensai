@@ -35,6 +35,30 @@ function Login() {
         }
     };
 
+    const fetchNews = async () => {
+        const { data, error } = await supabase
+            .from("news")
+            .select("*")
+            .order("created_at", { ascending: false });
+        if (error) {
+            console.error("取得エラー:", error);
+        } else {
+            setNewsList(data);
+        }
+    };
+
+    const fetchComments = async () => {
+        const { data, error } = await supabase
+            .from("comment")
+            .select("*")
+            .order("created_at", { ascending: false });
+        if (error) {
+            console.error("取得エラー:", error);
+        } else {
+            setCommentList(data);
+        }
+    };
+    
     const handleAddNews = async (e) => {
         e.preventDefault(); // ページリロード防止
         if (!passage) {
@@ -65,6 +89,7 @@ function Login() {
             setPassage("");
             setPageLink("");
         }
+        fetchNews();
     };
 
     const handleDeleteNews = async (id) => {
@@ -80,30 +105,6 @@ function Login() {
             console.log("削除成功！");
             // 表示を更新するならここで再取得 or フィルタ
             setNewsList(prev => prev.filter(item => item.id !== id));
-        }
-    };
-
-    const fetchNews = async () => {
-        const { data, error } = await supabase
-            .from("news")
-            .select("*")
-            .order("created_at", { ascending: false });
-        if (error) {
-            console.error("取得エラー:", error);
-        } else {
-            setNewsList(data);
-        }
-    };
-
-    const fetchComments = async () => {
-        const { data, error } = await supabase
-            .from("comment")
-            .select("*")
-            .order("created_at", { ascending: false });
-        if (error) {
-            console.error("取得エラー:", error);
-        } else {
-            setCommentList(data);
         }
     };
 

@@ -1,4 +1,4 @@
-import { parsePath } from 'react-router-dom';
+import { parsePath, Link } from 'react-router-dom';
 import './NewsBar.css'
 import { supabase } from './supabase';
 import { useEffect, useState } from 'react';
@@ -36,7 +36,13 @@ function NewsBar() {
 
     return (
         <div className="news-bar">
-            <p key={newsList[currentNews]?.id}>{newsList[currentNews]?.passage || "ニュースを読み込み中…"}</p>
+            <Link className="news-link"
+            key={newsList[currentNews]?.id}
+            to={newsList[currentNews]?.link || '/'}
+            aria-label={newsList[currentNews]?.passage || "ニュースを読み込み中…"}
+            >
+            {newsList[currentNews]?.passage || "ニュースを読み込み中…"}
+            </Link>
         </div>
         
     )

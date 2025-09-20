@@ -3,6 +3,12 @@
   padding: 3px;
 }
 
-.news-bar p {
+.news-link {
     color: aqua;
+    text-decoration: none;
+}
+
+
+.news-link:active {
+  opacity: 0.6; /* タップ中に薄くする */
 }
