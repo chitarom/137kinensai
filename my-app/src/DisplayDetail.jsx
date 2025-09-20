@@ -5,7 +5,7 @@ import DetailImageSlider from './SearchComponents/DetailImageSlider';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from './supabase';
 
-const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }) => {
+const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, displaystage }) => {
 
     const [favoriteSwitch, setFavoriteSwitch] = useState(false);
     const [CommentList, setCommentList] = useState([]);
@@ -18,6 +18,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
     const [commentCountKey] = useState(`commentCount-${displayDetailContents[1]}`);
     const [commentCount, setCommentCount] = useState(0);
     const navigate = useNavigate();
+    displaystage = displaystage || false;
 
     const hideDDetail = () => {
         setDisplayingDetail(-1);
@@ -169,7 +170,7 @@ const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled }
                         >
                             {scheduled ? "" : star}
                         </button>
-                        {displayDetailContents[0] === "ステージ" && (
+                        {(displayDetailContents[0] === "ステージ" || displaystage) && (
                             <button className='navigate-to-vote' onClick={() => navigate("/stagevote")}>
                                 投票する！<br />(投票ページへ)
                             </button>

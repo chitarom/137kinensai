@@ -15,6 +15,7 @@ function Schedule() {
     const [currentTab, setCurrentTab] = useState('kodo');
     const [displayingDetail, setDisplayingDetail] = useState(-1);
     const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
+    const [stage, setStage] = useState(false);
 
     useEffect(() => {
         console.log("Schedule mounted");
@@ -43,6 +44,8 @@ function Schedule() {
         container.addEventListener('scroll', handleScroll);
         return () => container.removeEventListener('scroll', handleScroll);
     }, [currentPage]);
+
+    useEffect(() => { setStage(currentTab === 'stage'); }, [currentTab]);
 
     function truncateText(text, maxLength) {
         return text.length > maxLength
@@ -129,17 +132,17 @@ function Schedule() {
     return (
         <div className="schedule-page">
             {(displayingDetail >= 0) &&
-                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} />)
+                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} displaystage={stage}/>)
             }
 {/*             <button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button> */}
             {currentPage == 0 && <>
                 <div className="ko-or-st-con">
                     <div className="kodo-or-stage">
-                        <button onClick={() => scrollToLeft()} className={`kodo-button ${activeTab === 'kodo' ? 'active' : ''}`}>
+                        <button onClick={() => scrollToLeft()} className={`kodo-button ${activeTab === 'kodo' ? 'active' : ''}`} disabled={displayingDetail !== -1}>
                             講堂企画
                         </button>
 
-                        <button onClick={() => scrollToRight()} className={`kodo-button ${activeTab === 'stage' ? 'active' : ''}`}>
+                        <button onClick={() => scrollToRight()} className={`kodo-button ${activeTab === 'stage' ? 'active' : ''}`} disabled={displayingDetail !== -1}>
                             ステージ企画
                         </button>
                     </div>
@@ -231,11 +234,11 @@ function Schedule() {
             {currentPage == 1 && <>
                 <div className="ko-or-st-con">
                     <div className="kodo-or-stage">
-                        <button onClick={() => setCurrentTab("kodo")} className={`kodo-button ${currentTab === 'kodo' ? 'active' : ''}`}>
+                        <button onClick={() => setCurrentTab("kodo")} className={`kodo-button ${currentTab === 'kodo' ? 'active' : ''}`} disabled={displayingDetail !== -1}>
                             講堂企画
                         </button>
 
-                        <button onClick={() => setCurrentTab("stage")} className={`kodo-button ${currentTab === 'stage' ? 'active' : ''}`}>
+                        <button onClick={() => setCurrentTab("stage")} className={`kodo-button ${currentTab === 'stage' ? 'active' : ''}`} disabled={displayingDetail !== -1}>
                             ステージ企画
                         </button>
                     </div>
