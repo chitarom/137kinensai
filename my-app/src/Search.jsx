@@ -22,7 +22,7 @@ function Search() {
     const search = (e) => {
         setFilter([[], 10, false]);
         var kw = e.target.value;
-        kw = kw.split("(").join("").split(")").join("").split("\\").join("").split("[").join("").split("]").join("").split("+").join("").split("?").join("");
+        kw = kw.split("(").join("").split(")").join("").split("\\").join("").split("[").join("").split("]").join("").split("+").join("").split("?").join("").split("*").join("");
         setKeyword(kw);
     }
     const changeFilterList = [template(10), template(11), template(7), template(8), template(9)];
