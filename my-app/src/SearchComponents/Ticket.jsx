@@ -93,9 +93,9 @@ function Ticket({ keyword, filter, projdata, ddetail, id, setDDC }) {
       <div className='ticket-right'>
         <div className='terms' onClick={changeDDetail}>
           {(projdata[6].indexOf("C") > -1) && (
-            <div className={`seiriken ${seiriken === "整理券有(α)" ? "ari" :
-                seiriken === "整理券有(β)" ? "nashi" :
-                  ""
+            <div className={`seiriken ${seiriken === "整理券有(α)" ? "ari-a" :
+                seiriken === "整理券有(β)" ? "ari-b" :
+                  "nashi"
               }`}>
               {seiriken}
             </div>
