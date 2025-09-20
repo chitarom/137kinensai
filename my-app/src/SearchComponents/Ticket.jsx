@@ -91,7 +91,7 @@ function Ticket ({keyword,filter,projdata,ddetail,id,setDDC}) {
         <div className='categories-wrap' onClick={changeDDetail}><div className='categories'>{category_list}</div></div>
         <div className='ticket-right'>
           <div className='terms' onClick={changeDDetail}>
-            <div className={'seiriken' + (seiriken == "整理券有" ? " ari" : "")}>{seiriken}</div>
+            {(projdata[6].indexOf("C") > -1) && <div className={'seiriken' + (seiriken == "整理券有" ? " ari" : "")}>{seiriken}</div>}
             <div className="satsun">{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? <p style={{ color: projdata[7][0] === "sat" ? "blue" : "red" }}>{projdata[7][0] === "sat" ? "27(土)" : "28(日)"}</p> : <></>}</div>
             <div className='term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? projdata[7][1]+":"+projdata[7][2] : ""}</div>
             <div className='seiriken-term'>{projdata[6].indexOf("K") > -1 || projdata[6].indexOf("S") > -1 ? "～" : ""}</div>
