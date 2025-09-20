@@ -76,7 +76,7 @@ function Kaijin() {
 
 
                 </div>
-                    <button className="kj-change-button" onClick={() => setCurrentPage(prev => (prev + 1) % 2)}>{currentPage == 0 ? "パフォーマー一覧" : "ルール説明"}</button>
+                    
 
                 </div>
                 )
