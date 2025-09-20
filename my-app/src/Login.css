@@ -51,7 +51,7 @@
 
 }
 .news-box {
-    font-size: 12px;
+    font-size: 14px;
     width: 95%;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,7 @@
     border: 1px solid #008cff;
     background-color: rgb(255, 255, 255);
     padding: 0 0 0 5px;
-    
+    height: 42px;
     
 }
 
@@ -70,7 +70,8 @@
     padding: 7px;
     font-size: 14px;
     font-weight: 550;
-    
+    height: 40px;
+    border-radius: 3px;
 }
 
 .news-list-con {
@@ -92,18 +93,28 @@
     margin: 10px 0;
     padding: 0 3%;
     display: flex;
+    gap: 4px;
+    border-radius: 7px;
 }
 
 .input-news {
-    font-size: 12px;
+    font-size: 16px;
     width: 85%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #008cff;
+    border: 1.5px solid #008cff;
     background-color: rgb(255, 255, 255);
     padding: 5px;
+    border-radius: 7px;
+    height: 40px;
+}
 
+.input-link {
+    font-size: 13px;
+    width: 53%;
+    border: 1.5px solid #008cff;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 7px;
+    height: 30px;
 }
 
 .add-button {
@@ -114,7 +125,14 @@
     padding: 7px;
     font-size: 14px;
     font-weight: 550;
+    border-radius: 7px;
 }
+
+.news-passage {
+    width: 60%;
+    font-size: 14px;
+}
+
 
 .add-news-con-con {
     width: 100%;

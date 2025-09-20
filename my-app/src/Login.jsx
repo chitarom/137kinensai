@@ -2,6 +2,7 @@ import "./Login.css"
 import { useState, useEffect } from "react"
 import { supabase } from "./supabase"
 import { Link } from "react-router-dom";
+import pagelist from "./JSON/PageList.json";
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ function Login() {
     const [result, setResult] = useState("");
     const [watchable, setWatchable] = useState(0);
     const [passage, setPassage] = useState("");
+    const [pagelink, setPageLink] = useState("");
     const [newsList, setNewsList] = useState([]);
     const [commentList, setCommentList] = useState([]);
     const [deleteConfirmId, setDeleteConfirmId] = useState(null);
@@ -35,23 +37,33 @@ function Login() {
 
     const handleAddNews = async (e) => {
         e.preventDefault(); // ページリロード防止
-        if (passage.length > 22) {
-            setResult("長すぎます")
+        if (!passage) {
+            setResult("入力してください");
             return;
         }
+        if (passage.length > 22) {
+            setResult("長すぎます");
+            return;
+        }
+
         setResult("");
-
-
+        const link = '/' + pagelink;
+        const page = pagelist.find(page => page.path === link);
+        if (!page) {
+            setResult("有効なリンクではありません");
+            return;
+        }
         const { error } = await supabase
             .from("news")
-            .insert([{ passage }])
-
+            .insert([{ passage, link }]);
 
         if (error) {
             console.error("取得エラー:", error);
             setResult("エラーが発生しました");
         } else {
-            setResult("送信成功");
+            setResult("送信成功！");
+            setPassage("");
+            setPageLink("");
         }
     };
 
@@ -159,7 +171,7 @@ function Login() {
                     <button className="ad-button" onClick={() => setWatchable(2)}>コメント検閲</button>
                     <button className="ad-button" onClick={() => setWatchable(3)}>ニュース管理</button>
                 </div>
-                <button className="ad-button" onClick={() => {localStorage.clear(); alert("削除しました");}}>データ全削除</button>
+                <button className="ad-button" onClick={() => { localStorage.clear(); alert("削除しました"); }}>データ全削除</button>
             </>}
             {watchable > 1 && <div className="ad-con">
                 <button className="ad-button back-button" onClick={() => setWatchable(1)}>戻る</button>
@@ -237,13 +249,23 @@ function Login() {
                         />
                         <button className="add-button" type="submit">追加</button>
                     </div>
+                    <div className="add-news-con">
+                    <input
+                        className="input-link"
+                        type="text"
+                        placeholder="リンクを入力(' / ' なし、正確に) ※書かないとHomeになります"
+                        value={pagelink}
+                        onChange={(e) => setPageLink(e.target.value)}
+                    />
+                    </div>
                     <p>{result}</p>
                 </form>
                 <div className="news-list-con">
                     <h3>ニュース一覧</h3>
                     {newsList.map(item => (
                         <div className="news-box">
-                            <p>{item.passage}</p>
+                            <p className="news-passage">{item.passage}</p>
+                            <p className="news-link">{item.link}</p>
                             <button className="delete-button" onClick={() => handleDeleteNews(item.id)}>delete</button>
                         </div>
                     ))}
