@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 function NewsBar() {
     const [newsList, setNewsList] = useState([]);
-    const [currentNews,setCurrentNews] = useState(0);
+    const [currentNews, setCurrentNews] = useState(0);
     useEffect(() => {
         const fetchNews = async () => {
             const {data, error} = await supabase
