@@ -16,6 +16,7 @@ function Schedule() {
     const [displayingDetail, setDisplayingDetail] = useState(-1);
     const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
     const [stage, setStage] = useState(false);
+    const multiplier = 1;
 
     useEffect(() => {
         console.log("Schedule mounted");
@@ -114,7 +115,7 @@ function Schedule() {
                 list[i].starttime = (parseInt(list[i].starthour) - 9) * 60 + parseInt(list[i].startminute)
                 list[i].finishtime = (parseInt(list[i].finishhour) - 9) * 60 + parseInt(list[i].finishminute)
             }
-            list[i].timelength = list[i].finishtime - list[i].starttime
+            list[i].timelength = (list[i].finishtime - list[i].starttime);
         }
     }
     calculateBoxSize(KodoGroupList);

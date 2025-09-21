@@ -1,3 +1,7 @@
+:root {
+    --multiplier: 1;
+}
+
 .schedule-con {
     position: relative;
     height: auto;
