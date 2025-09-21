@@ -1,27 +1,44 @@
 .reader-container {
-    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
     flex-direction: column;
 }
 
 .pleaseread {
-    font-size: 35px;
+    text-align: left;
+    position: fixed;
+    margin-left: 5%;
+    &.title {
+        font-size: 30px;
+        font-family: italic;
+        margin-top: 50px;
+    }
+    &.comment {
+        font-size: 20px;
+        margin-top: 95px;
+    }
 }
 
 .qr-button {
     font-size: 24px;
-    width: 50%;
+    font-weight: 450;
+    width: 90%;
     height: 100px;
-    margin: 5px;
-    background-color: white;
-    border: 2px solid #008cff;
-    border-radius: 10px;
+    margin: 30% 5% 0;
+    background-color: #007fe7;
+    border: none;
+    border-radius: 6px;
     text-decoration: none;
-    color: inherit;
+    color: white;
+}
 
+.qr-video {
+    margin: 0 5% 0 5%;
+    width: min(90%, 720px);
+    position: fixed;
+    top: 30%;
+    height: 50%;
+    display: block;
+    object-fit: cover;
 }
 
 .error-message {
@@ -34,4 +51,26 @@
     border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
+}
+
+.cancel-button {
+    position: fixed;
+    top: 65px;
+    right: 0;
+    z-index: 100;
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: #008cff;
+    color: white;
+    margin: 20px 10px;
+    border: none;
+    /*box-shadow: 0 4px 2px rgba(0, 0, 0, 0.4);*/
+}
+
+.qr-button:active,
+.qr-button:hover,
+.cancel-button:active,
+.cancel-button:hover {
+    background-color: #0069bf;
 }

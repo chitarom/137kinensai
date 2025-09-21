@@ -95,17 +95,21 @@ function ReadQR() {
       ) : (
         // スキャン中...
         <>
+        <p className="pleaseread title">QRコード読み取り</p>
+          <p className="pleaseread comment">QRコードをカメラにかざしてください</p>
           <video
             ref={videoRef}
             autoPlay
             playsInline
             muted
-            style={{ width: "100%" }}
+            className="qr-video"
           />
           <canvas ref={canvasRef} style={{ display: "none" }} />
-          <p className="pleaseread">QRコードをカメラに<br/>かざしてください</p>
         </>
       )}
+      <button className="cancel-button" onClick={() => navigate('/')}>
+        {scanning ? "閉じる" : "戻る"}
+      </button>
     </div>
   );
 }
