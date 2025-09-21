@@ -1,6 +1,7 @@
 import "./StageVote.css"
 import grouplist from "./JSON/ProjectData.json"
 import { useState, useEffect } from "react";
+import { supabase } from "./supabase";
 
 function StageVote() {
     const [selectedGroup, setSelectedGroup] = useState()
@@ -24,10 +25,21 @@ function StageVote() {
         setSelectedGroup(groupName);
     };
 
-    const handleVoted = (groupName) => {
-        localStorage.setItem("voted", "voted");
-        alert(`${groupName} に投票しました`);
-        setVoted("voted")
+    const handleVoted = async (groupName) => {
+
+        const name = groupName;
+        const { error } = await supabase
+            .from("vote")
+            .insert([{ name }]);
+        if (error) {
+            console.error("追加エラー:", error);
+        } else {
+            console.log("追加成功！");
+            localStorage.setItem("voted", "voted");
+            alert(`${groupName} に投票しました`);
+            setVoted("voted");
+            setCurrentPage(0);
+        }
     };
 
     const checkSelected = (groupName) => {
@@ -60,7 +72,7 @@ function StageVote() {
             </div>
 
             <div className="sc-day-con"><h2>27(土)</h2></div>
-            {grouplist.filter(item => item[0] === 'ステージ' && item[7][0] === 'sat').map(item => (
+            {grouplist.filter(item => item[0] === 'ステージ' && item[7][0] === 'sat' && item[7][6] !== "クイズ" && item[7][6] !== "合奏").map(item => (
                 <div role="button" key={item[1]} className="row-con" style={{ '--bg-image': `url(/pictures/${item[5][0]})` }}>
                     <div className="time-con">
                         <p>{item[7][1]}:{item[7][2]}</p>
@@ -84,7 +96,7 @@ function StageVote() {
                 </div>
             ))}
             <div className="sc-day-con sun"><h2>28(日)</h2></div>
-            {grouplist.filter(item => item[0] === 'ステージ' && item[7][0] === 'sun').map(item => (
+            {grouplist.filter(item => item[0] === 'ステージ' && item[7][0] === 'sun' && item[7][6] !== "クイズ" && item[7][6] !== "合奏").map(item => (
                 <div role="button" key={item[1]} className="row-con" style={{ '--bg-image': `url(/pictures/${item[5][0]})` }}>
                     <div className="time-con">
                         <p>{item[7][1]}:{item[7][2]}</p>
@@ -120,13 +132,13 @@ function StageVote() {
                         <h2>{selectedGroup}</h2>
                         <p>に投票します</p>
                         <h3>※投票はやり直せません！</h3>
-                        <button onClick={() => {handleVoted(selectedGroup)}}>投票する</button>
-                        <button onClick={() => {setCurrentPage(0)}}>やり直す</button>
+                        <button onClick={() => { handleVoted(selectedGroup) }}>投票する</button>
+                        <button onClick={() => { setCurrentPage(0) }}>やり直す</button>
                     </div>
 
                 </div>}
-            </>}
 
+            </>}
 
         </div>
 

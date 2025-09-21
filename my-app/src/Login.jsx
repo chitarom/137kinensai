@@ -15,6 +15,7 @@ function Login() {
     const [commentList, setCommentList] = useState([]);
     const [deleteConfirmId, setDeleteConfirmId] = useState(null);
     const [commentFilter, setCommentFilter] = useState("all");
+    const [voteList, setVoteList] = useState([[]]);
 
     const handleLogin = async (e) => {
         e.preventDefault(); // ページリロード防止
@@ -58,7 +59,7 @@ function Login() {
             setCommentList(data);
         }
     };
-    
+
     const handleAddNews = async (e) => {
         e.preventDefault(); // ページリロード防止
         if (!passage) {
@@ -108,11 +109,6 @@ function Login() {
         }
     };
 
-    useEffect(() => {
-        fetchNews();
-        fetchComments();
-    }, []);
-
     const handleDeleteComment = async (id) => {
         const { error } = await supabase
             .from("comment")
@@ -146,6 +142,25 @@ function Login() {
         }
     };
 
+    const fecthVotes = async () => {
+        const { data, error } = await supabase
+            .from("vote")
+            .select("id, created_at, name")
+            .order("created_at", { ascending: false });
+        if (error) {
+            console.error("取得エラー:", error);
+        } else {
+            setVoteList(data);
+            console.log(data);
+        }
+    };
+
+    useEffect(() => {
+        fetchNews();
+        fetchComments();
+        fecthVotes();
+    }, []);
+
     return (
         <>
             {watchable == 0 && <form className="login-con" onSubmit={handleLogin}>
@@ -172,7 +187,10 @@ function Login() {
                     <button className="ad-button" onClick={() => setWatchable(2)}>コメント検閲</button>
                     <button className="ad-button" onClick={() => setWatchable(3)}>ニュース管理</button>
                 </div>
-                <button className="ad-button" onClick={() => { localStorage.clear(); alert("削除しました"); }}>データ全削除</button>
+                <div className="ad-con">
+                    <button className="ad-button" onClick={() => { localStorage.clear(); alert("削除しました"); }}>データ全削除</button>
+                    <button className="ad-button" onClick={() => setWatchable(4)}>投票結果一覧</button>
+                </div>
             </>}
             {watchable > 1 && <div className="ad-con">
                 <button className="ad-button back-button" onClick={() => setWatchable(1)}>戻る</button>
@@ -252,13 +270,13 @@ function Login() {
                         <button className="add-button" type="submit">追加</button>
                     </div>
                     <div className="add-news-con">
-                    <input
-                        className="input-link"
-                        type="text"
-                        placeholder="リンクを入力(' / ' なし、正確に) ※書かないとHomeになります"
-                        value={pagelink}
-                        onChange={(e) => setPageLink(e.target.value)}
-                    />
+                        <input
+                            className="input-link"
+                            type="text"
+                            placeholder="リンクを入力(' / ' なし、正確に) ※書かないとHomeになります"
+                            value={pagelink}
+                            onChange={(e) => setPageLink(e.target.value)}
+                        />
                     </div>
                     <p>{result}</p>
                 </form>
@@ -275,7 +293,27 @@ function Login() {
                 </div>
 
             </div>}
-
+            {watchable == 4 && <div className="ad-interior-con">
+                <div className="votes-list-con">
+                    <h3>投票結果一覧</h3>
+                    {voteList.map((item) => {
+                        const date = new Date(item.created_at);
+                        const formatted = date.toLocaleString("ja-JP", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        });
+                        return (
+                            <div className="vote-box" key={item.id}>
+                                <p className="vote-time">{formatted}</p>
+                                <p className="vote-name">{item.name}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>}
 
         </>
     )
