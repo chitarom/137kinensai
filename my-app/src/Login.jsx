@@ -154,7 +154,6 @@ function Login() {
             console.error("取得エラー:", error);
         } else {
             setVoteList(data);
-            console.log(data);
         }
     };
 
@@ -163,6 +162,10 @@ function Login() {
         fetchComments();
         fecthVotes();
     }, []);
+
+    useEffect (() => {
+        if (watchable == 4) console.log(voteList);
+    }, [watchable]);
 
     const stageGroups = groupList.filter(
         item => (item[0] === "ステージ" &&
