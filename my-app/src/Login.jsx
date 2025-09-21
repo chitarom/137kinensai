@@ -221,6 +221,7 @@ function Login() {
                                                     handleToggleApproval(item.id, item.check);
                                                 }
                                             }}
+                                            disabled={true}
                                         >{deleteConfirmId === item.id ? "やめとく" : "承認"}</button>
                                     )}
                                     <button className="delete-button" disabled={true}

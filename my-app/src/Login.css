@@ -234,4 +234,4 @@
 .cancel-button:hover { background-color: #e68900; }
 .delete-button { background-color: #ff0000; }
 .delete-button:hover { background-color: #cc0000; }
-.delete-button:disabled { background-color: #cccccc; cursor: not-allowed; }
+.delete-button:disabled, .approve-button:disabled { background-color: #cccccc; cursor: not-allowed; }
