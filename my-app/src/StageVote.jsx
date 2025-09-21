@@ -106,11 +106,12 @@ function StageVote() {
                     </div>}
                 </div>
             ))}
-            {voted != "voted" && month > 8 && date > 26 && <>
+            {voted != "voted" && month > 7 && date > 20 && <>
                 <div className="vote-button">
                     <button className={selectedGroup ? "checked" : "unchecked"} onClick={() => {
                         if (selectedGroup) {
                             setCurrentPage(1);
+                            window.scrollTo({ top: 100, behavior: "smooth" });
                         }
                     }}>投票する！</button>
                 </div>
@@ -120,7 +121,7 @@ function StageVote() {
                         <p>に投票します</p>
                         <h3>※投票はやり直せません！</h3>
                         <button onClick={handleVoted}>投票する</button>
-
+                        <button onClick={() => {setCurrentPage(0)}}>やり直す</button>
                     </div>
 
                 </div>}
