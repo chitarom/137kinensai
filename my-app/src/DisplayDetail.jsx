@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import DetailImageSlider from './SearchComponents/DetailImageSlider';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from './supabase';
-import './displaydetail.css';
+import './DisplayDetail.css';
 
 const DisplayDetail = ({ displayDetailContents, setDisplayingDetail, scheduled, displaystage }) => {
 
