@@ -106,7 +106,7 @@ function StageVote() {
                     </div>}
                 </div>
             ))}
-            {voted != "voted" && month > 7 && date > 20 && <>
+            {voted != "voted" && month >= 8 && date >= 27 && <>
                 <div className="vote-button">
                     <button className={selectedGroup ? "checked" : "unchecked"} onClick={() => {
                         if (selectedGroup) {
