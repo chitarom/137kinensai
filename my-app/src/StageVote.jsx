@@ -26,7 +26,7 @@ function StageVote() {
 
     const handleVoted = (groupName) => {
         localStorage.setItem("voted", "voted");
-        alert(`${groupName} に投票候補を保存しました`);
+        alert(`${groupName} に投票しました`);
         setVoted("voted")
     };
 
@@ -120,7 +120,7 @@ function StageVote() {
                         <h2>{selectedGroup}</h2>
                         <p>に投票します</p>
                         <h3>※投票はやり直せません！</h3>
-                        <button onClick={handleVoted}>投票する</button>
+                        <button onClick={() => {handleVoted(selectedGroup)}}>投票する</button>
                         <button onClick={() => {setCurrentPage(0)}}>やり直す</button>
                     </div>
 
