@@ -1,6 +1,6 @@
 import './ReadQR.css'
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import jsQR from 'jsqr';
 
 
@@ -11,6 +11,7 @@ function ReadQR() {
   const [scanning, setScanning] = useState(false); // 起動中かどうか
   const [stream, setStream] = useState(null); // カメラから取得した MediaStream を保持する状態
   const [errorMessage, setErrorMessage] = useState(""); // エラーメッセージ用
+  const [showLink, setShowLink] = useState(false);
 
   // カメラを起動する
   const startCamera = () => {
@@ -33,21 +34,9 @@ function ReadQR() {
             setScanning(false);
             setErrorMessage(
               "お願い:\n" +
-              "QRコードの読み取りには、カメラへのアクセスを許可してください。\n" +
-              "\n\n許可の手順:\n" +
-              "①ブラウザ右上または右下の「︙」や「≡」→ [設定]をタップ\n" +
-              "②設定一覧にある [サイトの設定]や[Webサイト]、[サイトのアクセス許可]→[カメラ] へ移動\n" +
-              "③「ブロックリスト」の https://app.kinensai.jpをタップして、「許可する」を選択\n\n" +
-              "それでもうまくいかない場合(iOS + Safari):\n" +
-              "④スマホの [設定] を開き、下にスクロールして[Safari] をタップ\n" +
-              "⑤WEBサイトの設定→[カメラ] へ移動\n" +
-              "⑥カメラへのアクセスを許可、を選択\n\n" +
-              "それでもうまくいかない場合(Android)\n" +
-              "④スマホの[設定]の検索で、現在お使いのアプリを検索(Chromeなど)\n" +
-              "⑤アプリの情報の一覧にある、[権限]→[カメラ] へ移動\n" +
-              "⑥カメラへのアクセスを許可、を選択\n\n" +
-              "もしご不明な点がありましたら、お近くの東海生にお尋ねください。"
+              "QRコードの読み取りには、カメラへのアクセスを許可してください。\n"
             );
+            setShowLink(true);
           });
       });
   };
@@ -112,7 +101,9 @@ function ReadQR() {
               style={{ whiteSpace: "pre-line" }}
             >{errorMessage}</p>
           )}
-
+          {showLink && (
+              <Link to="/info" className='links'>やり方が分からない場合はこちら</Link>
+          )}
         </>
       ) : (
         // スキャン中...

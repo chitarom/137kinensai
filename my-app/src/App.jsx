@@ -21,6 +21,7 @@ import StageVote from './StageVote.jsx';
 import Kaijin from './Kaijin.jsx';
 import Shintenchi from './Shintenchi.jsx';
 import Mogiten from './Mogiten.jsx';
+import Info from './Info.jsx';
 import "./App.css"
 
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/kaijin" element={<Kaijin />} />
           <Route path="/shintenchi" element={<Shintenchi />} />
           <Route path="/mogiten" element={<Mogiten />} />
+          <Route path="/info" element={<Info />}></Route>
         </Routes>
 
 

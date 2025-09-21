@@ -45,7 +45,8 @@
     /*もっと優しいイメージがいいかも*/
     font-size: 19px;
     margin: 30px 10% 0 10%;
-    width: min(80%, 720px);background-color: #007fe7;
+    width: min(80%, 720px);
+    background-color:rgb(255, 94, 180);
     border: none;
     border-radius: 6px;
     text-decoration: none;
@@ -53,6 +54,28 @@
     border-radius: 10px;
     padding: 12px;
     box-sizing: border-box;
+}
+
+.links {
+    font-size: 19px;
+    margin: 30px 25% 0;
+    width: min(50%, 500px);
+    background-color: rgb(94, 156, 255); /* リンクなので青系に */
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 12px;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.links:hover,
+.links:active {
+    background-color: rgb(72, 130, 220);
+    transform: translateY(-2px);
+    cursor: pointer;
 }
 
 .cancel-button {
