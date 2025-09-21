@@ -12,7 +12,7 @@ function OnAirCopy() {
                     <h4>12:40~13:00</h4>
                     <h2 className="group-name">横転</h2>
                     <h2 className="subtitle">～ドカ笑い～</h2>
-                    <p><span className="blue">NEXT>></span>外れ値</p>
+                    <p><span className="blue">{"NEXT>>"}</span>外れ値</p>
                     <p className="next-time">13:00~13:20</p>
                 </div>
                 <div className="right-part">
