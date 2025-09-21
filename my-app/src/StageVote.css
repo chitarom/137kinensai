@@ -162,5 +162,9 @@
 
 .vote-attention h2 {
     color: rgb(255, 123, 0);
-    margin: 10px;
+    margin: 10px 0 0;
+}
+
+.vote-attention p {
+    font-size: 18px;
 }

@@ -253,8 +253,8 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    border: 1px solid #28a745; /* 緑系で区別 */
-    background-color: #fff;
+    border: 1px solid #28a745;
+    background-color: white;
     padding: 0 0 0 5px;
     margin-bottom: 8px;
     position: relative;
@@ -280,4 +280,41 @@
     color: #333;
     white-space: pre-wrap;
     word-break: break-word;
+}
+
+.votes-filter-buttons {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center
+}
+
+.vote-count-box {
+    font-size: 12px;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #28a745;
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.vote-count-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+    min-width: 120px;
+    text-align: left;
+    word-break: break-word;
+}
+
+.vote-count-number {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    min-width: 50px;
 }

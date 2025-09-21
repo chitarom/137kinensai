@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { supabase } from "./supabase"
 import { Link } from "react-router-dom";
 import pagelist from "./JSON/PageList.json";
+import groupList from "./JSON/ProjectData.json";
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -16,6 +17,8 @@ function Login() {
     const [deleteConfirmId, setDeleteConfirmId] = useState(null);
     const [commentFilter, setCommentFilter] = useState("all");
     const [voteList, setVoteList] = useState([[]]);
+    const [voteCounts, setVoteCounts] = useState({});
+    const [voteView, setVoteView] = useState("list");
 
     const handleLogin = async (e) => {
         e.preventDefault(); // ページリロード防止
@@ -161,6 +164,36 @@ function Login() {
         fecthVotes();
     }, []);
 
+    const stageGroups = groupList.filter(
+        item => (item[0] === "ステージ" &&
+            item[7][6] !== "クイズ" &&
+            item[7][6] !== "合奏"
+        )
+    );
+
+    useEffect(() => {
+        const counts = {};
+        stageGroups.forEach(([_, groupName]) => {
+            counts[groupName] = voteList.filter(v => v.name === groupName).length;
+        });
+        setVoteCounts(counts);
+    }, [voteList]);
+
+    const handleDeleteVote = async (id) => {
+        const { error } = await supabase
+            .from("vote")
+            .delete()
+            .eq("id", id);
+
+        if (error) {
+            console.error("削除エラー:", error);
+        } else {
+            alert("消しますよ");
+            console.log("削除成功！");
+            setVoteList(prev => prev.filter(item => item.id !== id));
+        }
+    }
+
     return (
         <>
             {watchable == 0 && <form className="login-con" onSubmit={handleLogin}>
@@ -294,24 +327,55 @@ function Login() {
 
             </div>}
             {watchable == 4 && <div className="ad-interior-con">
-                <div className="votes-list-con">
-                    <h3>投票結果一覧</h3>
-                    {voteList.map((item) => {
-                        const date = new Date(item.created_at);
-                        const formatted = date.toLocaleString("ja-JP", {
-                            year: "numeric",
-                            month: "2-digit",
-                            day: "2-digit",
-                            hour: "2-digit",
-                            minute: "2-digit"
-                        });
-                        return (
-                            <div className="vote-box" key={item.id}>
-                                <p className="vote-time">{formatted}</p>
-                                <p className="vote-name">{item.name}</p>
-                            </div>
-                        );
-                    })}
+                <div className="votes-con">
+                    <div className="votes-filter-buttons">
+                        <button
+                            className={`filter-button ${voteView === "list" ? "active" : ""}`}
+                            onClick={() => setVoteView("list")}
+                        >投票結果一覧</button>
+                        <button
+                            className={`filter-button ${voteView === "count" ? "active" : ""}`}
+                            onClick={() => setVoteView("count")}
+                        >団体別得票数</button>
+                    </div>
+                    {voteView === "list" && (
+                        <div className="votes-list-con">
+                            <h3>投票一覧</h3>
+                            {voteList.map((item) => {
+                                const date = new Date(item.created_at);
+                                const formatted = date.toLocaleString("ja-JP", {
+                                    year: "numeric",
+                                    month: "2-digit",
+                                    day: "2-digit",
+                                    hour: "2-digit",
+                                    minute: "2-digit"
+                                });
+                                return (
+                                    <div className="vote-box" key={item.id}>
+                                        <p className="vote-time">{formatted}</p>
+                                        <p className="vote-name">{item.name}</p>
+                                        <button className="delete-button"
+                                        onClick={() => handleDeleteVote(item.id)}
+                                        disabled={false} /* 消したいならtrueにして */
+                                        >
+                                            delete
+                                        </button>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                    {voteView === "count" && (
+                        <div className="votes-list-con">
+                            <h3>団体別得票数</h3>
+                            {Object.entries(voteCounts).map(([name, count]) => (
+                                <div className="vote-count-box" key={name}>
+                                    <span className="vote-count-name">{name}</span>
+                                    <span className="vote-count-number">{count} 票</span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>}
 

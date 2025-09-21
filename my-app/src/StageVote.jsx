@@ -8,8 +8,10 @@ function StageVote() {
     const [voted, setVoted] = useState()
     const [currentPage, setCurrentPage] = useState(0)
     const today = new Date();
+    const year = today.getFullYear();
     const month = today.getMonth(); // 0〜11 → 9月は「8」
-    const date = today.getDate()
+    const date = today.getDate();
+    const hour = today.getHours();
 
     useEffect(() => {
         const value = localStorage.getItem("selectedGroup")
@@ -118,7 +120,8 @@ function StageVote() {
                     </div>}
                 </div>
             ))}
-            {voted != "voted" && month >= 8 && date >= 27 && <>
+            {/*正確にはこうなりそう*/}
+            {voted != "voted" && (((hour >= 12 && date == 27) || (hour <= 16 && date == 28)) && month == 8 && year == 2025) ? <>
                 <div className="vote-button">
                     <button className={selectedGroup ? "checked" : "unchecked"} onClick={() => {
                         if (selectedGroup) {
@@ -138,6 +141,14 @@ function StageVote() {
 
                 </div>}
 
+            </> : voted === "voted" ? null : ((date <= 26 || (hour < 12 && date == 27)) && month == 8 && year == 2025) ? <>
+                <div className="vote-button">
+                    <button className="unchecked" disabled={true}>投票は27日(土)12:00～</button>
+                </div>
+            </> : <>
+                <div className="vote-button">
+                    <button className="unchecked"disabled={true}>投票は終了しました</button>
+                </div>
             </>}
 
         </div>
