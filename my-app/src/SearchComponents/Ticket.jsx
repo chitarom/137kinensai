@@ -34,7 +34,10 @@ function Ticket({ keyword, filter, projdata, ddetail, id, setDDC }) {
 
   var cl = projdata[0];
   var title = projdata[1];
-  if (title.search(keyword) >= 0 || cl.search(keyword) >= 0) hidden = false;
+  if (
+    title.toLowerCase().search(keyword.toLowerCase()) >= 0 ||
+    cl.toLowerCase().search(keyword.toLowerCase()) >= 0
+  ) hidden = false;
 
   //console.log(num,filter[1]);
 
