@@ -31,7 +31,23 @@ function ReadQR() {
           })
           .catch(err => {
             setScanning(false);
-            setErrorMessage("QRコードの読み取りには、カメラへのアクセスを許可してください。");
+            setErrorMessage(
+              "お願い:\n" +
+              "QRコードの読み取りには、カメラへのアクセスを許可してください。\n" +
+              "\n\n許可の手順:\n" +
+              "①ブラウザ右上または右下の「︙」や「≡」→ [設定]をタップ\n" +
+              "②設定一覧にある [サイトの設定]や[Webサイト]、[サイトのアクセス許可]→[カメラ] へ移動\n" +
+              "③「ブロックリスト」の https://app.kinensai.jpをタップして、「許可する」を選択\n\n" +
+              "それでもうまくいかない場合(iOS + Safari):\n" +
+              "④スマホの [設定] を開き、下にスクロールして[Safari] をタップ\n" +
+              "⑤WEBサイトの設定→[カメラ] へ移動\n" +
+              "⑥カメラへのアクセスを許可、を選択\n\n" +
+              "それでもうまくいかない場合(Android)\n" +
+              "④スマホの[設定]の検索で、現在お使いのアプリを検索(Chromeなど)\n" +
+              "⑤アプリの情報の一覧にある、[権限]→[カメラ] へ移動\n" +
+              "⑥カメラへのアクセスを許可、を選択\n\n" +
+              "もしご不明な点がありましたら、お近くの東海生にお尋ねください。"
+            );
           });
       });
   };
@@ -47,7 +63,7 @@ function ReadQR() {
       video.play().catch(err => {
         // 権限が与えられなかった場合
         setScanning(false);
-        setErrorMessage("カメラをうまく起動できませんでした。もう一度お試しください。");
+        setErrorMessage("カメラをうまく起動できませんでした。\nもう一度お試しください。\n");
       });
 
       // QRコード読み取り + 変換 (0.5sごとに行う)
@@ -90,12 +106,18 @@ function ReadQR() {
           <button onClick={startCamera} className="qr-button">
             カメラを起動
           </button>
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {errorMessage && (
+            <p
+              className="error-message"
+              style={{ whiteSpace: "pre-line" }}
+            >{errorMessage}</p>
+          )}
+
         </>
       ) : (
         // スキャン中...
         <>
-        <p className="pleaseread title">QRコード読み取り</p>
+          <p className="pleaseread title">QRコード読み取り</p>
           <p className="pleaseread comment">QRコードをカメラにかざしてください</p>
           <video
             ref={videoRef}

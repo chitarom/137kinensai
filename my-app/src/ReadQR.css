@@ -43,13 +43,15 @@
 
 .error-message {
     /*もっと優しいイメージがいいかも*/
-    color: red;
-    font-size: 20px;
-    width: 60%;
-    background-color: #ffd7f1;
-    border: 2px solid #f28c8c;
+    font-size: 19px;
+    margin: 30px 10% 0 10%;
+    width: min(80%, 720px);background-color: #007fe7;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
 }
 
