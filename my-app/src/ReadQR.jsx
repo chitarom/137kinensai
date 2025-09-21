@@ -101,7 +101,8 @@ function ReadQR() {
               style={{ whiteSpace: "pre-line" }}
             >{errorMessage}</p>
           )}
-          {showLink && (
+          {showLink && false && (
+            /*上のfalseを取るとリンク表示*/
               <Link to="/info" className='links'>やり方が分からない場合はこちら</Link>
           )}
         </>
