@@ -28,7 +28,7 @@ function Ticket({ keyword, filter, projdata, ddetail, id, setDDC }) {
   for (let i = 0; i < projdata[4].length; i++)
     category_list.push(<div key={i} className='category'>{
       projdata[4][i] === "整理券有(a)" ? "整理券有(α)" : projdata[4][i] === "整理券有(b)" ? "整理券有(β)" : projdata[4][i]
-      }</div>);
+    }</div>);
 
   var hidden = true;
 
@@ -41,8 +41,12 @@ function Ticket({ keyword, filter, projdata, ddetail, id, setDDC }) {
   //カテゴリ選別
   if (num != filter[1] && filter[1] != 10) hidden = true;
 
-  for (let i = 0; i < filter[0].length; i++)
-    if (!projdata[4].includes(filter[0][i])) hidden = true;
+  //最大20000回しかinclude検索しないので速度の心配はなし
+  for (let i = 0; i < filter[0].length; i++) {
+    const keywordTag = filter[0][i];
+    const match = projdata[4].some(tag => tag.includes(keywordTag));
+    if (!match) hidden = true;
+  }
 
   //console.log(keyword,hidden);
 
@@ -96,8 +100,8 @@ function Ticket({ keyword, filter, projdata, ddetail, id, setDDC }) {
         <div className='terms' onClick={changeDDetail}>
           {(projdata[6].indexOf("C") > -1) && (
             <div className={`seiriken ${seiriken === "整理券有(α)" ? "ari-a" :
-                seiriken === "整理券有(β)" ? "ari-b" :
-                  "nashi"
+              seiriken === "整理券有(β)" ? "ari-b" :
+                "nashi"
               }`}>
               {seiriken}
             </div>
