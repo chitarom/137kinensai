@@ -1,19 +1,18 @@
-import './AnalyzeQR.css'
+import './AnalyzeQR.css';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function AnalyzeQR() {
   const location = useLocation();
   const navigate = useNavigate();
-  const qrText = location.state?.qrData || "";
+  const cameFromApp = location.state?.qrData !== undefined; // ←これが重要
+  const qrText = cameFromApp ? location.state.qrData : "";
   const [resultText, setResultText] = useState("");
-  const [funcNum, setfuncNum] = useState(-1);
+  const [funcNum, setFuncNum] = useState(-1);
 
+  // アプリ内から来た場合の処理
   useEffect(() => {
-    if (!qrText) {
-      setResultText("QRコードを読み取っていません");
-      return;
-    }
+    if (!cameFromApp) return;
 
     // qrTextは、「1 Hello,World endqr」等の形式を想定
     const parts = qrText.split(" ");
@@ -26,17 +25,55 @@ function AnalyzeQR() {
       return;
     }
 
-    let num = parseInt(parts[0]);
-    let str = parts[1];
-    setfuncNum(num);
+    const num = parseInt(parts[0]);
+    const str = parts[1];
+    setFuncNum(num);
     setResultText(str);
-  }, [qrText]);
+  }, [cameFromApp, qrText]);
 
-  // QRの種類ごとに遷移
+  // URLから直接来た場合の処理
+  useEffect(() => {
+    if (cameFromApp) return; // ←アプリから来たならURL解析はスキップ
+
+    const params = new URLSearchParams(location.search);
+    const codeParam = params.get("code");
+
+    if (!codeParam) {
+      setResultText("QRコードが見つかりません");
+      return;
+    }
+
+    try {
+      const decoded = decodeURIComponent(codeParam);
+      const parts = decoded.split("|");
+
+      if (
+        parts.length !== 5 ||
+        (parts[0] !== "1" && parts[0] !== "2") ||
+        parts[4] !== "endqr"
+      ) {
+        setResultText("このQRコードは対応していません");
+        return;
+      }
+
+      // 同じ形式
+      const num = parseInt(parts[0]);
+      const result = `${parts[1]}|${parts[2]}|${parts[3]}`;
+
+      setFuncNum(num);
+      setResultText(result);
+    } catch (err) {
+      console.error("解析エラー:", err);
+      setResultText("QRコードの解析中にエラーが発生しました");
+    }
+  }, [location.search, cameFromApp]);
+
+
+  // funcNum によるmapへの遷移処理（共通）
   useEffect(() => {
     if (funcNum !== 1 && funcNum !== 2) return;
 
-    setfuncNum(-1);
+    setFuncNum(-1);
     if (funcNum == 1) {
       if (localStorage.getItem("pictures") == null) localStorage.setItem("pictures", "[]");
       const pictures = JSON.parse(localStorage.getItem("pictures"));
@@ -47,30 +84,18 @@ function AnalyzeQR() {
       navigate("/map", { state: { "text": resultText, "num": funcNum } });
     }
 
+    setFuncNum(-1); // 処理済みの印としてリセット
   }, [funcNum, navigate, resultText]);
 
   return (
     <div className="analyzer-container">
-      {funcNum === -1 ? (
-        <>
-          <button
-            onClick={() => navigate("/")}
-            className="back-home-button"
-          >
-            ホームに戻る
-          </button>
-        </>
-      ) : (
-        <></>
-      )
-      }
+      {funcNum === -1 && (
+        <button onClick={() => navigate("/")} className="back-home-button">
+          ホームに戻る
+        </button>
+      )}
     </div>
   );
 }
 
 export default AnalyzeQR;
-
-/*
-1 ... マップ現在地関連機能
-2 ... 絵の旅パスポート関連機能
-*/
