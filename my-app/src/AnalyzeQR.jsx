@@ -77,6 +77,7 @@ function AnalyzeQR() {
       const pictures = JSON.parse(localStorage.getItem("pictures"));
       if (pictures.indexOf(resultText) != -1) {
         alert("このピースは既にゲットしています。");
+        navigate("/passport");
       } else navigate("/map", { state: { "text": resultText, "num": funcNum } });
     } else if (funcNum == 2) {
       navigate("/map", { state: { "text": resultText, "num": funcNum } });
