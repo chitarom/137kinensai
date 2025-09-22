@@ -99,3 +99,7 @@ function AnalyzeQR() {
 }
 
 export default AnalyzeQR;
+
+// URLの形式
+// localhost → http://localhost:5173/analyzeqr?code=2%7C1%7C68.003%2C55.352%7C0%7Cendqr
+// app.kinensai.jp → https://app.kinensai.jp/analyzeqr?code=2|1|68.003,55.352|0|endqr
