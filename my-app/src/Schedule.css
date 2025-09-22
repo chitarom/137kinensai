@@ -201,7 +201,7 @@
     position: fixed;
     right: 0;
     bottom: 60px;
-    z-index: 1000;
+    z-index: 3;
     margin: 12px;
     font-size: 20px;
     padding: 10px;
