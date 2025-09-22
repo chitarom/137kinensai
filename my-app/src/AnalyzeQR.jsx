@@ -47,18 +47,16 @@ function AnalyzeQR() {
       const decoded = decodeURIComponent(codeParam);
       const parts = decoded.split("|");
 
-      if (
-        parts.length !== 5 ||
-        (parts[0] !== "1" && parts[0] !== "2") ||
-        parts[4] !== "endqr"
-      ) {
+      const type1 = (parts.length === 3 && parts[2] === "endqr" && (parts[0] === "1" || parts[0] === "2")); // 1|map.at_番号|endqr
+      const type2 = (parts.length === 5 && parts[4] === "endqr" && (parts[0] === "1" || parts[0] === "2")); // 2|1|68.003,55.352|0|endqr
+      if (!type1 && !type2) {
         setResultText("このQRコードは対応していません");
         return;
       }
-
+      // 解析成功
       // 同じ形式
       const num = parseInt(parts[0]);
-      const result = `${parts[1]}|${parts[2]}|${parts[3]}`;
+      const result = type2 ? `${parts[1]}|${parts[2]}|${parts[3]}` : parts[1];
 
       setFuncNum(num);
       setResultText(result);
@@ -102,4 +100,5 @@ export default AnalyzeQR;
 
 // URLの形式
 // localhost → http://localhost:5173/analyzeqr?code=2%7C1%7C68.003%2C55.352%7C0%7Cendqr
-// app.kinensai.jp → https://app.kinensai.jp/analyzeqr?code=2|1|68.003,55.352|0|endqr
+// app.kinensai.jp → https://app.kinensai.jp/analyzeqr?code=2|1|68.003,55.352|0|endqr(現在地)
+// app.kinensai.jp → https://app.kinensai.jp/analyzeqr?code=1|map.at_番号|endqr
