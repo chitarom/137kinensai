@@ -69,7 +69,7 @@ function Login() {
             setResult("入力してください");
             return;
         }
-        if (passage.length > 23) {
+        if (passage.length > 25) {
             setResult("長すぎます");
             return;
         }
@@ -299,7 +299,7 @@ function Login() {
                         <input
                             className="input-news"
                             type="text"
-                            placeholder="ニュースを入力(20文字前後)"
+                            placeholder="ニュースを入力(MAX24文字)"
                             value={passage}
                             onChange={(e) => setPassage(e.target.value)}
                         />

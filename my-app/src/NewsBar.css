@@ -5,10 +5,16 @@
 
 .news-link {
     color: aqua;
-    text-decoration: none;
+    text-decoration: none;;
 }
 
 
 .news-link:active {
   opacity: 0.6; /* タップ中に薄くする */
+}
+
+@media (max-width: 359px) {
+  .news-bar {
+    font-size: 14px;
+  }
 }
