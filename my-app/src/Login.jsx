@@ -69,7 +69,7 @@ function Login() {
             setResult("入力してください");
             return;
         }
-        if (passage.length > 22) {
+        if (passage.length > 23) {
             setResult("長すぎます");
             return;
         }
