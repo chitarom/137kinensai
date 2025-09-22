@@ -11,10 +11,15 @@
 
 .about-seiriken-con p {
     font-size: 18px;
+    font-family: italic;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .button {
@@ -26,4 +31,9 @@
     border-radius: 10px;
     margin: 20px;
     text-decoration: none;
+}
+
+.seiriken-image {
+    width: 100%;
+    margin: 10px;
 }
