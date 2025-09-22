@@ -1,12 +1,13 @@
 :root {
-    --multiplier: 1;
+    --multiplier-h: 2.5;
+    --multiplier-w: 1.2;
 }
 
 .schedule-con {
     position: relative;
     height: auto;
-    width: 260px;
-    height: 720px;
+    width: calc(260px * var(--multiplier-w));
+    height: calc(720px * var(--multiplier-h));
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -22,8 +23,8 @@
 }
 
 .schedule-box {
-    padding: 5px;
-    width: 250px;
+    padding: calc(5px * var(--multiplier-h));
+    width: calc(250px * var(--multiplier-w));
     position: absolute;
     border-radius: 10px;
     display: flex;
@@ -116,11 +117,11 @@
 .timesheet h1 {
     width: 50px;
     font-size: 30px;
-    height: 40px;
+    height: calc(40px * var(--multiplier-h));
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: calc(80px * var(--multiplier-h));
 
 }
 
@@ -186,11 +187,10 @@
 }
 
 .row-border {
-    margin-top: 19px;
-    margin-bottom: 118px;
+    margin-top: calc(19px * var(--multiplier-h));
+    margin-bottom: calc(119px * var(--multiplier-h));
     width: 620px;
     border: 1px solid rgb(0, 0, 0);
-    ;
 }
 
 .schedule-page {

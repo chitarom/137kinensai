@@ -16,7 +16,7 @@ function Schedule() {
     const [displayingDetail, setDisplayingDetail] = useState(-1);
     const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
     const [stage, setStage] = useState(false);
-    const multiplier = 1;
+    const multiplier = 2.5;
 
     useEffect(() => {
         console.log("Schedule mounted");
@@ -115,7 +115,7 @@ function Schedule() {
                 list[i].starttime = (parseInt(list[i].starthour) - 9) * 60 + parseInt(list[i].startminute)
                 list[i].finishtime = (parseInt(list[i].finishhour) - 9) * 60 + parseInt(list[i].finishminute)
             }
-            list[i].timelength = (list[i].finishtime - list[i].starttime);
+            list[i].timelength = (list[i].finishtime - list[i].starttime) * multiplier;
         }
     }
     calculateBoxSize(KodoGroupList);
@@ -135,7 +135,7 @@ function Schedule() {
             {(displayingDetail >= 0) &&
                 (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} displaystage={stage}/>)
             }
-{/* {             <button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button> } */}
+{/* {             <button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button> }  */}
             {currentPage == 0 && <>
                 <div className="ko-or-st-con">
                     <div className="kodo-or-stage">
@@ -174,7 +174,7 @@ function Schedule() {
 
                         <div className="schedule-con" ref={boxRef}>
                             {KodoGroupList.filter(item => item.day === 'sat').map(item => (
-                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
+                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${(item.starttime * 2 + 20) * multiplier + 2}px` }}>
                                     <p className="group-name">{item.label}</p>
                                     <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
                                 </a>
@@ -182,7 +182,7 @@ function Schedule() {
                         </div>
                         <div className="schedule-con sc-con-stage">
                             {StageGroupList.filter(item => item.day === 'sat').map(item => (
-                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
+                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${(item.starttime * 2 + 20) * multiplier + 2}px` }}>
                                     <p className="group-name">{item.label}</p>
                                     <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
                                 </a>
