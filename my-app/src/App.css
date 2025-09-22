@@ -1,5 +1,10 @@
+:root {
+  --defaultwidth: 800px;
+}
+
+
 .all-wrapper {
-    max-width: 800px;
+    max-width: var(--defaultwidth);
     margin:  0 auto;
     
 }
