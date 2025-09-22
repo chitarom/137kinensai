@@ -7,6 +7,7 @@
   { "path": "/shintenchi", "component": "Shintenchi" ,"name":"新天地"},
   { "path": "/aboutfood", "component": "AboutFood" ,"name":"お食事について"},
   { "path": "/mogiten", "component": "Mogiten" ,"name":"模擬店"},
+  { "path": "/aboutseiriken", "component": "AboutSeiriken" ,"name":"整理券について"},
   { "path": "/passport", "component": "Passport" ,"name":"絵の旅パスポート"},
   { "path": "/stagevote", "component": "StageVote" ,"name":"ステージ投票"},
   { "path": "/kaijin", "component": "Kaijin" ,"name":"海神"},
