@@ -56,7 +56,7 @@ function AnalyzeQR() {
       // 解析成功
       // 同じ形式
       const num = parseInt(parts[0]);
-      const result = type2 ? `${parts[1]} ${parts[2]} ${parts[3]}` : parts[1];
+      const result = type2 ? `${parts[1]}|${parts[2]}|${parts[3]}` : parts[1];
 
       setFuncNum(num);
       setResultText(result);
