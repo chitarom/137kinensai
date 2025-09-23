@@ -16,7 +16,8 @@ function Schedule() {
     const [displayingDetail, setDisplayingDetail] = useState(-1);
     const [displayDetailContents, setDisplayDetailContents] = useState(["", "", "", [], [], ""]);
     const [stage, setStage] = useState(false);
-    const multiplier = 2.5;
+    const multiplier = 2;
+    const [now, setNow] = useState(new Date()); // 現在時刻
 
     useEffect(() => {
         console.log("Schedule mounted");
@@ -115,7 +116,7 @@ function Schedule() {
                 list[i].starttime = (parseInt(list[i].starthour) - 9) * 60 + parseInt(list[i].startminute)
                 list[i].finishtime = (parseInt(list[i].finishhour) - 9) * 60 + parseInt(list[i].finishminute)
             }
-            list[i].timelength = (list[i].finishtime - list[i].starttime) * multiplier;
+            list[i].timelength = (list[i].finishtime - list[i].starttime);
         }
     }
     calculateBoxSize(KodoGroupList);
@@ -129,13 +130,72 @@ function Schedule() {
         }
     };
 
+    const calcFontSize = (text, timelength, base = 22, coef1 = 1, coef2 = 1.1, shortCoef = 1) => {
+        const length = text.length;
+        let fontSize = base;
+        // 十分長いなら問題なし
+        if (timelength >= 20) return fontSize;
+
+        // 文字数に応じた基本縮小
+        if (length < 9) fontSize *= 1;
+        else if (length >= 15) fontSize *= 1 / (15 / 8) * coef2;
+        else fontSize *= ((8 / length) * coef1);
+        // timelength が 4 以下ならさらに倍率を掛ける
+        if (timelength <= 4) {
+            fontSize *= (timelength / 5) * shortCoef;
+        }
+        return fontSize;
+    };
+
+    const calcPadding = (timelength) => {
+        if (timelength >= 5) {
+            return 5 * multiplier;
+        } else {
+            return timelength * multiplier;
+        }
+    };
+
+    // 15秒ごとに自動更新
+    useEffect(() => {
+        const timer = setInterval(() => setNow(new Date()), 15000);
+        return () => clearInterval(timer);
+    }, []);
+
+    // 現在時刻の縦位置を計算
+    const getNowTop = () => {
+        const totalMinutes = now.getHours() * 60 + now.getMinutes();
+        const startBase = 12 * 60;
+        const relativeMinutes = totalMinutes - startBase;
+
+        if (relativeMinutes < 0) return 0;
+        if (relativeMinutes > 260) return (240 * 2 + 25 + 2) * multiplier;
+
+        return (relativeMinutes * 2 + 20 + 2) * multiplier; // ← box と同じオフセットを足す
+    };
+
+    const isDisplayNowLine = () => {
+        const now = new Date();
+
+        // 日付チェック
+        const isTargetDate =
+            now.getFullYear() === 2025 &&
+            now.getMonth() === 8 && // 0スタートなので 8 = 9月
+            now.getDate() <= 27; // 編集！！！！！！！！！！！！！！！！
+
+        // 時間チェック 12:00 ~ 16:20 まで
+        const before1620 = now.getHours() < 16 || (now.getHours() === 16 && now.getMinutes() < 20);
+        const after1200 = now.getHours() > 12 || (now.getHours() === 12 && now.getMinutes() >= 0);
+
+        return isTargetDate && before1620 && after1200;
+    };
+
 
     return (
         <div className="schedule-page">
             {(displayingDetail >= 0) &&
-                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} displaystage={stage}/>)
+                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} displaystage={stage} />)
             }
-{/* {             <button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button> }  */}
+            {/*<button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button>*/}
             {currentPage == 0 && <>
                 <div className="ko-or-st-con">
                     <div className="kodo-or-stage">
@@ -158,7 +218,6 @@ function Schedule() {
                             <div className="row-border" />
                             <div className="row-border" />
                             <div className="row-border" />
-                            <div className="row-border" />
                         </div>
                         <div className="timesheet">
                             <h1>12</h1>
@@ -166,27 +225,79 @@ function Schedule() {
                             <h1>14</h1>
                             <h1>15</h1>
                             <h1>16</h1>
-                            <h1>17</h1>
-
-
-
+                            {/* 現在時刻表示 */
+                                isDisplayNowLine() && (
+                                    <h4 className="current-time-h4" style={{ top: `${getNowTop() - 4 * multiplier}px` }}>
+                                        {now.getHours().toString().padStart(2, "0")}:{now.getMinutes().toString().padStart(2, "0")}
+                                    </h4>
+                                )
+                            }
                         </div>
 
-                        <div className="schedule-con" ref={boxRef}>
-                            {KodoGroupList.filter(item => item.day === 'sat').map(item => (
-                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${(item.starttime * 2 + 20) * multiplier + 2}px` }}>
-                                    <p className="group-name">{item.label}</p>
-                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                                </a>
-                            ))}
+                        {/* 赤線はタイムテーブル全体の親に置く */
+                            isDisplayNowLine() && (
+                                <div className="row-border-now-con rbn-con-sat">
+                                    <div
+                                        className="row-border-now"
+                                        style={{ top: `${getNowTop()}px`, zIndex: 1000 }}
+                                    />
+                                </div>
+                            )
+                        }
+
+                        <div className="schedule-con sc-con-sat" ref={boxRef}>
+                            {KodoGroupList.filter(item => item.day === 'sat').map(item => {
+                                const fontSize = calcFontSize(item.label, item.timelength);
+                                const paddingY = calcPadding(item.timelength);
+                                // 左右paddingはcssで
+                                return (
+                                    <a
+                                        onClick={showDetail(item)}
+                                        key={item.label}
+                                        className="schedule-box box-kodo"
+                                        style={{
+                                            height: `${(item.timelength * 2 - 3) * multiplier}px`,
+                                            top: `${(item.starttime * 2 + 20 + 2) * multiplier}px`,
+                                            paddingTop: `${paddingY}px`,
+                                            paddingBottom: `${paddingY}px`
+                                        }}
+                                    >
+                                        <p className="group-name" style={{ fontSize: `${fontSize}px` }}>
+                                            {item.label}
+                                        </p>
+                                        <p className="group-time">
+                                            {item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}
+                                        </p>
+                                    </a>
+                                );
+                            })}
                         </div>
-                        <div className="schedule-con sc-con-stage">
-                            {StageGroupList.filter(item => item.day === 'sat').map(item => (
-                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${(item.starttime * 2 + 20) * multiplier + 2}px` }}>
-                                    <p className="group-name">{item.label}</p>
-                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                                </a>
-                            ))}
+                        <div className="schedule-con sc-con-stage sc-con-sat">
+                            {StageGroupList.filter(item => item.day === 'sat').map(item => {
+                                const fontSize = calcFontSize(item.label, item.timelength);
+                                const paddingY = calcPadding(item.timelength);
+                                // 左右paddingはcssで
+                                return (
+                                    <a
+                                        onClick={showDetail(item)}
+                                        key={item.label}
+                                        className="schedule-box box-stage"
+                                        style={{
+                                            height: `${(item.timelength * 2 - 3) * multiplier}px`,
+                                            top: `${(item.starttime * 2 + 20 + 2) * multiplier}px`,
+                                            paddingTop: `${paddingY}px`,
+                                            paddingBottom: `${paddingY}px`
+                                        }}
+                                    >
+                                        <p className="group-name" style={{ fontSize: `${fontSize}px` }}>
+                                            {item.label}
+                                        </p>
+                                        <p className="group-time">
+                                            {item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}
+                                        </p>
+                                    </a>
+                                );
+                            })}
                         </div>
 
                     </div>
@@ -214,20 +325,59 @@ function Schedule() {
                         </div>
 
                         <div className="schedule-con sc-con-sun" ref={boxRef}>
-                            {KodoGroupList.filter(item => item.day === 'sun').map(item => (
-                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-kodo" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
-                                    <p className="group-name">{item.label}</p>
-                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                                </a>
-                            ))}
+                            {KodoGroupList.filter(item => item.day === 'sun').map(item => {
+                                const fontSize = calcFontSize(item.label, item.timelength);
+                                const paddingY = calcPadding(item.timelength);
+                                // 左右paddingはcssで
+                                return (
+                                    <a
+                                        onClick={showDetail(item)}
+                                        key={item.label}
+                                        className="schedule-box box-kodo"
+                                        style={{
+                                            height: `${(item.timelength * 2 - 3) * multiplier}px`,
+                                            top: `${(item.starttime * 2 + 20 + 2) * multiplier}px`,
+                                            paddingTop: `${paddingY}px`,
+                                            paddingBottom: `${paddingY}px`
+                                        }}
+                                    >
+                                        <p className="group-name" style={{ fontSize: `${fontSize}px` }}>
+                                            {item.label}
+                                        </p>
+                                        <p className="group-time">
+                                            {item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}
+                                        </p>
+                                    </a>
+                                );
+                            })}
                         </div>
                         <div className="schedule-con sc-con-stage sc-con-sun">
-                            {StageGroupList.filter(item => item.day === 'sun').map(item => (
-                                <a onClick={showDetail(item)} key={item.label} className="schedule-box  box-stage" style={{ height: `${item.timelength * 2 - 4}px`, top: `${item.starttime * 2 + 20 + 2}px` }}>
-                                    <p className="group-name">{item.label}</p>
-                                    <p className="group-time">{item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}</p>
-                                </a>
-                            ))}
+                            {StageGroupList.filter(item => item.day === 'sun').map(item => {
+                                const fontSize = calcFontSize(item.label, item.timelength);
+                                const paddingY = calcPadding(item.timelength);
+                                // 左右paddingはcssで
+                                return (
+                                    <a
+                                        onClick={showDetail(item)}
+                                        key={item.label}
+                                        className="schedule-box box-stage"
+                                        style={{
+                                            height: `${(item.timelength * 2 - 3) * multiplier}px`,
+                                            top: `${(item.starttime * 2 + 20 + 2) * multiplier}px`,
+                                            paddingTop: `${paddingY}px`,
+                                            paddingBottom: `${paddingY}px`
+                                        }}
+                                    >
+
+                                        <p className="group-name" style={{ fontSize: `${fontSize}px` }}>
+                                            {item.label}
+                                        </p>
+                                        <p className="group-time">
+                                            {item.starthour}:{item.startminute}～{item.finishhour}:{item.finishminute}
+                                        </p>
+                                    </a>
+                                );
+                            })}
                         </div>
 
                     </div>
