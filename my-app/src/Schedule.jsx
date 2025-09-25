@@ -49,8 +49,8 @@ function Schedule() {
     useEffect(() => {
         // return;
         const timer = setInterval(async () => {
-            // setNow(new Date((new Date()).getTime() + (32 * 60 * 60 - 20 * 60) * 1000));
-            setNow(new Date());
+            setNow(new Date((new Date()).getTime() + (35 * 60 * 60 - 24 * 60) * 1000));
+            // setNow(new Date());
             // 遅延更新
             const { data, error } = await supabase
                 .from("delay")
@@ -63,7 +63,7 @@ function Schedule() {
                 setStageDelay(parseInt(data[0].stage));
                 setKodoDelay(parseInt(data[0].kodo));
             }
-        }, 15000);
+        }, 1000);
         return () => clearInterval(timer);
     }, []);
 
@@ -308,6 +308,26 @@ function Schedule() {
         else return null;
     };
 
+    const shouldDisplayBlue = (dayKey, time) => {
+        const cfg = dayConfigs[dayKey];
+
+        // 現在日時を "YYYY-MM-DD" 形式に整形
+        const currentDateStr = [
+            time.getFullYear(),
+            String(time.getMonth() + 1).padStart(2, "0"),
+            String(time.getDate()).padStart(2, "0"),
+        ].join("-");
+
+        // 日付チェック
+        const isTargetDate = currentDateStr === cfg.date;
+        // 時間チェック (開始-8分～終了+22分まで)
+        const nowMinutes = time.getHours() * 60 + time.getMinutes();
+        const startMinutes = cfg.startHour * 60 - 8;   // 開始8分前
+        const endMinutes = cfg.endHour * 60 + 22;      // 終了22分後
+
+        return isTargetDate && nowMinutes >= startMinutes && nowMinutes <= endMinutes;
+    };
+
     return (
         <div className="schedule-page">
             {(displayingDetail >= 0) &&
@@ -365,6 +385,7 @@ function Schedule() {
                                                 const oneCount = (timeStr.match(/1/g) || []).length; // '1'の出現回数(1は短いから)
                                                 const leftOffset = oneCount * 1.5 + 2; // 1px * 1の出現数 + 2px
 
+                                                let delta = 0;
                                                 const basetop = getNowTopFor(dayKey) - 6.2 * multiplier;
                                                 const nowminutes = now.getMinutes();
                                                 let delayminutes = nowminutes;
@@ -372,14 +393,17 @@ function Schedule() {
                                                 if (kodoDelay >= 0 && kodoDelay <= 3) {
                                                     delaytop = basetop - 14;
                                                     delayminutes -= 4;
+                                                    delta -= 4 * 60 * 1000;
                                                 }
                                                 else if (kodoDelay < 0 && kodoDelay >= -3) {
                                                     delaytop = basetop + 18;
                                                     delayminutes += 5;
+                                                    delta += 5 * 60 * 1000;
                                                 }
                                                 else {
                                                     delaytop = basetop - kodoDelay * multiplier * 2;
                                                     delayminutes -= kodoDelay;
+                                                    delta -= kodoDelay * 60 * 1000;
                                                 }
                                                 // console.log(delayminutes);
 
@@ -412,7 +436,7 @@ function Schedule() {
 
 
                                                 return (
-                                                    <>
+                                                    (shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
                                                         <h4
                                                             className="current-time-h4"
                                                             style={{
@@ -432,7 +456,7 @@ function Schedule() {
                                                         >
                                                             {showDelay(kodoDelay)}
                                                         </p>
-                                                    </>
+                                                    </>)
                                                 );
                                             })()
                                         )}
