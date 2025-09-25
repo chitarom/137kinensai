@@ -10,7 +10,7 @@ function Schedule() {
     const scrollContainerRef = useRef(null);
     const boxRef = useRef(null);
     const [activeTab, setActiveTab] = useState('kodo');
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
     let KodoGroupList = []
     let StageGroupList = []
     const [currentTab, setCurrentTab] = useState('kodo');
@@ -49,8 +49,8 @@ function Schedule() {
     useEffect(() => {
         // return;
         const timer = setInterval(async () => {
-            setNow(new Date((new Date()).getTime() + (35 * 60 * 60 - 24 * 60) * 1000));
-            // setNow(new Date());
+            // setNow(new Date((new Date()).getTime() + (35 * 60 * 60 - 24 * 60) * 1000));
+             setNow(new Date());
             // 遅延更新
             const { data, error } = await supabase
                 .from("delay")
@@ -436,7 +436,8 @@ function Schedule() {
 
 
                                                 return (
-                                                    (shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
+                                                    // true はずして
+                                                    (ture || shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
                                                         <h4
                                                             className="current-time-h4"
                                                             style={{
