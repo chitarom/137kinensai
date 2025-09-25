@@ -151,7 +151,7 @@
 
 /* 仕切り線の最後の margin-bottom も同様に減らす */
 .row-border-con .row-border:last-of-type {
-  margin-bottom: calc((59px - var(--last-modify)) * var(--multiplier-h));
+  margin-bottom: calc((58px - var(--last-modify)) * var(--multiplier-h));
 }
 
 .schedule-box {

@@ -45,7 +45,8 @@ function Schedule() {
 
     // 20秒ごとに自動更新
     useEffect(() => {
-        const timer = setInterval(() => setNow(new Date()), 20000);
+        return;
+        const timer = setInterval(() => setNow(new Date((new Date()).getTime() + (38 * 60 * 60 + 30) * 1000)), 5000);
         return () => clearInterval(timer);
     }, []);
 
@@ -391,11 +392,11 @@ function Schedule() {
                                         <div className={`row-border-now-con rbn-con-${dayKey}`}>
                                             <div
                                                 className="row-border-now left"
-                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`, left:'0px', zIndex: 1000 }}
+                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier - 0.5}px`, left:'0px', zIndex: 1000 }}
                                             />
                                             <div
                                                 className="row-border-now right"
-                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`, right:'110px', zIndex: 1000 }}
+                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier - 0.5}px`, right:'110px', zIndex: 1000 }}
                                             />
                                         </div>
                                     )}
