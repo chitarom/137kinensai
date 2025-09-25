@@ -1,7 +1,36 @@
 :root {
     --multiplier-h: 2;
     --multiplier-w: 1.1;
-    --last-modify: 50px;
+    --last-modify: 50px; /* 60px 以下で */
+}
+.schedule-page-con {
+    position: relative;
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+
+    display: flex;
+    align-items: flex-start;
+    padding-left: 55px;
+    padding-right: 55px;
+
+
+    /* scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;  */
+}
+
+.schedule-page-con-con {
+    overflow-x: auto;
+    overflow-y: auto;
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    /* スナップを有効化 */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
 }
 
 .schedule-con {
@@ -37,10 +66,9 @@
 
 .row-border-now {
   position: absolute;
-  left: 0;
-  right: 0;
   height: 2px;
   background-color: rgb(255, 0, 0, 0.75);
+  width: calc(260px * var(--multiplier-w) - 1px);
 }
 
 .current-time-display h4 {
@@ -55,7 +83,7 @@
   font-size: 16px;
   font-weight: bold;
   color: red;
-  background-color: rgba(253, 202, 255, 0.8);
+  background-color: rgba(253, 210, 255, 0.8);
   border-radius: 3px;
   z-index: 10;/* 赤線より上 */
   display: flex;
@@ -70,11 +98,21 @@
 }
 
 .timesheet {
-    position: sticky;
-    left: 0;
     z-index: 4; /* h4より上*/ /* displaydetailより下 */
     background-color: rgb(255, 255, 255);
-    border-right: 5px solid rgb(0, 0, 0);
+}
+
+.timesheet.left {
+    position: absolute;
+    left: 0;
+    border-right: 5px solid black;
+}
+
+.timesheet.right {
+    position: absolute; /* ← stickyじゃなくてabsoluteにする */
+    top: 0;
+    right: 0;
+    border-left: 5px solid black;
 }
 
 .timesheet h1 {
@@ -92,11 +130,18 @@
     position: absolute;
 }
 
+/*  139 = 46.33 * 3  */
 .row-border {
     margin-top: calc(19.5px * var(--multiplier-h));
-    margin-bottom: calc(119.5px * var(--multiplier-h));
+    margin-bottom: calc((59px - 19.5px) * var(--multiplier-h));
     width: 620px;
-    border: 1px solid rgb(0, 0, 0);
+}
+.main {
+    border: 1px solid rgb(0, 0, 0, 1);
+}
+
+.sub {
+    border: 1px solid rgb(200, 200, 200)
 }
 
 /* timesheet の最後の時間だけ 下側を減らす */
@@ -106,7 +151,7 @@
 
 /* 仕切り線の最後の margin-bottom も同様に減らす */
 .row-border-con .row-border:last-of-type {
-  margin-bottom: calc((119.5px - var(--last-modify)) * var(--multiplier-h));
+  margin-bottom: calc((59px - var(--last-modify)) * var(--multiplier-h));
 }
 
 .schedule-box {
@@ -192,33 +237,6 @@
     border-radius: 0 20px 20px 0;
 } */
 
-.schedule-page-con {
-    position: relative;
-    /* overflow-x: auto;
-    overflow-y: hidden; */
-
-    display: flex;
-    align-items: flex-start;
-
-
-    /* scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;  */
-}
-
-.schedule-page-con-con {
-    overflow-x: auto;
-    overflow-y: auto;
-    position: relative;
-
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
-    /* スナップを有効化 */
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-
-}
 
 .sc-day-con {
     width: 100%;
@@ -258,7 +276,7 @@
     position: fixed;
     right: 0;
     bottom: 60px;
-    z-index: 3;
+    z-index: 10;
     margin: 12px;
     font-size: 20px;
     padding: 10px;

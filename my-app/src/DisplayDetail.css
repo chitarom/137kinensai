@@ -7,7 +7,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(128, 128, 128, 0.402);
-    z-index: 5;
+    z-index: 20;
 }
 
 .dw-margin {
