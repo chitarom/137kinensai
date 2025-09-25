@@ -21,7 +21,7 @@ function Schedule() {
     // 倍数(設定済み)
     const multiplier = 2;
     // const [now, setNow] = useState(new Date());
-    const [now, setNow] = useState(new Date(2025, 8, 27, 12, 23)); // 現在時刻 もしテストしたいならここに時刻を入れる
+    const [now, setNow] = useState(new Date()); // 現在時刻 もしテストしたいならここに時刻を入れる
 
     // タイムテーブル情報
     const dayConfigs = {
