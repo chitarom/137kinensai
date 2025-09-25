@@ -1,29 +1,117 @@
 :root {
-    --multiplier-h: 2.5;
-    --multiplier-w: 1.2;
+    --multiplier-h: 2;
+    --multiplier-w: 1.1;
+    --last-modify: 50px;
 }
 
 .schedule-con {
     position: relative;
     height: auto;
     width: calc(260px * var(--multiplier-w));
-    height: calc(720px * var(--multiplier-h));
     flex-shrink: 0;
     display: flex;
     justify-content: center;
     background-color: rgba(253, 202, 255, 0.342);
 }
 
-.sc-con-sun {
-    height: 840px;
+.sc-con-sat {
+    height: calc((600px - var(--last-modify)) * var(--multiplier-h));
 }
+
+.sc-con-sun {
+    height: calc((840px - var(--last-modify)) * var(--multiplier-h));
+}
+
 
 .sc-con-stage {
     background-color: rgba(253, 202, 255, 0.164);
 }
 
+.row-border-now-con {
+  position: absolute; /* もしくは relative で親を基準に */
+  width: 100%;
+  height: 100%;
+  top: 0; /* schedule-page-con の先頭を基準に */
+  z-index: 1;/* 赤線は下 */
+}
+
+.row-border-now {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgb(255, 0, 0, 0.75);
+}
+
+.current-time-display h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.timesheet .current-time-h4 {
+  position: absolute;  /* 赤線と同じスケールに沿って配置 */
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+  background-color: rgba(253, 202, 255, 0.8);
+  border-radius: 3px;
+  z-index: 10;/* 赤線より上 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-time-h4,
+.row-border-now,
+.row-border-now-con {
+    pointer-events: none;
+}
+
+.timesheet {
+    position: sticky;
+    left: 0;
+    z-index: 4; /* h4より上*/ /* displaydetailより下 */
+    background-color: rgb(255, 255, 255);
+    border-right: 5px solid rgb(0, 0, 0);
+}
+
+.timesheet h1 {
+    width: 50px;
+    font-size: 30px;
+    height: calc(40px * var(--multiplier-h));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: calc(80px * var(--multiplier-h));
+
+}
+
+.row-border-con {
+    position: absolute;
+}
+
+.row-border {
+    margin-top: calc(19.5px * var(--multiplier-h));
+    margin-bottom: calc(119.5px * var(--multiplier-h));
+    width: 620px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+/* timesheet の最後の時間だけ 下側を減らす */
+.timesheet h1:last-of-type {
+  margin-bottom: calc((80px - var(--last-modify)) * var(--multiplier-h));
+}
+
+/* 仕切り線の最後の margin-bottom も同様に減らす */
+.row-border-con .row-border:last-of-type {
+  margin-bottom: calc((119.5px - var(--last-modify)) * var(--multiplier-h));
+}
+
 .schedule-box {
-    padding: calc(5px * var(--multiplier-h));
+    padding-left: calc(2px * var(--multiplier-w));
+    padding-right: calc(2px * var(--multiplier-w));
     width: calc(250px * var(--multiplier-w));
     position: absolute;
     border-radius: 10px;
@@ -31,16 +119,14 @@
     justify-content: space-around;
     align-items: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.301);
-    background-color: rgba(197, 232, 255);
 }
 
 .group-name {
-    font-size: 22px;
     color: rgb(8, 0, 122);
 }
 
 .group-time {
-    font-size: 13px;
+    font-size: 14px; /*少し大きくした*/
 }
 
 .schedule-page {
@@ -106,25 +192,6 @@
     border-radius: 0 20px 20px 0;
 } */
 
-.timesheet {
-    position: sticky;
-    left: 0;
-    z-index: 2;
-    background-color: rgb(255, 255, 255);
-    border-right: 5px solid rgb(0, 0, 0);
-}
-
-.timesheet h1 {
-    width: 50px;
-    font-size: 30px;
-    height: calc(40px * var(--multiplier-h));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: calc(80px * var(--multiplier-h));
-
-}
-
 .schedule-page-con {
     position: relative;
     /* overflow-x: auto;
@@ -140,7 +207,7 @@
 
 .schedule-page-con-con {
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
     position: relative;
 
     display: flex;
@@ -182,16 +249,6 @@
 
 }
 
-.row-border-con {
-    position: absolute;
-}
-
-.row-border {
-    margin-top: calc(19px * var(--multiplier-h));
-    margin-bottom: calc(119px * var(--multiplier-h));
-    width: 620px;
-    border: 1px solid rgb(0, 0, 0);
-}
 
 .schedule-page {
     position: relative;
