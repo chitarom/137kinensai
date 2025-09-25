@@ -1,8 +1,10 @@
 :root {
     --multiplier-h: 2;
-    --multiplier-w: 1.1;
-    --last-modify: 50px; /* 60px 以下で */
+    --multiplier-w: 1.2;
+    --last-modify: 50px;
+    /* 60px 以下で */
 }
+
 .schedule-page-con {
     position: relative;
     /* overflow-x: auto;
@@ -57,48 +59,76 @@
 }
 
 .row-border-now-con {
-  position: absolute; /* もしくは relative で親を基準に */
-  width: 100%;
-  height: 100%;
-  top: 0; /* schedule-page-con の先頭を基準に */
-  z-index: 1;/* 赤線は下 */
+    position: absolute;
+    /* もしくは relative で親を基準に */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    /* schedule-page-con の先頭を基準に */
+    z-index: 1;
+    /* 赤線は下 */
 }
 
 .row-border-now {
-  position: absolute;
-  height: 2px;
-  background-color: rgb(255, 0, 0, 0.75);
-  width: calc(260px * var(--multiplier-w) - 1px);
+    position: absolute;
+    &.basis {
+        width: calc(260px * 2 * var(--multiplier-w) + 1px);
+    }
+    &.left {
+        width: calc(260px * var(--multiplier-w) - 0px);
+    }
+    &.right {
+        width: calc(260px * var(--multiplier-w) + 1px);
+    }
 }
 
 .current-time-display h4 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .timesheet .current-time-h4 {
-  position: absolute;  /* 赤線と同じスケールに沿って配置 */
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: red;
-  background-color: rgba(253, 210, 255, 0.8);
-  border-radius: 3px;
-  z-index: 10;/* 赤線より上 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    /* 赤線と同じスケールに沿って配置 */
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(255, 82, 82);
+    background-color: rgba(253, 210, 255, 0.8);
+    border-radius: 3px;
+    z-index: 10;
+    /* 赤線より上 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.timesheet .current-time-delay {
+    position: absolute;
+    margin: 0;
+    font-size: 10px;
+    font-weight: normal;
+    color: blue;
+    border-radius: 3px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .current-time-h4,
 .row-border-now,
-.row-border-now-con {
+.row-border-now-con,
+.current-time-delay {
     pointer-events: none;
 }
 
 .timesheet {
-    z-index: 4; /* h4より上*/ /* displaydetailより下 */
+    z-index: 4;
+    /* h4より上*/
+    /* displaydetailより下 */
     background-color: rgb(255, 255, 255);
 }
 
@@ -109,7 +139,8 @@
 }
 
 .timesheet.right {
-    position: absolute; /* ← stickyじゃなくてabsoluteにする */
+    position: absolute;
+    /* ← stickyじゃなくてabsoluteにする */
     top: 0;
     right: 0;
     border-left: 5px solid black;
@@ -134,24 +165,25 @@
 .row-border {
     margin-top: calc(19.5px * var(--multiplier-h));
     margin-bottom: calc((59px - 19.5px) * var(--multiplier-h));
-    width: 620px;
+    width: calc(620px + 50px);
 }
-.main {
+
+.row-border.main {
     border: 1px solid rgb(0, 0, 0, 1);
 }
 
-.sub {
+.row-border.sub {
     border: 1px solid rgb(200, 200, 200)
 }
 
 /* timesheet の最後の時間だけ 下側を減らす */
 .timesheet h1:last-of-type {
-  margin-bottom: calc((80px - var(--last-modify)) * var(--multiplier-h));
+    margin-bottom: calc((80px - var(--last-modify)) * var(--multiplier-h));
 }
 
 /* 仕切り線の最後の margin-bottom も同様に減らす */
 .row-border-con .row-border:last-of-type {
-  margin-bottom: calc((58px - var(--last-modify)) * var(--multiplier-h));
+    margin-bottom: calc((58px - var(--last-modify)) * var(--multiplier-h));
 }
 
 .schedule-box {
@@ -171,7 +203,8 @@
 }
 
 .group-time {
-    font-size: 14px; /*少し大きくした*/
+    font-size: 14px;
+    /*少し大きくした*/
 }
 
 .schedule-page {

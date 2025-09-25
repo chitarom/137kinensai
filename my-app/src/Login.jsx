@@ -480,21 +480,7 @@ function Login() {
                         </p></div>
                         
                     </div>
-                    <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'stage')}>
-                        <div className="add-delay-con">
-                            <input
-                                className="input-delay"
-                                type="text"
-                                placeholder="ステージの遅れを入力..."
-                                value={stageValue}
-                                onChange={(e) => setStageValue(e.target.value)}
-                            />
-                            <button className="add-delay-button" type="submit">ステージ更新</button>
-                        </div>
-                        <p>{stageResult}</p>
-                    </form>
-
-                    {/* Kodo更新フォーム */}
+                    
                     <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'kodo')}>
                         <div className="add-delay-con">
                             <input
@@ -509,13 +495,27 @@ function Login() {
                         <p>{kodoResult}</p>
                     </form>
 
+                    <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'stage')}>
+                        <div className="add-delay-con">
+                            <input
+                                className="input-delay"
+                                type="text"
+                                placeholder="ステージの遅れを入力..."
+                                value={stageValue}
+                                onChange={(e) => setStageValue(e.target.value)}
+                            />
+                            <button className="add-delay-button" type="submit">ステージ更新</button>
+                        </div>
+                        <p>{stageResult}</p>
+                    </form>
+
                     {/* 現在の値を表示 */}
                     <div className="delay-list-con">
                         <h3>現在の遅れ</h3>
                         {delayList.length > 0 ? (
                             <div className="delay-box">
-                                <p className="delay-stage">ステージ: {delayList[0].stage}</p>
                                 <p className="delay-kodo">講堂: {delayList[0].kodo}</p>
+                                <p className="delay-stage">ステージ: {delayList[0].stage}</p>
                             </div>
                         ) : (
                             <p>データがありません</p>
