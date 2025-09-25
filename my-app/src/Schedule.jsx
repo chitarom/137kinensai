@@ -195,6 +195,7 @@ function Schedule() {
         if (timelength >= 5) {
             return 0;
         } else {
+            return 0;
             return timelength * multiplier;
         }
     };
