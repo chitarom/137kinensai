@@ -3,13 +3,14 @@ import { useRef, useEffect, useState } from 'react';
 import grouplist from './JSON/ProjectData.json'
 import { useLocation } from 'react-router-dom';
 import DisplayDetail from './DisplayDetail';
+import { supabase } from './supabase';
 
 function Schedule() {
     const location = useLocation();
     const scrollContainerRef = useRef(null);
     const boxRef = useRef(null);
     const [activeTab, setActiveTab] = useState('kodo');
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
     let KodoGroupList = []
     let StageGroupList = []
     const [currentTab, setCurrentTab] = useState('kodo');
@@ -19,8 +20,8 @@ function Schedule() {
 
     // 倍数(設定済み)
     const multiplier = 2;
-    const [now, setNow] = useState(new Date());
-    // const [now, setNow] = useState(new Date(2025, 8, 28, 10, 30)); // 現在時刻 もしテストしたいならここに時刻を入れる
+    // const [now, setNow] = useState(new Date());
+    const [now, setNow] = useState(new Date(2025, 8, 27, 12, 23)); // 現在時刻 もしテストしたいならここに時刻を入れる
 
     // タイムテーブル情報
     const dayConfigs = {
@@ -30,7 +31,7 @@ function Schedule() {
             startHour: 12,
             endHour: 16,
             hours: [12, 13, 14, 15, 16],  // 時刻の範囲
-            borderCount: 5                // 線の数
+            borderCount: 5 * 3 - 1            // 線の数
         },
         sun: {
             label: "28(日)",
@@ -38,13 +39,12 @@ function Schedule() {
             startHour: 9,
             endHour: 15,
             hours: [9, 10, 11, 12, 13, 14, 15],
-            borderCount: 7
+            borderCount: 7 * 3 - 1
         }
     };
 
     // 20秒ごとに自動更新
     useEffect(() => {
-        return;
         const timer = setInterval(() => setNow(new Date()), 20000);
         return () => clearInterval(timer);
     }, []);
@@ -193,7 +193,7 @@ function Schedule() {
 
     const calcPadding = (timelength) => {
         if (timelength >= 5) {
-            return 5 * multiplier;
+            return 0;
         } else {
             return timelength * multiplier;
         }
@@ -287,9 +287,9 @@ function Schedule() {
             {(displayingDetail >= 0) &&
                 (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} displaystage={stage} />)
             }
-            {/*
+            {
                 <button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button>
-            */}
+            }
             {currentPage == 0 && <>
                 <div className="ko-or-st-con">
                     <div className="kodo-or-stage">
@@ -319,12 +319,12 @@ function Schedule() {
                                     {/* 仕切り線 */}
                                     <div className="row-border-con">
                                         {Array.from({ length: config.borderCount }).map((_, idx) => (
-                                            <div key={idx} className="row-border" />
+                                            <div key={idx} className={`row-border ${idx % 3 == 0 ? "main": "sub"}`} />
                                         ))}
                                     </div>
 
                                     {/* 時間目盛り */}
-                                    <div className="timesheet">
+                                    <div className="timesheet left">
                                         {config.hours.map((h) => (
                                             <h1 key={h}>{h}</h1>
                                         ))}
@@ -354,12 +354,47 @@ function Schedule() {
                                         )}
                                     </div>
 
+                                    {/* 時間目盛り */}
+                                    <div className="timesheet right">
+                                        {config.hours.map((h) => (
+                                            <h1 key={h}>{h}</h1>
+                                        ))}
+
+                                        {/* 現在時刻（赤字） */}
+                                        {(shouldDisplayNowFor(dayKey) && displayingDetail === -1) && (
+                                            (() => {
+                                                const timeStr = `${now.getHours().toString().padStart(2, "0")}:${now
+                                                    .getMinutes()
+                                                    .toString()
+                                                    .padStart(2, "0")}`;
+                                                const oneCount = (timeStr.match(/1/g) || []).length; // '1'の出現回数(1は短いから)
+                                                const leftOffset = oneCount * 1.5 + 2; // 1px * 1の出現数 + 2px
+
+                                                return (
+                                                    <h4
+                                                        className="current-time-h4"
+                                                        style={{
+                                                            top: `${getNowTopFor(dayKey) - 6.2 * multiplier}px`,
+                                                            right: `${leftOffset}px`
+                                                        }}
+                                                    >
+                                                        {timeStr}
+                                                    </h4>
+                                                );
+                                            })()
+                                        )}
+                                    </div>
+
                                     {/* 赤線 */}
                                     {(shouldDisplayNowFor(dayKey) && displayingDetail === -1) && (
                                         <div className={`row-border-now-con rbn-con-${dayKey}`}>
                                             <div
-                                                className="row-border-now"
-                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`, zIndex: 1000 }}
+                                                className="row-border-now left"
+                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`, left:'0px', zIndex: 1000 }}
+                                            />
+                                            <div
+                                                className="row-border-now right"
+                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`, right:'110px', zIndex: 1000 }}
                                             />
                                         </div>
                                     )}
@@ -390,8 +425,8 @@ function Schedule() {
                                                                 paddingTop: `${paddingY}px`,
                                                                 paddingBottom: `${paddingY}px`,
                                                                 backgroundColor: (isOngoing(item) & false)
-                                                                    ? 'rgba(120, 200, 255, 0.97)' // 濃い色
-                                                                    : 'rgba(197, 232, 255, 0.97)'   // 通常色
+                                                                    ? 'rgba(120, 200, 255, 0.95)' // 濃い色
+                                                                    : 'rgba(197, 232, 255, 0.95)'   // 通常色
                                                             }}
                                                         >
                                                             <p className="group-name" style={{ fontSize: `${fontSize}px` }}>
