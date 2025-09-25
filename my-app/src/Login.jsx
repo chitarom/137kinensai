@@ -226,26 +226,29 @@ function Login() {
 
 
     // Stageだけ更新
-    const handleUpdateStage = async (e) => {
+    const handleUpdateDelay = async (e, target) => {
         e.preventDefault();
         if (delayList.length === 0) return;
 
-        const str = stageValue;
-        if (!str) {
-            setStageResult("入力してください");
+        const str = target == 'stage' ? stageValue : kodoValue;
+        let message = "";
+
+        if (!str) message = "入力してください";
+        else if (isNaN(str)) message = "正しく書いてください";
+
+        if (message !== "") {
+            target === 'stage' ? setStageResult(message) : setKodoResult(message);
             return;
         }
-        if (isNaN(str)) {
-            setStageResult("正しく書いてください");
-            return;
-        }
-        const num = parseInt(str);
-        if (!Number.isInteger(num)) {
-            setStageResult("正しく書いてください");
-            return;
-        }
-        if (num > 240 || num < -240) {
-            setStageResult("数字が大きすぎます");
+
+        const num = parseFloat(str);
+
+        if (!Number.isInteger(num)) message = "正しく書いてください";
+        else if (num > 240) message = "数字が大きすぎます";
+        else if (num < -240) message = "数字が小さすぎます";
+
+        if (message !== "") {
+            target === 'stage' ? setStageResult(message) : setKodoResult(message);
             return;
         }
 
@@ -253,39 +256,25 @@ function Login() {
 
         const { error } = await supabase
             .from("delay")
-            .update({ stage: num })
+            .update(target === 'stage' ? { stage: num } : { kodo: num })
             .eq("id", targetId);
 
         if (error) {
             console.error("更新エラー:", error);
-            setStageResult("Stage更新失敗");
+            target === 'stage' ? setStageResult("ステージ更新失敗") : setKodoResult("講堂更新失敗");
         } else {
-            setStageResult("Stage更新成功！");
-            setStageValue("");
+            if (target === 'stage') {
+                setStageResult("ステージ更新成功！");
+                setStageValue("");
+            }
+            else {
+                setKodoResult("講堂更新成功！");
+                setKodoValue("");
+            }
             fetchDelay();
         }
     };
 
-    // Kodoだけ更新
-    const handleUpdateKodo = async (e) => {
-        e.preventDefault();
-        if (delayList.length === 0) return;
-        const targetId = delayList[0].id;
-
-        const { error } = await supabase
-            .from("delay")
-            .update({ kodo: kodoValue })
-            .eq("id", targetId);
-
-        if (error) {
-            console.error("更新エラー:", error);
-            setKodoResult("Kodo更新失敗");
-        } else {
-            setKodoResult("Kodo更新成功！");
-            setKodoValue("");
-            fetchDelay();
-        }
-    };
 
     useEffect(() => {
         if (watchable !== 5) return;
@@ -491,7 +480,7 @@ function Login() {
                         </p></div>
                         
                     </div>
-                    <form className="add-delay-con-con" onSubmit={handleUpdateStage}>
+                    <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'stage')}>
                         <div className="add-delay-con">
                             <input
                                 className="input-delay"
@@ -506,7 +495,7 @@ function Login() {
                     </form>
 
                     {/* Kodo更新フォーム */}
-                    <form className="add-delay-con-con" onSubmit={handleUpdateKodo}>
+                    <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'kodo')}>
                         <div className="add-delay-con">
                             <input
                                 className="input-delay"
