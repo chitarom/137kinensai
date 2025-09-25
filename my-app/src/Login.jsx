@@ -224,15 +224,6 @@ function Login() {
         fetchDelay();
     }, []);
 
-    const OKnum = (str) => {
-        if (!str) return null;
-        if (str === "遅れなし") return 0;
-        if (str.split('分').length !== 2) return null;
-        const [num, a] = str.split('分');
-        if (a === "遅れ") return num;
-        if (a === "巻き") return ("-" + num);
-        return null;
-    };
 
     // Stageだけ更新
     const handleUpdateStage = async (e) => {
@@ -240,16 +231,21 @@ function Login() {
         if (delayList.length === 0) return;
 
         const str = stageValue;
-
         if (!str) {
             setStageResult("入力してください");
             return;
         }
-
-        const num = OKnum(str);
-
-        if (num == null) {
+        if (isNaN(str)) {
             setStageResult("正しく書いてください");
+            return;
+        }
+        const num = parseInt(str);
+        if (!Number.isInteger(num)) {
+            setStageResult("正しく書いてください");
+            return;
+        }
+        if (num > 240 || num < -240) {
+            setStageResult("数字が大きすぎます");
             return;
         }
 
@@ -327,6 +323,8 @@ function Login() {
                 <div className="ad-con">
                     <button className="ad-button" onClick={() => { localStorage.clear(); alert("削除しました"); }}>データ全削除</button>
                     <button className="ad-button" onClick={() => setWatchable(4)}>投票結果一覧</button>
+                </div>
+                <div className="ad-con">
                     <button className="ad-button" onClick={() => setWatchable(5)}>企画遅延反映</button>
                 </div>
             </>}
@@ -488,9 +486,8 @@ function Login() {
                     <div className="delay-list-con">
                         <div className="delay-attention">
                             <p>
-                            ※更新するときは「遅れ」なら〇〇分遅れ、
-                            「巻き」なら〇〇分巻き、「遅れなし」なら遅れなし、
-                            と入れてください (半角数字で)
+                            ※更新するときは「遅れ」なら〇〇、<br/>「巻き」なら-〇〇、
+                            「遅れなし」なら0、<br/>と入れてください (半角・分単位で)
                         </p></div>
                         
                     </div>
