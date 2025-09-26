@@ -333,9 +333,9 @@ function Schedule() {
             {(displayingDetail >= 0) &&
                 (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} displaystage={stage & false} />)
             }
-            {
+            {/*
                 <button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button>
-            }
+            */}
             {currentPage == 0 && <>
                 <div className="ko-or-st-con">
                     <div className="kodo-or-stage">
