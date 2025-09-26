@@ -23,6 +23,9 @@ import Shintenchi from './Shintenchi.jsx';
 import Mogiten from './Mogiten.jsx';
 import Info from './Info.jsx';
 import AboutSeiriken from './AboutSeiriken.jsx';
+import Buppan from './Buppan.jsx';
+
+import NotFound from './NotFound.jsx';
 import "./App.css"
 
 
@@ -53,8 +56,11 @@ function App() {
           <Route path="/kaijin" element={<Kaijin />} />
           <Route path="/shintenchi" element={<Shintenchi />} />
           <Route path="/mogiten" element={<Mogiten />} />
-          <Route path="/info" element={<Info />}></Route>
+          {/* <Route path="/info" element={<Info />}></Route> */}
           <Route path="/aboutseiriken" element={<AboutSeiriken />}></Route>
+          <Route path="/buppan" element={<Buppan />}></Route>
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
 
