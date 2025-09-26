@@ -121,7 +121,8 @@
 .current-time-h4,
 .row-border-now,
 .row-border-now-con,
-.current-time-delay {
+.current-time-delay,
+.current-time-fixed-display {
     pointer-events: none;
 }
 
@@ -183,7 +184,7 @@
 
 /* 仕切り線の最後の margin-bottom も同様に減らす */
 .row-border-con .row-border:last-of-type {
-    margin-bottom: calc((58px - var(--last-modify)) * var(--multiplier-h));
+    margin-bottom: calc(min(0px, (58px - var(--last-modify)) * var(--multiplier-h)));
 }
 
 .schedule-box {
