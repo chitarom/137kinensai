@@ -32,6 +32,7 @@ function Buppan() {
             </div>
             
             <DetailImageSlider imagelist={pictureList1}/>
+            <div className="spacer"></div>
             <DetailImageSlider imagelist={pictureList2}/>
             
         </div>

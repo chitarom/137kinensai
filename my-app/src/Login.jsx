@@ -460,12 +460,27 @@ function Login() {
                     {voteView === "count" && (
                         <div className="votes-list-con">
                             <h3>団体別得票数</h3>
-                            {Object.entries(voteCounts).sort((a, b) => b[1] - a[1]).map(([name, count], index) => (
-                                <div className="vote-count-box" key={name}>
-                                    <span className="vote-count-name">{index + 1}位: {name}</span>
-                                    <span className="vote-count-number">{count} 票</span>
-                                </div>
-                            ))}
+                            {(() => {
+                                const sorted = Object.entries(voteCounts).sort((a, b) => b[1] - a[1]);
+
+                                let lastCount = null;
+                                let rank = 0;
+
+                                return sorted.map(([name, count], index) => {
+                                    // 前と同じcountじゃなければ、順位を index+1 に更新
+                                    if (count !== lastCount) {
+                                        rank = index + 1;
+                                        lastCount = count;
+                                    }
+                                    return (
+                                        <div className="vote-count-box" key={name}>
+                                            <span className="vote-count-rank">{rank}位 </span>
+                                            <span className="vote-count-name">{name}</span>
+                                            <span className="vote-count-number">{count} 票</span>
+                                        </div>
+                                    );
+                                });
+                            })()}
                         </div>
                     )}
                 </div>
@@ -475,12 +490,12 @@ function Login() {
                     <div className="delay-list-con">
                         <div className="delay-attention">
                             <p>
-                            ※更新するときは「遅れ」なら〇〇、<br/>「巻き」なら-〇〇、
-                            「遅れなし」なら0、<br/>と入れてください (半角・分単位で)
-                        </p></div>
-                        
+                                ※更新するときは「遅れ」なら〇〇、<br />「巻き」なら-〇〇、
+                                「遅れなし」なら0、<br />と入れてください (半角・分単位で)
+                            </p></div>
+
                     </div>
-                    
+
                     <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'kodo')}>
                         <div className="add-delay-con">
                             <input
