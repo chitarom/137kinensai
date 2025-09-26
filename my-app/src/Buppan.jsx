@@ -15,10 +15,18 @@ function Buppan() {
 
     return (
         <div className="buppan-con">
-            <h2 className="buppan-title">物販</h2>
-            <p className="buppan-description">現在、物販の予定はありません。</p>
-            <p className="buppan-description">最新情報は公式Twitterをご確認ください。</p>
+            {/*
+                <img className="buppan-title" alt src={'./pictures/' + pictureList[0]}></img>
+            */}
+            <div className="buppan-description-con">
+                <p className="buppan-description">
+                    正門入ってすぐ横の記念祭本部(物販)にて記念祭限定グッズの販売を行っております。
+                    是非お買い求めください。
+                </p>
+            </div>
+            {/*
             <DetailImageSlider imagelist={pictureList}/>
+            */}
         </div>
     );
 };
