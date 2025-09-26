@@ -460,9 +460,9 @@ function Login() {
                     {voteView === "count" && (
                         <div className="votes-list-con">
                             <h3>団体別得票数</h3>
-                            {Object.entries(voteCounts).map(([name, count]) => (
+                            {Object.entries(voteCounts).sort((a, b) => b[1] - a[1]).map(([name, count], index) => (
                                 <div className="vote-count-box" key={name}>
-                                    <span className="vote-count-name">{name}</span>
+                                    <span className="vote-count-name">{index + 1}位: {name}</span>
                                     <span className="vote-count-number">{count} 票</span>
                                 </div>
                             ))}
