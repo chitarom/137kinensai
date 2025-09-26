@@ -95,7 +95,7 @@ function Map() {
             console.log("pieces: " + JSON.stringify(pieces));
             localStorage.setItem("pieces", JSON.stringify(pieces));
             //ここに画像を大きく見せるプログラムを書く
-            setGotNewPiece([true, r]);
+            setGotNewPiece([true, id]);
         } else if (location.state.num == 2) {
             //id: "map_type(0: entire_map, 1: floor1, 2: floor2, 3: floor3, 4:floor4-5)|x,y|direction(e.g 45)"
             var map = Number(id.split("|")[0]);
@@ -633,7 +633,7 @@ function Map() {
                             <div className='gotnewpiece'>
                                 <h3>絵をゲットしました！</h3>
                                 <div className='gift-wrap'>
-                                    <img src={"/pictures/" + enotabipictures["map.at_" + gotNewPiece[1]][0]} alt="" />
+                                    <img src={"/pictures/" + enotabipictures[gotNewPiece[1]][0]} alt="" />
 
                                 </div>
                             </div>
