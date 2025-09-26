@@ -49,8 +49,8 @@ function Schedule() {
     useEffect(() => {
         // return;
         const timer = setInterval(async () => {
-            // setNow(new Date((new Date()).getTime() + (35 * 60 * 60 - 24 * 60) * 1000));
-             setNow(new Date());
+            // setNow(new Date((new Date()).getTime() + (27 * 60 * 60 - 24 * 60) * 1000));
+            setNow(new Date());
             // 遅延更新
             const { data, error } = await supabase
                 .from("delay")
@@ -63,7 +63,7 @@ function Schedule() {
                 setStageDelay(parseInt(data[0].stage));
                 setKodoDelay(parseInt(data[0].kodo));
             }
-        }, 1000);
+        }, 3000);
         return () => clearInterval(timer);
     }, []);
 
@@ -385,7 +385,6 @@ function Schedule() {
                                                 const oneCount = (timeStr.match(/1/g) || []).length; // '1'の出現回数(1は短いから)
                                                 const leftOffset = oneCount * 1.5 + 2; // 1px * 1の出現数 + 2px
 
-                                                let delta = 0;
                                                 const basetop = getNowTopFor(dayKey) - 6.2 * multiplier;
                                                 const nowminutes = now.getMinutes();
                                                 let delayminutes = nowminutes;
@@ -393,19 +392,18 @@ function Schedule() {
                                                 if (kodoDelay >= 0 && kodoDelay <= 3) {
                                                     delaytop = basetop - 14;
                                                     delayminutes -= 4;
-                                                    delta -= 4 * 60 * 1000;
                                                 }
                                                 else if (kodoDelay < 0 && kodoDelay >= -3) {
                                                     delaytop = basetop + 18;
                                                     delayminutes += 5;
-                                                    delta += 5 * 60 * 1000;
                                                 }
                                                 else {
                                                     delaytop = basetop - kodoDelay * multiplier * 2;
                                                     delayminutes -= kodoDelay;
-                                                    delta -= kodoDelay * 60 * 1000;
                                                 }
                                                 // console.log(delayminutes);
+                                                const delta = (delayminutes - nowminutes) * 60 * 1000;
+                                                console.log(delta);
 
                                                 if ((delayminutes + 60) % 60 < 4 || (delayminutes + 60) % 60 > 60 - 4) {
                                                     const modify = 12;
