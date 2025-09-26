@@ -127,8 +127,6 @@
 .gift-wrap > img {
     width: 200px;
     height: 200px;
-    background-size: cover;
-    background-position: 50% 50%;
 }
 
 .achievement {
