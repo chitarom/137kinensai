@@ -80,8 +80,6 @@ function Schedule() {
         }
     }, []);
 
-
-
     useEffect(() => {
         const container = scrollContainerRef.current;
         if (!container) return; // ← これが重要！
@@ -106,7 +104,7 @@ function Schedule() {
     }
 
 
-
+    const stageDetailList = grouplist.filter(item => item[0] == "ステージ").map(item => item[3]); // 詳細説明
 
 
     const scrollToRight = () => {
@@ -162,10 +160,6 @@ function Schedule() {
     }
     createList(grouplist, KodoGroupList, grouplist.length)
     createList(grouplist, StageGroupList, grouplist.length)
-
-
-
-
 
     // const StageGroupList = [
     //     { label: '団体2', day: 'sat', starthour: '13', startminute: '20', finishhour: '16', finishminute: '00' }
@@ -333,10 +327,22 @@ function Schedule() {
     return (
         <div className="schedule-page">
             {(displayingDetail >= 0) &&
-                (<DisplayDetail displayDetailContents={displayDetailContents} setDisplayingDetail={setDisplayingDetail} scheduled={true} displaystage={stage & false} />)
+                (<DisplayDetail
+                    displayDetailContents={displayDetailContents}
+                    setDisplayingDetail={setDisplayingDetail}
+                    scheduled={true}
+                    displaystage={
+                        stageDetailList.includes(displayDetailContents[2]) &&
+                        displayDetailContents[0] !== "パフォーマンス・クイズ" &&
+                        displayDetailContents[0] !== "パフォーマンス・合奏"
+                    } />)
             }
             {
-                <button className="page-changer" onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} >{currentPage === 0 ? '一覧表示' : 'タイムテーブル'}</button>
+                <button className="page-changer" 
+                    onClick={() => { setCurrentPage(prev => (prev + 1) % 2); setActiveTab("kodo"); }} 
+                >
+                    {currentPage === 0 ? '一覧表示' : 'タイムテーブル'}
+                </button>
             }
             {currentPage == 0 && (
                 <p className="current-time-fixed-display">現在<br/>
