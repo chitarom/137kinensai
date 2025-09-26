@@ -90,6 +90,11 @@ function Passport() {
                     </Layer>
                 </Stage>
             </div>
+            {pieces.length >= 6 &&<>
+            <h3>COMPLETE!</h3>
+            <a href="/pictures/giftpicture.png" className="download-button">ダウンロードする！</a>
+            </>}
+            
         </div>
     )
 
