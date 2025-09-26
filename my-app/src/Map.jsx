@@ -63,6 +63,7 @@ function Map() {
         const id = location.state.text;
         if (location.state.num == 1) {
             var pictures = JSON.parse(localStorage.getItem("pictures"));
+            var bef_pictures = JSON.parse(localStorage.getItem("pictures"));
             if (!pictures.includes(id)) pictures.push(id);
             setDisplayMap(enotabipictures[id][3]);
             switch (enotabipictures[id][3]) {
@@ -92,7 +93,7 @@ function Map() {
                     var random = Math.floor(Math.random() * 6);
                     if (pieces.indexOf(random) <= -1) { pieces.push(random); bool = true; r = random; }
                 }
-            if (!pictures.includes(id)) {
+            if (!bef_pictures.includes(id)) {
                 console.log("pieces: " + JSON.stringify(pieces));
                 localStorage.setItem("pieces", JSON.stringify(pieces));
             }
