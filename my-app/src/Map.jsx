@@ -633,7 +633,8 @@ function Map() {
                             <div className='gotnewpiece'>
                                 <h3>絵をゲットしました！</h3>
                                 <div className='gift-wrap'>
-                                    <img src="/pictures/sample.jpg" alt="" />
+                                    <img src={"/pictures/" + enotabipictures["map.at_" + gotNewPiece[1]][0]} alt="" />
+
                                 </div>
                             </div>
                             <div className='gnp-margin2' onClick={closeGNP()}></div>
