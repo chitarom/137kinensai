@@ -101,10 +101,12 @@ function ReadQR() {
               style={{ whiteSpace: "pre-line" }}
             >{errorMessage}</p>
           )}
+          <p>校内に掲示してある、「絵の旅パスポート」と「ここどこ～ド」のQRコードを読み取ることができます。</p>
           {showLink && false && (
             /*上のfalseを取るとリンク表示*/
               <Link to="/info" className='links'>やり方が分からない場合はこちら</Link>
           )}
+
         </>
       ) : (
         // スキャン中...
