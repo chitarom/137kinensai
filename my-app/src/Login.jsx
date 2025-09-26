@@ -244,8 +244,8 @@ function Login() {
         const num = parseFloat(str);
 
         if (!Number.isInteger(num)) message = "正しく書いてください";
-        else if (num > 240) message = "数字が大きすぎます";
-        else if (num < -240) message = "数字が小さすぎます";
+        else if (num > 30) message = "数字が大きすぎます";
+        else if (num < -30) message = "数字が小さすぎます";
 
         if (message !== "") {
             target === 'stage' ? setStageResult(message) : setKodoResult(message);
