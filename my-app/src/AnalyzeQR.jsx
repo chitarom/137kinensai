@@ -14,21 +14,27 @@ function AnalyzeQR() {
   useEffect(() => {
     if (!cameFromApp) return;
 
-    // qrTextは、「1 Hello,World endqr」等の形式を想定
-    const parts = qrText.split(" ");
-    if (
-      parts.length !== 3 ||
-      (parts[0] !== "1" && parts[0] !== "2") ||
-      parts[2] !== "endqr"
-    ) {
-      setResultText("このQRコードは対応していません");
-      return;
-    }
+    try {
+      const decoded = qrText.split("=")[1]; // "QRコード="の後ろを取得
+      const parts = decoded.split("|");
 
-    const num = parseInt(parts[0]);
-    const str = parts[1];
-    setFuncNum(num);
-    setResultText(str);
+      const type1 = (parts.length === 3 && parts[2] === "endqr" && (parts[0] === "1" || parts[0] === "2")); // 1|map.at_番号|endqr
+      const type2 = (parts.length === 5 && parts[4] === "endqr" && (parts[0] === "1" || parts[0] === "2")); // 2|1|68.003,55.352|0|endqr
+      if (!type1 && !type2) {
+        setResultText("このQRコードは対応していません");
+        return;
+      }
+      // 解析成功
+      // 同じ形式
+      const num = parseInt(parts[0]);
+      const result = type2 ? `${parts[1]}|${parts[2]}|${parts[3]}` : parts[1];
+
+      setFuncNum(num);
+      setResultText(result);
+    } catch (err) {
+      console.error("解析エラー:", err);
+      setResultText("QRコードの解析中にエラーが発生しました");
+    }
   }, [cameFromApp, qrText]);
 
   // URLから直接来た場合の処理
