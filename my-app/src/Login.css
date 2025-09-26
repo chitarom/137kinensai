@@ -363,7 +363,7 @@
     align-items: center;
     border: 1.5px solid #ff9d00;
     background-color: #fff;
-    padding: 2px 5px;
+    padding: 2px;
     border-radius: 6px;
 }
 
@@ -428,6 +428,6 @@
 
 .delay-stage,
 .delay-kodo {
-    width: 35%;
+    width: 36%;
     font-size: 16px;
 }

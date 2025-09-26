@@ -224,32 +224,31 @@ function Login() {
         fetchDelay();
     }, []);
 
-    const OKnum = (str) => {
-        if (!str) return null;
-        if (str === "遅れなし") return 0;
-        if (str.split('分').length !== 2) return null;
-        const [num, a] = str.split('分');
-        if (a === "遅れ") return num;
-        if (a === "巻き") return ("-" + num);
-        return null;
-    };
 
     // Stageだけ更新
-    const handleUpdateStage = async (e) => {
+    const handleUpdateDelay = async (e, target) => {
         e.preventDefault();
         if (delayList.length === 0) return;
 
-        const str = stageValue;
+        const str = target == 'stage' ? stageValue : kodoValue;
+        let message = "";
 
-        if (!str) {
-            setStageResult("入力してください");
+        if (!str) message = "入力してください";
+        else if (isNaN(str)) message = "正しく書いてください";
+
+        if (message !== "") {
+            target === 'stage' ? setStageResult(message) : setKodoResult(message);
             return;
         }
 
-        const num = OKnum(str);
+        const num = parseFloat(str);
 
-        if (num == null) {
-            setStageResult("正しく書いてください");
+        if (!Number.isInteger(num)) message = "正しく書いてください";
+        else if (num > 240) message = "数字が大きすぎます";
+        else if (num < -240) message = "数字が小さすぎます";
+
+        if (message !== "") {
+            target === 'stage' ? setStageResult(message) : setKodoResult(message);
             return;
         }
 
@@ -257,39 +256,25 @@ function Login() {
 
         const { error } = await supabase
             .from("delay")
-            .update({ stage: num })
+            .update(target === 'stage' ? { stage: num } : { kodo: num })
             .eq("id", targetId);
 
         if (error) {
             console.error("更新エラー:", error);
-            setStageResult("Stage更新失敗");
+            target === 'stage' ? setStageResult("ステージ更新失敗") : setKodoResult("講堂更新失敗");
         } else {
-            setStageResult("Stage更新成功！");
-            setStageValue("");
+            if (target === 'stage') {
+                setStageResult("ステージ更新成功！");
+                setStageValue("");
+            }
+            else {
+                setKodoResult("講堂更新成功！");
+                setKodoValue("");
+            }
             fetchDelay();
         }
     };
 
-    // Kodoだけ更新
-    const handleUpdateKodo = async (e) => {
-        e.preventDefault();
-        if (delayList.length === 0) return;
-        const targetId = delayList[0].id;
-
-        const { error } = await supabase
-            .from("delay")
-            .update({ kodo: kodoValue })
-            .eq("id", targetId);
-
-        if (error) {
-            console.error("更新エラー:", error);
-            setKodoResult("Kodo更新失敗");
-        } else {
-            setKodoResult("Kodo更新成功！");
-            setKodoValue("");
-            fetchDelay();
-        }
-    };
 
     useEffect(() => {
         if (watchable !== 5) return;
@@ -327,6 +312,8 @@ function Login() {
                 <div className="ad-con">
                     <button className="ad-button" onClick={() => { localStorage.clear(); alert("削除しました"); }}>データ全削除</button>
                     <button className="ad-button" onClick={() => setWatchable(4)}>投票結果一覧</button>
+                </div>
+                <div className="ad-con">
                     <button className="ad-button" onClick={() => setWatchable(5)}>企画遅延反映</button>
                 </div>
             </>}
@@ -488,28 +475,13 @@ function Login() {
                     <div className="delay-list-con">
                         <div className="delay-attention">
                             <p>
-                            ※更新するときは「遅れ」なら〇〇分遅れ、
-                            「巻き」なら〇〇分巻き、「遅れなし」なら遅れなし、
-                            と入れてください (半角数字で)
+                            ※更新するときは「遅れ」なら〇〇、<br/>「巻き」なら-〇〇、
+                            「遅れなし」なら0、<br/>と入れてください (半角・分単位で)
                         </p></div>
                         
                     </div>
-                    <form className="add-delay-con-con" onSubmit={handleUpdateStage}>
-                        <div className="add-delay-con">
-                            <input
-                                className="input-delay"
-                                type="text"
-                                placeholder="ステージの遅れを入力..."
-                                value={stageValue}
-                                onChange={(e) => setStageValue(e.target.value)}
-                            />
-                            <button className="add-delay-button" type="submit">ステージ更新</button>
-                        </div>
-                        <p>{stageResult}</p>
-                    </form>
-
-                    {/* Kodo更新フォーム */}
-                    <form className="add-delay-con-con" onSubmit={handleUpdateKodo}>
+                    
+                    <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'kodo')}>
                         <div className="add-delay-con">
                             <input
                                 className="input-delay"
@@ -523,13 +495,27 @@ function Login() {
                         <p>{kodoResult}</p>
                     </form>
 
+                    <form className="add-delay-con-con" onSubmit={(e) => handleUpdateDelay(e, 'stage')}>
+                        <div className="add-delay-con">
+                            <input
+                                className="input-delay"
+                                type="text"
+                                placeholder="ステージの遅れを入力..."
+                                value={stageValue}
+                                onChange={(e) => setStageValue(e.target.value)}
+                            />
+                            <button className="add-delay-button" type="submit">ステージ更新</button>
+                        </div>
+                        <p>{stageResult}</p>
+                    </form>
+
                     {/* 現在の値を表示 */}
                     <div className="delay-list-con">
                         <h3>現在の遅れ</h3>
                         {delayList.length > 0 ? (
                             <div className="delay-box">
-                                <p className="delay-stage">ステージ: {delayList[0].stage}</p>
                                 <p className="delay-kodo">講堂: {delayList[0].kodo}</p>
+                                <p className="delay-stage">ステージ: {delayList[0].stage}</p>
                             </div>
                         ) : (
                             <p>データがありません</p>

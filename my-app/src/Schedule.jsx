@@ -22,6 +22,8 @@ function Schedule() {
     const multiplier = 2;
     // const [now, setNow] = useState(new Date());
     const [now, setNow] = useState(new Date()); // 現在時刻 もしテストしたいならここに時刻を入れる
+    const [stageDelay, setStageDelay] = useState(0);
+    const [kodoDelay, setKodoDelay] = useState(0);
 
     // タイムテーブル情報
     const dayConfigs = {
@@ -43,9 +45,25 @@ function Schedule() {
         }
     };
 
-    // 20秒ごとに自動更新
+    // 一定間隔で自動更新
     useEffect(() => {
-        const timer = setInterval(() => setNow(new Date()), 20000);
+        // return;
+        const timer = setInterval(async () => {
+            // setNow(new Date((new Date()).getTime() + (35 * 60 * 60 - 24 * 60) * 1000));
+             setNow(new Date());
+            // 遅延更新
+            const { data, error } = await supabase
+                .from("delay")
+                .select("*")
+                .order("id", { ascending: true })
+                .limit(1);
+
+            if (error) console.error("取得エラー", error);
+            else {
+                setStageDelay(parseInt(data[0].stage));
+                setKodoDelay(parseInt(data[0].kodo));
+            }
+        }, 1000);
         return () => clearInterval(timer);
     }, []);
 
@@ -181,7 +199,7 @@ function Schedule() {
         if (timelength >= 20) return fontSize;
 
         // 文字数に応じた基本縮小
-        if (length < 9) fontSize *= 1;
+        if (length <= 8) fontSize *= 1;
         else if (length >= 15) fontSize *= 1 / (15 / 8) * coef2;
         else fontSize *= ((8 / length) * coef1);
         // timelength が 4 以下ならさらに倍率を掛ける
@@ -195,6 +213,7 @@ function Schedule() {
         if (timelength >= 5) {
             return 0;
         } else {
+            return 0;
             return timelength * multiplier;
         }
     };
@@ -282,6 +301,33 @@ function Schedule() {
     }, [now]);
     */
 
+    const showDelay = (delay) => {
+        if (delay == 0) return "遅れなし";
+        else if (delay > 0 && delay < 60) return `${delay}分遅れ`;
+        else if (delay < 0 && delay > -60) return `${delay * (-1)}分巻き`;
+        else return null;
+    };
+
+    const shouldDisplayBlue = (dayKey, time) => {
+        const cfg = dayConfigs[dayKey];
+
+        // 現在日時を "YYYY-MM-DD" 形式に整形
+        const currentDateStr = [
+            time.getFullYear(),
+            String(time.getMonth() + 1).padStart(2, "0"),
+            String(time.getDate()).padStart(2, "0"),
+        ].join("-");
+
+        // 日付チェック
+        const isTargetDate = currentDateStr === cfg.date;
+        // 時間チェック (開始-8分～終了+22分まで)
+        const nowMinutes = time.getHours() * 60 + time.getMinutes();
+        const startMinutes = cfg.startHour * 60 - 8;   // 開始8分前
+        const endMinutes = cfg.endHour * 60 + 22;      // 終了22分後
+
+        return isTargetDate && nowMinutes >= startMinutes && nowMinutes <= endMinutes;
+    };
+
     return (
         <div className="schedule-page">
             {(displayingDetail >= 0) &&
@@ -319,7 +365,7 @@ function Schedule() {
                                     {/* 仕切り線 */}
                                     <div className="row-border-con">
                                         {Array.from({ length: config.borderCount }).map((_, idx) => (
-                                            <div key={idx} className={`row-border ${idx % 3 == 0 ? "main": "sub"}`} />
+                                            <div key={idx} className={`row-border ${idx % 3 == 0 ? "main" : "sub"}`} />
                                         ))}
                                     </div>
 
@@ -339,16 +385,79 @@ function Schedule() {
                                                 const oneCount = (timeStr.match(/1/g) || []).length; // '1'の出現回数(1は短いから)
                                                 const leftOffset = oneCount * 1.5 + 2; // 1px * 1の出現数 + 2px
 
+                                                let delta = 0;
+                                                const basetop = getNowTopFor(dayKey) - 6.2 * multiplier;
+                                                const nowminutes = now.getMinutes();
+                                                let delayminutes = nowminutes;
+                                                let delaytop;
+                                                if (kodoDelay >= 0 && kodoDelay <= 3) {
+                                                    delaytop = basetop - 14;
+                                                    delayminutes -= 4;
+                                                    delta -= 4 * 60 * 1000;
+                                                }
+                                                else if (kodoDelay < 0 && kodoDelay >= -3) {
+                                                    delaytop = basetop + 18;
+                                                    delayminutes += 5;
+                                                    delta += 5 * 60 * 1000;
+                                                }
+                                                else {
+                                                    delaytop = basetop - kodoDelay * multiplier * 2;
+                                                    delayminutes -= kodoDelay;
+                                                    delta -= kodoDelay * 60 * 1000;
+                                                }
+                                                // console.log(delayminutes);
+
+                                                if ((delayminutes + 60) % 60 < 4 || (delayminutes + 60) % 60 > 60 - 4) {
+                                                    const modify = 12;
+                                                    if (delayminutes >= 0 && delayminutes <= 60) {
+                                                        // 同じ側に
+                                                        if (nowminutes >= delayminutes) delayminutes = 60 - modify;
+                                                        if (nowminutes < delayminutes) delayminutes = modify;
+                                                    }
+                                                    else {
+                                                        // 異なる側に
+                                                        if (delayminutes < nowminutes) delayminutes = -1 * modify;
+                                                        if (delayminutes >= nowminutes) delayminutes = 60 + modify;
+                                                    }
+                                                    delaytop = basetop + (delayminutes - nowminutes) * multiplier * 2;
+                                                }
+
+                                                /* 
+                                                delayminutes=now.getMinutes()で初期化
+                                                basetop=getNowTopFor(dayKey)-6.2*multiplierで初期化
+                                                時間差が3巻きならdelaytop=basetop-14,(4min相当) delayminutes+=4
+                                                そうでなくもし時間差が3遅れならdelaytop=basetop+18,(5min相当)delayminutes-=5
+                                                そうでないならdelaytop=basetop-kododelay*multiplier*2
+
+                                                このときのdelayminutesについて
+                                                重なっていないならそのまま
+                                                そうでなくもし、nowとdelayがおなじ側にあるなら±9分固定
+                                                */
+
+
                                                 return (
-                                                    <h4
-                                                        className="current-time-h4"
-                                                        style={{
-                                                            top: `${getNowTopFor(dayKey) - 6.2 * multiplier}px`,
-                                                            left: `${leftOffset}px`
-                                                        }}
-                                                    >
-                                                        {timeStr}
-                                                    </h4>
+                                                    // true はずして
+                                                    (ture || shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
+                                                        <h4
+                                                            className="current-time-h4"
+                                                            style={{
+                                                                // 遅れを反映(1分 = 2px * multiplier)
+                                                                top: `${basetop}px`,
+                                                                left: `${leftOffset}px`
+                                                            }}
+                                                        >
+                                                            {timeStr}
+                                                        </h4>
+                                                        <p
+                                                            className="current-time-delay"
+                                                            style={{
+                                                                top: `${delaytop}px`, // h4の少し下に表示
+                                                                left: `${leftOffset}px`
+                                                            }}
+                                                        >
+                                                            {showDelay(kodoDelay)}
+                                                        </p>
+                                                    </>)
                                                 );
                                             })()
                                         )}
@@ -371,15 +480,27 @@ function Schedule() {
                                                 const leftOffset = oneCount * 1.5 + 2; // 1px * 1の出現数 + 2px
 
                                                 return (
-                                                    <h4
-                                                        className="current-time-h4"
-                                                        style={{
-                                                            top: `${getNowTopFor(dayKey) - 6.2 * multiplier}px`,
-                                                            right: `${leftOffset}px`
-                                                        }}
-                                                    >
-                                                        {timeStr}
-                                                    </h4>
+                                                    <>
+                                                        <h4
+                                                            className="current-time-h4"
+                                                            style={{
+                                                                top: `${getNowTopFor(dayKey) - 6.2 * multiplier}px`,
+                                                                right: `${leftOffset}px`
+                                                            }}
+                                                        >
+                                                            {timeStr}
+                                                        </h4>
+                                                        <p
+                                                            className="current-time-delay"
+                                                            style={{
+                                                                top: `${getNowTopFor(dayKey) - 6.2 * multiplier - (Math.abs(stageDelay) > 2 ? kodoDelay * multiplier * 2 
+                                                                    : (stageDelay < 0 ? -18 : 14))}px`,
+                                                                right: `${leftOffset}px`
+                                                            }}
+                                                        >
+                                                            {showDelay(stageDelay)}
+                                                        </p>
+                                                    </>
                                                 );
                                             })()
                                         )}
@@ -389,12 +510,28 @@ function Schedule() {
                                     {(shouldDisplayNowFor(dayKey) && displayingDetail === -1) && (
                                         <div className={`row-border-now-con rbn-con-${dayKey}`}>
                                             <div
+                                                className="row-border-now basis"
+                                                style={{
+                                                    top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`,
+                                                    left: '0px', height: '2px', zIndex: 1000,
+                                                    backgroundColor: 'rgb(255, 0, 0)'
+                                                }}
+                                            />
+                                            <div
                                                 className="row-border-now left"
-                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`, left:'0px', zIndex: 1000 }}
+                                                style={{
+                                                    top: `${getNowTopFor(dayKey) - 2.2 * multiplier + 0.5 - kodoDelay * multiplier * 2}px`,
+                                                    left: '0px', height: '1px', zIndex: 1000,
+                                                    backgroundColor: 'rgb(0, 0, 255)'
+                                                }}
                                             />
                                             <div
                                                 className="row-border-now right"
-                                                style={{ top: `${getNowTopFor(dayKey) - 2.2 * multiplier}px`, right:'110px', zIndex: 1000 }}
+                                                style={{
+                                                    top: `${getNowTopFor(dayKey) - 2.2 * multiplier + 0.5 - 0.3 - stageDelay * multiplier * 2}px`,
+                                                    right: '109px', height: `${1 + (kodoDelay == stageDelay ? 0 : 0.3)}px`, zIndex: 1000,
+                                                    backgroundColor: 'rgb(0, 0, 255)'
+                                                }}
                                             />
                                         </div>
                                     )}
