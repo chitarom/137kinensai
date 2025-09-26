@@ -9,7 +9,7 @@ function StageVote() {
     const [currentPage, setCurrentPage] = useState(0)
     const today = new Date();
     const startDate = new Date(2025, 8, 27, 12); // 0〜11 → 9月は「8」
-    const endDate = new Date(2025, 8, 28, 15, 59, 59);
+    const endDate = new Date(2025, 8, 28, 14, 27, 59);
 
     useEffect(() => {
         const value = localStorage.getItem("selectedGroup")
@@ -52,7 +52,9 @@ function StageVote() {
             <div className="vote-title-con">
                 <h2>STAGE</h2>
                 <div className="vote-title-exp">
-                    <p>　東海生の東海生による東海生のための個性の祭典。 今年度は、例年大きな盛り上がりを見せるTKI48やジャグリング部など、過去最多17組のパフォーマーが出演。年に一度のどこよりも自由な大会が幕を開ける。</p>
+                    <p>　東海生の東海生による東海生のための個性の祭典。 今年度は、例年大きな盛り上がりを見せるTKI48やジャグリング部など、過去最多17組のパフォーマーが出演。年に一度のどこよりも自由な大会が幕を開ける。
+                        <br />投票可能期間　:　9/27(土)　12:00　～　9/28(日)　14:27
+                    </p>
                     <img src="/pictures/stageposter.png" alt="加治屋の画像" />
 
                 </div>

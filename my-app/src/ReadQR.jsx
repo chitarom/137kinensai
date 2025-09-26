@@ -101,7 +101,9 @@ function ReadQR() {
               style={{ whiteSpace: "pre-line" }}
             >{errorMessage}</p>
           )}
-          <p>校内に掲示してある、「絵の旅パスポート」と「ここどこ～ド」のQRコードを読み取ることができます。</p>
+          <p className="readqr-exp">校内に掲示してある、「絵の旅パスポート（新天地企画）」と「ここどこ～ド（校内現在地機能）」のQRコードを読み取ることができます。</p>
+          <div className="read-pass-con"><Link to="/passport" className="event passport"></Link></div>
+          
           {showLink && false && (
             /*上のfalseを取るとリンク表示*/
               <Link to="/info" className='links'>やり方が分からない場合はこちら</Link>
