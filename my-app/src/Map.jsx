@@ -63,6 +63,7 @@ function Map() {
         const id = location.state.text;
         if (location.state.num == 1) {
             var pictures = JSON.parse(localStorage.getItem("pictures"));
+            var bef_pictures = JSON.parse(localStorage.getItem("pictures"));
             if (!pictures.includes(id)) pictures.push(id);
             setDisplayMap(enotabipictures[id][3]);
             switch (enotabipictures[id][3]) {
@@ -92,10 +93,13 @@ function Map() {
                     var random = Math.floor(Math.random() * 6);
                     if (pieces.indexOf(random) <= -1) { pieces.push(random); bool = true; r = random; }
                 }
-            console.log("pieces: " + JSON.stringify(pieces));
-            localStorage.setItem("pieces", JSON.stringify(pieces));
+            if (!bef_pictures.includes(id)) {
+                console.log("pieces: " + JSON.stringify(pieces));
+                localStorage.setItem("pieces", JSON.stringify(pieces));
+            }
+            
             //ここに画像を大きく見せるプログラムを書く
-            setGotNewPiece([true, r]);
+            setGotNewPiece([true, id]);
         } else if (location.state.num == 2) {
             //id: "map_type(0: entire_map, 1: floor1, 2: floor2, 3: floor3, 4:floor4-5)|x,y|direction(e.g 45)"
             var map = Number(id.split("|")[0]);
@@ -633,7 +637,7 @@ function Map() {
                             <div className='gotnewpiece'>
                                 <h3>絵をゲットしました！</h3>
                                 <div className='gift-wrap'>
-                                    <img src={"/pictures/" + enotabipictures["map.at_" + gotNewPiece[1]][0]} alt="" />
+                                    <img src={"/pictures/" + enotabipictures[gotNewPiece[1]][0]} alt="" />
 
                                 </div>
                             </div>
