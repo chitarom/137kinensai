@@ -3,6 +3,7 @@ import './SearchComponents/DetailImageSlider';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DetailImageSlider from './SearchComponents/DetailImageSlider';
+import imgtitle from '/pictures/物販.png';
 import img1 from '/pictures/buppan (1).jpg';
 import img2 from '/pictures/buppan (2).jpg';
 import img3 from '/pictures/buppan (3).jpg';
@@ -21,9 +22,8 @@ function Buppan() {
 
     return (
         <div className="buppan-con">
-            {/*
-                <img className="buppan-title" alt src={'./pictures/' + pictureList[0]}></img>
-            */}
+            <img className="buppan-title" alt src={imgtitle}></img>
+            
             <div className="buppan-description-con">
                 <p className="buppan-description">
                     正門入ってすぐ横の記念祭本部(物販)にて記念祭限定グッズの販売を行っております。
