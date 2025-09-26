@@ -92,8 +92,11 @@ function Map() {
                     var random = Math.floor(Math.random() * 6);
                     if (pieces.indexOf(random) <= -1) { pieces.push(random); bool = true; r = random; }
                 }
-            console.log("pieces: " + JSON.stringify(pieces));
-            localStorage.setItem("pieces", JSON.stringify(pieces));
+            if (!pictures.includes(id)) {
+                console.log("pieces: " + JSON.stringify(pieces));
+                localStorage.setItem("pieces", JSON.stringify(pieces));
+            }
+            
             //ここに画像を大きく見せるプログラムを書く
             setGotNewPiece([true, id]);
         } else if (location.state.num == 2) {
