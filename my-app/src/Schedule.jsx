@@ -49,7 +49,7 @@ function Schedule() {
     useEffect(() => {
         // return;
         const timer = setInterval(async () => {
-            // setNow(new Date((new Date()).getTime() + (35 * 60 * 60 - 24 * 60) * 1000));
+            // setNow(new Date((new Date()).getTime() + (24 * 60 * 60 - 24 * 60) * 1000));
              setNow(new Date());
             // 遅延更新
             const { data, error } = await supabase
@@ -437,7 +437,7 @@ function Schedule() {
 
                                                 return (
                                                     // true はずして
-                                                    (ture || shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
+                                                    (true || shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
                                                         <h4
                                                             className="current-time-h4"
                                                             style={{
