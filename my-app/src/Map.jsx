@@ -22,21 +22,35 @@ import sampjpg from "/pictures/kaijinlogo.png"
 
 
 function Map() {
-    const samps = [sampjpg, sampjpg, sampjpg, sampjpg, sampjpg, sampjpg, sampjpg];
+    const en = enotabipictures;
+    let samps = [];
+    for (let i = 0; i < en.length; i++) {
+        samps.push("/pictures/" + en["map.at_" + (i + 1)][0]);
+    }
     const location = useLocation();
     const navigate = useNavigate();
     const [isFirstLoad, setFirstLoad] = useState(true);
     const [displayMap, setDisplayMap] = useState(0);
     const [gotNewPiece, setGotNewPiece] = useState([false, null]);
     const [triangle, setTriangle] = useState(null);
-    const [sample, setSample] = useState({ "map.at_0": null, "map.at_1": null, "map.at_2": null, "map.at_3": null, "map.at_4": null, "map.at_5": null, "map.at_6": null });
+    const initialSample = Object.keys(enotabipictures).reduce((acc, key) => {
+        acc[key] = null;
+        return acc;
+    }, {});
+    const [sample, setSample] = useState(initialSample);
 
-    for (let i = 0; i < 7; i++) {
-        const samp0 = new window.Image();
-        samp0.crossOrigin = "anonymous";
-        samp0.onload = () => { var s = sample; s["map.at_" + i] = samp0; setSample(s) };
-        samp0.src = samps[i];
-    }
+    useEffect(() => {
+        Object.keys(enotabipictures).forEach((key) => {
+            const filename = enotabipictures[key][0]; // "gengaX.png"
+            const img = new window.Image();
+            img.crossOrigin = "anonymous";
+            img.onload = () => {
+                setSample(prev => ({ ...prev, [key]: img }));
+            };
+            img.src = "/pictures/" + filename;
+        });
+    }, []);
+
 
     var b = false;
     var preSVG = entire;
@@ -212,7 +226,7 @@ function Map() {
     const [scale, setScale] = useState(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [canOpen, setCanOpen] = useState([false, ""]);
-    const [loaded,setLoaded] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
     const [rects, setRects] = useState([]);
 
@@ -267,7 +281,7 @@ function Map() {
 
         const image = new window.Image();
         image.crossOrigin = "anonymous";
-        image.onload = () => {setImg(image);setLoaded(true);}
+        image.onload = () => { setImg(image); setLoaded(true); }
         image.src = SVG;
         /*.addEventListener("click",(e) => {
             console.log("160");
