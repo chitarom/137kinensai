@@ -99,3 +99,33 @@
 .cancel-button:hover {
     background-color: #0069bf;
 }
+
+.readqr-exp {
+    padding: 10px;
+}
+
+.event {
+    width: 90%;
+    margin: 10px;
+    height: 100px;
+    background-image: url("/pictures/stage-slide.png");
+    background-size: cover;
+    background-position: 50% 92%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.336);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.event.passport {
+    background-image: url("/pictures/enotabislide.png");
+    background-position: 50% 50%;
+
+}
+
+.read-pass-con {
+    display: flex;
+    justify-content: center;
+    
+}
