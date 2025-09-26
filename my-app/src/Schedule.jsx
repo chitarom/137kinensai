@@ -435,7 +435,7 @@ function Schedule() {
 
                                                 return (
                                                     // true はずして
-                                                    (ture || shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
+                                                    (true || shouldDisplayBlue(dayKey, new Date(now.getTime() + delta))) && (<>
                                                         <h4
                                                             className="current-time-h4"
                                                             style={{
