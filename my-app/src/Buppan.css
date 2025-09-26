@@ -8,6 +8,10 @@
 }
 
 .buppan-description {
-    font-size: 20px;
+    font-size: 19px;
     text-align: center;
+}
+
+.spacer {
+    height: 30px;
 }
