@@ -1,6 +1,6 @@
 .vote-title-con {
     width: 100%;
-    padding: 30px;
+    padding: 25px;
     background-color: white;
     position: relative;
 }
@@ -18,6 +18,19 @@
     display: flex;
     padding: 15px;
     font-size: 13px;
+}
+
+.vote-title-link {
+    display: block;
+    position: relative;
+    top: 0;
+    border: none;
+    background-color: #008cff;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    padding: 0.2rem;
 }
 
 .vote-title-exp img {

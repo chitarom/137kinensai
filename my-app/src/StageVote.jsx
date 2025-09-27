@@ -1,11 +1,10 @@
 import "./StageVote.css"
 import grouplist from "./JSON/ProjectData.json"
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { supabase } from "./supabase";
 
 function StageVote() {
-    const navigate = useNavigate();
     const [selectedGroup, setSelectedGroup] = useState()
     const [voted, setVoted] = useState()
     const [currentPage, setCurrentPage] = useState(0)
@@ -125,13 +124,15 @@ function StageVote() {
                 <h2>STAGE</h2>
                 <div className="vote-title-exp">
                     <p>　東海生の東海生による東海生のための個性の祭典。 今年度は、例年大きな盛り上がりを見せるTKI48やジャグリング部など、過去最多17組のパフォーマーが出演。年に一度のどこよりも自由な大会が幕を開ける。
-                        <br />投票可能期間　:　9/27(土)　12:00　～　9/28(日)　14:27
+                        <br />投票可能期間:<br />9/27(土) 12:00 ～ 9/28(日) 14:27
                     </p>
-                    {/*<button onClick={() => navigate("/schedule")}>スケジュールをチェック</button>*/}
+
                     <img src="/pictures/stageposter.png" alt="加治屋の画像" />
 
                 </div>
-
+                <Link to="/schedule?type=1" className="vote-title-link">
+                    →スケジュールをチェック！
+                </Link>
             </div>
             <div className="vote-subtitle-con">
                 <div className="vote-subtitle">
