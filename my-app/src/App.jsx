@@ -24,7 +24,7 @@ import Mogiten from './Mogiten.jsx';
 import Info from './Info.jsx';
 import AboutSeiriken from './AboutSeiriken.jsx';
 import Buppan from './Buppan.jsx';
-
+import { Analytics } from "@vercel/analytics/react"
 import NotFound from './NotFound.jsx';
 import "./App.css"
 
@@ -33,6 +33,7 @@ import "./App.css"
 function App() {
   return (
     <>
+    <Analytics />
       <Header />
 
       <div className="all-wrapper">
