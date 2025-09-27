@@ -20,7 +20,7 @@ function Schedule() {
 
     // 倍数(設定済み)
     const multiplier = 2;
-    const [now, setNow] = useState(new Date(2025, 8, 27, 12, 15)); // 本番はこれ
+    const [now, setNow] = useState(new Date()); // 本番はこれ
     // const [now, setNow] = useState(new Date(2025, 8, 28, 9, 4)); // 現在時刻 もしテストしたいならここに時刻を入れる
     const [stageDelay, setStageDelay] = useState(0);
     const [kodoDelay, setKodoDelay] = useState(0);
