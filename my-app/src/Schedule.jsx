@@ -112,7 +112,8 @@ function Schedule() {
         // 日付チェック
         const isTargetSat = shouldDisplayNowFor('sat') 
         const isTargetSun = shouldDisplayNowFor('sun');
-        
+        if (!isTargetSat && !isTargetSun) return;
+
         window.scrollTo({
             top: 
                 isTargetSat ? (getNowTopFor('sat') - 6.2 * multiplier) :
