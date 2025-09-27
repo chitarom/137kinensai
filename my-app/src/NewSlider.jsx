@@ -53,7 +53,6 @@ const NewsSlider = () => {
         </Link>
         <Link to="/kaijin" className="news-slide">
         <img src={kaijinSlide} alt="" />
-
         </Link>
         <Link to="/shintenchi" className="news-slide">
           <img src={shinslide} alt="" />

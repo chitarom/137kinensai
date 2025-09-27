@@ -40,16 +40,18 @@ function Home() {
                         <img src={passportHome} alt="" />
                         <h2>絵の旅パスポート</h2>
                     </Link>
-                    <Link to="/event" className="menu-button">
-                        <img src={eventHome} alt="" />
-                        <h2>イベント</h2>
-                    </Link>
-                </div>
-                <div className="home-menu-top">
+                    
                     <Link to="/pagelist" className="menu-button">
                         <img src={listHome} alt="" />
                         <h2>ページ一覧</h2>
                     </Link>
+                </div>
+                <div className="home-menu-top">
+                    <a href='https://forms.gle/DeTVPckAjLxt1T1b7' className="menu-button hp-link">
+                        <img src={linkHome} alt="" />
+                        <h2>ご質問・ご感想</h2>
+                    </a>
+                    
                     <a href='https://kinensai.jp' className="menu-button hp-link">
                         <img src={linkHome} alt="" />
                         <h2>HPはこちら</h2>
