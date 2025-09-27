@@ -13,25 +13,6 @@
 }
 
 .spacer {
-    height: 30px;
+    height: 25px;
 }
 
-.detail-images-wrap {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    height: 450px;
-    overflow-x: auto;
-    display: flex;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-}
-
-.detail-slide {
-    height: 100%;
-    object-fit: contain;
-    cursor: pointer;
-    margin: 0 50px;
-    /* ← 左右に20pxの余白を追加 */
-}
