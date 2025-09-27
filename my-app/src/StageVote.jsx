@@ -71,6 +71,29 @@ function StageVote() {
     };
 
     const handleVoted = async (groupName) => {
+        if (!userIP) {
+            alert("IP取得に失敗しました");
+            return;
+        }
+
+        // IP重複チェック
+        const { data: existing, error: fetchError } = await supabase
+            .from("vote")
+            .select("id")
+            .eq("ip", userIP);
+
+        if (fetchError) {
+            console.error("IPチェックエラー:", fetchError);
+            alert("投票処理に失敗しました");
+            return;
+        }
+
+        if (existing.length > 0) {
+            alert("このIPからはすでに投票されています");
+            setExistIP(true);
+            return;
+        }
+
 
         const { error } = await supabase
             .from("vote")
