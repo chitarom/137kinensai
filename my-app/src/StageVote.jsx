@@ -7,18 +7,62 @@ function StageVote() {
     const [selectedGroup, setSelectedGroup] = useState()
     const [voted, setVoted] = useState()
     const [currentPage, setCurrentPage] = useState(0)
+    const [userIP, setUserIP] = useState(null)
+    const [existIP, setExistIP] = useState(false)
     const today = new Date();
     const startDate = new Date(2025, 8, 27, 12); // 0〜11 → 9月は「8」
-    const endDate = new Date(2025, 8, 28, 14, 27, 59);
+    const endDate = new Date(2025, 8, 28, 14);
+
+
+    const getIP = async () => {
+        const res = await fetch("https://api.ipify.org?format=json");
+        const data = await res.json();
+        console.log("あなたのIP:", data.ip);
+        setUserIP(data.ip);
+        return data.ip;
+    };
+
+    const fetchIPs = async () => {
+        let ips = [];
+        const { data, error } = await supabase
+            .from("vote")
+            .select("ip")
+            .order('id', { ascending: true });
+        if (error) {
+            console.error("取得エラー:", error);
+        } else {
+            ips = data.map(item => item.ip);
+            console.log("取得したIPリスト:", ips);
+        }
+        return ips;
+    };
+
+    useEffect(() => {
+        const checkIP = async () => {
+            const iplist = await fetchIPs();
+            const userIP = await getIP();
+            console.log("このIPは既に投票済み？", existIP);
+            setExistIP(iplist.includes(userIP));
+        };
+        checkIP();
+    }, []);
+
 
     useEffect(() => {
         const value = localStorage.getItem("selectedGroup")
         setSelectedGroup(value)
         const value2 = localStorage.getItem("voted")
         setVoted(value2)
-    })
+    }, [])
 
-    useEffect (() => {console.log(today);}, []); // 確認用
+    useEffect(() => {
+        if (selectedGroup && today >= endDate && voted != "voted") {
+            handleVoted(selectedGroup)
+
+        }
+    }, [])
+
+    useEffect(() => { console.log(today); }, []); // 確認用
 
     const handleSelect = (groupName) => {
         localStorage.setItem("selectedGroup", groupName);
@@ -28,10 +72,13 @@ function StageVote() {
 
     const handleVoted = async (groupName) => {
 
-        const name = groupName;
         const { error } = await supabase
             .from("vote")
-            .insert([{ name }]);
+            .insert([{
+                name: groupName,
+                ip: userIP
+
+            }]);
         if (error) {
             console.error("追加エラー:", error);
         } else {
@@ -69,7 +116,7 @@ function StageVote() {
                     <h4>※一度投票したら変更はできません！</h4>
                 </div>
                 <div className="vote-subtitle reverse">
-                    <h4>{voted == "voted" ? "投票完了" : "選択中"}:{selectedGroup}</h4>
+                    <h4>{voted == "voted" || existIP ? "投票完了" : "選択中"}:{selectedGroup}</h4>
                 </div>
 
             </div>
@@ -130,7 +177,7 @@ function StageVote() {
                 <div className="vote-button">
                     <button className="unchecked" disabled={true}>投票は終了しました</button>
                 </div>
-            </> : voted == "voted" ? null : <>
+            </> : voted == "voted" || existIP ? null : <>
                 <div className="vote-button">
                     <button className={selectedGroup ? "checked" : "unchecked"} onClick={() => {
                         if (selectedGroup) {
