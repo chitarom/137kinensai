@@ -1,5 +1,5 @@
 import './Schedule.css';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, use } from 'react';
 import grouplist from './JSON/ProjectData.json'
 import { useLocation } from 'react-router-dom';
 import DisplayDetail from './DisplayDetail';
@@ -20,10 +20,11 @@ function Schedule() {
 
     // 倍数(設定済み)
     const multiplier = 2;
-    const [now, setNow] = useState(new Date()); // 本番はこれ
+    const [now, setNow] = useState(new Date(2025, 8, 27, 12, 15)); // 本番はこれ
     // const [now, setNow] = useState(new Date(2025, 8, 28, 9, 4)); // 現在時刻 もしテストしたいならここに時刻を入れる
     const [stageDelay, setStageDelay] = useState(0);
     const [kodoDelay, setKodoDelay] = useState(0);
+    const hasScrolledRef = useRef(false);
 
     // タイムテーブル情報
     const dayConfigs = {
@@ -65,7 +66,7 @@ function Schedule() {
                 setStageDelay(parseInt(data[0].stage));
                 setKodoDelay(parseInt(data[0].kodo));
             }
-        }, 500);
+        }, 3000);
         return () => clearInterval(timer);
     }, []);
 
@@ -96,6 +97,33 @@ function Schedule() {
     }, [currentPage]);
 
     useEffect(() => { setStage(currentTab === 'stage'); }, [currentTab]);
+
+    useEffect(() => {
+        if (currentPage !== 0 || displayingDetail !== -1) return;
+        if (hasScrolledRef.current) return;
+        hasScrolledRef.current = true;
+
+        const currentDateStr = [
+            now.getFullYear(),
+            String(now.getMonth() + 1).padStart(2, "0"),
+            String(now.getDate()).padStart(2, "0"),
+        ].join("-");
+
+        // 日付チェック
+        const isTargetSat = shouldDisplayNowFor('sat') 
+        const isTargetSun = shouldDisplayNowFor('sun');
+        
+        window.scrollTo({
+            top: 
+                isTargetSat ? (getNowTopFor('sat') - 6.2 * multiplier) :
+                isTargetSun ? (getNowTopFor('sun') - 6.2 * multiplier) + 1150 :
+                0
+            ,
+            behavior: 'smooth'
+        });
+
+    }, [currentPage, displayingDetail]);
+
 
     function truncateText(text, maxLength) {
         return text.length > maxLength

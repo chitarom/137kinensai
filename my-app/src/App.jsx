@@ -50,13 +50,15 @@ function App() {
           <Route path="/readqr" element={<ReadQR />} />
           <Route path="/analyzeqr" element={<AnalyzeQR />} />
           <Route path="/passport" element={<Passport />} />
-          <Route path="/articlemenu" element={<ArticleMenu />} />
-          <Route path="/article" element={<Article />} />
+          {// <Route path="/articlemenu" element={<ArticleMenu />} />
+            // <Route path="/article" element={<Article />} />
+          }
           <Route path="/stagevote" element={<StageVote />} />
           <Route path="/kaijin" element={<Kaijin />} />
           <Route path="/shintenchi" element={<Shintenchi />} />
           <Route path="/mogiten" element={<Mogiten />} />
-          {/* <Route path="/info" element={<Info />}></Route> */}
+          {// <Route path="/info" element={<Info />}></Route> }
+          }
           <Route path="/aboutseiriken" element={<AboutSeiriken />}></Route>
           <Route path="/buppan" element={<Buppan />}></Route>
 
