@@ -1,6 +1,7 @@
 import "./StageVote.css"
 import grouplist from "./JSON/ProjectData.json"
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "./supabase";
 
 function StageVote() {
@@ -11,7 +12,7 @@ function StageVote() {
     const [existIP, setExistIP] = useState(false)
     const today = new Date();
     const startDate = new Date(2025, 8, 27, 12); // 0〜11 → 9月は「8」
-    const endDate = new Date(2025, 8, 28, 14);
+    const endDate = new Date(2025, 8, 28, 14, 27);
 
 
     const getIP = async () => {
@@ -71,6 +72,29 @@ function StageVote() {
     };
 
     const handleVoted = async (groupName) => {
+        if (!userIP) {
+            alert("IP取得に失敗しました");
+            return;
+        }
+
+        // IP重複チェック
+        const { data: existing, error: fetchError } = await supabase
+            .from("vote")
+            .select("id")
+            .eq("ip", userIP);
+
+        if (fetchError) {
+            console.error("IPチェックエラー:", fetchError);
+            alert("投票処理に失敗しました");
+            return;
+        }
+
+        if (existing.length > 0) {
+            alert("このIPからはすでに投票されています");
+            setExistIP(true);
+            return;
+        }
+
 
         const { error } = await supabase
             .from("vote")
@@ -100,12 +124,15 @@ function StageVote() {
                 <h2>STAGE</h2>
                 <div className="vote-title-exp">
                     <p>　東海生の東海生による東海生のための個性の祭典。 今年度は、例年大きな盛り上がりを見せるTKI48やジャグリング部など、過去最多17組のパフォーマーが出演。年に一度のどこよりも自由な大会が幕を開ける。
-                        <br />投票可能期間　:　9/27(土)　12:00　～　9/28(日)　14:27
+                        <br />投票可能期間:<br />9/27(土) 12:00 ～ 9/28(日) 14:27
                     </p>
+
                     <img src="/pictures/stageposter.png" alt="加治屋の画像" />
 
                 </div>
-
+                <Link to="/schedule?type=1" className="vote-title-link">
+                    →スケジュールをチェック！
+                </Link>
             </div>
             <div className="vote-subtitle-con">
                 <div className="vote-subtitle">

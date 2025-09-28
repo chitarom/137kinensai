@@ -151,7 +151,7 @@ function Login() {
         }
     };
 
-    const fecthVotes = async () => {
+    const fetchVotes = async () => {
         const { data, error } = await supabase
             .from("vote")
             .select("id, created_at, name")
@@ -220,9 +220,9 @@ function Login() {
     useEffect(() => {
         fetchNews();
         fetchComments();
-        fecthVotes();
+        fetchVotes();
         fetchDelay();
-    }, []);
+    }, [watchable]);
 
 
     // Stageだけ更新
