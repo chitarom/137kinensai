@@ -173,7 +173,7 @@ function StageVote() {
                 <div className="vote-button">
                     <button className="unchecked" disabled={true}>投票は27日(土)12:00～</button>
                 </div>
-            </> : today > endDate ? <>
+            </> : today >= endDate ? <>
                 <div className="vote-button">
                     <button className="unchecked" disabled={true}>投票は終了しました</button>
                 </div>
