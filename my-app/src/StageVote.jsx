@@ -196,7 +196,7 @@ function StageVote() {
                 </div>
             ))}
             {/*正確にはこうなりそう*/}
-            {today < startDate ? <>
+            {/* {today < startDate ? <>
                 <div className="vote-button">
                     <button className="unchecked" disabled={true}>投票は27日(土)12:00～</button>
                 </div>
@@ -224,7 +224,7 @@ function StageVote() {
 
                 </div>}
             </>
-            }
+            } */}
 
         </div>
 
